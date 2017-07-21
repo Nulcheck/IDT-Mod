@@ -1,0 +1,804 @@
+command.idtnews=IDT News: 
+command.idtbug=IDT Bug Tracker: 
+command.idtsupport=§5Support MCE: §r
+
+nei.recipe.smelter=Smelter
+nei.recipe.cutter=Industrial Cutter
+nei.recipe.mc=Matter Condenser
+nei.recipe.extract=BioFuel Extractor
+nei.recipe.comp=Tank Compressor
+nei.recipe.welder=Welder
+nei.recipe.magnet=Magnetizer
+nei.recipe.bhg=Black Hole Generator
+nei.recipe.zng=Zimphnode Generator
+
+potion.radiationEffect=Radiation
+death.attack.idtradiation=%1$s died from their cells being ionized.
+
+itemGroup.IDT=§bIndustrial Technologies§r
+itemGroup.IDTItems=§bIndustrial Technologies: Items§r
+
+entity.mod_IDT.Ice Phantom.name=Ice Phantom
+entity.mod_IDT.Icy Creeper.name=Icy Creeper
+
+item.NdMagnet.unmag.name=Neodymium Magnet
+item.NdMagnet.mag.name=Neodymium Magnet
+
+container.smelter=Smelter
+container.cutter=Industrial Cutter
+container.matter.condenser=Matter Condenser
+container.zng=Zimphnode Generator
+container.tank.compressor=Tank Compressor
+container.bfe=BioFuel Extractor
+container.welder=Welder
+container.magnetizer=Magnetizer
+container.enricher=Enricher
+container.bhg=Black Hole Generator
+
+container.birchChest=Birkentruhe
+container.jungleChest=Tropentruhe
+container.spruceChest=Fichtentruhe
+container.willowChest=Willow truhe
+container.ebonyChest=Ebony truhe
+container.silkwoodChest=Silkwood truhe
+container.darkMatterChest=Schwarz Matter truhe
+container.acaciaChest=Akazientruhe
+container.darkOakChest=Schwarzeichentruhe
+container.gelidChest=Gelid truhe
+
+container.birchChestDouble=Große Birkentruhe
+container.jungleChestDouble=Große Tropentruhe
+container.spruceChestDouble=Große Fichtentruhe
+container.willowChestDouble=Große Willow truhe
+container.ebonyChestDouble=Große Ebony truhe
+container.silkwoodChestDouble=Große Silkwood truhe
+container.acaciaChestDouble=Große Akazientruhe
+container.darkOakChestDouble=Große Schwarzeichentruhe
+container.dmChestDouble=Große Schwarz Matter truhe
+container.gelidChestDouble=Große Gelid truhe
+
+tile.Cement.name=Cement
+tile.CementBricks.name=Cement Bricks
+tile.Healer.name=Healer
+tile.CryingObsidian.name=Crying Obsidian
+tile.LavaCobble.name=Lava Cobblestone
+tile.LavaObsidian.name=Lava Obsidian
+tile.CompactCobblestone.name=Compact Cobblestone
+tile.CrystalBlock.name=Crystal Block
+tile.TitaniumFrame.name=Titanium Frame
+tile.DidymiumGlass.name=Didymium Glass
+tile.DidymiumGlassPane.name=Didymium Glass Pane
+tile.EinsteiniumGlass.name=Einsteinium Glass
+tile.EinsteiniumGlassPane.name=Einsteinium Glass Pane
+tile.NeptuniumGlass.name=Neptunium Glass
+tile.NeptuniumGlassPane.name=Neptunium Glass Pane
+tile.UraniumGlass.name=Uranium Glass
+tile.UraniumGlassPane.name=Uranium Glass Pane
+tile.RFGlass.name=Reinforced Glass
+tile.RFGlassPane.name=Reinforced Glass Pane
+tile.DarkMatter.name=Dark Matter
+tile.StableBlackHole.name=Stable Black Hole
+tile.EinsteiniumCoreReactor.name=Einsteinium Core Reactor
+tile.NeptuniumCoreReactor.name=Neptunium Core Reactor
+tile.UraniumCoreReactor.name=Uranium Core Reactor
+tile.SuperReactor.name=Super Reactor
+tile.SmelterIdle.name=Smelter
+tile.SmelterActive.name=Smelter
+tile.IC.name=Industrial Cutter
+tile.MatterCondenser.name=Matter Condenser
+tile.ZNG.name=Z.N.G.
+tile.BioFuelExtractor.name=BioFuel Extractor
+tile.TankCompressor.name=Tank Compressor
+tile.BHG.name=Black Hole Generator
+tile.Welder.name=Welder
+tile.Magnetizer.name=Magnetizer
+tile.Enricher.name=Enricher
+tile.ZimWire.name=Zimphnode Wire
+
+tile.SteelBlock.name=Steel Block
+tile.TitaniumBlock.name=Titanium Block
+tile.CopperBlock.name=Copper Block
+tile.SiliconBlock.name=Silicon Block
+tile.VanadiumBlock.name=Vanadium Block
+tile.VCBlock.name=Vanadium Carbide Block
+tile.TantalumBlock.name=Tantalum Block
+tile.EinsteiniumBlock.name=Einsteinium Block
+tile.NeptuniumBlock.name=Neptunium Block
+tile.UraniumBlock.name=Uranium Block
+tile.PraseodymiumBlock.name=Praseodymium Block
+tile.NeodymiumBlock.name=Neodymium Block
+tile.NeoronBlock.name=Neoron Block
+tile.BoronBlock.name=Boron Block
+tile.SulfurBlock.name=Block of Sulfur
+tile.ZimphnodeBlock.name=Zimphnode Block
+
+tile.FrozenFire.name=Frozen Fire
+tile.CrystalFire.name=Crystal Fire
+
+tile.LiquidNitrogen.name=Liquid Nitrogen
+
+tile.EinsteiniumOre.name=Einsteinium Ore
+tile.NeptuniumOre.name=Neptunium Ore
+tile.UraniumOre.name=Uranium Ore
+tile.CrystalOre.name=Crystal Ore
+tile.PraOre.name=Praseodymium Ore
+tile.NeoOre.name=Neodymium Ore
+tile.VanOre.name=Vanadium Ore
+tile.TantOre.name=Tantalum Ore
+tile.Zimphnode.name=Zimphnode
+tile.SulfurOre.name=Sulfur Ore
+tile.BoronOre.name=Boron Ore
+tile.CopperOre.name=Copper Ore
+tile.TitaniumOre.name=Titanium Ore
+tile.Phosphorite.name=Phosphorite
+
+tile.EinsteiniumBomb.name=Einsteinium Bomb
+tile.NeptuniumBomb.name=Neptunium Bomb
+tile.UraniumBomb.name=Uranium Bomb
+tile.UltimateNuker.name=Ultimate Nuker
+tile.DarkMatterBomb.name=Dark Matter Bomb
+
+tile.FrostGrass.name=Frosty Grass
+tile.FrostDirt.name=Frozen Dirt
+tile.FrostStone.name=Frozen Stone
+tile.FrostCobble.name=Frozen Cobblestone
+tile.FrozenPortal.name=Frozen Portal
+
+tile.CrystalPortal.name=Crystal Portal
+
+tile.CornCrop.name=Corn Crop
+tile.SoyBeanCrop.name=Soybeans Crop
+
+tile.BirchButton.name=Birkenknopf
+tile.SpruceButton.name=Fichtenknopf
+tile.JungleButton.name=Tropenknopf
+tile.AcaciaButton.name=Akazienknopf
+tile.DarkOakButton.name=Schwarzeichenknopf
+tile.WillowButton.name=Willowknopf
+tile.EbonyButton.name=Ebonyknopf
+tile.SilkwoodButton.name=Silkwoodknopf
+tile.GelidButton.name=Gelidknopf
+
+tile.BirchPressurePlate.name=Birkendruckplatte
+tile.SprucePressurePlate.name=Fichtendruckplatte
+tile.JunglePressurePlate.name=Tropendruckplatte
+tile.AcaciaPressurePlate.name=Akaziendruckplatte
+tile.DarkOakPressurePlate.name=Schwarzeichendruckplatte
+tile.WillowPressurePlate.name=Willow druckplatte
+tile.EbonyPressurePlate.name=Ebony druckplatte
+tile.SilkwoodPressurePlate.name=Silkwood druckplatte
+tile.GelidPressurePlate.name=Gelid druckplatte
+
+tile.BirchFence.name=Birkenzaun
+tile.SpruceFence.name=Fichtenzaun
+tile.JungleFence.name=Tropenzaun
+tile.AcaciaFence.name=Akazienzaun
+tile.DarkOakFence.name=Schwarzeichenzaun
+tile.WillowFence.name=Willow zaun
+tile.EbonyFence.name=Ebony zaun
+tile.SilkwoodFence.name=Silkwood zaun
+tile.GelidFence.name=Gelid zaun
+
+tile.BirchGate.name=Birkenzauntor
+tile.SpruceGate.name=Fichtenzauntor
+tile.JungleGate.name=Tropenzauntor
+tile.AcaciaGate.name=Akazienzauntor
+tile.DarkOakGate.name=Schwarzeichenzauntor
+tile.WillowGate.name=Willow zauntor
+tile.EbonyGate.name=Ebony zauntor
+tile.SilkwoodGate.name=Silkwood zauntor
+tile.GelidGate.name=Gelid zauntor
+
+tile.WillowStairs.name=Willow holztreppe
+tile.EbonyStairs.name=Ebony holztreppe
+tile.SilkwoodStairs.name=Silkwood holztreppe
+tile.GelidStairs.name=Gelid holztreppe
+tile.StoneStairs.name=Steintreppe
+tile.CementStairs.name=Cement treppe
+tile.CementBrickStairs.name=Cement Brick treppe
+tile.CrystalStairs.name=Crystal treppe
+tile.GlassStairs.name=Glastreppe
+
+tile.GlassStairsWhite.name=White Stained Glastreppe
+tile.GlassStairsOrange.name=Orange Stained Glastreppe
+tile.GlassStairsMagenta.name=Magenta Stained Glastreppe
+tile.GlassStairsLightBlue.name=Light Blue Stained Glastreppe
+tile.GlassStairsYellow.name=Yellow Stained Glastreppe
+tile.GlassStairsLime.name=Lime Stained Glastreppe
+tile.GlassStairsPink.name=Pink Stained Glastreppe
+tile.GlassStairsGray.name=Gray Stained Glastreppe
+tile.GlassStairsLightGray.name=Light Gray Stained Glastreppe
+tile.GlassStairsCyan.name=Cyan Stained Glastreppe
+tile.GlassStairsPurple.name=Purple Stained Glastreppe
+tile.GlassStairsBlue.name=Blue Stained Glastreppe
+tile.GlassStairsBrown.name=Brown Stained Glastreppe
+tile.GlassStairsGreen.name=Green Stained Glastreppe
+tile.GlassStairsRed.name=Red Stained Glastreppe
+tile.GlassStairsBlack.name=Black Stained Glastreppe
+
+tile.BirchTorch.name=Birkenfackel
+tile.SpruceTorch.name=Fichtenfackel
+tile.JungleTorch.name=Tropenfackel
+tile.AcaciaTorch.name=Akazienfackel
+tile.DarkOakTorch.name=Schwarzeichenfackel
+tile.WillowTorch.name=Willow fackel
+tile.EbonyTorch.name=Ebony fackel
+tile.SilkwoodTorch.name=Silkwood fackel
+tile.GelidTorch.name=Gelid fackel
+
+tile.BRT.name=Birken Redstone-fackel (Off)
+tile.SRT.name=Fichten Redstone-fackel (Off)
+tile.JRT.name=Tropen Redstone-fackel (Off)
+tile.ART.name=Akazien Redstone-fackel (Off)
+tile.DORT.name=Schwarzeichen Redstone-fackel (Off)
+tile.WRT.name=Willow Redstone-fackel (Off)
+tile.ERT.name=Ebony Redstone-fackel (Off)
+tile.SWRT.name=Silkwood Redstone-fackel (Off)
+tile.GRT.name=Gelid Redstone-fackel (Off)
+
+tile.BRTO.name=Birken Redstone-fackel
+tile.SRTO.name=Fichten Redstone-fackel
+tile.JRTO.name=Tropen Redstone-fackel
+tile.ARTO.name=Akazien Redstone-fackel
+tile.DORTO.name=Schwarzeichen Redstone-fackel
+tile.WRTO.name=Willow Redstone-fackel
+tile.ERTO.name=Ebony Redstone-fackel
+tile.SWRTO.name=Silkwood Redstone-fackel
+tile.GRTO.name=Gelid Redstone-fackel
+
+tile.BirchChest.name=Birkentruhe
+tile.SpruceChest.name=Fichtentruhe
+tile.JungleChest.name=Tropentruhe
+tile.AcaciaChest.name=Akazientruhe
+tile.DarkOakChest.name=Schwarzeichentruhe
+tile.WillowChest.name=Willow truhe
+tile.EbonyChest.name=Ebony truhe
+tile.SilkwoodChest.name=Silkwood truhe
+tile.GelidChest.name=Gelid truhe
+tile.DarkMatterChest.name=Schwarz Matter truhe
+
+tile.BirchTrapChest.name=Birken Trapped Chest
+tile.SpruceTrapChest.name=Fichten Trapped Chest
+tile.JungleTrapChest.name=Tropen Trapped Chest
+tile.AcaciaTrapChest.name=Akazien Trapped Chest
+tile.DarkOakTrapChest.name=Schwarzeichen Trapped Chest
+tile.WillowTrapChest.name=Willow Trapped Chest
+tile.EbonyTrapChest.name=Ebony Trapped Chest
+tile.SilkwoodTrapChest.name=Silkwood Trapped Chest
+tile.GelidTrapChest.name=Gelid Trapped Chest
+
+tile.SandStoneWall.name=Sandsteinmauer
+tile.StoneWall.name=Steinmauer
+tile.ObsidianWall.name=Obsidianmauer
+tile.CementWall.name=Cement mauer
+tile.CementBrickWall.name=Cement Ziegelmauer
+tile.SnowWall.name=Schneemauer
+tile.NetherBrickWall.name=Nether Ziegelmauer
+tile.StoneBrickWall.name=Steinziegelmauer
+tile.BrickWall.name=Ziegelmauer
+tile.QuartzWall.name=Quartzmauer
+tile.CoalWall.name=Kohlemauer
+
+tile.OakWall.name=Eichen Wooden mauer
+tile.BirchWall.name=Birken Wooden mauer
+tile.SpruceWall.name=Fichten Wooden mauer
+tile.JungleWall.name=Tropen Wooden mauer
+tile.AcaciaWall.name=Akazien Wooden mauer
+tile.DarkOakWall.name=Schwarzeichen Wooden mauer
+tile.WillowWall.name=Willow Wooden mauer
+tile.EbonyWall.name=Ebony Wooden mauer
+tile.SilkwoodWall.name=Silkwood Wooden mauer
+tile.GelidWall.name=Gelid Wooden mauer
+
+tile.BirchDoor.name=Birkentür
+tile.SpruceDoor.name=Fichtentür
+tile.JungleDoor.name=Tropentür
+tile.AcaciaDoor.name=Akazientür
+tile.DarkOakDoor.name=Schwarzeichentür
+tile.WillowDoor.name=Willow tür
+tile.EbonyDoor.name=Ebony tür
+tile.SilkwoodDoor.name=Silkwood tür
+tile.GelidDoor.name=Gelid tür
+
+tile.WillowLog.name=Willow holz
+tile.EbonyLog.name=Ebony holz
+tile.SilkwoodLog.name=Silkwood holz
+tile.GelidLog.name=Gelid holz
+
+tile.WillowPlanks.name=Willow holzbretter
+tile.EbonyPlanks.name=Ebony holzbretter
+tile.SilkwoodPlanks.name=Silkwood holzbretter
+tile.GelidPlanks.name=Gelid holzbretter
+
+tile.leaves_willow.name=Willow laub
+tile.leaves_ebony.name=Ebony laub
+tile.leaves_silkwood.name=Silkwood laub
+tile.leaves_gelid.name=Gelid laub
+
+tile.sapling_willow.name=Willow Sapling
+tile.sapling_ebony.name=Ebony Sapling
+tile.sapling_silkwood.name=Silkwood Sapling
+tile.sapling_gelid.name=Gelid Sapling
+
+tile.BirchTrapdoor.name=Birken Trapdoor
+tile.SpruceTrapdoor.name=Fichten Trapdoor
+tile.JungleTrapdoor.name=Tropen Trapdoor
+tile.AcaciaTrapdoor.name=Akazien Trapdoor
+tile.DarkOakTrapdoor.name=Schwarzeichen Trapdoor
+tile.WillowTrapdoor.name=Willow Trapdoor
+tile.EbonyTrapdoor.name=Ebony Trapdoor
+tile.SilkwoodTrapdoor.name=Silkwood Trapdoor
+tile.GelidTrapdoor.name=Gelid Trapdoor
+
+tile.CementTrapdoor.name=Cement Trapdoor
+tile.CementBrickTrapdoor.name=Cement Brick Trapdoor
+tile.StoneTrapdoor.name=Stone Trapdoor
+tile.CobblestoneTrapdoor.name=Cobblestone Trapdoor
+tile.MossyCobblestoneTrapdoor.name=Mossy Cobblestone Trapdoor
+tile.StonebrickTrapdoor.name=Stonebrick Trapdoor
+tile.MossyStonebrickTrapdoor.name=Mossy Stonebrick Trapdoor
+tile.CrackedStonebrickTrapdoor.name=Cracked Stonebrick Trapdoor
+tile.ChiseledStonebirckTrapdoor.name=Chiseled Stonebrick Trapdoor
+
+tile.SecretOakTrapdoor.name=Oak Secret Trapdoor
+tile.SecretBirchTrapdoor.name=Birken Secret Trapdoor
+tile.SecretSpruceTrapdoor.name=Fichten Secret Trapdoor
+tile.SecretJungleTrapdoor.name=Tropen Secret Trapdoor
+tile.SecretAcaciaTrapdoor.name=Akazien Secret Trapdoor
+tile.SecretDarkOakTrapdoor.name=Schwarzeichen Secret Trapdoor
+tile.SecretWillowTrapdoor.name=Willow Secret Trapdoor
+tile.SecretEbonyTrapdoor.name=Ebony Secret Trapdoor
+tile.SecretSilkwoodTrapdoor.name=Silkwood Secret Trapdoor
+tile.SecretGelidTrapdoor.name=Gelid Secret Trapdoor
+
+tile.SecretCementTrapdoor.name=Cement Secret Trapdoor
+tile.SecretCementBrickTrapdoor.name=Cement Brick Secret Trapdoor
+tile.SecretStoneTrapdoor.name=Stone Secret Trapdoor
+tile.SecretCobblestoneTrapdoor.name=Cobblestone Secret Trapdoor
+tile.SecretMossyCobblestoneTrapdoor.name=Mossy Cobblestone Secret Trapdoor
+tile.SecretStonebrickTrapdoor.name=Stonebrick Secret Trapdoor
+tile.SecretMossyStonebrickTrapdoor.name=Mossy Stonebrick Secret Trapdoor
+tile.SecretCrackedStonebrickTrapdoor.name=Cracked Stonebrick Secret Trapdoor
+tile.SecretChiseledStonebirckTrapdoor.name=Chiseled Stonebrick Secret Trapdoor
+
+tile.BirchLever.name=Birken Lever
+tile.SpruceLever.name=Fichten Lever
+tile.JungleLever.name=Tropen Lever
+tile.AcaciaLever.name=Akazien Lever
+tile.DarkOakLever.name=Schwarzeichen Lever
+tile.WillowLever.name=Willow Lever
+tile.EbonyLever.name=Ebony Lever
+tile.SilkwoodLever.name=Silkwood Lever
+tile.GelidLever.name=Gelid Lever
+
+tile.BirchCraftingTable.name=Birken Crafting Table
+tile.SpruceCraftingTable.name=Fichten Crafting Table
+tile.JungleCraftingTable.name=Tropen Crafting Table
+tile.AcaciaCraftingTable.name=Akazien Crafting Table
+tile.DarkOakCraftingTable.name=Schwarzeichen Crafting Table
+tile.WillowCraftingTable.name=Willow Crafting Table
+tile.EbonyCraftingTable.name=Ebony Crafting Table
+tile.SilkwoodCraftingTable.name=Silkwood Crafting Table
+tile.GelidCraftingTable.name=Gelid Crafting Table
+tile.IDTCraftingTable.name=§bIDT Crafting Table§r
+
+tile.BirchLadder.name=Birken Ladder
+tile.SpruceLadder.name=Fichten Ladder
+tile.JungleLadder.name=Tropen Ladder
+tile.AcaciaLadder.name=Akazien Ladder
+tile.DarkOakLadder.name=Schwarzeichen Ladder
+tile.WillowLadder.name=Willow Ladder
+tile.EbonyLadder.name=Ebony Ladder
+tile.SilkwoodLadder.name=Silkwood Ladder
+tile.GelidLadder.name=Gelid Ladder
+
+tile.WillowSlab.0.name=Willow Slab
+tile.WillowSlab.1.name=Willow Slab
+tile.WillowSlab.2.name=Willow Slab
+tile.WillowSlab.3.name=Willow Slab
+tile.WillowSlab.4.name=Willow Slab
+tile.WillowSlab.8.name=Willow Slab
+tile.WillowDoubleSlab.name=Willow Double Slab
+
+tile.EbonySlab.0.name=Ebony Slab
+tile.EbonySlab.1.name=Ebony Slab
+tile.EbonySlab.2.name=Ebony Slab
+tile.EbonySlab.3.name=Ebony Slab
+tile.EbonySlab.4.name=Ebony Slab
+tile.EbonySlab.8.name=Ebony Slab
+tile.EbonyDoubleSlab.name=Ebony Double Slab
+
+tile.SilkwoodSlab.0.name=Silkwood Slab
+tile.SilkwoodSlab.1.name=Silkwood Slab
+tile.SilkwoodSlab.2.name=Silkwood Slab
+tile.SilkwoodSlab.3.name=Silkwood Slab
+tile.SilkwoodSlab.4.name=Silkwood Slab
+tile.SilkwoodSlab.8.name=Silkwood Slab
+tile.SilkwoodDoubleSlab.name=Silkwood Double Slab
+
+tile.GelidSlab.0.name=Gelid Slab
+tile.GelidSlab.1.name=Gelid Slab
+tile.GelidSlab.2.name=Gelid Slab
+tile.GelidSlab.3.name=Gelid Slab
+tile.GelidSlab.4.name=Gelid Slab
+tile.GelidSlab.8.name=Gelid Slab
+tile.GelidDoubleSlab.name=Gelid Double Slab
+
+tile.CementSlab.0.name=Cement Slab
+tile.CementSlab.1.name=Cement Slab
+tile.CementSlab.2.name=Cement Slab
+tile.CementSlab.3.name=Cement Slab
+tile.CementSlab.4.name=Cement Slab
+tile.CementSlab.8.name=Cement Slab
+tile.CementDoubleSlab.name=Cement Double Slab
+
+tile.CementBrickSlab.0.name=CementBrick Slab
+tile.CementBrickSlab.1.name=CementBrick Slab
+tile.CementBrickSlab.2.name=CementBrick Slab
+tile.CementBrickSlab.3.name=CementBrick Slab
+tile.CementBrickSlab.4.name=CementBrick Slab
+tile.CementBrickSlab.8.name=CementBrick Slab
+tile.CementBrickDoubleSlab.name=CementBrick Double Slab
+
+tile.StoneSlab.0.name=Real Stone Slab
+tile.StoneSlab.1.name=Real Stone Slab
+tile.StoneSlab.2.name=Real Stone Slab
+tile.StoneSlab.3.name=Real Stone Slab
+tile.StoneSlab.4.name=Real Stone Slab
+tile.StoneSlab.8.name=Real Stone Slab
+tile.StoneDoubleSlab.name=Real Stone Double Slab
+
+tile.GlassSlab.0.name=Glass Slab
+tile.GlassSlab.1.name=Glass Slab
+tile.GlassSlab.2.name=Glass Slab
+tile.GlassSlab.3.name=Glass Slab
+tile.GlassSlab.4.name=Glass Slab
+tile.GlassSlab.8.name=Glass Slab
+tile.GlassDoubleSlab.name=Glass Double Slab
+
+tile.GlassSlabWhite.0.name=White Stained Glass Slab
+tile.GlassSlabWhite.1.name=White Stained Glass Slab
+tile.GlassSlabWhite.2.name=White Stained Glass Slab
+tile.GlassSlabWhite.3.name=White Stained Glass Slab
+tile.GlassSlabWhite.4.name=White Stained Glass Slab
+tile.GlassSlabWhite.8.name=White Stained Glass Slab
+tile.GlassDoubleSlabWhite.name=White Stained Glass Double Slab
+
+tile.GlassSlabOrange.0.name=Orange Stained Glass Slab
+tile.GlassSlabOrange.1.name=Orange Stained Glass Slab
+tile.GlassSlabOrange.2.name=Orange Stained Glass Slab
+tile.GlassSlabOrange.3.name=Orange Stained Glass Slab
+tile.GlassSlabOrange.4.name=Orange Stained Glass Slab
+tile.GlassSlabOrange.8.name=Orange Stained Glass Slab
+tile.GlassDoubleSlabOrange.name=Orange Stained Glass Double Slab
+
+tile.GlassSlabMagenta.0.name=Magenta Stained Glass Slab
+tile.GlassSlabMagenta.1.name=Magenta Stained Glass Slab
+tile.GlassSlabMagenta.2.name=Magenta Stained Glass Slab
+tile.GlassSlabMagenta.3.name=Magenta Stained Glass Slab
+tile.GlassSlabMagenta.4.name=Magenta Stained Glass Slab
+tile.GlassSlabMagenta.8.name=Magenta Stained Glass Slab
+tile.GlassDoubleSlabMagenta.name=Magenta Stained Glass Double Slab
+
+tile.GlassSlabLightBlue.0.name=Light Blue Stained Glass Slab
+tile.GlassSlabLightBlue.1.name=Light Blue Stained Glass Slab
+tile.GlassSlabLightBlue.2.name=Light Blue Stained Glass Slab
+tile.GlassSlabLightBlue.3.name=Light Blue Stained Glass Slab
+tile.GlassSlabLightBlue.4.name=Light Blue Stained Glass Slab
+tile.GlassSlabLightBlue.8.name=Light Blue Stained Glass Slab
+tile.GlassDoubleSlabLightBlue.name=Light Blue Stained Glass Double Slab
+
+tile.GlassSlabYellow.0.name=Yellow Stained Glass Slab
+tile.GlassSlabYellow.1.name=Yellow Stained Glass Slab
+tile.GlassSlabYellow.2.name=Yellow Stained Glass Slab
+tile.GlassSlabYellow.3.name=Yellow Stained Glass Slab
+tile.GlassSlabYellow.4.name=Yellow Stained Glass Slab
+tile.GlassSlabYellow.8.name=Yellow Stained Glass Slab
+tile.GlassDoubleSlabYellow.name=Yellow Stained Glass Double Slab
+
+tile.GlassSlabLime.0.name=Lime Stained Glass Slab
+tile.GlassSlabLime.1.name=Lime Stained Glass Slab
+tile.GlassSlabLime.2.name=Lime Stained Glass Slab
+tile.GlassSlabLime.3.name=Lime Stained Glass Slab
+tile.GlassSlabLime.4.name=Lime Stained Glass Slab
+tile.GlassSlabLime.8.name=Lime Stained Glass Slab
+tile.GlassDoubleSlabLime.name=Lime Stained Glass Double Slab
+
+tile.GlassSlabPink.0.name=Pink Stained Glass Slab
+tile.GlassSlabPink.1.name=Pink Stained Glass Slab
+tile.GlassSlabPink.2.name=Pink Stained Glass Slab
+tile.GlassSlabPink.3.name=Pink Stained Glass Slab
+tile.GlassSlabPink.4.name=Pink Stained Glass Slab
+tile.GlassSlabPink.8.name=Pink Stained Glass Slab
+tile.GlassDoubleSlabPink.name=Pink Stained Glass Double Slab
+
+tile.GlassSlabGray.0.name=Gray Stained Glass Slab
+tile.GlassSlabGray.1.name=Gray Stained Glass Slab
+tile.GlassSlabGray.2.name=Gray Stained Glass Slab
+tile.GlassSlabGray.3.name=Gray Stained Glass Slab
+tile.GlassSlabGray.4.name=Gray Stained Glass Slab
+tile.GlassSlabGray.8.name=Gray Stained Glass Slab
+tile.GlassDoubleSlabGray.name=Gray Stained Glass Double Slab
+
+tile.GlassSlabLightGray.0.name=Light Gray Stained Glass Slab
+tile.GlassSlabLightGray.1.name=Light Gray Stained Glass Slab
+tile.GlassSlabLightGray.2.name=Light Gray Stained Glass Slab
+tile.GlassSlabLightGray.3.name=Light Gray Stained Glass Slab
+tile.GlassSlabLightGray.4.name=Light Gray Stained Glass Slab
+tile.GlassSlabLightGray.8.name=Light Gray Stained Glass Slab
+tile.GlassDoubleSlabLightGray.name=Light Gray Stained Glass Double Slab
+
+tile.GlassSlabCyan.0.name=Cyan Stained Glass Slab
+tile.GlassSlabCyan.1.name=Cyan Stained Glass Slab
+tile.GlassSlabCyan.2.name=Cyan Stained Glass Slab
+tile.GlassSlabCyan.3.name=Cyan Stained Glass Slab
+tile.GlassSlabCyan.4.name=Cyan Stained Glass Slab
+tile.GlassSlabCyan.8.name=Cyan Stained Glass Slab
+tile.GlassDoubleSlabCyan.name=Cyan Stained Glass Double Slab
+
+tile.GlassSlabPurple.0.name=Purple Stained Glass Slab
+tile.GlassSlabPurple.1.name=Purple Stained Glass Slab
+tile.GlassSlabPurple.2.name=Purple Stained Glass Slab
+tile.GlassSlabPurple.3.name=Purple Stained Glass Slab
+tile.GlassSlabPurple.4.name=Purple Stained Glass Slab
+tile.GlassSlabPurple.8.name=Purple Stained Glass Slab
+tile.GlassDoubleSlabPurple.name=Purple Stained Glass Double Slab
+
+tile.GlassSlabBlue.0.name=Blue Stained Glass Slab
+tile.GlassSlabBlue.1.name=Blue Stained Glass Slab
+tile.GlassSlabBlue.2.name=Blue Stained Glass Slab
+tile.GlassSlabBlue.3.name=Blue Stained Glass Slab
+tile.GlassSlabBlue.4.name=Blue Stained Glass Slab
+tile.GlassSlabBlue.8.name=Blue Stained Glass Slab
+tile.GlassDoubleSlabBlue.name=Blue Stained Glass Double Slab
+
+tile.GlassSlabBrown.0.name=Brown Stained Glass Slab
+tile.GlassSlabBrown.1.name=Brown Stained Glass Slab
+tile.GlassSlabBrown.2.name=Brown Stained Glass Slab
+tile.GlassSlabBrown.3.name=Brown Stained Glass Slab
+tile.GlassSlabBrown.4.name=Brown Stained Glass Slab
+tile.GlassSlabBrown.8.name=Brown Stained Glass Slab
+tile.GlassDoubleSlabBrown.name=Brown Stained Glass Double Slab
+
+tile.GlassSlabGreen.0.name=Green Stained Glass Slab
+tile.GlassSlabGreen.1.name=Green Stained Glass Slab
+tile.GlassSlabGreen.2.name=Green Stained Glass Slab
+tile.GlassSlabGreen.3.name=Green Stained Glass Slab
+tile.GlassSlabGreen.4.name=Green Stained Glass Slab
+tile.GlassSlabGreen.8.name=Green Stained Glass Slab
+tile.GlassDoubleSlabGreen.name=Green Stained Glass Double Slab
+
+tile.GlassSlabRed.0.name=Red Stained Glass Slab
+tile.GlassSlabRed.1.name=Red Stained Glass Slab
+tile.GlassSlabRed.2.name=Red Stained Glass Slab
+tile.GlassSlabRed.3.name=Red Stained Glass Slab
+tile.GlassSlabRed.4.name=Red Stained Glass Slab
+tile.GlassSlabRed.8.name=Red Stained Glass Slab
+tile.GlassDoubleSlabRed.name=Red Stained Glass Double Slab
+
+tile.GlassSlabBlack.0.name=Black Stained Glass Slab
+tile.GlassSlabBlack.1.name=Black Stained Glass Slab
+tile.GlassSlabBlack.2.name=Black Stained Glass Slab
+tile.GlassSlabBlack.3.name=Black Stained Glass Slab
+tile.GlassSlabBlack.4.name=Black Stained Glass Slab
+tile.GlassSlabBlack.8.name=Black Stained Glass Slab
+tile.GlassDoubleSlabBlack.name=Black Stained Glass Double Slab
+
+item.StoneBrick.name=Stone Brick
+item.ExplosiveCharge.name=Explosive Charge
+item.IceShard.name=Ice Shard
+item.IronSawBlade.name=Iron Saw Blade
+item.SteelSawBlade.name=Steel Saw Blade
+item.TitaniumSawBlade.name=Titanium Saw Blade
+item.DiamondSawBlade.name=Diamond Saw Blade
+item.Gear.name=Gear
+item.EmptyTank.name=Empty Tank
+item.PropaneTank.name=Propane
+item.Propanol.name=Propanol
+item.Propene.name=Propene
+item.NO2Tank.name=Nitrogen Dioxide
+item.CompressorUnit.name=Compressor Unit
+item.CompressorUnitGA.name=Advanced Compressor Unit
+item.SteelRod.name=Steel Rod
+item.TitaniumPlate.name=Titanium Plate
+item.VPlate.name=Vanadium Plate
+item.CopperPlate.name=Copper Plate
+item.TantPlate.name=Tantalum Plate
+item.CopperWire.name=Copper Wire
+item.VanWire.name=Vanadium Wire
+item.CopperFoil.name=Copper Foil
+item.TantFoil.name=Tantalum Foil
+item.Flask.name=Flask
+item.BlowTorch.name=Blowtorch
+item.UpMag.name=Magnetic Upgrade
+item.DMPiece.name=Dark Matter Piece
+item.ECRI.name=Einsteinium Core Reactor Item
+item.T1CB.name=Circuit Board
+item.T2CB.name=Circuit Board
+item.T3CB.name=Circuit Board
+item.QMan.name=Quantum Manipulator
+item.Trans.name=Transistor
+item.SiliconWafer.name=Silicon Wafer
+item.Microchip.name=Microchip
+item.Plank.name=Wooden Chip
+item.Fiberglass.name=Fiberglass
+item.BoronFG.name=Boronated Fiberglass
+item.PolePiece.name=Pole Piece
+item.Rotor.name=Rotor
+item.Stator.name=Stator
+item.Alternator.name=Alternator
+item.SiliconChip.name=Silicon Chip
+item.PSiliconChip.name=Phosphorus Doped Silicon Chip
+item.BSiliconChip.name=Boron Doped Silicon Chip
+item.LaserUpgrade.name=Laser Upgrade
+item.CrystalRod.name=Crystal Rod
+item.CrystalLens.name=Crystal Lens
+
+item.cd_icy.name=Music Disc
+item.cd_23.name=Music Disc
+item.r51vWLcxy9jo1Nvi.name=r51vWLcxy9jo1Nvi
+
+item.Sulfur.name=Sulfur
+item.VPowder.name=Vanadium Powder
+item.V2O5.name=Vanadium Pentoxide
+item.Carbon.name=Carbon
+item.SiliconDust.name=Silicon Dust
+item.CopperDust.name=Copper Dust
+item.PQuartz.name=Pure Quartz
+item.SO2.name=Sulfur Dioxide
+item.SO3.name=Sulfur Trioxide
+item.H2SO4.name=Sulfuric Acid
+item.HNO3.name=Nitric Acid
+item.NG.name=Nitroglycerin
+item.Glycerin.name=Glycerol
+item.Acrolein.name=Acrolein
+item.VCDust.name=Vanadium Carbide Dust
+item.PhosphorusDust.name=Phosphorus Dust
+item.BoronDust.name=Boron Dust
+
+item.EinsteiniumIngot.name=Einsteinium Ingot
+item.NeptuniumIngot.name=Neptunium Ingot
+item.UraniumIngot.name=Uranium Ingot
+item.SteelIngot.name=Steel Ingot
+item.TitaniumIngot.name=Titanium Ingot
+item.PraIngot.name=Praseodymium Ingot
+item.NeoIngot.name=Neodymium Ingot
+item.VanIngot.name=Vanadium Ingot
+item.TantIngot.name=Tantalum Ingot
+item.ZimphnodeBar.name=Zimphnode Bar
+item.NeoronIngot.name=Neoron Ingot
+item.BoronIngot.name=Boron Ingot
+item.CopperIngot.name=Copper Ingot
+item.SiliconIngot.name=Silicon Ingot
+item.VCIngot.name=Vanadium Carbide Ingot
+
+item.CrystalDust.name=Crystal Dust
+item.CrystalGem.name=Crystal Gem
+item.CutCrystalGem.name=Cut Crystal Gem
+item.CrystalNugget.name=Crystal Nugget
+item.CrystalPiece.name=Crystal Piece
+item.CrystalBall.name=Crystal Ball
+item.HardCrystalBall.name=Hard Crystal Ball
+
+item.EssenceOfLife.name=Essence Of Life
+item.EssenceOfFire.name=Essence Of Fire
+item.EssenceOfEarth.name=Essence Of Earth
+item.EssenceOfWater.name=Essence Of Water
+item.EssenceOfAir.name=Essence Of Air
+
+item.CornSeeds.name=Corn Seeds
+item.SoyBeans.name=Soybeans
+
+item.Corn.name=Corn
+item.Popcorn.name=Popcorn
+
+item.Chisel.name=Chisel
+item.WikiPaper.name=§bWiki Paper§r
+
+item.LiquidNitrogenBucket.name=Liquid Nitrogen Bucket
+
+item.StoneWallPart.name=Stone mauer Part
+item.CobblestoneWallPart.name=Cobblestone mauer Part
+item.MossyCobblestoneWallPart.name=Mossy Cobblestone mauer Part
+item.SandstoneWallPart.name=Sandstone mauer Part
+item.ObsidianWallPart.name=Obsidian mauer Part
+item.CementWallPart.name=Cement mauer Part
+item.CementBrickWallPart.name=Cement Brick mauer Part
+item.StonebrickWallPart.name=Stonebrick mauer Part
+item.BrickWallPart.name=Brick mauer Part
+item.CoalWallPart.name=Coal mauer Part
+item.SnowWallPart.name=Snow mauer Part
+item.NetherBrickWallPart.name=Nether Brick mauer Part
+item.QuartzWallPart.name=Quartz mauer Part
+
+item.OakWallPart.name=Oak mauer Part
+item.BirchWallPart.name=Birken mauer Part
+item.SpruceWallPart.name=Fichten mauer Part
+item.JungleWallPart.name=Tropen mauer Part
+item.AcaciaWallPart.name=Akazien mauer Part
+item.DarkOakWallPart.name=Schwarzeichen mauer Part
+item.WillowWallPart.name=Willow mauer Part
+item.EbonyWallPart.name=Ebony mauer Part
+item.SilkwoodWallPart.name=Silkwood mauer Part
+item.GelidWallPart.name=Gelid mauer Part
+
+item.BirchDoorItem.name=Birken Door
+item.SpruceDoorItem.name=Fichten Door
+item.JungleDoorItem.name=Tropen Door
+item.AcaciaDoorItem.name=Akazien Door
+item.DarkOakDoorItem.name=Schwarzeichen Door
+item.WillowDoorItem.name=Willow Door
+item.EbonyDoorItem.name=Ebony Door
+item.SilkwoodDoorItem.name=Silkwood Door
+item.GelidDoorItem.name=Gelid Door
+
+item.BirchStick.name=Birken Stick
+item.SpruceStick.name=Fichten Stick
+item.JungleStick.name=Tropen Stick
+item.AcaciaStick.name=Akazien Stick
+item.DarkOakStick.name=Schwarzeichen Stick
+item.WillowStick.name=Willow Stick
+item.EbonyStick.name=Ebony Stick
+item.SilkwoodStick.name=Silkwood Stick
+item.GelidStick.name=Gelid Stick
+
+item.SteelHelmet.name=Steel Helmet
+item.SteelChest.name=Steel Chestplate
+item.SteelLegs.name=Steel Leggings
+item.SteelBoots.name=Steel Boots
+
+item.TitaniumHelmet.name=Titanium Helmet
+item.TitaniumChest.name=Titanium Chestplate
+item.TitaniumLegs.name=Titanium Leggings
+item.TitaniumBoots.name=Titanium Boots
+
+item.ZimphnodeHelmet.name=Zimphnode Helmet
+item.ZimphnodeChest.name=Zimphnode Chestplate
+item.ZimphnodeLegs.name=Zimphnode Leggings
+item.ZimphnodeBoots.name=Zimphnode Boots
+
+item.VanadiumHelmet.name=Vanadium Helmet
+item.VanadiumChest.name=Vanadium Chestplate
+item.VanadiumLegs.name=Vanadium Leggings
+item.VanadiumBoots.name=Vanadium Boots
+
+item.VCHelmet.name=Vanadium Carbide Helmet
+item.VCChest.name=Vanadium Carbide Chestplate
+item.VCLegs.name=Vanadium Carbide Leggings
+item.VCBoots.name=Vanadium Carbide Boots
+
+item.TantalumHelmet.name=Tantalum Helmet
+item.TantalumChest.name=Tantalum Chestplate
+item.TantalumLegs.name=Tantalum Leggings
+item.TantalumBoots.name=Tantalum Boots
+
+item.NeoHelmet.name=Neoron Helmet
+item.NeoChest.name=Neoron Chestplate
+item.NeoLegs.name=Neoron Leggings
+item.NeoBoots.name=Neoron Boots
+
+item.SteelPick.name=Steel Pickaxe
+item.SteelShovel.name=Steel Shovel
+item.SteelAxe.name=Steel Axe
+item.SteelSword.name=Steel Sword
+item.SteelHoe.name=Steel Hoe
+
+item.TitaniumPick.name=Titanium Pickaxe
+item.TitaniumShovel.name=Titanium Shovel
+item.TitaniumAxe.name=Titanium Axe
+item.TitaniumSword.name=Titanium Sword
+item.TitaniumHoe.name=Titanium Hoe
+
+item.VanadiumPick.name=Vanadium Pickaxe
+item.VanadiumShovel.name=Vanadium Shovel
+item.VanadiumAxe.name=Vanadium Axe
+item.VanadiumSword.name=Vanadium Sword
+item.VanadiumHoe.name=Vanadium Hoe
+
+item.VCPick.name=Vanadium Carbide Pickaxe
+item.VCShovel.name=Vanadium Carbide Shovel
+item.VCAxe.name=Vanadium Carbide Axe
+item.VCSword.name=Vanadium Carbide Sword
+item.VCHoe.name=Vanadium Carbide Hoe
+
+item.NeoPick.name=Neoron Pickaxe

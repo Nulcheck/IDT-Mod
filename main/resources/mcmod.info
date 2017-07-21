@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mod_IDT",
+  "name": "\u00A7bIndustrial Technologies and More",
+  "description": "A somewhat of a tech mod, but also adds other stuff!",
+  "version": "\u00A7f2.0",
+  "mcversion": "1.7.10",
+  "url": "\u00A76\u00A7o\u00A7nhttp://mce626.enjin.com/idtnews",
+  "updateUrl": "",
+  "authorList": ["\u00A7bMCE626\u00A7f"],
+  "credits": "\u00A72CrazyGuy15052\u00A7f, \u00A76Tictoc26\u00A7f, \u00A71Guybot1001\u00A7f, MrProBro, UndeadGaming606, domi1819",
+  "logoFile": "IDT_logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

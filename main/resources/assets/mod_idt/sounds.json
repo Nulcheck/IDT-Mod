@@ -1,0 +1,9 @@
+{
+"ice_phantom_breathe": {"category": "master","sounds": [{"name": "mob/ice_phantom/ice_phantom_breathe","stream": false}]},
+"ice_phantom_hurt": {"category": "master","sounds": [{"name": "mob/ice_phantom/ice_phantom_hurt","stream": false}]},
+"ice_phantom_death": {"category": "master","sounds": [{"name": "mob/ice_phantom/ice_phantom_death","stream": false}]},
+"records.8-bit Icy": {"category": "record","sounds": [{"name": "records/8-bit Icy","stream": true}]},
+"records.23": {"category": "record","sounds": [{"name": "records/23","stream": true}]},
+"records.r51vWLcxy9jo1Nvi": {"category": "record","sounds": [{"name": "records/r51vWLcxy9jo1Nvi","stream": true}]},
+"blowtorch": {"category": "master","sounds": [{"name": "item/blowtorch","stream": false}]}
+}
