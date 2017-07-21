@@ -298,4 +298,24 @@ public class ModItems extends Item {
 			list.add("Industrial Cutter Upgrade");
 		}
 	}
+	
+	public static class StabilizaerUpgrade extends Item{
+		public StabilizaerUpgrade(){
+			super();
+		}
+		
+		public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
+			list.add("Black Hole Generator Upgrade");
+		}
+	}
+	
+	public static class QCUpgrade extends Item{
+		public QCUpgrade(){
+			super();
+		}
+		
+		public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
+			list.add("Matter Condenser Upgrade");
+		}
+	}
 }

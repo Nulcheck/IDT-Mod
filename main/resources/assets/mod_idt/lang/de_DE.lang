@@ -610,7 +610,6 @@ item.CopperFoil.name=Copper Foil
 item.TantFoil.name=Tantalum Foil
 item.Flask.name=Flask
 item.BlowTorch.name=Blowtorch
-item.UpMag.name=Magnetic Upgrade
 item.DMPiece.name=Dark Matter Piece
 item.ECRI.name=Einsteinium Core Reactor Item
 item.T1CB.name=Circuit Board
@@ -630,9 +629,13 @@ item.Alternator.name=Alternator
 item.SiliconChip.name=Silicon Chip
 item.PSiliconChip.name=Phosphorus Doped Silicon Chip
 item.BSiliconChip.name=Boron Doped Silicon Chip
-item.LaserUpgrade.name=Laser Upgrade
 item.CrystalRod.name=Crystal Rod
 item.CrystalLens.name=Crystal Lens
+
+item.UpMag.name=Magnetic Upgrade
+item.LaserUpgrade.name=Laser Upgrade
+item.StabilizerUpgrade.name=Stabilizer Upgrade
+item.QCUpgrade.name=Quantum Compressor Upgrade
 
 item.cd_icy.name=Music Disc
 item.cd_23.name=Music Disc

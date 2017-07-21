@@ -315,9 +315,11 @@ import com.mce.items.ModItems.MagneticUpgrade;
 import com.mce.items.ModItems.Microchip;
 import com.mce.items.ModItems.NO2Tank;
 import com.mce.items.ModItems.PropaneTank;
+import com.mce.items.ModItems.QCUpgrade;
 import com.mce.items.ModItems.QMan;
 import com.mce.items.ModItems.SO2;
 import com.mce.items.ModItems.SO3;
+import com.mce.items.ModItems.StabilizaerUpgrade;
 import com.mce.items.ModItems.SteelSawBlade;
 import com.mce.items.ModItems.T1CB;
 import com.mce.items.ModItems.T2CB;
@@ -939,6 +941,8 @@ public class mod_IDT {
 	// Upgrades
 	public static Item MagneticUpgrade;
 	public static Item LaserUpgrade;
+	public static Item StabilizerUpgrade;
+	public static Item QCUpgrade;
 
 	// Dusts
 	public static Item CopperDust;
@@ -2591,6 +2595,12 @@ public class mod_IDT {
 				.setUnlocalizedName("UpMag");
 
 		LaserUpgrade = new LaserUpgrade().setTextureName("mod_IDT:upgrade_laser").setUnlocalizedName("LaserUpgrade")
+				.setCreativeTab(IDTItems);
+
+		StabilizerUpgrade = new StabilizaerUpgrade().setTextureName("mod_IDT:upgrade_stable")
+				.setUnlocalizedName("StablilizerUpgrade").setCreativeTab(IDTItems);
+
+		QCUpgrade = new QCUpgrade().setTextureName("mod_IDT:upgrade_qc").setUnlocalizedName("QCUpgrade")
 				.setCreativeTab(IDTItems);
 
 		// Dusts
