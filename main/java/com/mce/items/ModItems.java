@@ -278,42 +278,42 @@ public class ModItems extends Item {
 			return this.containerItem;
 		}
 	}
-	
-	public static class MagneticUpgrade extends Item{
-		public MagneticUpgrade(){
+
+	public static class MagneticUpgrade extends Item {
+		public MagneticUpgrade() {
 			super();
 		}
-		
+
 		public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
 			list.add("Smelter Upgrade");
 		}
 	}
-	
-	public static class LaserUpgrade extends Item{
-		public LaserUpgrade(){
+
+	public static class LaserUpgrade extends Item {
+		public LaserUpgrade() {
 			super();
 		}
-		
+
 		public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
 			list.add("Industrial Cutter Upgrade");
 		}
 	}
-	
-	public static class StabilizaerUpgrade extends Item{
-		public StabilizaerUpgrade(){
+
+	public static class StabilizerUpgrade extends Item {
+		public StabilizerUpgrade() {
 			super();
 		}
-		
+
 		public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
 			list.add("Black Hole Generator Upgrade");
 		}
 	}
-	
-	public static class QCUpgrade extends Item{
-		public QCUpgrade(){
+
+	public static class QCUpgrade extends Item {
+		public QCUpgrade() {
 			super();
 		}
-		
+
 		public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
 			list.add("Matter Condenser Upgrade");
 		}

@@ -58,15 +58,13 @@ public class MatterCondenserGui extends GuiContainer {
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		int k, d;
 
-		if (this.matterCon.isCondensing()) {
-			k = this.matterCon.getCookProgressScaled(24);
-			drawTexturedModalRect(guiLeft + 80, guiTop + 34, 176, 22, k + 1, 17);
-		}
-
 		if (MatterCondenser.isActive) {
 			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
 
+		k = this.matterCon.getCookProgressScaled(24);
+		drawTexturedModalRect(guiLeft + 80, guiTop + 34, 176, 22, k + 1, 17);
+		
 		d = this.matterCon.getDamageScaled(49);
 		drawTexturedModalRect(guiLeft + 164, guiTop + 80 - d, 176, 88 - d, 4, d);
 	}

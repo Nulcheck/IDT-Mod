@@ -1,6 +1,7 @@
 package com.mce.entity.tile.tech;
 
 import com.mce.blocks.ModBlocks.MatterCondenser;
+import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.MatterCondenserRecipes;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,14 +15,16 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
+	private static final int[] upgrade_slot = new int[] { 2 };
 
 	private String isInvNameLocalized;
 
-	private ItemStack[] slots = new ItemStack[2];
+	private ItemStack[] slots = new ItemStack[3];
 
 	// Speed is really slow, 30 minutes
-	public int speed = 36000; //36000
+	public int speed = 36000;
 	public int cTime;
+	public int cDTime;
 	public int burnTime;
 	public boolean isPowered;
 
@@ -33,6 +36,7 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 	}
 
 	private String ln;
+
 	public void setGuiDisplayName(String dn) {
 		this.ln = dn;
 	}
@@ -111,19 +115,19 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 
 		this.cTime = tag.getShort("Progress");
 		MatterCondenser.isActive = tag.getBoolean("Powered");
-		this.damage = tag.getShort("DamageAmount");
+		this.damage = tag.getShort("Damage");
 
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
 		}
 	}
-	
+
 	public void writeToNBT(NBTTagCompound tag) {
 		super.writeToNBT(tag);
 
 		tag.setShort("Progress", (short) this.cTime);
 		tag.setBoolean("Powered", MatterCondenser.isActive);
-		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("Damage", (short) this.damage);
 
 		NBTTagList list = new NBTTagList();
 
@@ -156,10 +160,10 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 	}
 
 	public boolean isCondensing() {
-		return this.cTime > 0;
+		return this.cDTime > 0;
 	}
 
-	public boolean isPowered() {
+	public static boolean isPowered() {
 		return MatterCondenser.isActive;
 	}
 
@@ -177,18 +181,31 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.isPowered() && this.canCondense() && this.checkSlot() && this.damage > 0) {
-				this.cTime++;
 
-				if (this.cTime == this.speed) {
+			if (this.isPowered() && this.damage > 0) {
+				if (this.canCondense() && this.checkSlot()) {
+					this.cTime++;
+					this.cDTime++;
+
+					if (this.cTime >= this.speed) {
+						this.cTime = 0;
+						this.cDTime = 0;
+						this.condenseItem();
+
+						flag1 = true;
+					}
+
+					if (this.cDTime == 36000) {
+						this.cDTime = 0;
+					}
+
+					if (this.damage <= 0) {
+						this.cTime = 0;
+						this.cDTime = 0;
+					}
+				} else {
 					this.cTime = 0;
-					this.condenseItem();
-
-					flag1 = true;
-				}
-
-				if (this.damage <= 0) {
-					this.cTime = 0;
+					this.cDTime = 0;
 				}
 			}
 
@@ -204,6 +221,23 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 	}
 
 	private void onInventoryChanged() {
+	}
+
+	public void detectUpgradeAndCondense() {
+		if (this.canCondense() && this.damage > 0) {
+			detectUpgrade();
+		}
+	}
+
+	public void detectUpgrade() {
+		if (this.slots[2] == null) {
+			this.speed = 36000; // 30 min
+		}
+
+		if (this.slots[2] != null && this.slots[2].getItem() == mod_IDT.QCUpgrade) {
+			this.speed = 12000; // 10 min (I think)
+			MatterCondenser.updateState(this.isPowered(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+		}
 	}
 
 	public boolean checkSlot() {
@@ -294,6 +328,7 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 	}
 
 	public int getCookProgressScaled(int i) {
+		detectUpgrade();
 		return this.cTime * i / this.speed;
 	}
 

@@ -319,7 +319,7 @@ import com.mce.items.ModItems.QCUpgrade;
 import com.mce.items.ModItems.QMan;
 import com.mce.items.ModItems.SO2;
 import com.mce.items.ModItems.SO3;
-import com.mce.items.ModItems.StabilizaerUpgrade;
+import com.mce.items.ModItems.StabilizerUpgrade;
 import com.mce.items.ModItems.SteelSawBlade;
 import com.mce.items.ModItems.T1CB;
 import com.mce.items.ModItems.T2CB;
@@ -423,7 +423,7 @@ public class mod_IDT {
 	public static final String modid = "mod_IDT";
 	public static final String modid2 = "mod_idt";
 	public static final String name = "Industrial Technologies and More";
-	public static final String version = "Snapshot 17w25a";
+	public static final String version = "Snapshot 17w29a";
 
 	@SidedProxy(clientSide = "com.mce.client.ClientProxy", serverSide = "com.mce.common.CommonProxy")
 	public static CommonProxy proxy;
@@ -432,7 +432,6 @@ public class mod_IDT {
 	public boolean mobDef = Loader.isModLoaded("mod_mobdefensive");
 	public static boolean ebm = Loader.isModLoaded("mod_ebm");
 	public static boolean minechem = Loader.isModLoaded("minechem");
-	// public static boolean detectAddon;
 
 	// TODO: Blocks
 	// Other
@@ -2597,8 +2596,8 @@ public class mod_IDT {
 		LaserUpgrade = new LaserUpgrade().setTextureName("mod_IDT:upgrade_laser").setUnlocalizedName("LaserUpgrade")
 				.setCreativeTab(IDTItems);
 
-		StabilizerUpgrade = new StabilizaerUpgrade().setTextureName("mod_IDT:upgrade_stable")
-				.setUnlocalizedName("StablilizerUpgrade").setCreativeTab(IDTItems);
+		StabilizerUpgrade = new StabilizerUpgrade().setTextureName("mod_IDT:upgrade_stable")
+				.setUnlocalizedName("StabilizerUpgrade").setCreativeTab(IDTItems);
 
 		QCUpgrade = new QCUpgrade().setTextureName("mod_IDT:upgrade_qc").setUnlocalizedName("QCUpgrade")
 				.setCreativeTab(IDTItems);

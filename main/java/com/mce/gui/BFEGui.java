@@ -19,7 +19,7 @@ public class BFEGui extends GuiContainer {
 	public TileEntityBFE bfe;
 	public World world;
 
-	public final ResourceLocation texture = new ResourceLocation("mod_idt", "/textures/gui/cutter.png".substring(1));
+	public final ResourceLocation texture = new ResourceLocation("mod_idt", "/textures/gui/basic.png".substring(1));
 
 	public BFEGui(InventoryPlayer player, TileEntityBFE entity) {
 		super(new BFEContainer(player, entity));

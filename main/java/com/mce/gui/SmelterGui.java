@@ -1,6 +1,5 @@
 package com.mce.gui;
 
-import java.awt.Rectangle;
 import java.text.DecimalFormat;
 
 import org.lwjgl.opengl.GL11;
@@ -8,7 +7,6 @@ import org.lwjgl.opengl.GL11;
 import com.mce.container.SmelterContainer;
 import com.mce.entity.tile.tech.TileEntitySmelter;
 
-import codechicken.nei.recipe.TemplateRecipeHandler.RecipeTransferRect;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
@@ -27,7 +25,7 @@ public class SmelterGui extends GuiContainer {
 		this.smelter = entity;
 
 		this.xSize = 176;
-		this.ySize = 176; //166
+		this.ySize = 176;
 	}
 
 	public void drawGuiContainerForegroundLayer(int x, int y) {

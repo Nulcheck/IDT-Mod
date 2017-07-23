@@ -6,7 +6,6 @@ import com.mce.handlers.custom_recipes.IndustrialCutterRecipes;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -16,15 +15,17 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
+	private static final int[] upgrade_slot = new int[] { 2 };
 
 	private String isInvNameLocalized;
 
-	private ItemStack[] slots = new ItemStack[2];
+	private ItemStack[] slots = new ItemStack[3];
 
 	// Cutter Specs
 	// Speed is a little slower than a furnace
 	public int cuttingSpeed = 300;
 	public int cutTime;
+	public int cutDTime;
 	public int burnTime;
 	public boolean isPowered;
 
@@ -160,7 +161,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 	}
 
 	public boolean isCutting() {
-		return this.cutTime > 0;
+		return this.cutDTime > 0;
 	}
 
 	public static boolean isPowered() {
@@ -171,7 +172,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (isCutting()) {
+		if (isCutting() && this.isPowered()) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -181,21 +182,29 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		}
 
 		if (!this.worldObj.isRemote) {
+			this.detectUpgradeAndCut();
+			
 			if (this.isPowered() && this.canCut() && this.checkSlot() && this.damage > 0) {
 				this.cutTime++;
+				this.cutDTime++;
 
-				if (this.cutTime == this.cuttingSpeed) {
+				if (this.cutTime >= this.cuttingSpeed) {
 					this.cutTime = 0;
 					this.cutItem();
-
 					flag1 = true;
+				}
+				
+				if(this.cutDTime == 300){
+					this.cutDTime = 0;
 				}
 
 				if (this.damage <= 0) {
 					this.cutTime = 0;
+					this.cutDTime = 0;
 				}
 			} else {
 				this.cutTime = 0;
+				this.cutDTime = 0;
 			}
 
 			if (flag != this.isPowered()) {
@@ -210,6 +219,23 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 	}
 
 	private void onInventoryChanged() {
+	}
+
+	public void detectUpgradeAndCut() {
+		if (this.canCut() && this.damage > 0) {
+			detectUpgrade();
+		}
+	}
+
+	public void detectUpgrade() {
+		if (this.slots[2] == null) {
+			this.cuttingSpeed = 300;
+		}
+
+		if (this.slots[2] != null && this.slots[2].getItem() == mod_IDT.LaserUpgrade) {
+			this.cuttingSpeed = 120;
+			IndustrialCutter.updateState(this.isPowered(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+		}
 	}
 
 	public boolean checkSlot() {
@@ -295,6 +321,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 	}
 
 	public int getCookProgressScaled(int i) {
+		detectUpgrade();
 		return this.cutTime * i / this.cuttingSpeed;
 	}
 

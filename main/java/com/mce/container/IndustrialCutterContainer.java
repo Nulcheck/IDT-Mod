@@ -21,6 +21,7 @@ public class IndustrialCutterContainer extends Container {
 
 		this.addSlotToContainer(new Slot(entity, 0, 56, 35)); // Input
 		this.addSlotToContainer(new SlotOutIndustrialCutter(player.player, entity, 1, 116, 35)); // Output
+		this.addSlotToContainer(new Slot(entity, 2, 152, 11)); // Upgrade
 
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 9; j++) {
