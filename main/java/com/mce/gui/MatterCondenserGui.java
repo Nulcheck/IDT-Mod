@@ -46,7 +46,7 @@ public class MatterCondenserGui extends GuiContainer {
 				4210752);
 		this.fontRendererObj.drawString(I18n.format("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
 
-		this.fontRendererObj.drawString(dam + "%", 134, this.ySize - 96 + 2, 4210752);
+		this.fontRendererObj.drawString(dam + "%", 131, this.ySize - 96 + 2, 4210752);
 
 		this.fontRendererObj.drawString(time + "%", 78, 56, 4210752);
 	}

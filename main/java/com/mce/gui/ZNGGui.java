@@ -41,7 +41,7 @@ public class ZNGGui extends GuiContainer {
 				4210752);
 		this.fontRendererObj.drawString(I18n.format("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
 
-		this.fontRendererObj.drawString(dam + "%", 134, this.ySize - 96 + 2, 4210752);
+		this.fontRendererObj.drawString(dam + "%", 131, this.ySize - 96 + 2, 4210752);
 
 		this.fontRendererObj.drawString(fuel + "%", 30, this.ySize - 111, 4210752);
 

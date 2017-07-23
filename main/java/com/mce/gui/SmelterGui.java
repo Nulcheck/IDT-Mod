@@ -41,7 +41,7 @@ public class SmelterGui extends GuiContainer {
 				4210752);
 		this.fontRendererObj.drawString(I18n.format("container.inventory"), 28, this.ySize - 106 + 2, 4210752);
 
-		this.fontRendererObj.drawString(dam + "%", 134, this.ySize - 106 + 2, 4210752);
+		this.fontRendererObj.drawString(dam + "%", 131, this.ySize - 106 + 2, 4210752);
 	}
 
 	public void drawGuiContainerBackgroundLayer(float f, int i, int j) {

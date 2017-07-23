@@ -40,7 +40,7 @@ public class BHGGui extends GuiContainer {
 		df3.setMaximumFractionDigits(1);
 		double pdam = (this.bhg.damage * 100d) / this.bhg.maxDamage;
 		double pfuel = (this.bhg.fuel * 100d) / this.bhg.maxFuel;
-		double pprog = (this.bhg.createTime * 100d) / this.bhg.speed;
+		double pprog = this.bhg.getCreateProgressScaled(100);
 		String dam = String.valueOf(df.format(pdam));
 		String fuel = String.valueOf(df2.format(pfuel));
 		String prog = String.valueOf(df3.format(pprog));
@@ -49,7 +49,7 @@ public class BHGGui extends GuiContainer {
 				4210752);
 		this.fontRendererObj.drawString(I18n.format("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
 
-		this.fontRendererObj.drawString(dam + "%", 134, this.ySize - 96 + 2, 4210752);
+		this.fontRendererObj.drawString(dam + "%", 131, this.ySize - 96 + 2, 4210752);
 		this.fontRendererObj.drawString(fuel + "%", 30, this.ySize - 122, 4210752);
 		this.fontRendererObj.drawString("Hole Progress:", 35, this.ySize - 140, 4210752);
 		

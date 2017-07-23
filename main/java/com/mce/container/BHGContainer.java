@@ -19,6 +19,7 @@ public class BHGContainer extends Container {
 		this.bhg = entity;
 
 		this.addSlotToContainer(new Slot(entity, 0, 8, 34)); // Fuel
+		this.addSlotToContainer(new Slot(entity, 1, 152, 11)); // Upgrade
 
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 9; j++) {

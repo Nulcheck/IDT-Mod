@@ -16,15 +16,17 @@ import net.minecraft.tileentity.TileEntity;
 public class TileEntityBHG extends TileEntity implements IInventory {
 	// Slot 0 = input
 	private static final int[] input_slot = new int[] { 0 };
+	private static final int[] upgrade_slot = new int[] { 1 };
 
 	private String isInvNameLocalized;
-	private ItemStack[] slots = new ItemStack[1];
+	private ItemStack[] slots = new ItemStack[2];
 
 	// Specs
 	public int speed = 600;
 	public boolean isPowered;
 
 	public int createTime;
+	public int createDTime;
 	public final int minTime = 0;
 	public final int maxTime = 600;
 
@@ -165,7 +167,7 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 	}
 
 	public boolean isCreating() {
-		return this.createTime > 0;
+		return this.createDTime > 0;
 	}
 
 	public boolean hasFuel() {
@@ -193,6 +195,14 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 			this.fuel = this.maxFuel;
 		}
 
+		if (this.createDTime < this.minTime) {
+			this.createDTime = this.minTime;
+		}
+
+		if (this.createDTime > this.maxTime) {
+			this.createDTime = this.maxTime;
+		}
+		
 		if (this.createTime < this.minTime) {
 			this.createTime = this.minTime;
 		}
@@ -215,20 +225,26 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 				}
 			}
 
-			if (this.isPowered() && this.hasFuel() && this.damage > 0) {
-				this.createTime++;
+			detectUpgrade();
 
-				if (this.createTime == this.speed) {
-					// this.createTime = 0;
+			if (this.isPowered() && this.damage > 0 && this.hasFuel()) {
+				this.createTime++;
+				this.createDTime++;
+
+				if (this.createTime >= this.speed) {
 					this.createHole();
 					flag1 = true;
 				}
 
 				if (this.damage <= 0) {
 					this.createTime = 0;
+					this.createDTime = 0;
 				}
 			} else {
-				this.createTime--;
+				if (this.checkUpgrade() == false) {
+					this.createTime--;
+					this.createDTime--;
+				}
 				this.destoryHole();
 			}
 
@@ -246,6 +262,29 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 	private void onInventoryChanged() {
 	}
 
+	public void detectUpgrade() {
+		if (this.slots[1] == null) {
+			this.speed = 600; // 30 sec?
+		}
+
+		if (this.slots[1] != null && this.slots[1].getItem() == mod_IDT.StabilizerUpgrade) {
+			this.speed = 300; // 15 sec?
+			BHG.updateState(this.hasFuel(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+		}
+	}
+
+	public boolean checkUpgrade() {
+		if (this.slots[1] == null) {
+			return false;
+		}
+
+		if (this.slots[1] != null && this.slots[1].getItem() == mod_IDT.StabilizerUpgrade) {
+			return true;
+		}
+
+		return false;
+	}
+
 	public boolean checkSlot() {
 		ItemStack stack = BHGRecipes.compressing().getInput(this.slots[0]);
 		if (this.slots[0] == stack) {
@@ -259,9 +298,11 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 		if (this.worldObj.getBlock(this.xCoord, this.yCoord + 1, this.zCoord) == Blocks.air) {
 			this.worldObj.setBlock(this.xCoord, this.yCoord + 1, this.zCoord, mod_IDT.StableBlackHole);
 		} else {
-			/*Minecraft.getMinecraft().thePlayer
-					.addChatComponentMessage(new ChatComponentText("The block above the BHG isn't air!"));*/
-			//System.out.println("Block above isn't air!");
+			/*
+			 * Minecraft.getMinecraft().thePlayer .addChatComponentMessage(new
+			 * ChatComponentText("The block above the BHG isn't air!"));
+			 */
+			// System.out.println("Block above isn't air!");
 		}
 	}
 
@@ -320,6 +361,7 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 	}
 
 	public int getCreateProgressScaled(int i) {
+		detectUpgrade();
 		return this.createTime * i / this.speed;
 	}
 
