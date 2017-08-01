@@ -375,7 +375,7 @@ public class ModOre extends BlockOre {
 	public static class TitaniumOre extends BlockOre {
 		public TitaniumOre() {
 			super();
-			this.setHarvestLevel("pickaxe", 1);
+			this.setHarvestLevel("pickaxe", 2);
 		}
 	}
 	

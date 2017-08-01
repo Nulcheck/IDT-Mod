@@ -94,6 +94,7 @@ tile.Welder.name=Welder
 tile.Magnetizer.name=Magnetizer
 tile.Enricher.name=Enricher
 tile.ZimWire.name=Zimphnode Wire
+tile.LavaStone.name=Lava Stone
 
 tile.SteelBlock.name=Steel Block
 tile.TitaniumBlock.name=Titanium Block
