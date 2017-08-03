@@ -325,6 +325,7 @@ import com.mce.items.ModItems.T1CB;
 import com.mce.items.ModItems.T2CB;
 import com.mce.items.ModItems.T3CB;
 import com.mce.items.ModItems.TitaniumSawBlade;
+import com.mce.items.ModItems.UpgradeBase;
 import com.mce.items.ModItems.V2O5;
 import com.mce.items.ModSticks;
 import com.mce.items.NdMagnet;
@@ -938,6 +939,7 @@ public class mod_IDT {
 	public static Item PSiliconChip;
 
 	// Upgrades
+	public static Item UpgradeBase;
 	public static Item MagneticUpgrade;
 	public static Item LaserUpgrade;
 	public static Item StabilizerUpgrade;
@@ -2590,6 +2592,9 @@ public class mod_IDT {
 				.setCreativeTab(IDTItems);
 
 		// Upgrades
+		UpgradeBase = new UpgradeBase().setTextureName("mod_IDT:upgrade_base").setCreativeTab(IDTItems)
+				.setUnlocalizedName("UpBase");
+
 		MagneticUpgrade = new MagneticUpgrade().setTextureName("mod_IDT:upgrade_magnetic").setCreativeTab(IDTItems)
 				.setUnlocalizedName("UpMag");
 

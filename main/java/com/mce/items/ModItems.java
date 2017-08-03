@@ -278,6 +278,17 @@ public class ModItems extends Item {
 			return this.containerItem;
 		}
 	}
+	
+	public static class UpgradeBase extends Item {
+		public UpgradeBase() {
+			super();
+		}
+
+		public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
+			list.add("Used to make upgrades.");
+			list.add("Not an upgrade itself.");
+		}
+	}
 
 	public static class MagneticUpgrade extends Item {
 		public MagneticUpgrade() {

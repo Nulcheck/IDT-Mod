@@ -291,8 +291,8 @@ public class ItemRecipeHandler {
 				new ItemStack(Items.iron_ingot));
 
 		CraftingManager.getInstance().getRecipeList()
-				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.CompressorUnit), "ivi", "ipi", "ici", 'i', "ingotSteel",
-						'v', "ingotVanadium", 'p', new ItemStack(Item.getItemFromBlock(Blocks.piston)), 'c',
+				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.CompressorUnit), "iwi", "ipi", "ici", 'i', "ingotSteel",
+						'w', "wireCopper", 'p', new ItemStack(Item.getItemFromBlock(Blocks.piston)), 'c',
 						new ItemStack(mod_IDT.T1CircuitBoard)));
 
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.WikiPaper), new ItemStack(Items.paper));
@@ -394,10 +394,6 @@ public class ItemRecipeHandler {
 
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.BlowTorch), "g",
 				"p", 'g', "ingotGold", 'p', new ItemStack(mod_IDT.PropaneTank)));
-
-		CraftingManager.getInstance().getRecipeList()
-				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.MagneticUpgrade), "sms", "tmt", "sms", 's', "ingotSteel",
-						't', "ingotTitanium", 'm', new ItemStack(mod_IDT.NdMagnet, 1, 1)));
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.NeoronHelmet), "***", "* *", '*', "ingotNeoron"));
@@ -574,6 +570,29 @@ public class ItemRecipeHandler {
 
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.SiliconChip, 2), "***", "***", '*',
 				new ItemStack(mod_IDT.SiliconDust));
+
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.UpgradeBase), "www",
+				"sss", "sps", 's', "ingotSteel", 'p', "plateCopper", 'f', "foilCopper", 'w', "wireCopper"));
+
+		CraftingManager.getInstance().getRecipeList()
+				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.MagneticUpgrade), "sms", "mcm", "tut", 'u',
+						new ItemStack(mod_IDT.UpgradeBase), 's', "ingotSteel", 't', "ingotTitanium", 'm',
+						new ItemStack(mod_IDT.NdMagnet, 1, 1), 'c', new ItemStack(mod_IDT.T2CircuitBoard)));
+
+		CraftingManager.getInstance().getRecipeList()
+				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.LaserUpgrade), "sgs", "sls", "tut", 'u',
+						new ItemStack(mod_IDT.UpgradeBase), 't', "ingotTitanium", 'l',
+						new ItemStack(mod_IDT.CrystalLens), 's', "ingotSteel", 'g', new ItemStack(Blocks.glass_pane)));
+
+		CraftingManager.getInstance().getRecipeList()
+				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.StabilizerUpgrade), "vmv", "mqm", "vuv", 'u',
+						new ItemStack(mod_IDT.UpgradeBase), 'v', "ingotVC", 'm',
+						new ItemStack(mod_IDT.NdMagnet, 1, 1), 'q', new ItemStack(mod_IDT.QMan)));
+
+		CraftingManager.getInstance().getRecipeList()
+				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.QCUpgrade), "vcv", "mqm", "vuv", 'u',
+						new ItemStack(mod_IDT.UpgradeBase), 'v', "ingotVanadium", 'm', new ItemStack(mod_IDT.NdMagnet, 1, 1),
+						'q', new ItemStack(mod_IDT.QMan), 'c', new ItemStack(mod_IDT.CompressorUnitGA)));
 	}
 
 	public static void registerSmelting() {

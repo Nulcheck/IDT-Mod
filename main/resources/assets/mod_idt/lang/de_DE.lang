@@ -633,6 +633,7 @@ item.BSiliconChip.name=Boron Doped Silicon Chip
 item.CrystalRod.name=Crystal Rod
 item.CrystalLens.name=Crystal Lens
 
+item.UpBase.name=Upgrade Base
 item.UpMag.name=Magnetic Upgrade
 item.LaserUpgrade.name=Laser Upgrade
 item.StabilizerUpgrade.name=Stabilizer Upgrade

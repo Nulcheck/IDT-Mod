@@ -59,10 +59,11 @@ public class ItemRegistry {
 		 */
 
 		// Upgrades
+		GameRegistry.registerItem(mod_IDT.UpgradeBase, "UpBase");
 		GameRegistry.registerItem(mod_IDT.MagneticUpgrade, "UpMag");
 		GameRegistry.registerItem(mod_IDT.LaserUpgrade, "LaserUpgrade");
-		GameRegistry.registerItem(mod_IDT.StabilizerUpgrade, "StabilizerUpgrade");
 		GameRegistry.registerItem(mod_IDT.QCUpgrade, "QCUpgrade");
+		GameRegistry.registerItem(mod_IDT.StabilizerUpgrade, "StabilizerUpgrade");
 
 		// Records
 		GameRegistry.registerItem(mod_IDT.cd_icy, "cd_icy");
