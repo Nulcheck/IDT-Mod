@@ -25,7 +25,7 @@ public class CrystalPortal extends BlockBreakable {
 	public static final int[][] field_150001_a = new int[][] { new int[0], { 3, 1 }, { 2, 0 } };
 
 	public CrystalPortal() {
-		super("portal", Material.portal, false);
+		super("mod_IDT:portal_crystal", Material.portal, false);
 		this.setTickRandomly(true);
 	}
 

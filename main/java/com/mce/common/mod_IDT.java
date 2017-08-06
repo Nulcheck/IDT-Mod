@@ -424,7 +424,7 @@ public class mod_IDT {
 	public static final String modid = "mod_IDT";
 	public static final String modid2 = "mod_idt";
 	public static final String name = "Industrial Technologies and More";
-	public static final String version = "Snapshot 17w31b";
+	public static final String version = "Snapshot 17w32a";
 
 	@SidedProxy(clientSide = "com.mce.client.ClientProxy", serverSide = "com.mce.common.CommonProxy")
 	public static CommonProxy proxy;
@@ -1418,8 +1418,8 @@ public class mod_IDT {
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:neoron_block").setCreativeTab(IDT);
 
 		// Fires
-		FrozenFire = new FrozenFire("FrozenFire");
-		CrystalFire = new CrystalFire("CrystalFire");
+		FrozenFire = new FrozenFire(Material.ground);
+		CrystalFire = new CrystalFire(Material.ground);
 
 		// Doors
 		BirchDoor = new BirchDoor(Material.wood).setBlockName("BirchDoor").setStepSound(Block.soundTypeWood)

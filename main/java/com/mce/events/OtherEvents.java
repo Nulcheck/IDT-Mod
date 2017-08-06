@@ -255,7 +255,7 @@ public class OtherEvents {
 			e.entityPlayer.inventory.addItemStackToInventory(new ItemStack(Items.water_bucket, 1));
 		}
 
-		// Essence of Air & wiki paper for air
+		// Essence of Air
 		else if (e.action == PlayerInteractEvent.Action.RIGHT_CLICK_AIR) {
 			if (e.entityPlayer.isSneaking() && e.entityPlayer.getHeldItem() != null
 					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.HardCrystalBall) {
@@ -270,16 +270,17 @@ public class OtherEvents {
 
 		// Portal creations
 		else if (e.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
-			if (e.entityPlayer.isSneaking() && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == Items.snowball
+			if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == Items.snowball
 					&& e.world.getBlock(e.x, e.y, e.z) == Blocks.snow) {
 				e.world.setBlock(e.x, e.y + 1, e.z, mod_IDT.FrozenFire);
+				e.world.scheduleBlockUpdate(e.x, e.y, e.z, mod_IDT.FrozenFire, 1);
 			}
 
-			else if (e.entityPlayer.isSneaking() && e.entityPlayer.getHeldItem() != null
+			else if (e.entityPlayer.getHeldItem() != null
 					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.CrystalGem
 					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CrystalBlock) {
 				e.world.setBlock(e.x, e.y + 1, e.z, mod_IDT.CrystalFire);
+				e.world.scheduleBlockUpdate(e.x, e.y, e.z, mod_IDT.CrystalFire, 1);
 			}
 		}
 	}
