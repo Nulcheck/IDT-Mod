@@ -12,6 +12,8 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.WorldSettings.GameType;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.common.DimensionManager;
@@ -29,7 +31,7 @@ public class WorldProviderFrost extends WorldProvider {
 	public IChunkProvider createChunkGenerator() {
 		return new ChunkProviderFrost(this.worldObj, this.worldObj.getSeed(), true);
 	}
-	
+
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerFrost(this.worldObj);
 		this.dimensionId = mod_IDT.frostDimId;
@@ -42,6 +44,27 @@ public class WorldProviderFrost extends WorldProvider {
 	public boolean canCoordinateBeSpawn(int x, int z) {
 		return this.worldObj.getTopBlock(x, z) == mod_IDT.FrostGrass
 				|| this.worldObj.getTopBlock(x, z) == mod_IDT.FrostDirt;
+	}
+
+	public ChunkCoordinates getRandomizedSpawnPoint() {
+		ChunkCoordinates chunkcoordinates = new ChunkCoordinates(this.worldObj.getSpawnPoint());
+
+		boolean isAdventure = worldObj.getWorldInfo().getGameType() == GameType.ADVENTURE;
+		int spawnFuzz = terrainType.getSpawnFuzz();
+		int spawnFuzzHalf = spawnFuzz / 2;
+
+		if (!hasNoSky && !isAdventure && net.minecraftforge.common.ForgeModContainer.defaultHasSpawnFuzz) {
+			chunkcoordinates.posX += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
+			chunkcoordinates.posZ += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
+			chunkcoordinates.posY = this.worldObj.getTopSolidOrLiquidBlock(chunkcoordinates.posX,
+					chunkcoordinates.posZ);
+		}
+
+		return chunkcoordinates;
+	}
+
+	public BiomeGenBase getBiomeGenForCoords(int x, int z) {
+		return worldObj.getBiomeGenForCoordsBody(x, z);
 	}
 
 	public String getDimensionName() {

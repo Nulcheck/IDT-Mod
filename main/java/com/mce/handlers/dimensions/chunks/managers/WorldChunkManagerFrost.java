@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import com.mce.gen.biome.FrostBarren;
 import com.mce.handlers.dimensions.layers.FrostGenLayer;
 import com.mce.handlers.registers.BiomeRegistry;
 
@@ -50,7 +51,7 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 
 	public WorldChunkManagerFrost(World world) {
 		this(world.getSeed(), world.getWorldInfo().getTerrainType());
-		//this.biomesToSpawnIn.addAll(allowBiomes);
+		this.biomesToSpawnIn.addAll(allowBiomes);
 	}
 
 	/**
@@ -130,22 +131,12 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 
 		int[] aint = this.genBiomes.getInts(x, y, w, d);
 
-		try {
-			for (int i = 0; i < w * d; ++i) {
-				biomes[i] = BiomeGenBase.getBiome(aint[i]);
-			}
-
-			return biomes;
-		} catch (Throwable throwable) {
-			CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
-			CrashReportCategory crashreportcategory = crashreport.makeCategory("RawBiomeBlock");
-			crashreportcategory.addCrashSection("biomes[] size", Integer.valueOf(biomes.length));
-			crashreportcategory.addCrashSection("x", Integer.valueOf(x));
-			crashreportcategory.addCrashSection("z", Integer.valueOf(y));
-			crashreportcategory.addCrashSection("w", Integer.valueOf(w));
-			crashreportcategory.addCrashSection("h", Integer.valueOf(d));
-			throw new ReportedException(crashreport);
+		for (int i = 0; i < w * d; ++i) {
+			biomes[i] = BiomeGenBase.getBiome(aint[i]);
 		}
+
+		// Arrays.fill(biomes, 0, w * d, this.biomesToSpawnIn);
+		return biomes;
 	}
 
 	/**
@@ -164,22 +155,22 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	 * infinite loop in BiomeCacheBlock)
 	 */
 	@Override
-	public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] listToReuse, int x, int y, int width, int length,
+	public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] listToReuse, int x, int y, int width, int depth,
 			boolean cacheFlag) {
 		IntCache.resetIntCache();
 
-		if (listToReuse == null || listToReuse.length < width * length) {
-			listToReuse = new BiomeGenBase[width * length];
+		if (listToReuse == null || listToReuse.length < width * depth) {
+			listToReuse = new BiomeGenBase[width * depth];
 		}
 
-		if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (y & 15) == 0) {
-			BiomeGenBase[] abiomegenbase1 = this.biomeCache.getCachedBiomes(x, y);
-			System.arraycopy(abiomegenbase1, 0, listToReuse, 0, width * length);
+		if (cacheFlag && width == 16 && depth == 16 && (x & 15) == 0 && (y & 15) == 0) {
+			BiomeGenBase[] biomeBase = this.biomeCache.getCachedBiomes(x, y);
+			System.arraycopy(biomeBase, 0, listToReuse, 0, width * depth);
 			return listToReuse;
 		} else {
-			int[] aint = this.biomeIndexLayer.getInts(x, y, width, length);
+			int[] aint = this.biomeIndexLayer.getInts(x, y, width, depth);
 
-			for (int i = 0; i < width * length; ++i) {
+			for (int i = 0; i < width * depth; ++i) {
 				listToReuse[i] = BiomeGenBase.getBiome(aint[i]);
 			}
 			return listToReuse;
@@ -191,7 +182,7 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	public boolean areBiomesViable(int x, int y, int z, List par4List) {
+	public boolean areBiomesViable(int x, int y, int z, List list) {
 		IntCache.resetIntCache();
 		int l = x - z >> 2;
 		int i1 = y - z >> 2;
@@ -201,26 +192,15 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 		int i2 = k1 - i1 + 1;
 		int[] aint = this.genBiomes.getInts(l, i1, l1, i2);
 
-		try {
-			for (int j2 = 0; j2 < l1 * i2; ++j2) {
-				BiomeGenBase biomegenbase = BiomeGenBase.getBiome(aint[j2]);
+		for (int j2 = 0; j2 < l1 * i2; ++j2) {
+			BiomeGenBase biomegenbase = BiomeGenBase.getBiome(aint[j2]);
 
-				if (!par4List.contains(biomegenbase)) {
-					return false;
-				}
+			if (!list.contains(biomegenbase)) {
+				return false;
 			}
-
-			return true;
-		} catch (Throwable throwable) {
-			CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
-			CrashReportCategory crashreportcategory = crashreport.makeCategory("Layer");
-			crashreportcategory.addCrashSection("Layer", this.genBiomes.toString());
-			crashreportcategory.addCrashSection("x", Integer.valueOf(x));
-			crashreportcategory.addCrashSection("z", Integer.valueOf(y));
-			crashreportcategory.addCrashSection("radius", Integer.valueOf(z));
-			crashreportcategory.addCrashSection("allowed", par4List);
-			throw new ReportedException(crashreport);
 		}
+
+		return true;
 	}
 
 	/**
