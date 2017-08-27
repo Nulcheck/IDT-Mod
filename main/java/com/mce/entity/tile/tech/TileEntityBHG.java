@@ -22,7 +22,7 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 	private ItemStack[] slots = new ItemStack[2];
 
 	// Specs
-	public int speed = 600;
+	public int speed;
 	public boolean isPowered;
 
 	public int createTime;

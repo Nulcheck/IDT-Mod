@@ -23,7 +23,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 
 	// Cutter Specs
 	// Speed is a little slower than a furnace
-	public int cuttingSpeed = 300;
+	public int cuttingSpeed;
 	public int cutTime;
 	public int cutDTime;
 	public int burnTime;
@@ -164,7 +164,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		return this.cutDTime > 0;
 	}
 
-	public static boolean isPowered() {
+	public boolean isPowered() {
 		return IndustrialCutter.isActive;
 	}
 

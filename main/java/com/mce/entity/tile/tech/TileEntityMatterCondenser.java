@@ -22,7 +22,7 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 	private ItemStack[] slots = new ItemStack[3];
 
 	// Speed is really slow, 30 minutes
-	public int speed = 36000;
+	public int speed;
 	public int cTime;
 	public int cDTime;
 	public int burnTime;
