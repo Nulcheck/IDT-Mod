@@ -385,4 +385,23 @@ public class ModOre extends BlockOre {
 			this.setHarvestLevel("pickaxe", 1);
 		}
 	}
+	
+	public static class Agate extends BlockOre {
+		public Agate(){
+			super();
+			this.setHarvestLevel("pickaxe", 2);
+		}
+		
+		public Item getItemDropped(int id, Random rand, int meta) {
+			return mod_IDT.PureQuartz;
+		}
+
+		public int quantityDroppedWithBonus(int i, Random ran) {
+			return this.quantityDropped(ran) + ran.nextInt(i + 1);
+		}
+
+		public int quantityDropped(Random ran) {
+			return 4 + ran.nextInt(2);
+		}
+	}
 }

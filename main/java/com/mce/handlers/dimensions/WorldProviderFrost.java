@@ -108,7 +108,7 @@ public class WorldProviderFrost extends WorldProvider {
 	}
 
 	public boolean isSurfaceWorld() {
-		return true;
+		return false;
 	}
 
 	public int setHeight() {

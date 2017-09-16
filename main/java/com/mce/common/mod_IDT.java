@@ -97,6 +97,7 @@ import com.mce.blocks.ModLogs.EbonyLog;
 import com.mce.blocks.ModLogs.GelidLog;
 import com.mce.blocks.ModLogs.SilkwoodLog;
 import com.mce.blocks.ModLogs.WillowLog;
+import com.mce.blocks.ModOre.Agate;
 import com.mce.blocks.ModOre.BoronOre;
 import com.mce.blocks.ModOre.CopperOre;
 import com.mce.blocks.ModOre.CrystalOre;
@@ -743,6 +744,7 @@ public class mod_IDT {
 	public static Block CopperOre;
 	public static Block TitaniumOre;
 	public static Block Phosphorite;
+	public static Block Agate;
 
 	// Bombs
 	public static Block EinsteiniumBomb;
@@ -2100,6 +2102,9 @@ public class mod_IDT {
 
 		Phosphorite = new Phosphorite().setBlockName("Phosphorite").setHardness(2f).setResistance(4f)
 				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_phosphorite");
+
+		Agate = new Agate().setBlockName("Agate").setHardness(3f).setResistance(6f).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_agate");
 
 		// Bombs
 		EinsteiniumBomb = new EinsteiniumBomb().setBlockName("EinsteiniumBomb").setHardness(1.0F)

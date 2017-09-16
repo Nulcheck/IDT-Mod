@@ -213,14 +213,14 @@ public class EntityIcePhantom extends EntityTameable {
 	}
 
 	public void onLivingUpdate() {
-		for (int i = 0; i < 2; ++i) {
+		/*for (int i = 0; i < 2; ++i) {
 			if (!this.worldObj.isRemote) {
 				mod_IDT.proxy.spawnParticle(this.worldObj,
 						this.posX + (this.rand.nextDouble() - .5d) * (double) this.width,
 						this.posY + (this.rand.nextDouble() - .5d) * (double) this.height,
 						this.posZ + (this.rand.nextDouble() - .5d) * (double) this.width, "iceFx");
 			}
-		}
+		}*/
 
 		super.onLivingUpdate();
 	}

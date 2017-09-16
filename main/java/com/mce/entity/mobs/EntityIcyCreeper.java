@@ -31,7 +31,6 @@ public class EntityIcyCreeper extends EntityMob {
 	private int timeSinceIgnited;
 	private int fuseTime = 30;
 	private double explosionRadius = 2.5d;
-	private static final String __OBFID = "CL_00001684";
 
 	public EntityIcyCreeper(World world) {
 		super(world);
@@ -117,6 +116,10 @@ public class EntityIcyCreeper extends EntityMob {
 		}
 
 		super.onUpdate();
+	}
+	
+	public void onLivingUpdate(){
+		super.onLivingUpdate();
 	}
 
 	protected String getHurtSound() {

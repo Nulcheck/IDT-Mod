@@ -340,6 +340,7 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.CopperOre, "CopperOre");
 		GameRegistry.registerBlock(mod_IDT.TitaniumOre, "TitaniumOre");
 		GameRegistry.registerBlock(mod_IDT.Phosphorite, "Phosphorite");
+		GameRegistry.registerBlock(mod_IDT.Agate, "Agate");
 
 		// Bombs
 		GameRegistry.registerBlock(mod_IDT.EinsteiniumBomb, EBBlock.class,
