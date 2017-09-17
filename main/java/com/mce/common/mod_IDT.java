@@ -425,7 +425,7 @@ public class mod_IDT {
 	public static final String modid = "mod_IDT";
 	public static final String modid2 = "mod_idt";
 	public static final String name = "Industrial Technologies and More";
-	public static final String version = "Snapshot 17w32a";
+	public static final String version = "Snapshot 17w38a";
 
 	@SidedProxy(clientSide = "com.mce.client.ClientProxy", serverSide = "com.mce.common.CommonProxy")
 	public static CommonProxy proxy;
@@ -2051,7 +2051,7 @@ public class mod_IDT {
 		FrostDirt = new FrostyBlocks(Material.ground).setBlockName("FrostDirt").setHardness(0.5F).setResistance(2f)
 				.setStepSound(Block.soundTypeGravel).setBlockTextureName("mod_IDT:frost_dirt").setCreativeTab(IDT);
 
-		FrostStone = new FrozenStone(Material.ground).setBlockName("FrostStone").setHardness(1.5F).setResistance(15F)
+		FrostStone = new FrozenStone(Material.ground).setBlockName("FrostStone").setHardness(1.2F).setResistance(15F)
 				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:frost_stone").setCreativeTab(IDT);
 
 		FrostCobble = new FrostyBlocks(Material.ground).setBlockName("FrostCobble").setHardness(2F).setResistance(15F)
@@ -2103,7 +2103,7 @@ public class mod_IDT {
 		Phosphorite = new Phosphorite().setBlockName("Phosphorite").setHardness(2f).setResistance(4f)
 				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_phosphorite");
 
-		Agate = new Agate().setBlockName("Agate").setHardness(3f).setResistance(6f).setCreativeTab(IDT)
+		Agate = new Agate().setBlockName("Agate").setHardness(5f).setResistance(10f).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:ore_agate");
 
 		// Bombs

@@ -1,6 +1,5 @@
 package com.mce.handlers;
 
-import com.mce.gen.ores.WorldGenAgate;
 import com.mce.gen.ores.WorldGenBoronOre;
 import com.mce.gen.ores.WorldGenCopperOre;
 import com.mce.gen.ores.WorldGenCrystalOre;
@@ -34,6 +33,5 @@ public class OreGenHandler {
 		GameRegistry.registerWorldGenerator(new WorldGenCopperOre(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenTitaniumOre(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenPhosphorite(), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenAgate(), 0);
 	}
 }

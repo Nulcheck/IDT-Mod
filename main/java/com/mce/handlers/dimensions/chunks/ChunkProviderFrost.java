@@ -1,11 +1,8 @@
 package com.mce.handlers.dimensions.chunks;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.MINESHAFT;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVINE;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.SCATTERED_FEATURE;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.STRONGHOLD;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.VILLAGE;
+import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
@@ -39,12 +36,14 @@ import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenLakes;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenStronghold;
 import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
@@ -452,7 +451,20 @@ public class ChunkProviderFrost implements IChunkProvider {
 				}
 			}
 		}
+		
+		/* GENERATE CUSTOM ORE FOR DIMENSION */
+		WorldGenMinable agate = new WorldGenMinable(mod_IDT.Agate, 13, mod_IDT.FrostStone);
+		int j2;
+		
+		doGen = TerrainGen.generateOre(worldObj, rand, agate, k, 1, CUSTOM);
+		for(k1 = 0; doGen && k1 < 16; ++k1){
+			l1 = k + this.rand.nextInt(16);
+			i2 = this.rand.nextInt(75);
+			j2 = l + this.rand.nextInt(16);
+			agate.generate(worldObj, rand, l1, i2, j2);
+		}
 
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldObj, rand, k, l));
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(chunk, worldObj, rand, x, z, flag));
 
 		BlockFalling.fallInstantly = false;

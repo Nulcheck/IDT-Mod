@@ -100,6 +100,14 @@ public class BlockRegistry {
 		// GameRegistry.registerBlock(mod_IDT.EssenceExtractor,
 		// "EssenceExtractor");
 
+		// Bombs
+		GameRegistry.registerBlock(mod_IDT.EinsteiniumBomb, EBBlock.class,
+				mod_IDT.EinsteiniumBomb.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.NeptuniumBomb, NBBlock.class, mod_IDT.NeptuniumBomb.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.UraniumBomb, UBBlock.class, mod_IDT.UraniumBomb.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.UltimateNuker, UNBlock.class, mod_IDT.UltimateNuker.getUnlocalizedName());
+		// GameRegistry.registerBlock(mod_IDT.DarkMatterBomb, "DarkMatterBomb");
+
 		// Fires
 		GameRegistry.registerBlock(mod_IDT.FrozenFire, "FrozenFire");
 		GameRegistry.registerBlock(mod_IDT.CrystalFire, "CrystalFire");
@@ -341,14 +349,6 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.TitaniumOre, "TitaniumOre");
 		GameRegistry.registerBlock(mod_IDT.Phosphorite, "Phosphorite");
 		GameRegistry.registerBlock(mod_IDT.Agate, "Agate");
-
-		// Bombs
-		GameRegistry.registerBlock(mod_IDT.EinsteiniumBomb, EBBlock.class,
-				mod_IDT.EinsteiniumBomb.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.NeptuniumBomb, NBBlock.class, mod_IDT.NeptuniumBomb.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.UraniumBomb, UBBlock.class, mod_IDT.UraniumBomb.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.UltimateNuker, UNBlock.class, mod_IDT.UltimateNuker.getUnlocalizedName());
-		// GameRegistry.registerBlock(mod_IDT.DarkMatterBomb, "DarkMatterBomb");
 
 		// Doors
 		GameRegistry.registerBlock(mod_IDT.BirchDoor, "BirchDoor");

@@ -82,6 +82,10 @@ public class WorldProviderFrost extends WorldProvider {
 	public float getStarBrightness(World world, float f) {
 		return 0f;
 	}
+	
+	public double getMovementFactor() {
+		return 2;
+	}
 
 	public boolean renderClouds() {
 		return true;
