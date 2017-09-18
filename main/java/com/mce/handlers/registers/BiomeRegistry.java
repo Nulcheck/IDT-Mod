@@ -48,9 +48,5 @@ public class BiomeRegistry {
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(WillowForest, 10));
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(EbonyForest, 10));
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(SilkwoodForest, 10));
-		/*BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(FrostBiome, 10));
-		BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(FrostBarren, 10));
-		BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(FrostForest, 10));
-		BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(CrystalBiome, 10));*/
 	}
 }

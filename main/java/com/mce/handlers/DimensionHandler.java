@@ -4,6 +4,7 @@ import com.mce.common.mod_IDT;
 import com.mce.handlers.dimensions.WorldProviderCrystal;
 import com.mce.handlers.dimensions.WorldProviderFrost;
 
+import net.minecraft.world.WorldProvider;
 import net.minecraftforge.common.DimensionManager;
 
 public class DimensionHandler {

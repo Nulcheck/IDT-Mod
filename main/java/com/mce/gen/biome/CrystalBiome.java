@@ -2,6 +2,7 @@ package com.mce.gen.biome;
 
 import com.mce.common.mod_IDT;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class CrystalBiome extends BiomeGenBase {
@@ -15,7 +16,7 @@ public class CrystalBiome extends BiomeGenBase {
 
 		this.theBiomeDecorator.generateLakes = false;
 		this.topBlock = mod_IDT.CrystalBlock;
-		this.fillerBlock = mod_IDT.CrystalBlock;
+		this.fillerBlock = Blocks.dirt;
 		this.enableRain = false;
 		this.enableSnow = false;
 

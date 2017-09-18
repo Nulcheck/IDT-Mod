@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import com.mce.gen.biome.FrostBarren;
 import com.mce.handlers.dimensions.layers.FrostGenLayer;
 import com.mce.handlers.registers.BiomeRegistry;
 
@@ -22,20 +21,19 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.terraingen.WorldTypeEvent;
 
 public class WorldChunkManagerFrost extends WorldChunkManager {
 	public static ArrayList<BiomeGenBase> allowBiomes = new ArrayList<BiomeGenBase>(
 			Arrays.asList(BiomeRegistry.FrostBiome, BiomeRegistry.FrostBarren, BiomeRegistry.FrostForest));
 	private GenLayer genBiomes;
-	/** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
 	private GenLayer biomeIndexLayer;
-	/** The BiomeCache object for this world. */
 	private BiomeCache biomeCache;
-	/** A list of biomes that the player can spawn in. */
 	private List<BiomeGenBase> biomesToSpawnIn;
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public WorldChunkManagerFrost() {
+	protected WorldChunkManagerFrost() {
 		this.biomeCache = new BiomeCache(this);
 		this.biomesToSpawnIn = new ArrayList();
 		this.biomesToSpawnIn.addAll(allowBiomes);
@@ -51,7 +49,7 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 
 	public WorldChunkManagerFrost(World world) {
 		this(world.getSeed(), world.getWorldInfo().getTerrainType());
-		this.biomesToSpawnIn.addAll(allowBiomes);
+		// this.biomesToSpawnIn.addAll(allowBiomes);
 	}
 
 	/**
@@ -122,21 +120,31 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	 * Returns an array of biomes for the location input.
 	 */
 	@Override
-	public BiomeGenBase[] getBiomesForGeneration(BiomeGenBase[] biomes, int x, int y, int w, int d) {
+	public BiomeGenBase[] getBiomesForGeneration(BiomeGenBase[] biomes, int x, int z, int w, int h) {
 		IntCache.resetIntCache();
 
-		if (biomes == null || biomes.length < w * d) {
-			biomes = new BiomeGenBase[w * d];
+		if (biomes == null || biomes.length < w * h) {
+			biomes = new BiomeGenBase[w * h];
 		}
 
-		int[] aint = this.genBiomes.getInts(x, y, w, d);
+		int[] aint = this.genBiomes.getInts(x, z, w, h);
 
-		for (int i = 0; i < w * d; ++i) {
-			biomes[i] = BiomeGenBase.getBiome(aint[i]);
+		try {
+			for (int i1 = 0; i1 < w * h; ++i1) {
+				biomes[i1] = BiomeGenBase.getBiome(aint[i1]);
+			}
+
+			return biomes;
+		} catch (Throwable throwable) {
+			CrashReport cr = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
+			CrashReportCategory crc = cr.makeCategory("RawBiomeBlock");
+			crc.addCrashSection("biomes[] size", Integer.valueOf(biomes.length));
+			crc.addCrashSection("x", Integer.valueOf(x));
+			crc.addCrashSection("z", Integer.valueOf(z));
+			crc.addCrashSection("w", Integer.valueOf(w));
+			crc.addCrashSection("h", Integer.valueOf(h));
+			throw new ReportedException(cr);
 		}
-
-		// Arrays.fill(biomes, 0, w * d, this.biomesToSpawnIn);
-		return biomes;
 	}
 
 	/**
@@ -155,22 +163,21 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	 * infinite loop in BiomeCacheBlock)
 	 */
 	@Override
-	public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] listToReuse, int x, int y, int width, int depth,
-			boolean cacheFlag) {
+	public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] listToReuse, int x, int z, int w, int h, boolean cacheFlag) {
 		IntCache.resetIntCache();
 
-		if (listToReuse == null || listToReuse.length < width * depth) {
-			listToReuse = new BiomeGenBase[width * depth];
+		if (listToReuse == null || listToReuse.length < w * h) {
+			listToReuse = new BiomeGenBase[w * h];
 		}
 
-		if (cacheFlag && width == 16 && depth == 16 && (x & 15) == 0 && (y & 15) == 0) {
-			BiomeGenBase[] biomeBase = this.biomeCache.getCachedBiomes(x, y);
-			System.arraycopy(biomeBase, 0, listToReuse, 0, width * depth);
+		if (cacheFlag && w == 16 && h == 16 && (x & 15) == 0 && (z & 15) == 0) {
+			BiomeGenBase[] biomeBase = this.biomeCache.getCachedBiomes(x, z);
+			System.arraycopy(biomeBase, 0, listToReuse, 0, w * h);
 			return listToReuse;
 		} else {
-			int[] aint = this.biomeIndexLayer.getInts(x, y, width, depth);
+			int[] aint = this.biomeIndexLayer.getInts(x, z, w, h);
 
-			for (int i = 0; i < width * depth; ++i) {
+			for (int i = 0; i < w * h; ++i) {
 				listToReuse[i] = BiomeGenBase.getBiome(aint[i]);
 			}
 			return listToReuse;
@@ -182,25 +189,36 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	public boolean areBiomesViable(int x, int y, int z, List list) {
+	public boolean areBiomesViable(int x, int z, int radius, List list) {
 		IntCache.resetIntCache();
-		int l = x - z >> 2;
-		int i1 = y - z >> 2;
-		int j1 = x + z >> 2;
-		int k1 = y + z >> 2;
+		int l = x - radius >> 2;
+		int i1 = z - radius >> 2;
+		int j1 = x + radius >> 2;
+		int k1 = z + radius >> 2;
 		int l1 = j1 - l + 1;
 		int i2 = k1 - i1 + 1;
 		int[] aint = this.genBiomes.getInts(l, i1, l1, i2);
 
-		for (int j2 = 0; j2 < l1 * i2; ++j2) {
-			BiomeGenBase biomegenbase = BiomeGenBase.getBiome(aint[j2]);
+		try {
+			for (int j2 = 0; j2 < l1 * i2; ++j2) {
+				BiomeGenBase biomegenbase = BiomeGenBase.getBiome(aint[j2]);
 
-			if (!list.contains(biomegenbase)) {
-				return false;
+				if (!list.contains(biomegenbase)) {
+					return false;
+				}
 			}
-		}
 
-		return true;
+			return true;
+		} catch (Throwable throwable) {
+			CrashReport cr = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
+			CrashReportCategory crc = cr.makeCategory("Layer");
+			crc.addCrashSection("Layer", this.genBiomes.toString());
+			crc.addCrashSection("x", Integer.valueOf(x));
+			crc.addCrashSection("z", Integer.valueOf(z));
+			crc.addCrashSection("radius", Integer.valueOf(radius));
+			crc.addCrashSection("allowed", list);
+			throw new ReportedException(cr);
+		}
 	}
 
 	/**
@@ -210,12 +228,12 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	public ChunkPosition findBiomePosition(int x, int y, int z, List par4List, Random random) {
+	public ChunkPosition findBiomePosition(int x, int z, int radius, List list, Random random) {
 		IntCache.resetIntCache();
-		int l = x - z >> 2;
-		int i1 = y - z >> 2;
-		int j1 = x + z >> 2;
-		int k1 = y + z >> 2;
+		int l = x - radius >> 2;
+		int i1 = z - radius >> 2;
+		int j1 = x + radius >> 2;
+		int k1 = z + radius >> 2;
 		int l1 = j1 - l + 1;
 		int i2 = k1 - i1 + 1;
 		int[] aint = this.genBiomes.getInts(l, i1, l1, i2);
@@ -227,7 +245,7 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 			int i3 = i1 + k2 / l1 << 2;
 			BiomeGenBase biomegenbase = BiomeGenBase.getBiome(aint[k2]);
 
-			if (par4List.contains(biomegenbase) && (chunkposition == null || random.nextInt(j2 + 1) == 0)) {
+			if (list.contains(biomegenbase) && (chunkposition == null || random.nextInt(j2 + 1) == 0)) {
 				chunkposition = new ChunkPosition(l2, 0, i3);
 				++j2;
 			}
@@ -242,5 +260,11 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	@Override
 	public void cleanupCache() {
 		this.biomeCache.cleanupCache();
+	}
+
+	public GenLayer[] getModdedBiomeGenerators(WorldType worldType, long seed, GenLayer[] original) {
+		WorldTypeEvent.InitBiomeGens event = new WorldTypeEvent.InitBiomeGens(worldType, seed, original);
+		MinecraftForge.TERRAIN_GEN_BUS.post(event);
+		return event.newBiomeGens;
 	}
 }

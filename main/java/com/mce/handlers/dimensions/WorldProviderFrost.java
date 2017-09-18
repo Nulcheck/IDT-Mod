@@ -1,7 +1,6 @@
 package com.mce.handlers.dimensions;
 
 import com.mce.common.mod_IDT;
-import com.mce.handlers.dimensions.chunks.ChunkProviderFrost;
 import com.mce.handlers.dimensions.chunks.managers.WorldChunkManagerFrost;
 import com.mce.handlers.dimensions.renders.CloudRender;
 import com.mce.handlers.dimensions.renders.frost.SkyRenderFrost;
@@ -13,28 +12,38 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldSettings.GameType;
+import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderFrost extends WorldProvider {
-	private IRenderHandler skyRenderer = null;
-	private IRenderHandler cloudRenderer = null;
-	private IRenderHandler weatherRenderer = null;
+	public WorldType terType;
+	public String options;
+	public World worldObj;
+	public int dimensionId;
+	public WorldChunkManager worldChunkMgr;
+	public boolean hasNoSky;
+	public float[] lightBrightnessTable = new float[16];
 
 	public final void registerTheWorld(World world) {
+		this.worldObj = world;
+		this.terType = world.getWorldInfo().getTerrainType();
+		this.options = world.getWorldInfo().getGeneratorOptions();
 		this.registerWorldChunkManager();
 		this.generateLightBrightnessTable();
 	}
 
-	public IChunkProvider createChunkGenerator() {
-		return new ChunkProviderFrost(this.worldObj, this.worldObj.getSeed(), true);
+	public void registerWorldChunkManager() {
+		this.worldChunkMgr = this.getChunkManager(worldObj);
+		this.dimensionId = mod_IDT.frostDimId;
 	}
 
-	public void registerWorldChunkManager() {
-		this.worldChunkMgr = new WorldChunkManagerFrost(this.worldObj);
-		this.dimensionId = mod_IDT.frostDimId;
+	public IChunkProvider createChunkGenerator() {
+		return this.getChunkGenerator(worldObj, options);
 	}
 
 	public static WorldProvider getProviderForDimension(int id) {
@@ -46,11 +55,19 @@ public class WorldProviderFrost extends WorldProvider {
 				|| this.worldObj.getTopBlock(x, z) == mod_IDT.FrostDirt;
 	}
 
+	public IChunkProvider getChunkGenerator(World world, String options) {
+		return new ChunkProviderGenerate(world, world.getSeed(), world.getWorldInfo().isMapFeaturesEnabled());
+	}
+
+	public WorldChunkManager getChunkManager(World world) {
+		return new WorldChunkManagerFrost(world);
+	}
+
 	public ChunkCoordinates getRandomizedSpawnPoint() {
 		ChunkCoordinates chunkcoordinates = new ChunkCoordinates(this.worldObj.getSpawnPoint());
 
 		boolean isAdventure = worldObj.getWorldInfo().getGameType() == GameType.ADVENTURE;
-		int spawnFuzz = terrainType.getSpawnFuzz();
+		int spawnFuzz = terType.getSpawnFuzz();
 		int spawnFuzzHalf = spawnFuzz / 2;
 
 		if (!hasNoSky && !isAdventure && net.minecraftforge.common.ForgeModContainer.defaultHasSpawnFuzz) {
@@ -82,7 +99,7 @@ public class WorldProviderFrost extends WorldProvider {
 	public float getStarBrightness(World world, float f) {
 		return 0f;
 	}
-	
+
 	public double getMovementFactor() {
 		return 2;
 	}
@@ -120,11 +137,12 @@ public class WorldProviderFrost extends WorldProvider {
 	}
 
 	public float getCloudHeight() {
-		return this.terrainType.getCloudHeight();
+		return this.terType.getCloudHeight();
 	}
 
 	public ChunkCoordinates getEntrancePortalPosition() {
-		return new ChunkCoordinates(50, 5, 0);
+		// eturn new ChunkCoordinates(50, 5, 0);
+		return null;
 	}
 
 	public void generateLightBrightnessTable() {
@@ -144,19 +162,19 @@ public class WorldProviderFrost extends WorldProvider {
 		return "Thawing out body..";
 	}
 
-	public void setSkyRender(IRenderHandler render) {
-		this.skyRenderer = new SkyRenderFrost();
+	public IRenderHandler getSkyRender() {
+		return new SkyRenderFrost();
 	}
 
-	public void setCloudRender(IRenderHandler render) {
-		this.cloudRenderer = new CloudRender();
+	public IRenderHandler getCloudRender() {
+		return new CloudRender();
 	}
 
-	public void setWeatherRenderer(IRenderHandler render) {
-		this.weatherRenderer = new WeatherRenderFrost();
+	public IRenderHandler getWeatherRenderer() {
+		return new WeatherRenderFrost();
 	}
 
 	public Vec3 drawClouds(float ticks) {
-		return super.drawClouds(ticks);
+		return worldObj.drawCloudsBody(ticks);
 	}
 }

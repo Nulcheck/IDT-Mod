@@ -36,7 +36,6 @@ public class WorldProviderCrystal extends WorldProvider {
 		return "Crystalline";
 	}
 
-	// The folder in the world save.
 	public String getSaveFolder() {
 		return "IDT-DIM" + mod_IDT.crystalDimId;
 	}
@@ -45,12 +44,10 @@ public class WorldProviderCrystal extends WorldProvider {
 		return false;
 	}
 
-	// Player speeds
 	public double getMovementFactor() {
-		return .01;
+		return .05;
 	}
 
-	// How bright it is at night?
 	public float getStarBrightness(World world, float f) {
 		return .3f;
 	}
@@ -59,14 +56,12 @@ public class WorldProviderCrystal extends WorldProvider {
 		return true;
 	}
 
-	// This is so annoying, so i'm not going to do it.
 	public boolean renderVoidFog() {
 		return false;
 	}
 
-	// Render that end skybox over the normal one
 	public boolean renderEndSky() {
-		return false;
+		return true;
 	}
 
 	public float setSunSize() {
@@ -76,8 +71,7 @@ public class WorldProviderCrystal extends WorldProvider {
 	public float setMoonSize() {
 		return 2f;
 	}
-
-	// Sky color..
+	
 	public Vec3 getSkyColor(Entity entity, float ticks) {
 		return worldObj.getSkyColorBody(entity, ticks);
 	}
@@ -86,14 +80,12 @@ public class WorldProviderCrystal extends WorldProvider {
 		return true;
 	}
 
-	// If dead, can player respawn in this dimension?
 	public boolean canRespawnHere() {
 		return true;
 	}
 
-	// Surface or underworld like nether?
 	public boolean isSurfaceWorld() {
-		return true;
+		return false;
 	}
 
 	public float getCloudHeight() {
@@ -104,7 +96,6 @@ public class WorldProviderCrystal extends WorldProvider {
 		return new ChunkCoordinates(50, 5, 0);
 	}
 
-	// General lightness of the dimension
 	public void generateLightBrightnessTable() {
 		float f = 0f;
 
