@@ -1,11 +1,9 @@
-package com.mce.gen.biome;
+package com.mce.gen.biome.dimension;
 
 import com.mce.common.mod_IDT;
+import com.mce.handlers.dimensions.biomes.CrystalBiomes;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.world.biome.BiomeGenBase;
-
-public class CrystalBiome extends BiomeGenBase {
+public class CrystalBiome extends CrystalBiomes {
 	public CrystalBiome(int id) {
 		super(id);
 		this.setHeight(height_Default);
@@ -15,8 +13,8 @@ public class CrystalBiome extends BiomeGenBase {
 		this.spawnableWaterCreatureList.clear();
 
 		this.theBiomeDecorator.generateLakes = false;
-		this.topBlock = mod_IDT.CrystalBlock;
-		this.fillerBlock = Blocks.dirt;
+		this.topBlock = mod_IDT.CrystalGlass;
+		this.fillerBlock = mod_IDT.CrystalRock;
 		this.enableRain = false;
 		this.enableSnow = false;
 

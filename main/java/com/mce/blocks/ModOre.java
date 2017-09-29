@@ -401,7 +401,7 @@ public class ModOre extends BlockOre {
 		}
 
 		public int quantityDropped(Random ran) {
-			return 4 + ran.nextInt(2);
+			return 2 + ran.nextInt(1);
 		}
 	}
 }

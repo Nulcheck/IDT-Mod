@@ -10,8 +10,8 @@ public class CrystalGenLayer extends GenLayer {
 		super(seed);
 	}
 
-	public static GenLayer[] makeWorld(long seed, WorldType type) {
-		GenLayer biomes = new FrostGenBiomes(1L);
+	public static GenLayer[] makeTheWorld(long seed, WorldType type) {
+		GenLayer biomes = new CrystalGenBiomes(1L);
 		biomes = new GenLayerZoom(100L, biomes);
 		GenLayer zoom = new GenLayerVoronoiZoom(10L, biomes);
 		biomes.initWorldGenSeed(seed);

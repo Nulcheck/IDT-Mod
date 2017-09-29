@@ -65,115 +65,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.QCUpgrade, "QCUpgrade");
 		GameRegistry.registerItem(mod_IDT.StabilizerUpgrade, "StabilizerUpgrade");
 
-		// Records
-		GameRegistry.registerItem(mod_IDT.cd_icy, "cd_icy");
-		GameRegistry.registerItem(mod_IDT.cd_23, "cd_23");
-		GameRegistry.registerItem(mod_IDT.cd_r51, "r51vWLcxy9jo1Nvi");
-
-		// Chemistry Stuff
-		GameRegistry.registerItem(mod_IDT.Sulfur, "Sulfur");
-		GameRegistry.registerItem(mod_IDT.VPowder, "VPowder");
-		GameRegistry.registerItem(mod_IDT.V2O5, "V2O5");
-		GameRegistry.registerItem(mod_IDT.Carbon, "Carbon");
-		// GameRegistry.registerItem(mod_IDT.Graphene, "Graphene");
-		GameRegistry.registerItem(mod_IDT.SiliconDust, "SiliconDust");
-		GameRegistry.registerItem(mod_IDT.CopperDust, "CopperDust");
-		// GameRegistry.registerItem(mod_IDT.TitaniumDust, "TitaniumDust");
-		GameRegistry.registerItem(mod_IDT.PhosphorusDust, "PhosphorusDust");
-		GameRegistry.registerItem(mod_IDT.BoronDust, "BoronDust");
-		GameRegistry.registerItem(mod_IDT.VCDust, "VCDust");
-		GameRegistry.registerItem(mod_IDT.PureQuartz, "PQuartz");
-		GameRegistry.registerItem(mod_IDT.SO2, "SO2");
-		GameRegistry.registerItem(mod_IDT.SO3, "SO3");
-		GameRegistry.registerItem(mod_IDT.H2SO4, "H2SO4");
-		GameRegistry.registerItem(mod_IDT.HNO3, "HNO3");
-		GameRegistry.registerItem(mod_IDT.Nitroglycerin, "NG");
-		GameRegistry.registerItem(mod_IDT.Glycerin, "Glycerin");
-		GameRegistry.registerItem(mod_IDT.Acrolein, "Acrolein");
-
-		// Liquids
-		GameRegistry.registerItem(mod_IDT.LiquidNitrogenBucket, "LiquidNitrogenBucket");
-
-		// Wall Parts
-		GameRegistry.registerItem(mod_IDT.StoneWallPart, "StoneWallPart");
-		GameRegistry.registerItem(mod_IDT.CobblestoneWallPart, "CobblestoneWallPart");
-		GameRegistry.registerItem(mod_IDT.MossyCobblestoneWallPart, "MossyCobblestoneWallPart");
-		GameRegistry.registerItem(mod_IDT.SandstoneWallPart, "SandstoneWallPart");
-		GameRegistry.registerItem(mod_IDT.ObsidianWallPart, "ObsidianWallPart");
-		GameRegistry.registerItem(mod_IDT.CementWallPart, "CementWallPart");
-		GameRegistry.registerItem(mod_IDT.CementBrickWallPart, "CementBrickWallPart");
-		GameRegistry.registerItem(mod_IDT.StonebrickWallPart, "StonebrickWallPart");
-		GameRegistry.registerItem(mod_IDT.BrickWallPart, "BrickWallPart");
-		GameRegistry.registerItem(mod_IDT.CoalWallPart, "CoalWallPart");
-		GameRegistry.registerItem(mod_IDT.SnowWallPart, "SnowWallPart");
-		GameRegistry.registerItem(mod_IDT.NetherBrickWallPart, "NetherBrickWallPart");
-		GameRegistry.registerItem(mod_IDT.QuartzWallPart, "QuartzWallPart");
-		GameRegistry.registerItem(mod_IDT.OakWallPart, "OakWallPart");
-		GameRegistry.registerItem(mod_IDT.BirchWallPart, "BirchWallPart");
-		GameRegistry.registerItem(mod_IDT.SpruceWallPart, "SpruceWallPart");
-		GameRegistry.registerItem(mod_IDT.JungleWallPart, "JungleWallPart");
-		GameRegistry.registerItem(mod_IDT.AcaciaWallPart, "AcaciaWallPart");
-		GameRegistry.registerItem(mod_IDT.DarkOakWallPart, "DarkOakWallPart");
-		GameRegistry.registerItem(mod_IDT.WillowWallPart, "WillowWallPart");
-		GameRegistry.registerItem(mod_IDT.EbonyWallPart, "EbonyWallPart");
-		GameRegistry.registerItem(mod_IDT.SilkwoodWallPart, "SilkwoodWallPart");
-		GameRegistry.registerItem(mod_IDT.GelidWallPart, "GelidWallPart");
-
-		// Armor
-		// Steel
-		GameRegistry.registerItem(mod_IDT.SteelHelmet, "SteelHelmet");
-		GameRegistry.registerItem(mod_IDT.SteelChestplate, "SteelChest");
-		GameRegistry.registerItem(mod_IDT.SteelLeggings, "SteelLegs");
-		GameRegistry.registerItem(mod_IDT.SteelBoots, "SteelBoots");
-
-		// Titanium
-		GameRegistry.registerItem(mod_IDT.TitaniumHelmet, "TitaniumHelmet");
-		GameRegistry.registerItem(mod_IDT.TitaniumChestplate, "TitaniumChest");
-		GameRegistry.registerItem(mod_IDT.TitaniumLeggings, "TitaniumLegs");
-		GameRegistry.registerItem(mod_IDT.TitaniumBoots, "TitaniumBoots");
-
-		// Zimphnode
-		GameRegistry.registerItem(mod_IDT.ZimphnodeHelmet, "ZimphnodeHelmet");
-		GameRegistry.registerItem(mod_IDT.ZimphnodeChestplate, "ZimphnodeChest");
-		GameRegistry.registerItem(mod_IDT.ZimphnodeLeggings, "ZimphnodeLegs");
-		GameRegistry.registerItem(mod_IDT.ZimphnodeBoots, "ZimphnodeBoots");
-
-		// Vanadium
-		GameRegistry.registerItem(mod_IDT.VanadiumHelmet, "VanadiumHelmet");
-		GameRegistry.registerItem(mod_IDT.VanadiumChestplate, "VanadiumChest");
-		GameRegistry.registerItem(mod_IDT.VanadiumLeggings, "VanadiumLegs");
-		GameRegistry.registerItem(mod_IDT.VanadiumBoots, "VanadiumBoots");
-
-		// VC
-		GameRegistry.registerItem(mod_IDT.VCHelmet, "VCHelmet");
-		GameRegistry.registerItem(mod_IDT.VCChestplate, "VCChest");
-		GameRegistry.registerItem(mod_IDT.VCLeggings, "VCLegs");
-		GameRegistry.registerItem(mod_IDT.VCBoots, "VCBoots");
-
-		// Tantalum
-		GameRegistry.registerItem(mod_IDT.TantalumHelmet, "TantalumHelmet");
-		GameRegistry.registerItem(mod_IDT.TantalumChestplate, "TantalumChest");
-		GameRegistry.registerItem(mod_IDT.TantalumLeggings, "TantalumLegs");
-		GameRegistry.registerItem(mod_IDT.TantalumBoots, "TantalumBoots");
-
-		// Neoron / Magnetic
-		GameRegistry.registerItem(mod_IDT.NeoronHelmet, "NeoHelmet");
-		GameRegistry.registerItem(mod_IDT.NeoronChestplate, "NeoChest");
-		GameRegistry.registerItem(mod_IDT.NeoronLeggings, "NeoLegs");
-		GameRegistry.registerItem(mod_IDT.NeoronBoots, "NeoBoots");
-
-		// Door Items
-		GameRegistry.registerItem(mod_IDT.BirchDoorItem, "BirchDoorItem");
-		GameRegistry.registerItem(mod_IDT.SpruceDoorItem, "SpruceDoorItem");
-		GameRegistry.registerItem(mod_IDT.JungleDoorItem, "JungleDoorItem");
-		GameRegistry.registerItem(mod_IDT.AcaciaDoorItem, "AcaciaDoorItem");
-		GameRegistry.registerItem(mod_IDT.DarkOakDoorItem, "DarkOakDoorItem");
-		GameRegistry.registerItem(mod_IDT.WillowDoorItem, "WillowDoorItem");
-		GameRegistry.registerItem(mod_IDT.EbonyDoorItem, "EbonyDoorItem");
-		GameRegistry.registerItem(mod_IDT.SilkwoodDoorItem, "SilkwoodDoorItem");
-		GameRegistry.registerItem(mod_IDT.GelidDoorItem, "GelidDoorItem");
-
-		// Ingots
+		//TODO: Ingots
 		GameRegistry.registerItem(mod_IDT.EinsteiniumIngot, "EinsteiniumIngot");
 		GameRegistry.registerItem(mod_IDT.NeptuniumIngot, "NeptuniumIngot");
 		GameRegistry.registerItem(mod_IDT.UraniumIngot, "UraniumIngot");
@@ -221,6 +113,71 @@ public class ItemRegistry {
 		 * GameRegistry.registerItem(mod_IDT.EOTP, "EOTP");
 		 */
 
+		// Chemistry Stuff
+		GameRegistry.registerItem(mod_IDT.Sulfur, "Sulfur");
+		GameRegistry.registerItem(mod_IDT.VPowder, "VPowder");
+		GameRegistry.registerItem(mod_IDT.V2O5, "V2O5");
+		GameRegistry.registerItem(mod_IDT.Carbon, "Carbon");
+		// GameRegistry.registerItem(mod_IDT.Graphene, "Graphene");
+		GameRegistry.registerItem(mod_IDT.SiliconDust, "SiliconDust");
+		GameRegistry.registerItem(mod_IDT.CopperDust, "CopperDust");
+		// GameRegistry.registerItem(mod_IDT.TitaniumDust, "TitaniumDust");
+		GameRegistry.registerItem(mod_IDT.PhosphorusDust, "PhosphorusDust");
+		GameRegistry.registerItem(mod_IDT.BoronDust, "BoronDust");
+		GameRegistry.registerItem(mod_IDT.VCDust, "VCDust");
+		GameRegistry.registerItem(mod_IDT.PureQuartz, "PQuartz");
+		GameRegistry.registerItem(mod_IDT.SO2, "SO2");
+		GameRegistry.registerItem(mod_IDT.SO3, "SO3");
+		GameRegistry.registerItem(mod_IDT.H2SO4, "H2SO4");
+		GameRegistry.registerItem(mod_IDT.HNO3, "HNO3");
+		GameRegistry.registerItem(mod_IDT.Nitroglycerin, "NG");
+		GameRegistry.registerItem(mod_IDT.Glycerin, "Glycerin");
+		GameRegistry.registerItem(mod_IDT.Acrolein, "Acrolein");
+
+		// Liquids
+		GameRegistry.registerItem(mod_IDT.LiquidNitrogenBucket, "LiquidNitrogenBucket");
+
+		// Records
+		GameRegistry.registerItem(mod_IDT.cd_icy, "cd_icy");
+		GameRegistry.registerItem(mod_IDT.cd_23, "cd_23");
+		GameRegistry.registerItem(mod_IDT.cd_r51, "r51vWLcxy9jo1Nvi");
+
+		// Wall Parts
+		GameRegistry.registerItem(mod_IDT.StoneWallPart, "StoneWallPart");
+		GameRegistry.registerItem(mod_IDT.CobblestoneWallPart, "CobblestoneWallPart");
+		GameRegistry.registerItem(mod_IDT.MossyCobblestoneWallPart, "MossyCobblestoneWallPart");
+		GameRegistry.registerItem(mod_IDT.SandstoneWallPart, "SandstoneWallPart");
+		GameRegistry.registerItem(mod_IDT.ObsidianWallPart, "ObsidianWallPart");
+		GameRegistry.registerItem(mod_IDT.CementWallPart, "CementWallPart");
+		GameRegistry.registerItem(mod_IDT.CementBrickWallPart, "CementBrickWallPart");
+		GameRegistry.registerItem(mod_IDT.StonebrickWallPart, "StonebrickWallPart");
+		GameRegistry.registerItem(mod_IDT.BrickWallPart, "BrickWallPart");
+		GameRegistry.registerItem(mod_IDT.CoalWallPart, "CoalWallPart");
+		GameRegistry.registerItem(mod_IDT.SnowWallPart, "SnowWallPart");
+		GameRegistry.registerItem(mod_IDT.NetherBrickWallPart, "NetherBrickWallPart");
+		GameRegistry.registerItem(mod_IDT.QuartzWallPart, "QuartzWallPart");
+		GameRegistry.registerItem(mod_IDT.OakWallPart, "OakWallPart");
+		GameRegistry.registerItem(mod_IDT.BirchWallPart, "BirchWallPart");
+		GameRegistry.registerItem(mod_IDT.SpruceWallPart, "SpruceWallPart");
+		GameRegistry.registerItem(mod_IDT.JungleWallPart, "JungleWallPart");
+		GameRegistry.registerItem(mod_IDT.AcaciaWallPart, "AcaciaWallPart");
+		GameRegistry.registerItem(mod_IDT.DarkOakWallPart, "DarkOakWallPart");
+		GameRegistry.registerItem(mod_IDT.WillowWallPart, "WillowWallPart");
+		GameRegistry.registerItem(mod_IDT.EbonyWallPart, "EbonyWallPart");
+		GameRegistry.registerItem(mod_IDT.SilkwoodWallPart, "SilkwoodWallPart");
+		GameRegistry.registerItem(mod_IDT.GelidWallPart, "GelidWallPart");
+
+		// Door Items
+		GameRegistry.registerItem(mod_IDT.BirchDoorItem, "BirchDoorItem");
+		GameRegistry.registerItem(mod_IDT.SpruceDoorItem, "SpruceDoorItem");
+		GameRegistry.registerItem(mod_IDT.JungleDoorItem, "JungleDoorItem");
+		GameRegistry.registerItem(mod_IDT.AcaciaDoorItem, "AcaciaDoorItem");
+		GameRegistry.registerItem(mod_IDT.DarkOakDoorItem, "DarkOakDoorItem");
+		GameRegistry.registerItem(mod_IDT.WillowDoorItem, "WillowDoorItem");
+		GameRegistry.registerItem(mod_IDT.EbonyDoorItem, "EbonyDoorItem");
+		GameRegistry.registerItem(mod_IDT.SilkwoodDoorItem, "SilkwoodDoorItem");
+		GameRegistry.registerItem(mod_IDT.GelidDoorItem, "GelidDoorItem");
+
 		// Sticks
 		GameRegistry.registerItem(mod_IDT.WillowStick, "WillowStick");
 		GameRegistry.registerItem(mod_IDT.BirchStick, "BirchStick");
@@ -240,7 +197,50 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.Corn, "Corn");
 		GameRegistry.registerItem(mod_IDT.Popcorn, "Popcorn");
 
-		// Tools
+		//TODO: Armor
+		// Steel
+		GameRegistry.registerItem(mod_IDT.SteelHelmet, "SteelHelmet");
+		GameRegistry.registerItem(mod_IDT.SteelChestplate, "SteelChest");
+		GameRegistry.registerItem(mod_IDT.SteelLeggings, "SteelLegs");
+		GameRegistry.registerItem(mod_IDT.SteelBoots, "SteelBoots");
+
+		// Titanium
+		GameRegistry.registerItem(mod_IDT.TitaniumHelmet, "TitaniumHelmet");
+		GameRegistry.registerItem(mod_IDT.TitaniumChestplate, "TitaniumChest");
+		GameRegistry.registerItem(mod_IDT.TitaniumLeggings, "TitaniumLegs");
+		GameRegistry.registerItem(mod_IDT.TitaniumBoots, "TitaniumBoots");
+
+		// Zimphnode
+		GameRegistry.registerItem(mod_IDT.ZimphnodeHelmet, "ZimphnodeHelmet");
+		GameRegistry.registerItem(mod_IDT.ZimphnodeChestplate, "ZimphnodeChest");
+		GameRegistry.registerItem(mod_IDT.ZimphnodeLeggings, "ZimphnodeLegs");
+		GameRegistry.registerItem(mod_IDT.ZimphnodeBoots, "ZimphnodeBoots");
+
+		// Vanadium
+		GameRegistry.registerItem(mod_IDT.VanadiumHelmet, "VanadiumHelmet");
+		GameRegistry.registerItem(mod_IDT.VanadiumChestplate, "VanadiumChest");
+		GameRegistry.registerItem(mod_IDT.VanadiumLeggings, "VanadiumLegs");
+		GameRegistry.registerItem(mod_IDT.VanadiumBoots, "VanadiumBoots");
+
+		// VC
+		GameRegistry.registerItem(mod_IDT.VCHelmet, "VCHelmet");
+		GameRegistry.registerItem(mod_IDT.VCChestplate, "VCChest");
+		GameRegistry.registerItem(mod_IDT.VCLeggings, "VCLegs");
+		GameRegistry.registerItem(mod_IDT.VCBoots, "VCBoots");
+
+		// Tantalum
+		GameRegistry.registerItem(mod_IDT.TantalumHelmet, "TantalumHelmet");
+		GameRegistry.registerItem(mod_IDT.TantalumChestplate, "TantalumChest");
+		GameRegistry.registerItem(mod_IDT.TantalumLeggings, "TantalumLegs");
+		GameRegistry.registerItem(mod_IDT.TantalumBoots, "TantalumBoots");
+
+		// Neoron / Magnetic
+		GameRegistry.registerItem(mod_IDT.NeoronHelmet, "NeoHelmet");
+		GameRegistry.registerItem(mod_IDT.NeoronChestplate, "NeoChest");
+		GameRegistry.registerItem(mod_IDT.NeoronLeggings, "NeoLegs");
+		GameRegistry.registerItem(mod_IDT.NeoronBoots, "NeoBoots");
+
+		//TODO Tools
 		GameRegistry.registerItem(mod_IDT.Chisel, "Chisel");
 		GameRegistry.registerItem(mod_IDT.WikiPaper, "WikiPaper");
 

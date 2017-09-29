@@ -1,4 +1,4 @@
-package com.mce.handlers.dimensions.renders.frost;
+package com.mce.handlers.dimensions.renders;
 
 import java.util.Random;
 

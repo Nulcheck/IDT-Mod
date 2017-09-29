@@ -4,8 +4,8 @@ import com.mce.common.mod_IDT;
 import com.mce.handlers.dimensions.chunks.ChunkProviderFrost;
 import com.mce.handlers.dimensions.chunks.managers.WorldChunkManagerFrost;
 import com.mce.handlers.dimensions.renders.CloudRender;
-import com.mce.handlers.dimensions.renders.frost.SkyRenderFrost;
-import com.mce.handlers.dimensions.renders.frost.WeatherRenderFrost;
+import com.mce.handlers.dimensions.renders.SkyRenderFrost;
+import com.mce.handlers.dimensions.renders.WeatherRenderFrost;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

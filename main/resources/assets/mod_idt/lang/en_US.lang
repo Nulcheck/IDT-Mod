@@ -140,13 +140,15 @@ tile.UraniumBomb.name=Uranium Bomb
 tile.UltimateNuker.name=Ultimate Nuker
 tile.DarkMatterBomb.name=Dark Matter Bomb
 
+tile.FrozenPortal.name=Frozen Portal
 tile.FrostGrass.name=Frosty Grass
 tile.FrostDirt.name=Frozen Dirt
 tile.FrostStone.name=Frozen Stone
 tile.FrostCobble.name=Frozen Cobblestone
-tile.FrozenPortal.name=Frozen Portal
 
 tile.CrystalPortal.name=Crystal Portal
+tile.CrystalGlass.name=Crystal Glass
+tile.CrystalRock.name=Crystalline Rock
 
 tile.CornCrop.name=Corn Crop
 tile.SoyBeanCrop.name=Soybeans Crop

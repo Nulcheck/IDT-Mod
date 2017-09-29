@@ -124,7 +124,7 @@ public class ModBlocks extends Block {
 			}
 		}
 	}
-	
+
 	public static class LavaStone extends Block {
 		public LavaStone(Material mat) {
 			super(mat);
@@ -905,7 +905,7 @@ public class ModBlocks extends Block {
 
 			if (active) {
 				worldObj.setBlock(xCoord, yCoord, zCoord, mod_IDT.SmelterActive);
-				
+
 			} else {
 				worldObj.setBlock(xCoord, yCoord, zCoord, mod_IDT.SmelterIdle);
 			}
@@ -2584,6 +2584,46 @@ public class ModBlocks extends Block {
 
 		public int getRenderBlockPass() {
 			return -1;
+		}
+	}
+
+	public static class CrystalGlass extends Block {
+		public CrystalGlass(Material mat) {
+			super(mat);
+		}
+		
+		public Item getItemDropped(int id, Random rand, int meta){
+			return null;
+		}
+
+		public boolean isOpaqueCube() {
+			return false;
+		}
+
+		public int getRenderBlockPass() {
+			return 1;
+		}
+	}
+
+	public static class CrystalRock extends Block {
+		public CrystalRock(Material mat) {
+			super(mat);
+		}
+		
+		public Item getItemDropped(int id, Random rand, int meta) {
+			int i = rand.nextInt(3);
+
+			if (i >= 2 && i <= 3) {
+				return mod_IDT.PureQuartz;
+			}
+
+			else {
+				return mod_IDT.CrystalDust;
+			}
+		}
+
+		public int quantityDropped(Random ran) {
+			return 2 + ran.nextInt(2);
 		}
 	}
 }

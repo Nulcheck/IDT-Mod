@@ -63,7 +63,6 @@ public class ChunkProviderFrost implements IChunkProvider {
 	public NoiseGeneratorOctaves mobSpawnerNoise;
 	/** Reference to the World object. */
 	private World worldObj;
-	private WorldChunkManagerFrost frostMgr;
 	/** are map structures going to be generated (e.g. strongholds) */
 	private final boolean mapFeaturesEnabled;
 	private WorldType field_147435_p;
@@ -90,17 +89,6 @@ public class ChunkProviderFrost implements IChunkProvider {
 
 	{
 		caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-		/*
-		 * strongholdGenerator = (MapGenStronghold)
-		 * TerrainGen.getModdedMapGen(strongholdGenerator, STRONGHOLD);
-		 * villageGenerator = (MapGenVillage)
-		 * TerrainGen.getModdedMapGen(villageGenerator, VILLAGE);
-		 * mineshaftGenerator = (MapGenMineshaft)
-		 * TerrainGen.getModdedMapGen(mineshaftGenerator, MINESHAFT);
-		 * scatteredFeatureGenerator = (MapGenScatteredFeature)
-		 * TerrainGen.getModdedMapGen(scatteredFeatureGenerator,
-		 * SCATTERED_FEATURE);
-		 */
 		ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
 	}
 
@@ -219,7 +207,6 @@ public class ChunkProviderFrost implements IChunkProvider {
 		for (int k = 0; k < 16; ++k) {
 			for (int l = 0; l < 16; ++l) {
 				FrostBiomes biomegenbase = (FrostBiomes) biome[l + k * 16];
-				/*BiomeGenBase biomegenbase = biome[l + k * 16];*/
 				biomegenbase.genTerrainBlocks(this.worldObj, this.rand, block, b, x * 16 + k, z * 16 + l,
 						this.stoneNoise[l + k * 16]);
 			}
@@ -392,18 +379,6 @@ public class ChunkProviderFrost implements IChunkProvider {
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(chunk, worldObj, rand, x, z, flag));
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldObj, rand, k, l));
 
-		/*
-		 * if (this.mapFeaturesEnabled) {
-		 * this.mineshaftGenerator.generateStructuresInChunk(this.worldObj,
-		 * this.rand, x, z); flag =
-		 * this.villageGenerator.generateStructuresInChunk(this.worldObj,
-		 * this.rand, x, z);
-		 * this.strongholdGenerator.generateStructuresInChunk(this.worldObj,
-		 * this.rand, x, z);
-		 * this.scatteredFeatureGenerator.generateStructuresInChunk(this.
-		 * worldObj, this.rand, x, z); }
-		 */
-
 		int k1;
 		int l1;
 		int i2;
@@ -473,8 +448,6 @@ public class ChunkProviderFrost implements IChunkProvider {
 		}
 
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(chunk, worldObj, rand, x, z, flag));
-		//MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldObj, rand, k, l));
-
 		BlockFalling.fallInstantly = false;
 	}
 

@@ -1,4 +1,4 @@
-package com.mce.handlers.dimensions.renders.frost;
+package com.mce.handlers.dimensions.renders;
 
 import org.lwjgl.opengl.GL11;
 
@@ -15,12 +15,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.client.IRenderHandler;
 
-public class SkyRenderFrost extends IRenderHandler {
+public class SkyRenderCrystal extends IRenderHandler {
 	private int starGLCallList;
 	private int glSkyList;
 	private int glSkyList2;
 
-	public SkyRenderFrost() {
+	public SkyRenderCrystal() {
 		RenderGlobal render = Minecraft.getMinecraft().renderGlobal;
 		this.glSkyList2 = (this.glSkyList = (this.starGLCallList = ReflectionHelper.getPrivateValue(RenderGlobal.class,
 				render, "starGLCallList")) + 1) + 1;
@@ -107,8 +107,8 @@ public class SkyRenderFrost extends IRenderHandler {
 		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glRotatef(world.getCelestialAngle(ticks) * 360.0F, 1.0F, 0.0F, 0.0F);
 
-		f10 = .5F; // Size of sun from center
-		mc.renderEngine.bindTexture(new ResourceLocation("mod_idt", "/textures/environment/frost/sun_cold.png".substring(1)));
+		f10 = 30F; // Size of sun from center
+		mc.renderEngine.bindTexture(new ResourceLocation("mod_idt", "/textures/environment/crystal/sun_red.png".substring(1)));
 
 		tes.startDrawingQuads();
 		tes.addVertexWithUV((double) (-f10), 100.0D, (double) (-f10), 0.0D, 0.0D);
@@ -117,8 +117,8 @@ public class SkyRenderFrost extends IRenderHandler {
 		tes.addVertexWithUV((double) (-f10), 100.0D, (double) f10, 0.0D, 1.0D);
 
 		tes.draw(); // Draw sun
-		f10 = 20F; // Size of moon from center
-		mc.renderEngine.bindTexture(new ResourceLocation("mod_idt", "/textures/environment/frost/moon_phases.png".substring(1)));
+		f10 = 2F; // Size of moon from center
+		mc.renderEngine.bindTexture(new ResourceLocation("mod_idt", "/textures/environment/crystal/moon_phases.png".substring(1)));
 
 		int k = world.getMoonPhase();
 		int l = k % 4;

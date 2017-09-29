@@ -39,6 +39,8 @@ import com.mce.blocks.ModBlocks.BHG;
 import com.mce.blocks.ModBlocks.BioFuelExtractor;
 import com.mce.blocks.ModBlocks.CryingObsidian;
 import com.mce.blocks.ModBlocks.CrystalBlock;
+import com.mce.blocks.ModBlocks.CrystalGlass;
+import com.mce.blocks.ModBlocks.CrystalRock;
 import com.mce.blocks.ModBlocks.DarkMatter;
 import com.mce.blocks.ModBlocks.EinsteiniumCoreReactor;
 import com.mce.blocks.ModBlocks.Enricher;
@@ -425,7 +427,7 @@ public class mod_IDT {
 	public static final String modid = "mod_IDT";
 	public static final String modid2 = "mod_idt";
 	public static final String name = "Industrial Technologies and More";
-	public static final String version = "Snapshot 17w38a";
+	public static final String version = "Snapshot 17w40a";
 
 	@SidedProxy(clientSide = "com.mce.client.ClientProxy", serverSide = "com.mce.common.CommonProxy")
 	public static CommonProxy proxy;
@@ -494,6 +496,35 @@ public class mod_IDT {
 	public static Block SulfurBlock;
 	public static Block ZimphnodeBlock;
 	public static Block NeoronBlock;
+
+	// Frost Dim
+	public static Block FrostGrass;
+	public static Block FrostDirt;
+	public static Block FrostStone;
+	public static Block FrostCobble;
+	public static Block FrozenPortal;
+
+	// Crystal Dim
+	public static Block CrystalGlass;
+	public static Block CrystalRock;
+	public static Block CrystalPortal;
+
+	// Ores
+	public static Block EinsteiniumOre;
+	public static Block UraniumOre;
+	public static Block NeptuniumOre;
+	public static Block CrystalOre;
+	public static Block PraseodymiumOre;
+	public static Block NeodymiumOre;
+	public static Block VanadiumOre;
+	public static Block TantalumOre;
+	public static Block ZimphnodeOre;
+	public static Block SulfurOre;
+	public static Block BoronOre;
+	public static Block CopperOre;
+	public static Block TitaniumOre;
+	public static Block Phosphorite;
+	public static Block Agate;
 
 	// Fires
 	public static FrozenFire FrozenFire;
@@ -718,33 +749,6 @@ public class mod_IDT {
 	public static Block AcaciaWall;
 	public static Block DarkOakWall;
 	public static Block GelidWall;
-
-	// Frost Dim
-	public static Block FrostGrass;
-	public static Block FrostDirt;
-	public static Block FrostStone;
-	public static Block FrostCobble;
-	public static Block FrozenPortal;
-
-	// Crystal Dim
-	public static Block CrystalPortal;
-
-	// Ores
-	public static Block EinsteiniumOre;
-	public static Block UraniumOre;
-	public static Block NeptuniumOre;
-	public static Block CrystalOre;
-	public static Block PraseodymiumOre;
-	public static Block NeodymiumOre;
-	public static Block VanadiumOre;
-	public static Block TantalumOre;
-	public static Block ZimphnodeOre;
-	public static Block SulfurOre;
-	public static Block BoronOre;
-	public static Block CopperOre;
-	public static Block TitaniumOre;
-	public static Block Phosphorite;
-	public static Block Agate;
 
 	// Bombs
 	public static Block EinsteiniumBomb;
@@ -1423,6 +1427,76 @@ public class mod_IDT {
 		FrozenFire = new FrozenFire(Material.ground);
 		CrystalFire = new CrystalFire(Material.ground);
 
+		// Frost Dimension
+		FrostGrass = new FrostGrass().setBlockName("FrostGrass").setHardness(0.6F).setResistance(2f)
+				.setStepSound(Block.soundTypeGrass).setBlockTextureName("mod_IDT:frost_grass").setCreativeTab(IDT);
+
+		FrostDirt = new FrostyBlocks(Material.ground).setBlockName("FrostDirt").setHardness(0.5F).setResistance(2f)
+				.setStepSound(Block.soundTypeGravel).setBlockTextureName("mod_IDT:frost_dirt").setCreativeTab(IDT);
+
+		FrostStone = new FrozenStone(Material.ground).setBlockName("FrostStone").setHardness(1.2F).setResistance(15F)
+				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:frost_stone").setCreativeTab(IDT);
+
+		FrostCobble = new FrostyBlocks(Material.ground).setBlockName("FrostCobble").setHardness(2F).setResistance(15F)
+				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:frost_cobble").setCreativeTab(IDT);
+
+		// Crystal Dimension
+		CrystalGlass = new CrystalGlass(Material.glass).setBlockName("CrystalGlass").setHardness(2.2f)
+				.setResistance(10f).setStepSound(Block.soundTypeGlass).setBlockTextureName("mod_IDT:crystal_glass")
+				.setCreativeTab(IDT);
+
+		CrystalRock = new CrystalRock(Material.rock).setBlockName("CrystalRock").setHardness(3f).setResistance(15f)
+				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:crystal_rock").setCreativeTab(IDT);
+
+		// Ores
+		EinsteiniumOre = new EinsteiniumOre(true).setBlockName("EinsteiniumOre").setHardness(3F).setResistance(5F)
+				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_einsteinium");
+
+		UraniumOre = new UraniumOre(true).setBlockName("UraniumOre").setHardness(3.0F).setResistance(5.0F)
+				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_uranium");
+
+		NeptuniumOre = new NeptuniumOre(true).setBlockName("NeptuniumOre").setHardness(3.0F).setResistance(5.0F)
+				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_neptunium");
+
+		CrystalOre = new CrystalOre().setBlockName("CrystalOre").setHardness(3.0F).setResistance(5F)
+				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_crystal");
+
+		PraseodymiumOre = new PraseodymiumOre().setBlockName("PraOre").setHardness(3.5F).setResistance(5.5F)
+				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_praseodymium");
+
+		NeodymiumOre = new NeodymiumOre().setBlockName("NeoOre").setHardness(3.5F).setResistance(5F).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_neodymium");
+
+		VanadiumOre = new VanadiumOre().setBlockName("VanOre").setHardness(4f).setResistance(7f).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_vanadium");
+
+		ZimphnodeOre = new Zimphnode().setBlockName("Zimphnode").setCreativeTab(IDT).setStepSound(Block.soundTypeStone)
+				.setHardness(3F).setResistance(20F).setLightLevel(.8F).setBlockTextureName("mod_IDT:zimphnode_ore");
+
+		TantalumOre = new TantalumOre().setBlockName("TantOre").setHardness(3f).setResistance(7f).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_tantalum");
+
+		SulfurOre = new SulfurOre(true).setBlockName("SulfurOre").setHardness(1.5f).setResistance(5f)
+				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_sulfur");
+
+		BoronOre = new BoronOre().setBlockName("BoronOre").setHardness(2f).setResistance(5f).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_boron");
+
+		CopperOre = new CopperOre().setBlockName("CopperOre").setHardness(2.5f).setResistance(5f).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_copper");
+
+		TitaniumOre = new TitaniumOre().setBlockName("TitaniumOre").setHardness(3f).setResistance(5f)
+				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_titanium");
+
+		Phosphorite = new Phosphorite().setBlockName("Phosphorite").setHardness(2f).setResistance(4f)
+				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_phosphorite");
+
+		Agate = new Agate().setBlockName("Agate").setHardness(5f).setResistance(10f).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:ore_agate");
+
 		// Doors
 		BirchDoor = new BirchDoor(Material.wood).setBlockName("BirchDoor").setStepSound(Block.soundTypeWood)
 				.setHardness(3F).setResistance(5f);
@@ -2043,68 +2117,6 @@ public class mod_IDT {
 
 		GelidRedTorchOn = new GelidRedTorch(true).setHardness(0f).setStepSound(Block.soundTypeWood).setBlockName("GRTO")
 				.setLightLevel(.5f).setCreativeTab(IDT).setBlockTextureName("mod_IDT:red_torch_on_gelid");
-
-		// Frost Dimension
-		FrostGrass = new FrostGrass().setBlockName("FrostGrass").setHardness(0.6F).setResistance(2f)
-				.setStepSound(Block.soundTypeGrass).setBlockTextureName("mod_IDT:frost_grass").setCreativeTab(IDT);
-
-		FrostDirt = new FrostyBlocks(Material.ground).setBlockName("FrostDirt").setHardness(0.5F).setResistance(2f)
-				.setStepSound(Block.soundTypeGravel).setBlockTextureName("mod_IDT:frost_dirt").setCreativeTab(IDT);
-
-		FrostStone = new FrozenStone(Material.ground).setBlockName("FrostStone").setHardness(1.2F).setResistance(15F)
-				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:frost_stone").setCreativeTab(IDT);
-
-		FrostCobble = new FrostyBlocks(Material.ground).setBlockName("FrostCobble").setHardness(2F).setResistance(15F)
-				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:frost_cobble").setCreativeTab(IDT);
-
-		// Ores
-		EinsteiniumOre = new EinsteiniumOre(true).setBlockName("EinsteiniumOre").setHardness(3F).setResistance(5F)
-				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_einsteinium");
-
-		UraniumOre = new UraniumOre(true).setBlockName("UraniumOre").setHardness(3.0F).setResistance(5.0F)
-				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_uranium");
-
-		NeptuniumOre = new NeptuniumOre(true).setBlockName("NeptuniumOre").setHardness(3.0F).setResistance(5.0F)
-				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_neptunium");
-
-		CrystalOre = new CrystalOre().setBlockName("CrystalOre").setHardness(3.0F).setResistance(5F)
-				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_crystal");
-
-		PraseodymiumOre = new PraseodymiumOre().setBlockName("PraOre").setHardness(3.5F).setResistance(5.5F)
-				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_praseodymium");
-
-		NeodymiumOre = new NeodymiumOre().setBlockName("NeoOre").setHardness(3.5F).setResistance(5F).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_neodymium");
-
-		VanadiumOre = new VanadiumOre().setBlockName("VanOre").setHardness(4f).setResistance(7f).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_vanadium");
-
-		ZimphnodeOre = new Zimphnode().setBlockName("Zimphnode").setCreativeTab(IDT).setStepSound(Block.soundTypeStone)
-				.setHardness(3F).setResistance(20F).setLightLevel(.8F).setBlockTextureName("mod_IDT:zimphnode_ore");
-
-		TantalumOre = new TantalumOre().setBlockName("TantOre").setHardness(3f).setResistance(7f).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_tantalum");
-
-		SulfurOre = new SulfurOre(true).setBlockName("SulfurOre").setHardness(1.5f).setResistance(5f)
-				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_sulfur");
-
-		BoronOre = new BoronOre().setBlockName("BoronOre").setHardness(2f).setResistance(5f).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_boron");
-
-		CopperOre = new CopperOre().setBlockName("CopperOre").setHardness(2.5f).setResistance(5f).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_copper");
-
-		TitaniumOre = new TitaniumOre().setBlockName("TitaniumOre").setHardness(3f).setResistance(5f)
-				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_titanium");
-
-		Phosphorite = new Phosphorite().setBlockName("Phosphorite").setHardness(2f).setResistance(4f)
-				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_phosphorite");
-
-		Agate = new Agate().setBlockName("Agate").setHardness(5f).setResistance(10f).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:ore_agate");
 
 		// Bombs
 		EinsteiniumBomb = new EinsteiniumBomb().setBlockName("EinsteiniumBomb").setHardness(1.0F)

@@ -2,29 +2,32 @@ package com.mce.handlers.dimensions;
 
 import com.mce.common.mod_IDT;
 import com.mce.handlers.dimensions.chunks.ChunkProviderCrystal;
-import com.mce.handlers.dimensions.renders.CloudRender;
-import com.mce.handlers.dimensions.renders.frost.SkyRenderFrost;
-import com.mce.handlers.dimensions.renders.frost.WeatherRenderFrost;
-import com.mce.handlers.registers.BiomeRegistry;
+import com.mce.handlers.dimensions.chunks.managers.WorldChunkManagerCrystal;
+import com.mce.handlers.dimensions.renders.SkyRenderCrystal;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.biome.WorldChunkManagerHell;
+import net.minecraft.world.WorldSettings.GameType;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderCrystal extends WorldProvider {
-	public IChunkProvider createChunkGen() {
+	IRenderHandler skyRenderer;
+
+	public IChunkProvider createChunkGenerator() {
 		return new ChunkProviderCrystal(this.worldObj, this.worldObj.getSeed(), true);
 	}
 
 	public void registerWorldChunkManager() {
-		this.worldChunkMgr = new WorldChunkManagerHell(BiomeRegistry.CrystalBiome, 1.2f);
+		this.worldChunkMgr = new WorldChunkManagerCrystal(this.worldObj.getSeed(), terrainType);
 		this.dimensionId = mod_IDT.crystalDimId;
 	}
 
@@ -32,6 +35,33 @@ public class WorldProviderCrystal extends WorldProvider {
 		return DimensionManager.createProviderFor(mod_IDT.crystalDimId);
 	}
 
+	public boolean canCoordinateBeSpawn(int x, int z) {
+		return this.worldObj.getTopBlock(x, z) == mod_IDT.CrystalGlass
+				|| this.worldObj.getTopBlock(x, z) == mod_IDT.CrystalRock;
+	}
+
+	public ChunkCoordinates getRandomizedSpawnPoint() {
+		ChunkCoordinates chunkcoordinates = new ChunkCoordinates(this.worldObj.getSpawnPoint());
+
+		boolean isAdventure = worldObj.getWorldInfo().getGameType() == GameType.ADVENTURE;
+		int spawnFuzz = terrainType.getSpawnFuzz();
+		int spawnFuzzHalf = spawnFuzz / 2;
+
+		if (!hasNoSky && !isAdventure && net.minecraftforge.common.ForgeModContainer.defaultHasSpawnFuzz) {
+			chunkcoordinates.posX += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
+			chunkcoordinates.posZ += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
+			chunkcoordinates.posY = this.worldObj.getTopSolidOrLiquidBlock(chunkcoordinates.posX,
+					chunkcoordinates.posZ);
+		}
+
+		return chunkcoordinates;
+	}
+
+	public BiomeGenBase getBiomeGenForCoords(int x, int z) {
+		return worldObj.getBiomeGenForCoordsBody(x, z);
+	}
+
+	@SideOnly(Side.CLIENT)
 	public String getDimensionName() {
 		return "Crystalline";
 	}
@@ -40,62 +70,62 @@ public class WorldProviderCrystal extends WorldProvider {
 		return "IDT-DIM" + mod_IDT.crystalDimId;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean renderStars() {
 		return false;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public double getMovementFactor() {
-		return .05;
+		return 4;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(World world, float f) {
 		return .3f;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean renderClouds() {
-		return true;
+		return false;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean renderVoidFog() {
 		return false;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean renderEndSky() {
-		return true;
+		return false;
 	}
 
-	public float setSunSize() {
-		return .5f;
-	}
-
-	public float setMoonSize() {
-		return 2f;
-	}
-	
+	@SideOnly(Side.CLIENT)
 	public Vec3 getSkyColor(Entity entity, float ticks) {
 		return worldObj.getSkyColorBody(entity, ticks);
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean isSkyColored() {
 		return true;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean canRespawnHere() {
 		return true;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean isSurfaceWorld() {
-		return false;
+		return true;
 	}
 
-	public float getCloudHeight() {
-		return this.terrainType.getCloudHeight();
-	}
-
+	@SideOnly(Side.CLIENT)
 	public ChunkCoordinates getEntrancePortalPosition() {
-		return new ChunkCoordinates(50, 5, 0);
+		return null;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public void generateLightBrightnessTable() {
 		float f = 0f;
 
@@ -105,30 +135,22 @@ public class WorldProviderCrystal extends WorldProvider {
 		}
 	}
 
+	@SideOnly(Side.CLIENT)
 	public String getWelcomeMessage() {
 		return "Don't step on any crystals!";
 	}
 
+	@SideOnly(Side.CLIENT)
 	public String getDepartMessage() {
 		return "You didn't steal any crystals, did you?";
 	}
 
+	@SideOnly(Side.CLIENT)
 	public IRenderHandler getSkyRender() {
-		return new SkyRenderFrost();
+		return new SkyRenderCrystal();
 	}
 
-	public IRenderHandler getCloudRender() {
-		return new CloudRender();
-	}
-
-	public IRenderHandler getWeatherRenderer() {
-		return new WeatherRenderFrost();
-	}
-
-	public Vec3 drawClouds(float ticks) {
-		return super.drawClouds(ticks);
-	}
-
+	@SideOnly(Side.CLIENT)
 	public Vec3 getFogColor(float i, float j) {
 		float f2 = MathHelper.cos(i * (float) Math.PI * 2f) * 2f + .5f;
 

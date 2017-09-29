@@ -108,6 +108,35 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.UltimateNuker, UNBlock.class, mod_IDT.UltimateNuker.getUnlocalizedName());
 		// GameRegistry.registerBlock(mod_IDT.DarkMatterBomb, "DarkMatterBomb");
 
+		// Frost Dim
+		GameRegistry.registerBlock(mod_IDT.FrozenPortal, "FrozenPortal");
+		GameRegistry.registerBlock(mod_IDT.FrostGrass, "FrostGrass");
+		GameRegistry.registerBlock(mod_IDT.FrostDirt, "FrostDirt");
+		GameRegistry.registerBlock(mod_IDT.FrostStone, "FrostStone");
+		GameRegistry.registerBlock(mod_IDT.FrostCobble, "FrostCobble");
+
+		// Crystal Dim
+		GameRegistry.registerBlock(mod_IDT.CrystalPortal, "CrystalPortal");
+		GameRegistry.registerBlock(mod_IDT.CrystalGlass, "CrystalGlass");
+		GameRegistry.registerBlock(mod_IDT.CrystalRock, "CrystalRock");
+
+		// Ores
+		GameRegistry.registerBlock(mod_IDT.EinsteiniumOre, "EindteiniumOre");
+		GameRegistry.registerBlock(mod_IDT.NeptuniumOre, "NeptuniumOre");
+		GameRegistry.registerBlock(mod_IDT.UraniumOre, "UraniumOre");
+		GameRegistry.registerBlock(mod_IDT.CrystalOre, "CrystalOre");
+		GameRegistry.registerBlock(mod_IDT.PraseodymiumOre, "PraOre");
+		GameRegistry.registerBlock(mod_IDT.NeodymiumOre, "NeoOre");
+		GameRegistry.registerBlock(mod_IDT.VanadiumOre, "VanOre");
+		GameRegistry.registerBlock(mod_IDT.TantalumOre, "TantOre");
+		GameRegistry.registerBlock(mod_IDT.ZimphnodeOre, "Zimphnode");
+		GameRegistry.registerBlock(mod_IDT.SulfurOre, "SulfurOre");
+		GameRegistry.registerBlock(mod_IDT.BoronOre, "BoronOre");
+		GameRegistry.registerBlock(mod_IDT.CopperOre, "CopperOre");
+		GameRegistry.registerBlock(mod_IDT.TitaniumOre, "TitaniumOre");
+		GameRegistry.registerBlock(mod_IDT.Phosphorite, "Phosphorite");
+		GameRegistry.registerBlock(mod_IDT.Agate, "Agate");
+
 		// Fires
 		GameRegistry.registerBlock(mod_IDT.FrozenFire, "FrozenFire");
 		GameRegistry.registerBlock(mod_IDT.CrystalFire, "CrystalFire");
@@ -322,33 +351,6 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.EbonyWall, "EbonyWall");
 		GameRegistry.registerBlock(mod_IDT.SilkwoodWall, "SilkwoodWall");
 		GameRegistry.registerBlock(mod_IDT.GelidWall, "GelidWall");
-
-		// Frost Dim
-		GameRegistry.registerBlock(mod_IDT.FrostGrass, "FrostGrass");
-		GameRegistry.registerBlock(mod_IDT.FrostDirt, "FrostDirt");
-		GameRegistry.registerBlock(mod_IDT.FrostStone, "FrostStone");
-		GameRegistry.registerBlock(mod_IDT.FrostCobble, "FrostCobble");
-		GameRegistry.registerBlock(mod_IDT.FrozenPortal, "FrozenPortal");
-
-		// Crystal Dim
-		GameRegistry.registerBlock(mod_IDT.CrystalPortal, "CrystalPortal");
-
-		// Ores
-		GameRegistry.registerBlock(mod_IDT.EinsteiniumOre, "EindteiniumOre");
-		GameRegistry.registerBlock(mod_IDT.NeptuniumOre, "NeptuniumOre");
-		GameRegistry.registerBlock(mod_IDT.UraniumOre, "UraniumOre");
-		GameRegistry.registerBlock(mod_IDT.CrystalOre, "CrystalOre");
-		GameRegistry.registerBlock(mod_IDT.PraseodymiumOre, "PraOre");
-		GameRegistry.registerBlock(mod_IDT.NeodymiumOre, "NeoOre");
-		GameRegistry.registerBlock(mod_IDT.VanadiumOre, "VanOre");
-		GameRegistry.registerBlock(mod_IDT.TantalumOre, "TantOre");
-		GameRegistry.registerBlock(mod_IDT.ZimphnodeOre, "Zimphnode");
-		GameRegistry.registerBlock(mod_IDT.SulfurOre, "SulfurOre");
-		GameRegistry.registerBlock(mod_IDT.BoronOre, "BoronOre");
-		GameRegistry.registerBlock(mod_IDT.CopperOre, "CopperOre");
-		GameRegistry.registerBlock(mod_IDT.TitaniumOre, "TitaniumOre");
-		GameRegistry.registerBlock(mod_IDT.Phosphorite, "Phosphorite");
-		GameRegistry.registerBlock(mod_IDT.Agate, "Agate");
 
 		// Doors
 		GameRegistry.registerBlock(mod_IDT.BirchDoor, "BirchDoor");
