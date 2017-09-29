@@ -4,11 +4,11 @@ package com.mce.handlers.registers;
 import com.mce.common.mod_IDT;
 import com.mce.gen.biome.CrystalBiome;
 import com.mce.gen.biome.EbonyForest;
-import com.mce.gen.biome.FrostBarren;
-import com.mce.gen.biome.FrostBiome;
-import com.mce.gen.biome.FrostForest;
 import com.mce.gen.biome.SilkwoodForest;
 import com.mce.gen.biome.WillowForest;
+import com.mce.gen.biome.dimension.FrostBarren;
+import com.mce.gen.biome.dimension.FrostBiome;
+import com.mce.gen.biome.dimension.FrostForest;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;

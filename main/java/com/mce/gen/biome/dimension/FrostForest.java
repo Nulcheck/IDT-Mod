@@ -1,4 +1,4 @@
-package com.mce.gen.biome;
+package com.mce.gen.biome.dimension;
 
 import java.util.Random;
 
@@ -6,12 +6,13 @@ import com.mce.common.mod_IDT;
 import com.mce.entity.mobs.EntityIcePhantom;
 import com.mce.entity.mobs.EntityIcyCreeper;
 import com.mce.gen.trees.WorldGenGelidTree;
+import com.mce.handlers.dimensions.biomes.FrostBiomes;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class FrostForest extends BiomeGenBase {
+public class FrostForest extends FrostBiomes {
 	private WorldGenerator worldGenFrostTree;
 	int idfk = 1;
 
@@ -28,10 +29,10 @@ public class FrostForest extends BiomeGenBase {
 		this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityIcyCreeper.class, 1, 2, 5));
 		this.theBiomeDecorator.generateLakes = true;
 		this.worldGenFrostTree = new WorldGenGelidTree();
-		
+
 		this.topBlock = mod_IDT.FrostGrass;
 		this.fillerBlock = mod_IDT.FrostDirt;
-		
+
 		this.waterColorMultiplier = 7195119;
 		this.setBiomeName("Frosty Forest");
 	}

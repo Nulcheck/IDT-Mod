@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Random;
 
 import com.mce.common.mod_IDT;
+import com.mce.handlers.dimensions.biomes.FrostBiomes;
+import com.mce.handlers.dimensions.chunks.managers.WorldChunkManagerFrost;
 
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.Block;
@@ -61,6 +63,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 	public NoiseGeneratorOctaves mobSpawnerNoise;
 	/** Reference to the World object. */
 	private World worldObj;
+	private WorldChunkManagerFrost frostMgr;
 	/** are map structures going to be generated (e.g. strongholds) */
 	private final boolean mapFeaturesEnabled;
 	private WorldType field_147435_p;
@@ -87,11 +90,17 @@ public class ChunkProviderFrost implements IChunkProvider {
 
 	{
 		caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-		/*strongholdGenerator = (MapGenStronghold) TerrainGen.getModdedMapGen(strongholdGenerator, STRONGHOLD);
-		villageGenerator = (MapGenVillage) TerrainGen.getModdedMapGen(villageGenerator, VILLAGE);
-		mineshaftGenerator = (MapGenMineshaft) TerrainGen.getModdedMapGen(mineshaftGenerator, MINESHAFT);
-		scatteredFeatureGenerator = (MapGenScatteredFeature) TerrainGen.getModdedMapGen(scatteredFeatureGenerator,
-				SCATTERED_FEATURE);*/
+		/*
+		 * strongholdGenerator = (MapGenStronghold)
+		 * TerrainGen.getModdedMapGen(strongholdGenerator, STRONGHOLD);
+		 * villageGenerator = (MapGenVillage)
+		 * TerrainGen.getModdedMapGen(villageGenerator, VILLAGE);
+		 * mineshaftGenerator = (MapGenMineshaft)
+		 * TerrainGen.getModdedMapGen(mineshaftGenerator, MINESHAFT);
+		 * scatteredFeatureGenerator = (MapGenScatteredFeature)
+		 * TerrainGen.getModdedMapGen(scatteredFeatureGenerator,
+		 * SCATTERED_FEATURE);
+		 */
 		ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
 	}
 
@@ -129,10 +138,11 @@ public class ChunkProviderFrost implements IChunkProvider {
 		this.mobSpawnerNoise = (NoiseGeneratorOctaves) noiseGens[6];
 	}
 
+	// TODO: generateTerrain
 	public void func_147424_a(int x, int z, Block[] block) {
 		byte b0 = 63;
-		this.biomes = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomes,
-				x * 4 - 2, z * 4 - 2, 10, 10);
+		this.biomes = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomes, x * 4 - 2, z * 4 - 2, 10,
+				10);
 		this.func_147423_a(x * 4, 0, z * 4);
 
 		for (int k = 0; k < 4; ++k) {
@@ -177,7 +187,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 								} else if (k2 * 8 + l2 < b0) {
 									block[j3 += short1] = mod_IDT.LiquidNitrogen;
 								} else {
-									block[j3 += short1] = null;
+									block[j3 += short1] = null; // Air
 								}
 							}
 
@@ -208,7 +218,8 @@ public class ChunkProviderFrost implements IChunkProvider {
 
 		for (int k = 0; k < 16; ++k) {
 			for (int l = 0; l < 16; ++l) {
-				BiomeGenBase biomegenbase = biome[l + k * 16];
+				FrostBiomes biomegenbase = (FrostBiomes) biome[l + k * 16];
+				/*BiomeGenBase biomegenbase = biome[l + k * 16];*/
 				biomegenbase.genTerrainBlocks(this.worldObj, this.rand, block, b, x * 16 + k, z * 16 + l,
 						this.stoneNoise[l + k * 16]);
 			}
@@ -232,18 +243,10 @@ public class ChunkProviderFrost implements IChunkProvider {
 		Block[] ablock = new Block[65536];
 		byte[] abyte = new byte[65536];
 		this.func_147424_a(x, z, ablock);
-		this.biomes = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomes,
-				x * 16, z * 16, 16, 16);
+		this.biomes = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomes, x * 16, z * 16, 16, 16);
 		this.replaceBlocksForBiome(x, z, ablock, abyte, this.biomes);
 		this.caveGenerator.func_151539_a(this, this.worldObj, x, z, ablock);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z, ablock);
-
-		if (this.mapFeaturesEnabled) {
-			this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z, ablock);
-			this.villageGenerator.func_151539_a(this, this.worldObj, x, z, ablock);
-			this.strongholdGenerator.func_151539_a(this, this.worldObj, x, z, ablock);
-			this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, x, z, ablock);
-		}
 
 		Chunk chunk = new Chunk(this.worldObj, ablock, abyte, x, z);
 		byte[] abyte1 = chunk.getBiomeArray();
@@ -256,6 +259,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 		return chunk;
 	}
 
+	// TODO: initializeNoiseField
 	private void func_147423_a(int x, int y, int z) {
 		double d0 = 684.412D;
 		double d1 = 684.412D;
@@ -373,9 +377,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 		return true;
 	}
 
-	/**
-	 * Populates chunk with ores etc etc
-	 */
+	// TODO: Populate
 	public void populate(IChunkProvider chunk, int x, int z) {
 		BlockFalling.fallInstantly = true;
 		int k = x * 16;
@@ -388,6 +390,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 		boolean flag = false;
 
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(chunk, worldObj, rand, x, z, flag));
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldObj, rand, k, l));
 
 		/*
 		 * if (this.mapFeaturesEnabled) {
@@ -405,6 +408,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 		int l1;
 		int i2;
 
+		// Water Lakes
 		if (!flag && this.rand.nextInt(4) == 0 && TerrainGen.populate(chunk, worldObj, rand, x, z, flag, LAKE)) {
 			k1 = k + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(256);
@@ -412,6 +416,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 			(new WorldGenLakes(mod_IDT.LiquidNitrogen)).generate(this.worldObj, this.rand, k1, l1, i2);
 		}
 
+		// Lava Lakes (Underground)
 		if (TerrainGen.populate(chunk, worldObj, rand, x, z, flag, LAVA) && !flag && this.rand.nextInt(8) == 0) {
 			k1 = k + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(this.rand.nextInt(248) + 8);
@@ -422,6 +427,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 			}
 		}
 
+		// Dungeons
 		boolean doGen = TerrainGen.populate(chunk, worldObj, rand, x, z, flag, DUNGEON);
 		for (k1 = 0; doGen && k1 < 8; ++k1) {
 			l1 = k + this.rand.nextInt(16) + 8;
@@ -430,6 +436,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 			(new WorldGenDungeons()).generate(this.worldObj, this.rand, l1, i2, j2);
 		}
 
+		// Animal spawning
 		biomegenbase.decorate(this.worldObj, this.rand, k, l);
 		if (TerrainGen.populate(chunk, worldObj, rand, x, z, flag, ANIMALS)) {
 			SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);
@@ -437,6 +444,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 		k += 8;
 		l += 8;
 
+		// Ice and Snow
 		doGen = TerrainGen.populate(chunk, worldObj, rand, x, z, flag, ICE);
 		for (k1 = 0; doGen && k1 < 16; ++k1) {
 			for (l1 = 0; l1 < 16; ++l1) {
@@ -451,21 +459,21 @@ public class ChunkProviderFrost implements IChunkProvider {
 				}
 			}
 		}
-		
-		/* GENERATE CUSTOM ORE FOR DIMENSION */
-		WorldGenMinable agate = new WorldGenMinable(mod_IDT.Agate, 13, mod_IDT.FrostStone);
+
+		// Custom Ore Generation
+		WorldGenMinable agate = new WorldGenMinable(mod_IDT.Agate, 8, mod_IDT.FrostStone);
 		int j2;
-		
+
 		doGen = TerrainGen.generateOre(worldObj, rand, agate, k, 1, CUSTOM);
-		for(k1 = 0; doGen && k1 < 16; ++k1){
+		for (k1 = 0; doGen && k1 < 10; ++k1) {
 			l1 = k + this.rand.nextInt(16);
 			i2 = this.rand.nextInt(75);
 			j2 = l + this.rand.nextInt(16);
 			agate.generate(worldObj, rand, l1, i2, j2);
 		}
 
-		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldObj, rand, k, l));
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(chunk, worldObj, rand, x, z, flag));
+		//MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldObj, rand, k, l));
 
 		BlockFalling.fallInstantly = false;
 	}
@@ -483,8 +491,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 	 * Save extra data not associated with any Chunk. Not saved during autosave,
 	 * only during world unload. Currently unimplemented.
 	 */
-	public void saveExtraData() {
-	}
+	public void saveExtraData() {}
 
 	/**
 	 * Unloads chunks that are marked to be unloaded. This is not guaranteed to
@@ -518,9 +525,9 @@ public class ChunkProviderFrost implements IChunkProvider {
 				? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList() : biomegenbase.getSpawnableList(type);
 	}
 
+	// Find closest stronghold
 	public ChunkPosition func_147416_a(World world, String name, int x, int y, int z) {
-		return "Stronghold".equals(name) && this.strongholdGenerator != null
-				? this.strongholdGenerator.func_151545_a(world, x, y, z) : null;
+		return null;
 	}
 
 	public int getLoadedChunkCount() {
@@ -529,10 +536,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 
 	public void recreateStructures(int x, int z) {
 		if (this.mapFeaturesEnabled) {
-			this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z, (Block[]) null);
-			this.villageGenerator.func_151539_a(this, this.worldObj, x, z, (Block[]) null);
-			this.strongholdGenerator.func_151539_a(this, this.worldObj, x, z, (Block[]) null);
-			this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, x, z, (Block[]) null);
+			// this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, x, z, (Block[]) null);
 		}
 	}
 }

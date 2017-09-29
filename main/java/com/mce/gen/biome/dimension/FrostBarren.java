@@ -1,12 +1,13 @@
-package com.mce.gen.biome;
+package com.mce.gen.biome.dimension;
 
 import com.mce.common.mod_IDT;
 import com.mce.entity.mobs.EntityIcePhantom;
 import com.mce.entity.mobs.EntityIcyCreeper;
+import com.mce.handlers.dimensions.biomes.FrostBiomes;
 
 import net.minecraft.world.biome.BiomeGenBase;
 
-public class FrostBarren extends BiomeGenBase {
+public class FrostBarren extends FrostBiomes {
 	public FrostBarren(int id) {
 		super(id);
 		this.setHeight(height_Default);

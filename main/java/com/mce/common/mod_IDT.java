@@ -1623,7 +1623,7 @@ public class mod_IDT {
 		SilkwoodSapling = new SilkwoodSapling().setBlockName("sapling_silkwood")
 				.setBlockTextureName("mod_IDT:sapling_silkwood").setLightOpacity(1);
 
-		GelidSapling = new GelidSapling().setBlockName("splaing_gelid").setBlockTextureName("mod_IDT:sapling_gelid")
+		GelidSapling = new GelidSapling().setBlockName("sapling_gelid").setBlockTextureName("mod_IDT:sapling_gelid")
 				.setLightOpacity(1);
 
 		// Slabs

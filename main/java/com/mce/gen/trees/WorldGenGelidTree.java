@@ -5,6 +5,7 @@ import java.util.Random;
 import com.mce.common.mod_IDT;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 

@@ -49,7 +49,6 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 
 	public WorldChunkManagerFrost(World world) {
 		this(world.getSeed(), world.getWorldInfo().getTerrainType());
-		// this.biomesToSpawnIn.addAll(allowBiomes);
 	}
 
 	/**
@@ -152,7 +151,6 @@ public class WorldChunkManagerFrost extends WorldChunkManager {
 	 * temperature and humidity onto the WorldChunkManager Args: oldBiomeList,
 	 * x, z, width, depth
 	 */
-	@Override
 	public BiomeGenBase[] loadBlockGeneratorData(BiomeGenBase[] oldBiomeList, int x, int z, int width, int depth) {
 		return this.getBiomeGenAt(oldBiomeList, x, z, width, depth, true);
 	}

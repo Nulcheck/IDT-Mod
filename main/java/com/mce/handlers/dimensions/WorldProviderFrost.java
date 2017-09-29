@@ -1,49 +1,37 @@
 package com.mce.handlers.dimensions;
 
 import com.mce.common.mod_IDT;
+import com.mce.handlers.dimensions.chunks.ChunkProviderFrost;
 import com.mce.handlers.dimensions.chunks.managers.WorldChunkManagerFrost;
 import com.mce.handlers.dimensions.renders.CloudRender;
 import com.mce.handlers.dimensions.renders.frost.SkyRenderFrost;
 import com.mce.handlers.dimensions.renders.frost.WeatherRenderFrost;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldSettings.GameType;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.common.DimensionManager;
 
 public class WorldProviderFrost extends WorldProvider {
-	public WorldType terType;
-	public String options;
-	public World worldObj;
-	public int dimensionId;
-	public WorldChunkManager worldChunkMgr;
-	public boolean hasNoSky;
-	public float[] lightBrightnessTable = new float[16];
-
-	public final void registerTheWorld(World world) {
-		this.worldObj = world;
-		this.terType = world.getWorldInfo().getTerrainType();
-		this.options = world.getWorldInfo().getGeneratorOptions();
-		this.registerWorldChunkManager();
-		this.generateLightBrightnessTable();
-	}
-
-	public void registerWorldChunkManager() {
-		this.worldChunkMgr = this.getChunkManager(worldObj);
-		this.dimensionId = mod_IDT.frostDimId;
-	}
-
+	IRenderHandler skyRenderer;
+	IRenderHandler cloudRenderer;
+	IRenderHandler weatherRenderer;
+	
 	public IChunkProvider createChunkGenerator() {
-		return this.getChunkGenerator(worldObj, options);
+		return new ChunkProviderFrost(this.worldObj, this.worldObj.getSeed(), true);
+	}
+	
+	public void registerWorldChunkManager() {
+		this.worldChunkMgr = new WorldChunkManagerFrost(this.worldObj.getSeed(), terrainType);
+		this.dimensionId = mod_IDT.frostDimId;
 	}
 
 	public static WorldProvider getProviderForDimension(int id) {
@@ -55,19 +43,11 @@ public class WorldProviderFrost extends WorldProvider {
 				|| this.worldObj.getTopBlock(x, z) == mod_IDT.FrostDirt;
 	}
 
-	public IChunkProvider getChunkGenerator(World world, String options) {
-		return new ChunkProviderGenerate(world, world.getSeed(), world.getWorldInfo().isMapFeaturesEnabled());
-	}
-
-	public WorldChunkManager getChunkManager(World world) {
-		return new WorldChunkManagerFrost(world);
-	}
-
 	public ChunkCoordinates getRandomizedSpawnPoint() {
 		ChunkCoordinates chunkcoordinates = new ChunkCoordinates(this.worldObj.getSpawnPoint());
 
 		boolean isAdventure = worldObj.getWorldInfo().getGameType() == GameType.ADVENTURE;
-		int spawnFuzz = terType.getSpawnFuzz();
+		int spawnFuzz = terrainType.getSpawnFuzz();
 		int spawnFuzzHalf = spawnFuzz / 2;
 
 		if (!hasNoSky && !isAdventure && net.minecraftforge.common.ForgeModContainer.defaultHasSpawnFuzz) {
@@ -84,67 +64,78 @@ public class WorldProviderFrost extends WorldProvider {
 		return worldObj.getBiomeGenForCoordsBody(x, z);
 	}
 
+	@Override
 	public String getDimensionName() {
 		return "Frosty the Snowman";
 	}
 
+	@Override
 	public String getSaveFolder() {
 		return "IDT-DIM" + mod_IDT.frostDimId;
 	}
-
+	
+	@SideOnly(Side.CLIENT)
 	public boolean renderStars() {
 		return false;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(World world, float f) {
 		return 0f;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public double getMovementFactor() {
 		return 2;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean renderClouds() {
 		return true;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean renderVoidFog() {
 		return false;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean renderEndSky() {
 		return false;
 	}
 
-	public Vec3 getSkyColor(Entity entity, float ticks) {
-		return worldObj.getSkyColorBody(entity, ticks);
-	}
-
+	@SideOnly(Side.CLIENT)
 	public boolean isSkyColored() {
 		return true;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean canRespawnHere() {
 		return true;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean isSurfaceWorld() {
 		return false;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public int setHeight() {
 		return 512;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public float getCloudHeight() {
-		return this.terType.getCloudHeight();
+		return this.terrainType.getCloudHeight();
 	}
 
+	@SideOnly(Side.CLIENT)
 	public ChunkCoordinates getEntrancePortalPosition() {
-		// eturn new ChunkCoordinates(50, 5, 0);
+		// return new ChunkCoordinates(50, 5, 0);
 		return null;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public void generateLightBrightnessTable() {
 		float f = 0f;
 
@@ -154,27 +145,42 @@ public class WorldProviderFrost extends WorldProvider {
 		}
 	}
 
+	@Override
+	@SideOnly(Side.CLIENT)
 	public String getWelcomeMessage() {
 		return "Bundle up so you don't get frostbyte!";
 	}
 
+	@Override
+	@SideOnly(Side.CLIENT)
 	public String getDepartMessage() {
 		return "Thawing out body..";
 	}
 
-	public IRenderHandler getSkyRender() {
+	@SideOnly(Side.CLIENT)
+	public IRenderHandler getSkyRenderer() {
 		return new SkyRenderFrost();
 	}
 
-	public IRenderHandler getCloudRender() {
+	@SideOnly(Side.CLIENT)
+	public IRenderHandler getCloudRenderer() {
 		return new CloudRender();
 	}
 
+	@SideOnly(Side.CLIENT)
 	public IRenderHandler getWeatherRenderer() {
 		return new WeatherRenderFrost();
 	}
 
+	@Override
+	@SideOnly(Side.CLIENT)
 	public Vec3 drawClouds(float ticks) {
 		return worldObj.drawCloudsBody(ticks);
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public Vec3 getSkyColor(Entity entity, float ticks) {
+		return worldObj.getSkyColorBody(entity, ticks);
 	}
 }

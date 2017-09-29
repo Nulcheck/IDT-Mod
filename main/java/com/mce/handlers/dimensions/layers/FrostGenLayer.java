@@ -15,9 +15,6 @@ public class FrostGenLayer extends GenLayer {
 		biomes = new GenLayerZoom(1000L, biomes);
 		biomes = new GenLayerZoom(1001L, biomes);
 		biomes = new GenLayerZoom(1002L, biomes);
-		biomes = new GenLayerZoom(1003L, biomes);
-		biomes = new GenLayerZoom(1004L, biomes);
-		biomes = new GenLayerZoom(1005L, biomes);
 		GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, biomes);
 		biomes.initWorldGenSeed(seed);
 		genlayervoronoizoom.initWorldGenSeed(seed);
