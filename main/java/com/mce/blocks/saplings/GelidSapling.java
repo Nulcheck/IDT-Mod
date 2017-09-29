@@ -32,8 +32,8 @@ public class GelidSapling extends BlockSapling implements IGrowable {
 	private static WorldGenerator tree1;
 
 	public GelidSapling() {
-		tree = new WorldGenGelidTree();
-		tree1 = new WorldGenGelidTree();
+		tree = new WorldGenGelidTree(true);
+		tree1 = new WorldGenGelidTree(true);
 		this.setHardness(0.0F);
 		this.setStepSound(Block.soundTypeGrass);
 		this.setCreativeTab(mod_IDT.IDT);

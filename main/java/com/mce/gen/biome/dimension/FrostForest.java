@@ -28,7 +28,8 @@ public class FrostForest extends FrostBiomes {
 		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityIcePhantom.class, 1, 2, 5));
 		this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityIcyCreeper.class, 1, 2, 5));
 		this.theBiomeDecorator.generateLakes = true;
-		this.worldGenFrostTree = new WorldGenGelidTree();
+		this.theBiomeDecorator.treesPerChunk = 5;
+		this.worldGenFrostTree = new WorldGenGelidTree(true);
 
 		this.topBlock = mod_IDT.FrostGrass;
 		this.fillerBlock = mod_IDT.FrostDirt;

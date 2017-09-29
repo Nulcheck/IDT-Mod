@@ -36,11 +36,9 @@ public class WillowForest extends BiomeGenBase {
 	}
 
 	public WorldGenAbstractTree func_150567_a(Random ran) {
-		return (WorldGenAbstractTree) ((this.idfk == 1) && ran.nextInt(3) == 0 ? (this.idfk != 2
-				&& ran.nextInt(13) != 0 ? worldGenWillowTree
-				: worldGenWillowTree)
-				: (ran.nextInt(3) == 0 ? worldGenWillowTree
-						: worldGenWillowTree));
+		return (WorldGenAbstractTree) ((this.idfk == 1) && ran.nextInt(3) == 0
+				? (this.idfk != 2 && ran.nextInt(13) != 0 ? worldGenWillowTree : worldGenWillowTree)
+				: (ran.nextInt(3) == 0 ? worldGenWillowTree : worldGenWillowTree));
 	}
 
 	public WorldGenerator getRandomWorldGenForGrass(Random rand) {
