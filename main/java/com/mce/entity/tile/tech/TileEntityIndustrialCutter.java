@@ -4,6 +4,7 @@ import com.mce.blocks.ModBlocks.IndustrialCutter;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.IndustrialCutterRecipes;
 
+import cofh.api.energy.EnergyStorage;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,8 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
 	private static final int[] upgrade_slot = new int[] { 2 };
+
+	protected EnergyStorage maxRf = new EnergyStorage(10000);
 
 	private String isInvNameLocalized;
 
@@ -172,7 +175,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (isCutting() && this.isPowered()) {
+		if (isCutting() && this.isPowered() && (maxRf.getEnergyStored() > 0)) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -183,8 +186,9 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 
 		if (!this.worldObj.isRemote) {
 			this.detectUpgradeAndCut();
-			
-			if (this.isPowered() && this.canCut() && this.checkSlot() && this.damage > 0) {
+
+			if (this.isPowered() && (maxRf.getEnergyStored() > 0) && this.canCut() && this.checkSlot()
+					&& this.damage > 0) {
 				this.cutTime++;
 				this.cutDTime++;
 
@@ -193,8 +197,8 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 					this.cutItem();
 					flag1 = true;
 				}
-				
-				if(this.cutDTime == 300){
+
+				if (this.cutDTime == 300) {
 					this.cutDTime = 0;
 				}
 
