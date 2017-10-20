@@ -18,8 +18,6 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 	private static final int[] output_slot = new int[] { 1 };
 	private static final int[] upgrade_slot = new int[] { 2 };
 
-	protected EnergyStorage maxRf = new EnergyStorage(10000);
-
 	private String isInvNameLocalized;
 
 	private ItemStack[] slots = new ItemStack[3];
@@ -175,7 +173,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (isCutting() && this.isPowered() && (maxRf.getEnergyStored() > 0)) {
+		if (isCutting() && this.isPowered()) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -187,7 +185,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		if (!this.worldObj.isRemote) {
 			this.detectUpgradeAndCut();
 
-			if (this.isPowered() && (maxRf.getEnergyStored() > 0) && this.canCut() && this.checkSlot()
+			if (this.isPowered() && this.canCut() && this.checkSlot()
 					&& this.damage > 0) {
 				this.cutTime++;
 				this.cutDTime++;

@@ -1,5 +1,6 @@
 package com.mce.entity.tile.tech;
 
+import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.ModBlocks.BioFuelExtractor;
 import com.mce.handlers.custom_recipes.BFERecipes;
 
@@ -8,9 +9,9 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityBFE extends TileEntity implements ISidedInventory {
+public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
@@ -26,6 +27,7 @@ public class TileEntityBFE extends TileEntity implements ISidedInventory {
 	public int extractingTime;
 	public int burnTime;
 	public boolean isPowered;
+	public int capacity = 5000;
 
 	public int damage;
 	public final int maxDamage = 16000;
@@ -166,11 +168,19 @@ public class TileEntityBFE extends TileEntity implements ISidedInventory {
 		return BioFuelExtractor.isActive;
 	}
 
+	private boolean energyToExtract() {
+		return (getEnergyStored(ForgeDirection.UNKNOWN) >= 100);
+	}
+
+	public int getEnergyNeeded() {
+		return 100;
+	}
+
 	public void updateEntity() {
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (this.isExtracting() && this.isPowered()) {
+		if (this.isExtracting() && this.isPowered() && energyToExtract()) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -180,7 +190,7 @@ public class TileEntityBFE extends TileEntity implements ISidedInventory {
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.isPowered() && this.canExtract() && this.checkSlot() && this.damage > 0) {
+			if (this.canExtract() && this.checkSlot() && (this.damage > 0) && (consumeEnergy(getEnergyNeeded()))) {
 				this.extractingTime++;
 
 				if (this.extractingTime == this.speed) {
