@@ -1,5 +1,6 @@
 package com.mce.entity.tile.tech;
 
+import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.ModBlocks.TankCompressor;
 import com.mce.handlers.custom_recipes.TankCompressorRecipes;
 
@@ -8,9 +9,8 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityTankCompressor extends TileEntity implements ISidedInventory {
+public class TileEntityTankCompressor extends IDTRFTech implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
@@ -25,10 +25,14 @@ public class TileEntityTankCompressor extends TileEntity implements ISidedInvent
 	public int compSpeed = 200;
 	public int compTime;
 	public int burnTime;
-	public boolean isPowered;
 
 	public int damage;
 	public final int maxDamage = 16000;
+	public static int capacity = 100000;
+
+	public TileEntityTankCompressor() {
+		super(capacity, 100);
+	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -101,7 +105,6 @@ public class TileEntityTankCompressor extends TileEntity implements ISidedInvent
 		super.writeToNBT(tag);
 
 		tag.setShort("CompTime", (short) this.compTime);
-		tag.setBoolean("Powered", TankCompressor.isActive);
 		tag.setShort("DamageAmount", (short) this.damage);
 
 		NBTTagList list = new NBTTagList();
@@ -138,7 +141,6 @@ public class TileEntityTankCompressor extends TileEntity implements ISidedInvent
 		}
 
 		this.compTime = tag.getShort("CompTime");
-		TankCompressor.isActive = tag.getBoolean("Powered");
 		this.damage = tag.getShort("DamageAmount");
 
 		if (tag.hasKey("CustomName")) {
@@ -163,7 +165,11 @@ public class TileEntityTankCompressor extends TileEntity implements ISidedInvent
 	}
 
 	public boolean isPowered() {
-		return TankCompressor.isActive;
+		return this.hasEnergy(energy.getStored());
+	}
+
+	public int getEnergyNeeded() {
+		return 50;
 	}
 
 	public void updateEntity() {
@@ -180,18 +186,20 @@ public class TileEntityTankCompressor extends TileEntity implements ISidedInvent
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.isPowered() && this.canComp() && this.checkSlot() && this.damage > 0) {
-				this.compTime++;
+			if (this.isPowered() && this.canComp() && this.checkSlot() && (this.damage > 0)) {
+				if (this.consumeEnergy(this.getEnergyNeeded())) {
+					this.compTime++;
 
-				if (this.compTime == this.compSpeed) {
-					this.compTime = 0;
-					this.compItem();
+					if (this.compTime == this.compSpeed) {
+						this.compTime = 0;
+						this.compItem();
 
-					flag1 = true;
-				}
+						flag1 = true;
+					}
 
-				if (this.damage <= 0) {
-					this.compTime = 0;
+					if (this.damage <= 0) {
+						this.compTime = 0;
+					}
 				}
 			} else {
 				this.compTime = 0;

@@ -30,6 +30,7 @@ import com.mce.items.EBBlock;
 import com.mce.items.NBBlock;
 import com.mce.items.UBBlock;
 import com.mce.items.UNBlock;
+import com.mce.items.ZNGBlock;
 import com.mce.items.ZimWireItem;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -86,7 +87,7 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.SmelterActive, "SmelterActive");
 		GameRegistry.registerBlock(mod_IDT.IndustrialCutter, "IC");
 		GameRegistry.registerBlock(mod_IDT.MatterCondenser, "MatterCondenser");
-		GameRegistry.registerBlock(mod_IDT.ZNG, "ZNG");
+		GameRegistry.registerBlock(mod_IDT.ZNG, ZNGBlock.class, mod_IDT.ZNG.getUnlocalizedName());
 		GameRegistry.registerBlock(mod_IDT.BioFuelExtractor, "BioFuelExtractor");
 		GameRegistry.registerBlock(mod_IDT.TankCompressor, "TankCompressor");
 		GameRegistry.registerBlock(mod_IDT.BlackHoleGenerator, "BHG");

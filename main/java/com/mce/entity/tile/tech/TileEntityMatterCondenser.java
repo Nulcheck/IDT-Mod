@@ -1,5 +1,6 @@
 package com.mce.entity.tile.tech;
 
+import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.ModBlocks.MatterCondenser;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.MatterCondenserRecipes;
@@ -9,9 +10,8 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityMatterCondenser extends TileEntity implements ISidedInventory {
+public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
@@ -26,10 +26,14 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 	public int cTime;
 	public int cDTime;
 	public int burnTime;
-	public boolean isPowered;
 
 	public int damage;
 	public final int maxDamage = 96000;
+	public static int capacity = 2000000;
+
+	public TileEntityMatterCondenser() {
+		super(capacity, 1000);
+	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -114,7 +118,6 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 		}
 
 		this.cTime = tag.getShort("Progress");
-		MatterCondenser.isActive = tag.getBoolean("Powered");
 		this.damage = tag.getShort("Damage");
 
 		if (tag.hasKey("CustomName")) {
@@ -126,7 +129,6 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 		super.writeToNBT(tag);
 
 		tag.setShort("Progress", (short) this.cTime);
-		tag.setBoolean("Powered", MatterCondenser.isActive);
 		tag.setShort("Damage", (short) this.damage);
 
 		NBTTagList list = new NBTTagList();
@@ -163,8 +165,12 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 		return this.cDTime > 0;
 	}
 
-	public static boolean isPowered() {
-		return MatterCondenser.isActive;
+	public boolean isPowered() {
+		return this.hasEnergy(energy.getStored());
+	}
+
+	public int getEnergyNeeded() {
+		return 500;
 	}
 
 	public void updateEntity() {
@@ -182,26 +188,28 @@ public class TileEntityMatterCondenser extends TileEntity implements ISidedInven
 
 		if (!this.worldObj.isRemote) {
 
-			if (this.isPowered() && this.damage > 0) {
+			if (this.isPowered() && (this.damage > 0)) {
 				if (this.canCondense() && this.checkSlot()) {
-					this.cTime++;
-					this.cDTime++;
+					if (this.consumeEnergy(this.getEnergyNeeded())) {
+						this.cTime++;
+						this.cDTime++;
 
-					if (this.cTime >= this.speed) {
-						this.cTime = 0;
-						this.cDTime = 0;
-						this.condenseItem();
+						if (this.cTime >= this.speed) {
+							this.cTime = 0;
+							this.cDTime = 0;
+							this.condenseItem();
 
-						flag1 = true;
-					}
+							flag1 = true;
+						}
 
-					if (this.cDTime == 36000) {
-						this.cDTime = 0;
-					}
+						if (this.cDTime == 36000) {
+							this.cDTime = 0;
+						}
 
-					if (this.damage <= 0) {
-						this.cTime = 0;
-						this.cDTime = 0;
+						if (this.damage <= 0) {
+							this.cTime = 0;
+							this.cDTime = 0;
+						}
 					}
 				} else {
 					this.cTime = 0;

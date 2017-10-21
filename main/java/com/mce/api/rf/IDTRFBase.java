@@ -26,12 +26,12 @@ public class IDTRFBase extends TileEntity {
 		return this.energy.consumeEnergy(amount);
 	}
 
-	public boolean genEnergy(int amount) {
-		return this.energy.genEnergy(amount);
+	public boolean generateEnergy(int amount) {
+		return this.energy.generateEnergy(amount);
 	}
 
 	public boolean hasEnergy(int amount) {
-		return this.hasEnergy(amount);
+		return this.energy.hasEnergy(amount);
 	}
 
 	public void writeToNBT(NBTTagCompound tag) {

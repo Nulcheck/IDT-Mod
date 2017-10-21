@@ -57,7 +57,7 @@ public class MagnetizerGui extends GuiContainer {
 			drawTexturedModalRect(guiLeft + 74, guiTop + 39, 176, 22, k + 1, 11);
 		}
 
-		if (Magnetizer.isActive) {
+		if (this.magnetizer.isPowered() == true) {
 			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
 

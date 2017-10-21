@@ -4,7 +4,6 @@ import java.text.DecimalFormat;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.ModBlocks.BioFuelExtractor;
 import com.mce.container.BFEContainer;
 import com.mce.entity.tile.tech.TileEntityBFE;
 
@@ -13,11 +12,9 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 
 public class BFEGui extends GuiContainer {
 	public TileEntityBFE bfe;
-	public World world;
 
 	public final ResourceLocation texture = new ResourceLocation("mod_idt", "/textures/gui/basic.png".substring(1));
 
@@ -52,13 +49,13 @@ public class BFEGui extends GuiContainer {
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		int k, d;
 
+		if (this.bfe.isPowered() == true) {
+			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
+		}
+		
 		if (this.bfe.isExtracting()) {
 			k = this.bfe.getCookProgressScaled(24);
 			drawTexturedModalRect(guiLeft + 80, guiTop + 34, 176, 22, k + 1, 17);
-		}
-
-		if (BioFuelExtractor.isActive) {
-			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
 
 		d = this.bfe.getDamageScaled(49);

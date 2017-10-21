@@ -72,7 +72,7 @@ public class BHGGui extends GuiContainer {
 			drawTexturedModalRect(guiLeft + 8, guiTop + 54, 176, 22, L - 2, 16);
 		}
 
-		if (BHG.isActive) {
+		if (this.bhg.isPowered() == true) {
 			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
 		

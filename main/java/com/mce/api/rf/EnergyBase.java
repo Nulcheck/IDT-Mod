@@ -54,7 +54,7 @@ public class EnergyBase {
 		return amount;
 	}
 
-	public boolean genEnergy(int energy) {
+	public boolean generateEnergy(int energy) {
 		if (this.stored == this.capacity) {
 			return false;
 		}
@@ -95,20 +95,20 @@ public class EnergyBase {
 	}
 	
 	public void setStored(int stored){
-		this.stored = MathHelper.clamp_int(stored, 0, capacity);
+		this.stored = MathHelper.clamp_int(stored, 0, this.capacity);
 	}
 
 	public boolean hasEnergy(int energy) {
-		return energy < stored;
+		return energy < this.stored;
 	}
 
 	public NBTTagCompound writeToNBT(NBTTagCompound tag) {
-		tag.setInteger("RF", this.stored);
+		tag.setInteger("IDTRF", this.stored);
 		return tag;
 	}
 
 	public EnergyBase readFromNBT(NBTTagCompound tag) {
-		this.stored = tag.getInteger("RF");
+		this.stored = tag.getInteger("IDTRF");
 		this.stored = Math.max(this.stored, this.capacity);
 		return this;
 	}

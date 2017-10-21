@@ -1,5 +1,6 @@
 package com.mce.entity.tile.tech;
 
+import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.ModBlocks.Magnetizer;
 import com.mce.handlers.custom_recipes.MagnetizerRecipes;
 
@@ -8,9 +9,8 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityMagnetizer extends TileEntity implements ISidedInventory {
+public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
@@ -22,10 +22,14 @@ public class TileEntityMagnetizer extends TileEntity implements ISidedInventory 
 	public int speed = 80;
 	public int magTime;
 	public int burnTime;
-	public boolean isPowered;
 
 	public int damage;
 	public final int maxDamage = 12000;
+	public static int capacity = 5000;
+
+	public TileEntityMagnetizer() {
+		super(capacity, 100);
+	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -98,7 +102,6 @@ public class TileEntityMagnetizer extends TileEntity implements ISidedInventory 
 		super.writeToNBT(tag);
 
 		tag.setShort("MagTime", (short) this.magTime);
-		tag.setBoolean("Powered", Magnetizer.isActive);
 		tag.setShort("DamageAmount", (short) this.damage);
 
 		NBTTagList list = new NBTTagList();
@@ -135,7 +138,6 @@ public class TileEntityMagnetizer extends TileEntity implements ISidedInventory 
 		}
 
 		this.magTime = tag.getShort("MagTime");
-		Magnetizer.isActive = tag.getBoolean("Powered");
 		this.damage = tag.getShort("DamageAmount");
 
 		if (tag.hasKey("CustomName")) {
@@ -160,7 +162,11 @@ public class TileEntityMagnetizer extends TileEntity implements ISidedInventory 
 	}
 
 	public boolean isPowered() {
-		return Magnetizer.isActive;
+		return this.hasEnergy(energy.getStored());
+	}
+
+	public int getEnergyNeeded() {
+		return 10;
 	}
 
 	public void updateEntity() {
@@ -177,17 +183,19 @@ public class TileEntityMagnetizer extends TileEntity implements ISidedInventory 
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.isPowered() && this.canMagnetize() && this.checkSlot() && this.damage > 0) {
-				this.magTime++;
+			if (this.canMagnetize() && this.checkSlot() && (this.damage > 0)) {
+				if (this.consumeEnergy(this.getEnergyNeeded())) {
+					this.magTime++;
 
-				if (this.magTime == this.speed) {
-					this.magTime = 0;
-					this.magnetizeItem();
-					flag1 = true;
-				}
+					if (this.magTime == this.speed) {
+						this.magTime = 0;
+						this.magnetizeItem();
+						flag1 = true;
+					}
 
-				if (this.damage <= 0) {
-					this.magTime = 0;
+					if (this.damage <= 0) {
+						this.magTime = 0;
+					}
 				}
 			} else {
 				this.magTime = 0;

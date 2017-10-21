@@ -1,5 +1,6 @@
 package com.mce.entity.tile.tech;
 
+import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.ModBlocks.ZNG;
 import com.mce.common.mod_IDT;
 
@@ -9,9 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityZNG extends TileEntity implements ISidedInventory {
+public class TileEntityZNG extends IDTRFTech implements ISidedInventory {
 	// Slot 0 is just the input. There is no output item thing.
 	private static final int[] input_slot = new int[] { 0 };
 
@@ -26,7 +26,7 @@ public class TileEntityZNG extends TileEntity implements ISidedInventory {
 
 	public int speed = 50;
 	public int burnTime;
-	public final int maxTime = 50;
+	public final int maxTime = 250;
 
 	public int damage;
 	public final int maxDamage = 60000;
@@ -209,7 +209,7 @@ public class TileEntityZNG extends TileEntity implements ISidedInventory {
 				}
 			}
 
-			if (this.hasFuel() && this.isActive() && this.damage > 0) {
+			if (this.hasFuel() && this.isActive() && (this.damage > 0)) {
 				this.burnTime++;
 
 				if (this.burnTime == this.speed) {
@@ -247,8 +247,8 @@ public class TileEntityZNG extends TileEntity implements ISidedInventory {
 	}
 
 	public void power() {
-		// idk how to do this yet.
-		// output zPower.
+		//Power.
+		this.generateEnergy(70);
 	}
 
 	public static int getItemFuel(ItemStack stack) {

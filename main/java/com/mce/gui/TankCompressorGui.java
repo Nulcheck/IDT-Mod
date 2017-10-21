@@ -57,7 +57,7 @@ public class TankCompressorGui extends GuiContainer {
 			drawTexturedModalRect(guiLeft + 80, guiTop + 34, 176, 22, k + 1, 17);
 		}
 
-		if (TankCompressor.isActive) {
+		if (this.tankCompressor.isPowered() == true) {
 			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
 

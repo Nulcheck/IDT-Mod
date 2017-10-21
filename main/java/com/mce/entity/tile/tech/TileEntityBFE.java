@@ -9,7 +9,6 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
@@ -26,11 +25,14 @@ public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 	public int speed = 300;
 	public int extractingTime;
 	public int burnTime;
-	public boolean isPowered;
-	public int capacity = 5000;
 
 	public int damage;
 	public final int maxDamage = 16000;
+	public static int capacity = 100000;
+
+	public TileEntityBFE() {
+		super(capacity, 100);
+	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -103,7 +105,6 @@ public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 		super.writeToNBT(tag);
 
 		tag.setShort("ExtractingTime", (short) this.extractingTime);
-		tag.setBoolean("Powered", BioFuelExtractor.isActive);
 		tag.setShort("DamageAmount", (short) this.damage);
 
 		NBTTagList list = new NBTTagList();
@@ -140,7 +141,6 @@ public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 		}
 
 		this.extractingTime = tag.getShort("ExtractingTime");
-		BioFuelExtractor.isActive = tag.getBoolean("Powered");
 		this.damage = tag.getShort("DamageAmount");
 
 		if (tag.hasKey("CustomName")) {
@@ -165,22 +165,18 @@ public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 	}
 
 	public boolean isPowered() {
-		return BioFuelExtractor.isActive;
-	}
-
-	private boolean energyToExtract() {
-		return (getEnergyStored(ForgeDirection.UNKNOWN) >= 100);
+		return this.hasEnergy(energy.getStored());
 	}
 
 	public int getEnergyNeeded() {
-		return 100;
+		return 50;
 	}
 
 	public void updateEntity() {
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (this.isExtracting() && this.isPowered() && energyToExtract()) {
+		if (this.isExtracting() && this.isPowered()) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -190,17 +186,19 @@ public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.canExtract() && this.checkSlot() && (this.damage > 0) && (consumeEnergy(getEnergyNeeded()))) {
-				this.extractingTime++;
+			if (this.canExtract() && this.checkSlot() && (this.damage > 0)) {
+				if (this.consumeEnergy(this.getEnergyNeeded())) {
+					this.extractingTime++;
 
-				if (this.extractingTime == this.speed) {
-					this.extractingTime = 0;
-					this.extractItem();
-					flag1 = true;
-				}
+					if (this.extractingTime == this.speed) {
+						this.extractingTime = 0;
+						this.extractItem();
+						flag1 = true;
+					}
 
-				if (this.damage <= 0) {
-					this.extractingTime = 0;
+					if (this.damage <= 0) {
+						this.extractingTime = 0;
+					}
 				}
 			} else {
 				this.extractingTime = 0;

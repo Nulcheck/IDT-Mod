@@ -58,7 +58,7 @@ public class MatterCondenserGui extends GuiContainer {
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		int k, d;
 
-		if (MatterCondenser.isActive) {
+		if (this.matterCon.isPowered() == true) {
 			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
 

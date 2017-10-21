@@ -977,9 +977,7 @@ public class ModBlocks extends Block {
 
 	public static class BioFuelExtractor extends BlockContainer {
 		private Random rand = new Random();
-
 		private static boolean keepInv;
-		public static boolean isActive;
 
 		public BioFuelExtractor(Material mat) {
 			super(mat);
@@ -995,20 +993,6 @@ public class ModBlocks extends Block {
 
 			super.onBlockAdded(world, x, y, z);
 			bfe.damage = bfe.maxDamage;
-
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				BioFuelExtractor.isActive = true;
-			} else {
-				BioFuelExtractor.isActive = false;
-			}
-		}
-
-		public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				BioFuelExtractor.isActive = true;
-			} else {
-				BioFuelExtractor.isActive = false;
-			}
 		}
 
 		public TileEntity createNewTileEntity(World world, int meta) {
@@ -1138,9 +1122,7 @@ public class ModBlocks extends Block {
 
 	public static class TankCompressor extends BlockContainer {
 		private Random rand = new Random();
-
 		private static boolean keepInv;
-		public static boolean isActive;
 
 		public TankCompressor(Material mat) {
 			super(mat);
@@ -1157,20 +1139,6 @@ public class ModBlocks extends Block {
 			super.onBlockAdded(world, x, y, z);
 			this.setDefaultDirection(world, x, y, z);
 			tc.damage = tc.maxDamage;
-
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				TankCompressor.isActive = true;
-			} else {
-				TankCompressor.isActive = false;
-			}
-		}
-
-		public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				TankCompressor.isActive = true;
-			} else {
-				TankCompressor.isActive = false;
-			}
 		}
 
 		public void setDefaultDirection(World world, int x, int y, int z) {
@@ -1756,9 +1724,7 @@ public class ModBlocks extends Block {
 
 	public static class MatterCondenser extends BlockContainer {
 		private Random rand = new Random();
-
 		private static boolean keepInv;
-		public static boolean isActive;
 
 		public MatterCondenser(Material mat) {
 			super(mat);
@@ -1773,20 +1739,6 @@ public class ModBlocks extends Block {
 
 			super.onBlockAdded(world, x, y, z);
 			mc.damage = mc.maxDamage;
-
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				MatterCondenser.isActive = true;
-			} else {
-				MatterCondenser.isActive = false;
-			}
-		}
-
-		public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				MatterCondenser.isActive = true;
-			} else {
-				MatterCondenser.isActive = false;
-			}
 		}
 
 		public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta, float hitX,
@@ -1916,9 +1868,7 @@ public class ModBlocks extends Block {
 
 	public static class BHG extends BlockContainer {
 		private Random rand = new Random();
-
 		private static boolean keepInv;
-		public static boolean isActive;
 
 		public BHG(Material mat) {
 			super(mat);
@@ -1938,20 +1888,6 @@ public class ModBlocks extends Block {
 			super.onBlockAdded(world, x, y, z);
 			this.setDefaultDirection(world, x, y, z);
 			bhg.damage = bhg.maxDamage;
-
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				BHG.isActive = true;
-			} else {
-				BHG.isActive = false;
-			}
-		}
-
-		public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				BHG.isActive = true;
-			} else {
-				BHG.isActive = false;
-			}
 		}
 
 		public void setDefaultDirection(World world, int x, int y, int z) {
@@ -2263,9 +2199,7 @@ public class ModBlocks extends Block {
 
 	public static class Magnetizer extends BlockContainer {
 		private Random rand = new Random();
-
 		private static boolean keepInv;
-		public static boolean isActive;
 
 		public Magnetizer(Material mat) {
 			super(mat);
@@ -2280,20 +2214,6 @@ public class ModBlocks extends Block {
 
 			super.onBlockAdded(world, x, y, z);
 			mag.damage = mag.maxDamage;
-
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				Magnetizer.isActive = true;
-			} else {
-				Magnetizer.isActive = false;
-			}
-		}
-
-		public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
-			if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-				Magnetizer.isActive = true;
-			} else {
-				Magnetizer.isActive = false;
-			}
 		}
 
 		public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta, float hitX,
@@ -2591,8 +2511,8 @@ public class ModBlocks extends Block {
 		public CrystalGlass(Material mat) {
 			super(mat);
 		}
-		
-		public Item getItemDropped(int id, Random rand, int meta){
+
+		public Item getItemDropped(int id, Random rand, int meta) {
 			return null;
 		}
 
@@ -2609,7 +2529,7 @@ public class ModBlocks extends Block {
 		public CrystalRock(Material mat) {
 			super(mat);
 		}
-		
+
 		public Item getItemDropped(int id, Random rand, int meta) {
 			int i = rand.nextInt(3);
 

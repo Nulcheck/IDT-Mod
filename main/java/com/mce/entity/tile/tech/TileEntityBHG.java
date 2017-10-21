@@ -1,5 +1,6 @@
 package com.mce.entity.tile.tech;
 
+import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.ModBlocks.BHG;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.BHGRecipes;
@@ -11,9 +12,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityBHG extends TileEntity implements IInventory {
+public class TileEntityBHG extends IDTRFTech implements IInventory {
 	// Slot 0 = input
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] upgrade_slot = new int[] { 1 };
@@ -23,7 +23,6 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 
 	// Specs
 	public int speed;
-	public boolean isPowered;
 
 	public int createTime;
 	public int createDTime;
@@ -35,6 +34,11 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 
 	public int damage;
 	public final int maxDamage = 96000;
+	public static int capacity = 4000000;
+
+	public TileEntityBHG() {
+		super(capacity, 1000);
+	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -109,7 +113,6 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 		tag.setShort("CreateTime", (short) this.createTime);
 		tag.setShort("Fuel", (short) this.fuel);
 		tag.setShort("DamageAmount", (short) this.damage);
-		tag.setBoolean("Powered", BHG.isActive);
 
 		NBTTagList list = new NBTTagList();
 
@@ -147,7 +150,6 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 		this.createTime = tag.getShort("CreateTime");
 		this.fuel = tag.getShort("Fuel");
 		this.damage = tag.getShort("DamageAmount");
-		BHG.isActive = tag.getBoolean("Powered");
 
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
@@ -175,7 +177,11 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 	}
 
 	public boolean isPowered() {
-		return BHG.isActive;
+		return this.hasEnergy(energy.getStored());
+	}
+
+	public int getEnergyNeeded() {
+		return 1000;
 	}
 
 	public void updateEntity() {
@@ -202,7 +208,7 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 		if (this.createDTime > this.maxTime) {
 			this.createDTime = this.maxTime;
 		}
-		
+
 		if (this.createTime < this.minTime) {
 			this.createTime = this.minTime;
 		}
@@ -227,18 +233,20 @@ public class TileEntityBHG extends TileEntity implements IInventory {
 
 			detectUpgrade();
 
-			if (this.isPowered() && this.damage > 0 && this.hasFuel()) {
-				this.createTime++;
-				this.createDTime++;
+			if (this.isPowered() && (this.damage > 0) && this.hasFuel()) {
+				if (this.consumeEnergy(this.getEnergyNeeded())) {
+					this.createTime++;
+					this.createDTime++;
 
-				if (this.createTime >= this.speed) {
-					this.createHole();
-					flag1 = true;
-				}
+					if (this.createTime >= this.speed) {
+						this.createHole();
+						flag1 = true;
+					}
 
-				if (this.damage <= 0) {
-					this.createTime = 0;
-					this.createDTime = 0;
+					if (this.damage <= 0) {
+						this.createTime = 0;
+						this.createDTime = 0;
+					}
 				}
 			} else {
 				if (this.checkUpgrade() == false) {

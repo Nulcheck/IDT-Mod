@@ -6,6 +6,22 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 @Optional.Interface(iface = "cofh.api.energy.IEnergyReceiver", modid = "CoFHAPI|energy")
 public class IDTRFTech extends IDTRFBase implements IEnergyReceiver {
+	public IDTRFTech(int cap, int maxIn, int maxOut){
+		super(cap, maxIn, maxOut);
+	}
+	
+	public IDTRFTech(int cap, int maxIn){
+		super(cap, maxIn);
+	}
+	
+	public IDTRFTech(int cap){
+		super(cap);
+	}
+	
+	public IDTRFTech(){
+		super();
+	}
+	
 	@Optional.Method(modid = "CoFHAPI|energy")
 	public boolean canConnectEnergy(ForgeDirection dir) {
 		return true;
