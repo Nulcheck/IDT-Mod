@@ -1,10 +1,9 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.blocks.ModBlocks.IndustrialCutter;
+import com.mce.blocks.tech.IndustrialCutter;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.IndustrialCutterRecipes;
 
-import cofh.api.energy.EnergyStorage;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -185,8 +184,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		if (!this.worldObj.isRemote) {
 			this.detectUpgradeAndCut();
 
-			if (this.isPowered() && this.canCut() && this.checkSlot()
-					&& this.damage > 0) {
+			if (this.isPowered() && this.canCut() && this.checkSlot() && this.damage > 0) {
 				this.cutTime++;
 				this.cutDTime++;
 

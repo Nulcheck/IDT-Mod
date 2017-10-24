@@ -1,7 +1,7 @@
 package com.mce.entity.tile.tech;
 
 import com.mce.api.rf.IDTRFTech;
-import com.mce.blocks.ModBlocks.BioFuelExtractor;
+import com.mce.blocks.tech.BioFuelExtractor;
 import com.mce.handlers.custom_recipes.BFERecipes;
 
 import net.minecraft.entity.player.EntityPlayer;

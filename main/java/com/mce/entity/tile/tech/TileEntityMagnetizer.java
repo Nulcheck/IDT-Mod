@@ -1,7 +1,7 @@
 package com.mce.entity.tile.tech;
 
 import com.mce.api.rf.IDTRFTech;
-import com.mce.blocks.ModBlocks.Magnetizer;
+import com.mce.blocks.tech.Magnetizer;
 import com.mce.handlers.custom_recipes.MagnetizerRecipes;
 
 import net.minecraft.entity.player.EntityPlayer;

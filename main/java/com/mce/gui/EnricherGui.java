@@ -43,8 +43,8 @@ public class EnricherGui extends GuiContainer {
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		int k;
 
-		//k = this.smelter.getCookProgressScaled(24);
-		//drawTexturedModalRect(guiLeft + 100, guiTop + 34, 176, 0, k + 1, 17);
+		// k = this.smelter.getCookProgressScaled(24);
+		// drawTexturedModalRect(guiLeft + 100, guiTop + 34, 176, 0, k + 1, 17);
 
 	}
 }

@@ -4,7 +4,6 @@ import java.text.DecimalFormat;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.ModBlocks.BHG;
 import com.mce.container.BHGContainer;
 import com.mce.entity.tile.tech.TileEntityBHG;
 
@@ -52,8 +51,8 @@ public class BHGGui extends GuiContainer {
 		this.fontRendererObj.drawString(dam + "%", 131, this.ySize - 96 + 2, 4210752);
 		this.fontRendererObj.drawString(fuel + "%", 30, this.ySize - 122, 4210752);
 		this.fontRendererObj.drawString("Hole Progress:", 35, this.ySize - 140, 4210752);
-		
-		if(pprog >= 100){
+
+		if (pprog >= 100) {
 			this.fontRendererObj.drawString("Done", 115, this.ySize - 140, 4210752);
 		} else {
 			this.fontRendererObj.drawString(prog + "%", 115, this.ySize - 140, 4210752);
@@ -65,7 +64,7 @@ public class BHGGui extends GuiContainer {
 
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
-		int L, d, p;
+		int L, d;
 
 		if (this.bhg.hasFuel()) {
 			L = this.bhg.getFuelScaled(81);
@@ -75,7 +74,7 @@ public class BHGGui extends GuiContainer {
 		if (this.bhg.isPowered() == true) {
 			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
-		
+
 		d = this.bhg.getDamagedScaled(49);
 		drawTexturedModalRect(guiLeft + 164, guiTop + 80 - d, 176, 87 - d, 4, d);
 	}

@@ -4,7 +4,6 @@ import java.text.DecimalFormat;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.ModBlocks.TankCompressor;
 import com.mce.container.TankCompressorContainer;
 import com.mce.entity.tile.tech.TileEntityTankCompressor;
 

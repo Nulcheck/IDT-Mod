@@ -1,7 +1,7 @@
 package com.mce.entity.tile.tech;
 
 import com.mce.api.rf.IDTRFTech;
-import com.mce.blocks.ModBlocks.TankCompressor;
+import com.mce.blocks.tech.TankCompressor;
 import com.mce.handlers.custom_recipes.TankCompressorRecipes;
 
 import net.minecraft.entity.player.EntityPlayer;

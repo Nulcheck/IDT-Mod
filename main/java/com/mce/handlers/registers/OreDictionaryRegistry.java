@@ -62,6 +62,21 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("ingotCopper", new ItemStack(mod_IDT.CopperIngot));
 		OreDictionary.registerOre("ingotSilicon", new ItemStack(mod_IDT.SiliconIngot));
 		OreDictionary.registerOre("ingotVC", new ItemStack(mod_IDT.VCIngot));
+		
+		// Nuggets
+		OreDictionary.registerOre("nuggetEinsteinium", new ItemStack(mod_IDT.EinsteiniumNugget));
+		OreDictionary.registerOre("nuggetNeptunium", new ItemStack(mod_IDT.NeptuniumNugget));
+		OreDictionary.registerOre("nuggetUranium", new ItemStack(mod_IDT.UraniumNugget));
+		OreDictionary.registerOre("nuggetSteel", new ItemStack(mod_IDT.SteelNugget));
+		OreDictionary.registerOre("nuggetTitanium", new ItemStack(mod_IDT.TitaniumNugget));
+		OreDictionary.registerOre("nuggetPraseodymium", new ItemStack(mod_IDT.PraseodymiumNugget));
+		OreDictionary.registerOre("nuggetNeodymium", new ItemStack(mod_IDT.NeodymiumNugget));
+		OreDictionary.registerOre("nuggetVanadium", new ItemStack(mod_IDT.VanadiumNugget));
+		OreDictionary.registerOre("nuggetTantalum", new ItemStack(mod_IDT.TantalumNugget));
+		OreDictionary.registerOre("nuggetBoron", new ItemStack(mod_IDT.BoronNugget));
+		OreDictionary.registerOre("nuggetCopper", new ItemStack(mod_IDT.CopperNugget));
+		OreDictionary.registerOre("nuggetSilicon", new ItemStack(mod_IDT.SiliconNugget));
+		OreDictionary.registerOre("nuggetCrystal", new ItemStack(mod_IDT.CrystalNugget));
 
 		// Wire
 		OreDictionary.registerOre("wireCopper", new ItemStack(mod_IDT.CopperWire));
@@ -78,6 +93,7 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("foilTantalum", new ItemStack(mod_IDT.TantalumFoil));
 
 		// Dusts
+		OreDictionary.registerOre("dustCrystal", new ItemStack(mod_IDT.CrystalDust));
 		OreDictionary.registerOre("dustCopper", new ItemStack(mod_IDT.CopperDust));
 		OreDictionary.registerOre("dustSilicon", new ItemStack(mod_IDT.SiliconDust));
 		OreDictionary.registerOre("dustVC", new ItemStack(mod_IDT.VCDust));
@@ -85,8 +101,6 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("dustBoron", new ItemStack(mod_IDT.BoronDust));
 
 		// Crystal
-		OreDictionary.registerOre("dustCrystal", new ItemStack(mod_IDT.CrystalDust));
-		OreDictionary.registerOre("nuggetCrystal", new ItemStack(mod_IDT.CrystalNugget));
 		OreDictionary.registerOre("gemCrystal", new ItemStack(mod_IDT.CrystalGem));
 		OreDictionary.registerOre("gemCrystal", new ItemStack(mod_IDT.CutCrystalGem));
 		OreDictionary.registerOre("pieceCrystal", new ItemStack(mod_IDT.CrystalPiece));

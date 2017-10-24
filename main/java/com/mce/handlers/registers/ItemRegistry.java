@@ -95,12 +95,11 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.BoronNugget, "BoronNugget");
 		GameRegistry.registerItem(mod_IDT.CopperNugget, "CopperNugget");
 		GameRegistry.registerItem(mod_IDT.SiliconNugget, "SiliconNugget");
+		GameRegistry.registerItem(mod_IDT.CrystalNugget, "CrystalNugget");
 
 		// Crystals
-		GameRegistry.registerItem(mod_IDT.CrystalDust, "CrystalDust");
 		GameRegistry.registerItem(mod_IDT.CrystalGem, "CrystalGem");
 		GameRegistry.registerItem(mod_IDT.CutCrystalGem, "CutCrystalGem");
-		GameRegistry.registerItem(mod_IDT.CrystalNugget, "CrystalNugget");
 		GameRegistry.registerItem(mod_IDT.CrystalPiece, "CrystalPiece");
 		GameRegistry.registerItem(mod_IDT.CrystalLens, "CrystalLens");
 		GameRegistry.registerItem(mod_IDT.CrystalBall, "CrystalBall");
@@ -127,8 +126,9 @@ public class ItemRegistry {
 		 * GameRegistry.registerItem(mod_IDT.EOTP, "EOTP");
 		 */
 
-		// Chemistry Stuff
+		//// Chemistry Stuff/Dusts
 		GameRegistry.registerItem(mod_IDT.Sulfur, "Sulfur");
+		GameRegistry.registerItem(mod_IDT.CrystalDust, "CrystalDust");
 		GameRegistry.registerItem(mod_IDT.VPowder, "VPowder");
 		GameRegistry.registerItem(mod_IDT.V2O5, "V2O5");
 		GameRegistry.registerItem(mod_IDT.Carbon, "Carbon");
@@ -140,6 +140,8 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.BoronDust, "BoronDust");
 		GameRegistry.registerItem(mod_IDT.VCDust, "VCDust");
 		GameRegistry.registerItem(mod_IDT.PureQuartz, "PQuartz");
+		
+		// Chem
 		GameRegistry.registerItem(mod_IDT.SO2, "SO2");
 		GameRegistry.registerItem(mod_IDT.SO3, "SO3");
 		GameRegistry.registerItem(mod_IDT.H2SO4, "H2SO4");

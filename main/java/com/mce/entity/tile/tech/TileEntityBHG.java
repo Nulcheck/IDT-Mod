@@ -1,7 +1,7 @@
 package com.mce.entity.tile.tech;
 
 import com.mce.api.rf.IDTRFTech;
-import com.mce.blocks.ModBlocks.BHG;
+import com.mce.blocks.tech.BHG;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.BHGRecipes;
 

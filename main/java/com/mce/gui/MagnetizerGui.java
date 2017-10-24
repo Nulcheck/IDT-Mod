@@ -4,7 +4,6 @@ import java.text.DecimalFormat;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.ModBlocks.Magnetizer;
 import com.mce.container.MagnetizerContainer;
 import com.mce.entity.tile.tech.TileEntityMagnetizer;
 

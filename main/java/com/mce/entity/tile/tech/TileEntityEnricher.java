@@ -1,6 +1,6 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.blocks.ModBlocks.Enricher;
+import com.mce.blocks.tech.Enricher;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.WelderRecipes;
 

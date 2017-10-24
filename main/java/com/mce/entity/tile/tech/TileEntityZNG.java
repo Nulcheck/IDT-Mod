@@ -1,7 +1,7 @@
 package com.mce.entity.tile.tech;
 
 import com.mce.api.rf.IDTRFTech;
-import com.mce.blocks.ModBlocks.ZNG;
+import com.mce.blocks.tech.ZNG;
 import com.mce.common.mod_IDT;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -247,7 +247,7 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory {
 	}
 
 	public void power() {
-		//Power.
+		// Power.
 		this.generateEnergy(70);
 	}
 

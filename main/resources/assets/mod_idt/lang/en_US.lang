@@ -647,6 +647,7 @@ item.cd_23.name=Music Disc
 item.r51vWLcxy9jo1Nvi.name=r51vWLcxy9jo1Nvi
 
 item.Sulfur.name=Sulfur
+item.CrystalDust.name=Crystal Dust
 item.VPowder.name=Vanadium Powder
 item.V2O5.name=Vanadium Pentoxide
 item.Carbon.name=Carbon
@@ -680,10 +681,22 @@ item.CopperIngot.name=Copper Ingot
 item.SiliconIngot.name=Silicon Ingot
 item.VCIngot.name=Vanadium Carbide Ingot
 
-item.CrystalDust.name=Crystal Dust
+item.EinsteiniumNugget.name=Einsteinium Nugget
+item.NeptuniumNugget.name=Neptunium Nugget
+item.UraniumNugget.name=Uranium Nugget
+item.SteelNugget.name=Steel Nugget
+item.TitaniumNugget.name=Titanium Nugget
+item.PraseodymiumNugget.name=Praseodymium Nugget
+item.NeodymiumNugget.name=Neodymium Nugget
+item.VanadiumNugget.name=Vanadium Nugget
+item.TantalumNugget.name=Tantalum Nugget
+item.BoronNugget.name=Boron Nugget
+item.CopperNugget.name=Copper Nugget
+item.SiliconNugget.name=Silicon Nugget
+item.CrystalNugget.name=Crystal Nugget
+
 item.CrystalGem.name=Crystal Gem
 item.CutCrystalGem.name=Cut Crystal Gem
-item.CrystalNugget.name=Crystal Nugget
 item.CrystalPiece.name=Crystal Piece
 item.CrystalBall.name=Crystal Ball
 item.HardCrystalBall.name=Hard Crystal Ball

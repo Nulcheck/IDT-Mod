@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.ModBlocks.IndustrialCutter;
+import com.mce.blocks.tech.IndustrialCutter;
 import com.mce.container.IndustrialCutterContainer;
 import com.mce.entity.tile.tech.TileEntityIndustrialCutter;
 
@@ -50,11 +50,11 @@ public class IndustrialCutterGui extends GuiContainer {
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		int k, d;
-		
+
 		if (IndustrialCutter.isActive) {
 			drawTexturedModalRect(guiLeft + 6, guiTop + 3, 176, 0 - 3, 23, 22);
 		}
-		
+
 		k = this.cutter.getCookProgressScaled(24);
 		drawTexturedModalRect(guiLeft + 80, guiTop + 34, 176, 22, k + 1, 17);
 

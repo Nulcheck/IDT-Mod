@@ -1,12 +1,9 @@
 package com.mce.gui;
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.ModBlocks.MatterCondenser;
 import com.mce.container.MatterCondenserContainer;
 import com.mce.entity.tile.tech.TileEntityMatterCondenser;
 

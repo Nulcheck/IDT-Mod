@@ -1,6 +1,6 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.blocks.ModBlocks.Smelter;
+import com.mce.blocks.tech.Smelter;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.SmelterRecipes;
 
@@ -317,7 +317,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 		if (this.slots[1] != null && this.slots[2] != null) {
 			ItemStack stack1 = SmelterRecipes.smelting().getInput1(this.slots[1]);
 			ItemStack stack2 = SmelterRecipes.smelting().getInput2(this.slots[2]);
-			
+
 			if (this.slots[1].getItem() == mod_IDT.Carbon && this.slots[2].getItem() == mod_IDT.VPowder
 					&& !checkUpgrade()) {
 				return false;
