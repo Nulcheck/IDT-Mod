@@ -3,23 +3,12 @@ package com.mce.blocks;
 import java.util.Random;
 
 import com.mce.common.mod_IDT;
-import com.mce.entity.tile.TEAH;
 import com.mce.entity.tile.TileEntityECR;
 import com.mce.entity.tile.TileEntityNCR;
 import com.mce.entity.tile.TileEntitySBH;
 import com.mce.entity.tile.TileEntitySR;
 import com.mce.entity.tile.TileEntityTF;
 import com.mce.entity.tile.TileEntityUCR;
-import com.mce.entity.tile.tech.TileEntityBFE;
-import com.mce.entity.tile.tech.TileEntityBHG;
-import com.mce.entity.tile.tech.TileEntityEnricher;
-import com.mce.entity.tile.tech.TileEntityIndustrialCutter;
-import com.mce.entity.tile.tech.TileEntityMagnetizer;
-import com.mce.entity.tile.tech.TileEntityMatterCondenser;
-import com.mce.entity.tile.tech.TileEntitySmelter;
-import com.mce.entity.tile.tech.TileEntityTankCompressor;
-import com.mce.entity.tile.tech.TileEntityWelder;
-import com.mce.entity.tile.tech.TileEntityZNG;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -27,22 +16,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -756,9 +739,11 @@ public class ModBlocks extends Block {
 		public int getRenderBlockPass() {
 			return 1;
 		}
-		
-		public boolean shouldSideBeRendered(IBlockAccess blockAcc, int x, int y, int z, int side) {
-			return false;
+
+		public void onFallenUpon(World world, int x, int y, int z, Entity e, float f) {
+			if (!world.isRemote && world.rand.nextFloat() < f - 0.5F) {
+				world.setBlock(x, y, z, Blocks.air);
+			}
 		}
 	}
 
