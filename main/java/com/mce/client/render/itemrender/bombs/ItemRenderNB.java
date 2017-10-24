@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
 
-import com.mce.blocks.modeled.ModelBomb;
 import com.mce.entity.tile.bombs.TileEntityNB;
+import com.mce.models.blocks.ModelBomb;
 
 public class ItemRenderNB implements IItemRenderer {
 	private ModelBomb model;

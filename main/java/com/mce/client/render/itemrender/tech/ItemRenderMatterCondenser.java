@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
 
-import com.mce.blocks.modeled.matterCondenser;
 import com.mce.entity.tile.tech.TileEntityMatterCondenser;
+import com.mce.models.blocks.matterCondenser;
 
 public class ItemRenderMatterCondenser implements IItemRenderer {
 	private matterCondenser model;

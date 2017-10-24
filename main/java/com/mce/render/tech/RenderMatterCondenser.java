@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.matterCondenser;
+import com.mce.models.blocks.matterCondenser;
 
 public class RenderMatterCondenser extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation(

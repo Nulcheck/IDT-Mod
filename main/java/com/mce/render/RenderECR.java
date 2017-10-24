@@ -2,7 +2,7 @@ package com.mce.render;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.coreReactor;
+import com.mce.models.blocks.coreReactor;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;

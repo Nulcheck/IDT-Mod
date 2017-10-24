@@ -2,7 +2,7 @@ package com.mce.render.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.modelMagnetizer;
+import com.mce.models.blocks.modelMagnetizer;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;

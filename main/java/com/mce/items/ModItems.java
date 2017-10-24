@@ -12,6 +12,30 @@ public class ModItems extends Item {
 	public ModItems() {
 		super();
 	}
+	
+	public static class ModIngot extends Item {
+		public ModIngot(){
+			super();
+		}
+	}
+	
+	public static class ModNugget extends Item {
+		public ModNugget(){
+			super();
+		}
+	}
+	
+	public static class ModEssence extends Item {
+		public ModEssence() {
+			super();
+		}
+	}
+	
+	public static class ModSticks extends Item {
+		public ModSticks() {
+			super();
+		}
+	}
 
 	public static class SO2 extends Item {
 		public SO2() {

@@ -2,7 +2,7 @@ package com.mce.render;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.tankCompressor;
+import com.mce.models.blocks.tankCompressor;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;

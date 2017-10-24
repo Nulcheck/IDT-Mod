@@ -1,7 +1,7 @@
 package com.mce.client.render.itemrender.tech;
 
-import com.mce.blocks.modeled.tankCompressor;
 import com.mce.entity.tile.tech.TileEntityTankCompressor;
+import com.mce.models.blocks.tankCompressor;
 
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;

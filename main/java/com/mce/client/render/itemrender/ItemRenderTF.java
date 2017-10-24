@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
 
-import com.mce.blocks.modeled.titaniumFrame;
 import com.mce.entity.tile.TileEntityTF;
+import com.mce.models.blocks.titaniumFrame;
 
 public class ItemRenderTF implements IItemRenderer {
 	private titaniumFrame model;

@@ -16,8 +16,6 @@ import com.mce.armor.TitaniumArmor;
 import com.mce.armor.VCArmor;
 import com.mce.armor.VanadiumArmor;
 import com.mce.armor.ZimphnodeArmor;
-import com.mce.blocks.CrystalFire;
-import com.mce.blocks.FrozenFire;
 import com.mce.blocks.MineralBlocks.BoronBlock;
 import com.mce.blocks.MineralBlocks.CopperBlock;
 import com.mce.blocks.MineralBlocks.EinsteiniumBlock;
@@ -168,9 +166,11 @@ import com.mce.blocks.chest.SpruceChest;
 import com.mce.blocks.chest.WillowChest;
 import com.mce.blocks.crops.CornCrop;
 import com.mce.blocks.crops.SoyBeanCrop;
-import com.mce.blocks.dimensions.frost.FrostGrass;
-import com.mce.blocks.dimensions.frost.FrostyBlocks;
-import com.mce.blocks.dimensions.frost.FrostyBlocks.FrozenStone;
+import com.mce.blocks.dimension.crystal.CrystalFire;
+import com.mce.blocks.dimension.frost.FrostGrass;
+import com.mce.blocks.dimension.frost.FrostyBlocks;
+import com.mce.blocks.dimension.frost.FrozenFire;
+import com.mce.blocks.dimension.frost.FrostyBlocks.FrozenStone;
 import com.mce.blocks.doors.AcaciaDoor;
 import com.mce.blocks.doors.BirchDoor;
 import com.mce.blocks.doors.DarkOakDoor;
@@ -239,19 +239,10 @@ import com.mce.handlers.registers.ItemRegistry;
 import com.mce.handlers.registers.MobRegistry;
 import com.mce.handlers.registers.OreDictionaryRegistry;
 import com.mce.handlers.registers.TileEntityRegistry;
-import com.mce.items.AcaciaDoorItem;
-import com.mce.items.BirchDoorItem;
 import com.mce.items.ChargeStone;
 import com.mce.items.Chisel;
-import com.mce.items.DarkOakDoorItem;
-import com.mce.items.EbonyDoorItem;
-import com.mce.items.EinsteiniumCoreReactorItem;
-import com.mce.items.GelidDoorItem;
 import com.mce.items.HardCrystalBall;
-import com.mce.items.JungleDoorItem;
 import com.mce.items.LiquidNitrogenBucket;
-import com.mce.items.ModEssence;
-import com.mce.items.ModIngot;
 import com.mce.items.ModItems;
 import com.mce.items.ModItems.DiamondSawBlade;
 import com.mce.items.ModItems.Flask;
@@ -262,6 +253,10 @@ import com.mce.items.ModItems.IronSawBlade;
 import com.mce.items.ModItems.LaserUpgrade;
 import com.mce.items.ModItems.MagneticUpgrade;
 import com.mce.items.ModItems.Microchip;
+import com.mce.items.ModItems.ModEssence;
+import com.mce.items.ModItems.ModIngot;
+import com.mce.items.ModItems.ModNugget;
+import com.mce.items.ModItems.ModSticks;
 import com.mce.items.ModItems.NO2Tank;
 import com.mce.items.ModItems.PropaneTank;
 import com.mce.items.ModItems.QCUpgrade;
@@ -276,12 +271,9 @@ import com.mce.items.ModItems.T3CB;
 import com.mce.items.ModItems.TitaniumSawBlade;
 import com.mce.items.ModItems.UpgradeBase;
 import com.mce.items.ModItems.V2O5;
-import com.mce.items.ModSticks;
 import com.mce.items.NdMagnet;
 import com.mce.items.Nitroglycerin;
 import com.mce.items.Pouch;
-import com.mce.items.SilkwoodDoorItem;
-import com.mce.items.SpruceDoorItem;
 import com.mce.items.Tools.Axe;
 import com.mce.items.Tools.Hoe;
 import com.mce.items.Tools.Pick;
@@ -311,7 +303,16 @@ import com.mce.items.WallPart.StoneWallPart;
 import com.mce.items.WallPart.StonebrickWallPart;
 import com.mce.items.WallPart.WillowWallPart;
 import com.mce.items.WikiPaper;
-import com.mce.items.WillowDoorItem;
+import com.mce.items.blocks.EinsteiniumCoreReactorItem;
+import com.mce.items.doors.AcaciaDoorItem;
+import com.mce.items.doors.BirchDoorItem;
+import com.mce.items.doors.DarkOakDoorItem;
+import com.mce.items.doors.EbonyDoorItem;
+import com.mce.items.doors.GelidDoorItem;
+import com.mce.items.doors.JungleDoorItem;
+import com.mce.items.doors.SilkwoodDoorItem;
+import com.mce.items.doors.SpruceDoorItem;
+import com.mce.items.doors.WillowDoorItem;
 import com.mce.items.records.Disc23;
 import com.mce.items.records.DiscIcy;
 import com.mce.items.records.Discr51;
@@ -897,6 +898,23 @@ public class mod_IDT {
 	public static Item StabilizerUpgrade;
 	public static Item QCUpgrade;
 
+	// Ingots
+	public static Item EinsteiniumIngot;
+	public static Item UraniumIngot;
+	public static Item NeptuniumIngot;
+	public static Item SteelIngot;
+	public static Item TitaniumIngot;
+	public static Item PraseodymiumIngot;
+	public static Item NeodymiumIngot;
+	public static Item VanadiumIngot;
+	public static Item TantalumIngot;
+	public static Item ZimphnodeBar;
+	public static Item NeoronIngot;
+	public static Item BoronIngot;
+	public static Item CopperIngot;
+	public static Item SiliconIngot;
+	public static Item VCIngot;
+
 	// Dusts
 	public static Item CopperDust;
 	public static Item SiliconDust;
@@ -904,6 +922,20 @@ public class mod_IDT {
 	public static Item TitaniumDust;
 	public static Item PhosphorusDust;
 	public static Item BoronDust;
+
+	// Nuggets
+	public static Item EinsteiniumNugget;
+	public static Item NeptuniumNugget;
+	public static Item UraniumNugget;
+	public static Item SteelNugget;
+	public static Item TitaniumNugget;
+	public static Item PraseodymiumNugget;
+	public static Item NeodymiumNugget;
+	public static Item VanadiumNugget;
+	public static Item TantalumNugget;
+	public static Item BoronNugget;
+	public static Item CopperNugget;
+	public static Item SiliconNugget;
 
 	// Records
 	public static Item cd_icy;
@@ -965,23 +997,6 @@ public class mod_IDT {
 	public static Item AcaciaDoorItem;
 	public static Item DarkOakDoorItem;
 	public static Item GelidDoorItem;
-
-	// Ingots
-	public static Item EinsteiniumIngot;
-	public static Item UraniumIngot;
-	public static Item NeptuniumIngot;
-	public static Item SteelIngot;
-	public static Item TitaniumIngot;
-	public static Item PraseodymiumIngot;
-	public static Item NeodymiumIngot;
-	public static Item VanadiumIngot;
-	public static Item TantalumIngot;
-	public static Item ZimphnodeBar;
-	public static Item NeoronIngot;
-	public static Item BoronIngot;
-	public static Item CopperIngot;
-	public static Item SiliconIngot;
-	public static Item VCIngot;
 
 	// Crystals
 	public static Item CrystalDust;
@@ -2570,6 +2585,86 @@ public class mod_IDT {
 		QCUpgrade = new QCUpgrade().setTextureName("mod_IDT:upgrade_qc").setUnlocalizedName("QCUpgrade")
 				.setCreativeTab(IDTItems);
 
+		// Ingots
+		EinsteiniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_einsteinium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("EinsteiniumIngot");
+
+		UraniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_uranium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("UraniumIngot");
+
+		NeptuniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_neptunium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("NeptuniumIngot");
+
+		SteelIngot = new ModIngot().setCreativeTab(IDTItems).setTextureName("mod_IDT:ingot_steel")
+				.setUnlocalizedName("SteelIngot");
+
+		TitaniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_titanium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("TitaniumIngot");
+
+		PraseodymiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_praseodymium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("PraIngot");
+
+		NeodymiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_neodymium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("NeoIngot");
+
+		VanadiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_vanadium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("VanIngot");
+
+		TantalumIngot = new ModIngot().setTextureName("mod_IDT:ingot_tantalum").setCreativeTab(IDTItems)
+				.setUnlocalizedName("TantIngot");
+
+		NeoronIngot = new ModIngot().setTextureName("mod_IDT:ingot_neoron").setCreativeTab(IDTItems)
+				.setUnlocalizedName("NeoronIngot");
+
+		BoronIngot = new ModIngot().setTextureName("mod_IDT:ingot_boron").setCreativeTab(IDTItems)
+				.setUnlocalizedName("BoronIngot");
+
+		CopperIngot = new ModIngot().setTextureName("mod_IDT:ingot_copper").setCreativeTab(IDTItems)
+				.setUnlocalizedName("CopperIngot");
+
+		SiliconIngot = new ModIngot().setTextureName("mod_IDT:ingot_silicon").setCreativeTab(IDTItems)
+				.setUnlocalizedName("SiliconIngot");
+
+		VCIngot = new ModIngot().setTextureName("mod_IDT:ingot_vc").setCreativeTab(IDTItems)
+				.setUnlocalizedName("VCIngot");
+
+		// Nuggets
+		EinsteiniumNugget = new ModNugget().setTextureName("mod_IDT:nugget_einsteinium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("EinsteiniumNugget");
+
+		NeptuniumNugget = new ModNugget().setTextureName("mod_IDT:nugget_neptunium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("NeptuniumNugget");
+
+		UraniumNugget = new ModNugget().setTextureName("mod_IDT:nugget_uranium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("UraniumNugget");
+
+		SteelNugget = new ModNugget().setTextureName("mod_IDT:nugget_steel").setCreativeTab(IDTItems)
+				.setUnlocalizedName("SteelNugget");
+
+		TitaniumNugget = new ModNugget().setTextureName("mod_IDT:nugget_titanium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("TitaniumNugget");
+
+		PraseodymiumNugget = new ModNugget().setTextureName("mod_IDT:nugget_praseodymium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("PraseodymiumNugget");
+
+		NeodymiumNugget = new ModNugget().setTextureName("mod_IDT:nugget_neodymium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("NeodymiumNugget");
+
+		VanadiumNugget = new ModNugget().setTextureName("mod_IDT:nugget_vanadium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("VanadiumNugget");
+
+		TantalumNugget = new ModNugget().setTextureName("mod_IDT:nugget_tantalum").setCreativeTab(IDTItems)
+				.setUnlocalizedName("TantalumNugget");
+
+		BoronNugget = new ModNugget().setTextureName("mod_IDT:nugget_boron").setCreativeTab(IDTItems)
+				.setUnlocalizedName("BoronNugget");
+
+		CopperNugget = new ModNugget().setTextureName("mod_IDT:nugget_copper").setCreativeTab(IDTItems)
+				.setUnlocalizedName("CopperNugget");
+
+		SiliconNugget = new ModNugget().setTextureName("mod_IDT:nugget_silicon").setCreativeTab(IDTItems)
+				.setUnlocalizedName("SiliconNugget");
+
 		// Dusts
 		CopperDust = new Item().setTextureName("mod_IDT:dust_copper").setCreativeTab(IDTItems)
 				.setUnlocalizedName("CopperDust");
@@ -2738,49 +2833,6 @@ public class mod_IDT {
 
 		GelidDoorItem = new GelidDoorItem(Material.wood).setCreativeTab(IDTItems).setTextureName("mod_IDT:door_gelid")
 				.setUnlocalizedName("GelidDoorItem");
-
-		// Ingots
-		EinsteiniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_einsteinium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("EinsteiniumIngot");
-
-		UraniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_uranium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("UraniumIngot");
-
-		NeptuniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_neptunium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("NeptuniumIngot");
-
-		SteelIngot = new ModIngot().setCreativeTab(IDTItems).setTextureName("mod_IDT:ingot_steel")
-				.setUnlocalizedName("SteelIngot");
-
-		TitaniumIngot = new ModIngot().setTextureName("mod_IDT:ingot_titanium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("TitaniumIngot");
-
-		PraseodymiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_praseodymium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("PraIngot");
-
-		NeodymiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_neodymium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("NeoIngot");
-
-		VanadiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_vanadium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("VanIngot");
-
-		TantalumIngot = new ModIngot().setTextureName("mod_IDT:ingot_tantalum").setCreativeTab(IDTItems)
-				.setUnlocalizedName("TantIngot");
-
-		NeoronIngot = new ModIngot().setTextureName("mod_IDT:ingot_neoron").setCreativeTab(IDTItems)
-				.setUnlocalizedName("NeoronIngot");
-
-		BoronIngot = new ModIngot().setTextureName("mod_IDT:ingot_boron").setCreativeTab(IDTItems)
-				.setUnlocalizedName("BoronIngot");
-
-		CopperIngot = new ModIngot().setTextureName("mod_IDT:ingot_copper").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CopperIngot");
-
-		SiliconIngot = new ModIngot().setTextureName("mod_IDT:ingot_silicon").setCreativeTab(IDTItems)
-				.setUnlocalizedName("SiliconIngot");
-
-		VCIngot = new ModIngot().setTextureName("mod_IDT:ingot_vc").setCreativeTab(IDTItems)
-				.setUnlocalizedName("VCIngot");
 
 		// Crystals
 		CrystalDust = new Item().setTextureName("mod_IDT:crystal_dust").setCreativeTab(IDTItems)

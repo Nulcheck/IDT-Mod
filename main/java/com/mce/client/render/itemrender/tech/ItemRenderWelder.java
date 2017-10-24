@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.modelWelder;
+import com.mce.models.blocks.modelWelder;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;

@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.coreReactor;
+import com.mce.models.blocks.coreReactor;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;

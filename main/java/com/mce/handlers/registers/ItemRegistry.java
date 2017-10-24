@@ -65,7 +65,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.QCUpgrade, "QCUpgrade");
 		GameRegistry.registerItem(mod_IDT.StabilizerUpgrade, "StabilizerUpgrade");
 
-		//TODO: Ingots
+		// TODO: Ingots
 		GameRegistry.registerItem(mod_IDT.EinsteiniumIngot, "EinsteiniumIngot");
 		GameRegistry.registerItem(mod_IDT.NeptuniumIngot, "NeptuniumIngot");
 		GameRegistry.registerItem(mod_IDT.UraniumIngot, "UraniumIngot");
@@ -81,6 +81,20 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.CopperIngot, "CopperIngot");
 		GameRegistry.registerItem(mod_IDT.SiliconIngot, "SiliconIngot");
 		GameRegistry.registerItem(mod_IDT.VCIngot, "VCIngot");
+
+		// Nuggets
+		GameRegistry.registerItem(mod_IDT.EinsteiniumNugget, "EinsteiniumNugget");
+		GameRegistry.registerItem(mod_IDT.NeptuniumNugget, "NeptuniumNugget");
+		GameRegistry.registerItem(mod_IDT.UraniumNugget, "UraniumNugget");
+		GameRegistry.registerItem(mod_IDT.SteelNugget, "SteelNugget");
+		GameRegistry.registerItem(mod_IDT.TitaniumNugget, "TitaniumNugget");
+		GameRegistry.registerItem(mod_IDT.PraseodymiumNugget, "PraseodymiumNugget");
+		GameRegistry.registerItem(mod_IDT.NeodymiumNugget, "NeodymiumNugget");
+		GameRegistry.registerItem(mod_IDT.VanadiumNugget, "VanadiumNugget");
+		GameRegistry.registerItem(mod_IDT.TantalumNugget, "TantalumNugget");
+		GameRegistry.registerItem(mod_IDT.BoronNugget, "BoronNugget");
+		GameRegistry.registerItem(mod_IDT.CopperNugget, "CopperNugget");
+		GameRegistry.registerItem(mod_IDT.SiliconNugget, "SiliconNugget");
 
 		// Crystals
 		GameRegistry.registerItem(mod_IDT.CrystalDust, "CrystalDust");
@@ -197,7 +211,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.Corn, "Corn");
 		GameRegistry.registerItem(mod_IDT.Popcorn, "Popcorn");
 
-		//TODO: Armor
+		// TODO: Armor
 		// Steel
 		GameRegistry.registerItem(mod_IDT.SteelHelmet, "SteelHelmet");
 		GameRegistry.registerItem(mod_IDT.SteelChestplate, "SteelChest");
@@ -240,7 +254,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.NeoronLeggings, "NeoLegs");
 		GameRegistry.registerItem(mod_IDT.NeoronBoots, "NeoBoots");
 
-		//TODO Tools
+		// TODO Tools
 		GameRegistry.registerItem(mod_IDT.Chisel, "Chisel");
 		GameRegistry.registerItem(mod_IDT.WikiPaper, "WikiPaper");
 

@@ -1,7 +1,7 @@
 package com.mce.client.render.wall_parts;
 
-import com.mce.blocks.modeled.wallPart;
 import com.mce.entity.tile.wall_parts.TileEntityWPOak;
+import com.mce.models.items.wallPart;
 
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;

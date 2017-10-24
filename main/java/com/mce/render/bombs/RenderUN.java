@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.ModelBomb;
+import com.mce.models.blocks.ModelBomb;
 
 public class RenderUN extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation(

@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.bioFuelExtractor;
+import com.mce.models.blocks.bioFuelExtractor;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;

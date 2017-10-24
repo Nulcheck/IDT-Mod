@@ -2,7 +2,7 @@ package com.mce.render.wall_parts;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.blocks.modeled.wallPart;
+import com.mce.models.items.wallPart;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
