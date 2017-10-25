@@ -2,6 +2,7 @@ package com.mce.api.rf;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class IDTRFBase extends TileEntity {
 	protected EnergyBase energy;
@@ -28,6 +29,10 @@ public class IDTRFBase extends TileEntity {
 
 	public boolean generateEnergy(int amount) {
 		return this.energy.generateEnergy(amount);
+	}
+	
+	public int receiveEnergy(int maxIn, boolean doInput) {
+		return this.energy.receiveEnergy(maxIn, doInput);
 	}
 
 	public boolean hasEnergy(int amount) {

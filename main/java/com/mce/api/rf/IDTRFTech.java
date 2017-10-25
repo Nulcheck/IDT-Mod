@@ -23,22 +23,26 @@ public class IDTRFTech extends IDTRFBase implements IEnergyReceiver {
 	}
 	
 	@Optional.Method(modid = "CoFHAPI|energy")
+	@Override
 	public boolean canConnectEnergy(ForgeDirection dir) {
 		return true;
 	}
 
 	@Optional.Method(modid = "CoFHAPI|energy")
+	@Override
 	public int getEnergyStored(ForgeDirection dir) {
 		return this.energy.getStored();
 	}
 
 	@Optional.Method(modid = "CoFHAPI|energy")
+	@Override
 	public int getMaxEnergyStored(ForgeDirection dir) {
 		return this.energy.getCapacity();
 	}
 
 	@Optional.Method(modid = "CoFHAPI|energy")
+	@Override
 	public int receiveEnergy(ForgeDirection dir, int amount, boolean doInput) {
-		return this.energy.inputEnergy(amount, doInput);
+		return this.energy.receiveEnergy(amount, doInput);
 	}
 }

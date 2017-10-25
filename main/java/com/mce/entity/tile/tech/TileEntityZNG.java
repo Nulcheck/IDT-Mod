@@ -4,14 +4,21 @@ import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.tech.ZNG;
 import com.mce.common.mod_IDT;
 
+import cofh.api.energy.IEnergyProvider;
+import cpw.mods.fml.common.Optional;
+import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityZNG extends IDTRFTech implements ISidedInventory {
+public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergyProvider, ITickable {
 	// Slot 0 is just the input. There is no output item thing.
 	private static final int[] input_slot = new int[] { 0 };
 
@@ -19,6 +26,13 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory {
 	private String getInvName;
 
 	private ItemStack[] slots = new ItemStack[2];
+
+	int maxRF = 70;
+	int rf;
+
+	public TileEntityZNG() {
+		super(70, 0, 70);
+	}
 
 	// Specs
 	public int fuel;
@@ -224,7 +238,7 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory {
 			} else {
 				this.burnTime = 0;
 			}
-
+			this.markDirty();
 			if (flag != this.hasFuel()) {
 				flag1 = true;
 				ZNG.updateState(this.hasFuel(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);
@@ -248,7 +262,18 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory {
 
 	public void power() {
 		// Power.
-		this.generateEnergy(70);
+		if (ForgeDirection.UP != null)
+			this.extractEnergy(ForgeDirection.UP, 70, true);
+		if (ForgeDirection.DOWN != null)
+			this.extractEnergy(ForgeDirection.DOWN, 70, true);
+		if (ForgeDirection.EAST != null)
+			this.extractEnergy(ForgeDirection.EAST, 70, true);
+		if (ForgeDirection.NORTH != null)
+			this.extractEnergy(ForgeDirection.NORTH, 70, true);
+		if (ForgeDirection.SOUTH != null)
+			this.extractEnergy(ForgeDirection.SOUTH, 70, true);
+		if (ForgeDirection.WEST != null)
+			this.extractEnergy(ForgeDirection.WEST, 70, true);
 	}
 
 	public static int getItemFuel(ItemStack stack) {
@@ -308,5 +333,17 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory {
 
 	public int getDamageScaled(int i) {
 		return this.damage * i / this.maxDamage;
+	}
+
+	@Optional.Method(modid = "CoFHAPI|energy")
+	@Override
+	public int extractEnergy(ForgeDirection dir, int maxOut, boolean doExtract) {
+		return this.energy.extractEnergy(maxOut, doExtract);
+	}
+
+	@Override
+	public void tick() {
+		// something
+		this.markDirty();
 	}
 }
