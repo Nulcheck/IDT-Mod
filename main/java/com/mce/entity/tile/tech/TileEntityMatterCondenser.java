@@ -118,7 +118,7 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 		}
 
 		this.cTime = tag.getShort("Progress");
-		this.damage = tag.getShort("Damage");
+		this.damage = tag.getShort("DamageAmount");
 
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
@@ -129,7 +129,7 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 		super.writeToNBT(tag);
 
 		tag.setShort("Progress", (short) this.cTime);
-		tag.setShort("Damage", (short) this.damage);
+		tag.setShort("DamageAmount", (short) this.damage);
 
 		NBTTagList list = new NBTTagList();
 

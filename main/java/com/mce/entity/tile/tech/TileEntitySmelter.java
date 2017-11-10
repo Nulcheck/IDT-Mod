@@ -126,7 +126,6 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 		this.cookTime = tag.getShort("CookTime");
 		this.fuelAmount = tag.getShort("FuelAmount");
 		this.damage = tag.getShort("DamageAmount");
-		// this.damage = tag.getInteger("DamageAmount");
 
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
