@@ -44,20 +44,20 @@ public class WorldProviderFrost extends WorldProvider {
 	}
 
 	public ChunkCoordinates getRandomizedSpawnPoint() {
-		ChunkCoordinates chunkcoordinates = new ChunkCoordinates(this.worldObj.getSpawnPoint());
+		ChunkCoordinates coord = new ChunkCoordinates(this.worldObj.getSpawnPoint());
 
 		boolean isAdventure = worldObj.getWorldInfo().getGameType() == GameType.ADVENTURE;
 		int spawnFuzz = terrainType.getSpawnFuzz();
 		int spawnFuzzHalf = spawnFuzz / 2;
 
 		if (!hasNoSky && !isAdventure && net.minecraftforge.common.ForgeModContainer.defaultHasSpawnFuzz) {
-			chunkcoordinates.posX += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
-			chunkcoordinates.posZ += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
-			chunkcoordinates.posY = this.worldObj.getTopSolidOrLiquidBlock(chunkcoordinates.posX,
-					chunkcoordinates.posZ);
+			coord.posX += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
+			coord.posZ += this.worldObj.rand.nextInt(spawnFuzz) - spawnFuzzHalf;
+			coord.posY = this.worldObj.getTopSolidOrLiquidBlock(coord.posX,
+					coord.posZ);
 		}
 
-		return chunkcoordinates;
+		return coord;
 	}
 
 	public BiomeGenBase getBiomeGenForCoords(int x, int z) {
