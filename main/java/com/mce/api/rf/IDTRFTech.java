@@ -43,6 +43,6 @@ public class IDTRFTech extends IDTRFBase implements IEnergyReceiver {
 	@Optional.Method(modid = "CoFHAPI|energy")
 	@Override
 	public int receiveEnergy(ForgeDirection dir, int amount, boolean doInput) {
-		return this.energy.receiveEnergy(amount, doInput);
+		return this.energy.addEnergy(amount, doInput);
 	}
 }

@@ -28,7 +28,7 @@ public class TileEntityBFE extends IDTRFTech implements ISidedInventory {
 
 	public int damage;
 	public final int maxDamage = 16000;
-	public static int capacity = 100000;
+	public static final int capacity = 100000;
 
 	public TileEntityBFE() {
 		super(capacity, 100);

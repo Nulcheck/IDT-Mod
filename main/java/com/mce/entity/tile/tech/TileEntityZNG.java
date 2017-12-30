@@ -262,18 +262,7 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 
 	public void power() {
 		// Power.
-		if (ForgeDirection.UP != null)
-			this.extractEnergy(ForgeDirection.UP, 70, true);
-		if (ForgeDirection.DOWN != null)
-			this.extractEnergy(ForgeDirection.DOWN, 70, true);
-		if (ForgeDirection.EAST != null)
-			this.extractEnergy(ForgeDirection.EAST, 70, true);
-		if (ForgeDirection.NORTH != null)
-			this.extractEnergy(ForgeDirection.NORTH, 70, true);
-		if (ForgeDirection.SOUTH != null)
-			this.extractEnergy(ForgeDirection.SOUTH, 70, true);
-		if (ForgeDirection.WEST != null)
-			this.extractEnergy(ForgeDirection.WEST, 70, true);
+		this.energy.addEnergy(70, true);
 	}
 
 	public static int getItemFuel(ItemStack stack) {
@@ -338,7 +327,7 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 	@Optional.Method(modid = "CoFHAPI|energy")
 	@Override
 	public int extractEnergy(ForgeDirection dir, int maxOut, boolean doExtract) {
-		return this.energy.extractEnergy(maxOut, doExtract);
+		return this.energy.addEnergy(maxOut, doExtract);
 	}
 
 	@Override

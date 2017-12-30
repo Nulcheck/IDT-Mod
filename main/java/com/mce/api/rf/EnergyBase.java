@@ -29,7 +29,7 @@ public class EnergyBase {
 	}
 
 	public boolean consumeEnergy(int energy) {
-		if (hasEnergy(energy)) {
+		if (hasEnergy(stored)) {
 			this.stored -= energy;
 			return true;
 		}
@@ -37,7 +37,7 @@ public class EnergyBase {
 		return false;
 	}
 
-	public int receiveEnergy(int maxIn, boolean doInput) {
+	public int addEnergy(int maxIn, boolean doInput) {
 		int amount = Math.min(maxIn, Math.min(this.maxInput, this.capacity - this.stored));
 		if (doInput) {
 			this.stored += amount;
@@ -45,7 +45,7 @@ public class EnergyBase {
 		return amount;
 	}
 
-	public int extractEnergy(int maxOut, boolean doExtract) {
+	public int removeEnergy(int maxOut, boolean doExtract) {
 		int amount = Math.min(this.stored, Math.min(maxOut, maxOutput));
 		if (doExtract) {
 			this.stored -= amount;

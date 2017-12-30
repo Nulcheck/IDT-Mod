@@ -107,7 +107,7 @@ public class SkyRenderFrost extends IRenderHandler {
 		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glRotatef(world.getCelestialAngle(ticks) * 360.0F, 1.0F, 0.0F, 0.0F);
 
-		f10 = .5F; // Size of sun from center
+		f10 = 5F; // Size of sun from center
 		mc.renderEngine.bindTexture(new ResourceLocation("mod_idt", "/textures/environment/frost/sun_cold.png".substring(1)));
 
 		tes.startDrawingQuads();

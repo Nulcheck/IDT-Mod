@@ -27,14 +27,6 @@ public class IDTRFBase extends TileEntity {
 		return this.energy.consumeEnergy(amount);
 	}
 
-	public boolean generateEnergy(int amount) {
-		return this.energy.generateEnergy(amount);
-	}
-	
-	public int receiveEnergy(int maxIn, boolean doInput) {
-		return this.energy.receiveEnergy(maxIn, doInput);
-	}
-
 	public boolean hasEnergy(int amount) {
 		return this.energy.hasEnergy(amount);
 	}
