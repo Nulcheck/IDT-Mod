@@ -1409,7 +1409,7 @@ public class mod_IDT {
 		CrystalRock = new CrystalRock(Material.rock).setBlockName("CrystalRock").setHardness(3f).setResistance(15f)
 				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:crystal_rock").setCreativeTab(IDT);
 
-		// Ores
+		//TODO: Ores
 		EinsteiniumOre = new EinsteiniumOre(true).setBlockName("EinsteiniumOre").setHardness(3F).setResistance(5F)
 				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:ore_einsteinium");
