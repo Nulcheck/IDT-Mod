@@ -916,10 +916,18 @@ public class mod_IDT {
 	public static Item VCIngot;
 
 	// Dusts
+	public static Item TitaniumDust;
+	public static Item VPowder;
+	public static Item EinsteiniumDust;
+	public static Item NeptuniumDust;
+	public static Item UraniumDust;
+	public static Item PraseodymiumDust;
+	public static Item NeodymiumDust;
+	public static Item ZimphnodeDust;
+	public static Item TantalumDust;
 	public static Item CopperDust;
 	public static Item SiliconDust;
 	public static Item VCDust;
-	public static Item TitaniumDust;
 	public static Item PhosphorusDust;
 	public static Item BoronDust;
 
@@ -949,7 +957,6 @@ public class mod_IDT {
 	public static Item H2SO4;
 	public static Item NO2Tank;
 	public static Item HNO3;
-	public static Item VPowder;
 	public static Item V2O5;
 	public static Item Nitroglycerin;
 	public static Item Glycerin;
@@ -1409,7 +1416,7 @@ public class mod_IDT {
 		CrystalRock = new CrystalRock(Material.rock).setBlockName("CrystalRock").setHardness(3f).setResistance(15f)
 				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:crystal_rock").setCreativeTab(IDT);
 
-		//TODO: Ores
+		// TODO: Ores
 		EinsteiniumOre = new EinsteiniumOre(true).setBlockName("EinsteiniumOre").setHardness(3F).setResistance(5F)
 				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:ore_einsteinium");

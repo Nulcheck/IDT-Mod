@@ -646,13 +646,8 @@ item.cd_icy.name=Music Disc
 item.cd_23.name=Music Disc
 item.r51vWLcxy9jo1Nvi.name=r51vWLcxy9jo1Nvi
 
-item.Sulfur.name=Sulfur
-item.CrystalDust.name=Crystal Dust
-item.VPowder.name=Vanadium Powder
-item.V2O5.name=Vanadium Pentoxide
+iitem.V2O5.name=Vanadium Pentoxide
 item.Carbon.name=Carbon
-item.SiliconDust.name=Silicon Dust
-item.CopperDust.name=Copper Dust
 item.PQuartz.name=Pure Quartz
 item.SO2.name=Sulfur Dioxide
 item.SO3.name=Sulfur Trioxide
@@ -661,6 +656,12 @@ item.HNO3.name=Nitric Acid
 item.NG.name=Nitroglycerin
 item.Glycerin.name=Glycerol
 item.Acrolein.name=Acrolein
+
+item.Sulfur.name=Sulfur
+item.SiliconDust.name=Silicon Dust
+item.CopperDust.name=Copper Dust
+item.CrystalDust.name=Crystal Dust
+item.VPowder.name=Vanadium Dust
 item.VCDust.name=Vanadium Carbide Dust
 item.PhosphorusDust.name=Phosphorus Dust
 item.BoronDust.name=Boron Dust
