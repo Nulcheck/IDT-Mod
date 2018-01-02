@@ -105,6 +105,7 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		tag.setShort("CutTime", (short) this.cutTime);
 		tag.setBoolean("Powered", IndustrialCutter.isActive);
 		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("MaxDamage", (short) this.maxDamage);
 
 		NBTTagList list = new NBTTagList();
 
@@ -146,6 +147,14 @@ public class TileEntityIndustrialCutter extends TileEntity implements ISidedInve
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
 		}
+	}
+	
+	public int getDamage() {
+		return damage;
+	}
+	
+	public int getMaxDamage(){
+		return maxDamage;
 	}
 
 	public boolean isUseableByPlayer(EntityPlayer player) {

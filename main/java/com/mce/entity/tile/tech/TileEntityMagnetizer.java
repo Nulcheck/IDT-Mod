@@ -1,16 +1,17 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.tech.Magnetizer;
 import com.mce.handlers.custom_recipes.MagnetizerRecipes;
 
+import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
+public class TileEntityMagnetizer extends TileEnergyHandler implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
@@ -26,10 +27,6 @@ public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
 	public int damage;
 	public final int maxDamage = 12000;
 	public static int capacity = 5000;
-
-	public TileEntityMagnetizer() {
-		super(capacity, 100);
-	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -103,6 +100,7 @@ public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
 
 		tag.setShort("MagTime", (short) this.magTime);
 		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("MaxDamage", (short) this.maxDamage);
 
 		NBTTagList list = new NBTTagList();
 
@@ -144,6 +142,14 @@ public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
 			this.ln = tag.getString("CustomName");
 		}
 	}
+	
+	public int getDamage() {
+		return damage;
+	}
+	
+	public int getMaxDamage(){
+		return maxDamage;
+	}
 
 	public boolean isUseableByPlayer(EntityPlayer player) {
 		return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false
@@ -162,7 +168,7 @@ public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
 	}
 
 	public boolean isPowered() {
-		return this.hasEnergy(energy.getStored());
+		return this.getEnergyStored(ForgeDirection.UNKNOWN) > 0;
 	}
 
 	public int getEnergyNeeded() {
@@ -173,7 +179,7 @@ public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (this.isMagnetizing() && this.isPowered()) {
+		if (this.isMagnetizing() && flag) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -184,7 +190,8 @@ public class TileEntityMagnetizer extends IDTRFTech implements ISidedInventory {
 
 		if (!this.worldObj.isRemote) {
 			if (this.canMagnetize() && this.checkSlot() && (this.damage > 0)) {
-				if (this.consumeEnergy(this.getEnergyNeeded())) {
+				if (flag) {
+					this.extractEnergy(ForgeDirection.UNKNOWN, this.getEnergyNeeded(), false);
 					this.magTime++;
 
 					if (this.magTime == this.speed) {

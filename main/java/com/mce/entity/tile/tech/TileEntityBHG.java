@@ -1,10 +1,10 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.tech.BHG;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.BHGRecipes;
 
+import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
@@ -12,8 +12,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityBHG extends IDTRFTech implements IInventory {
+public class TileEntityBHG extends TileEnergyHandler implements IInventory {
 	// Slot 0 = input
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] upgrade_slot = new int[] { 1 };
@@ -35,10 +36,6 @@ public class TileEntityBHG extends IDTRFTech implements IInventory {
 	public int damage;
 	public final int maxDamage = 96000;
 	public static int capacity = 4000000;
-
-	public TileEntityBHG() {
-		super(capacity, 1000);
-	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -113,6 +110,7 @@ public class TileEntityBHG extends IDTRFTech implements IInventory {
 		tag.setShort("CreateTime", (short) this.createTime);
 		tag.setShort("Fuel", (short) this.fuel);
 		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("MaxDamage", (short) this.maxDamage);
 
 		NBTTagList list = new NBTTagList();
 
@@ -156,6 +154,14 @@ public class TileEntityBHG extends IDTRFTech implements IInventory {
 		}
 	}
 
+	public int getDamage() {
+		return damage;
+	}
+	
+	public int getMaxDamage(){
+		return maxDamage;
+	}
+	
 	public boolean isUseableByPlayer(EntityPlayer player) {
 		return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false
 				: player.getDistanceSq((double) this.xCoord + 0.5d, (double) this.yCoord + 0.5d,
@@ -177,7 +183,7 @@ public class TileEntityBHG extends IDTRFTech implements IInventory {
 	}
 
 	public boolean isPowered() {
-		return this.hasEnergy(energy.getStored());
+		return this.getEnergyStored(ForgeDirection.UNKNOWN) > 0;
 	}
 
 	public int getEnergyNeeded() {
@@ -233,8 +239,9 @@ public class TileEntityBHG extends IDTRFTech implements IInventory {
 
 			detectUpgrade();
 
-			if (this.isPowered() && (this.damage > 0) && this.hasFuel()) {
-				if (this.consumeEnergy(this.getEnergyNeeded())) {
+			if ((this.damage > 0) && this.hasFuel()) {
+				if (flag) {
+					this.extractEnergy(ForgeDirection.UNKNOWN, this.getEnergyNeeded(), false);
 					this.createTime++;
 					this.createDTime++;
 

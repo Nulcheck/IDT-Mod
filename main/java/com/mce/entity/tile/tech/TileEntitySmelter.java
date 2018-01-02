@@ -21,8 +21,9 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 	private static final int[] slot_output = new int[] { 3 };
 
 	private String isInvNameLocalized;
-	@SuppressWarnings("unused")
-	private String getInvName;
+	private String isModeNameLocalized;
+	public String modeName;
+	//public int mode;
 
 	private ItemStack[] slots = new ItemStack[4];
 
@@ -51,8 +52,16 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 		return this.isInvNameLocalized != null && this.ln.length() > 0;
 	}
 
+	public boolean isModeNameLocalized() {
+		return this.isModeNameLocalized != null && this.ln.length() > 0;
+	}
+
 	public String getInvName() {
 		return this.isInvNameLocalized() ? this.ln : "container.smelter";
+	}
+
+	public String getModeName() {
+		return this.isModeNameLocalized() ? this.ln : modeName;
 	}
 
 	public int getSizeInventory() {
@@ -138,6 +147,8 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 		tag.setShort("CookTime", (short) this.cookTime);
 		tag.setShort("FuelAmount", (short) this.fuelAmount);
 		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("MaxDamage", (short) this.maxDamage);
+		tag.setShort("SmelterMode", (short) this.smelterSpeed);
 
 		NBTTagList list = new NBTTagList();
 
@@ -159,6 +170,14 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 
 	public int getDamage() {
 		return damage;
+	}
+
+	public int getMaxDamage() {
+		return maxDamage;
+	}
+
+	public String getMode() {
+		return modeName;
 	}
 
 	public void setDamage(int stored) {
@@ -216,7 +235,8 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 				}
 			}
 
-			this.detectUpgradeAndCanSmelt();
+			this.detectUpgrade();
+			//this.detectUpgradeAndCanSmelt();
 
 			if (this.hasFuel() && this.checkSlot() && this.canSmelt() && this.damage > 0) {
 				this.cookTime++;
@@ -262,6 +282,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 		if (this.slots[0] == null || this.slots[0] != null && this.slots[0].getItem() == Items.bucket
 				|| this.slots[0] != null && this.slots[0].getItem() == Items.lava_bucket) {
 			this.smelterSpeed = 400;
+			this.modeName = "";
 		}
 
 		if (this.slots[0] != null && this.slots[0].getItem() == Item.getItemFromBlock(mod_IDT.EinsteiniumCoreReactor)
@@ -269,18 +290,19 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 				|| this.slots[0] != null
 						&& this.slots[0].getItem() == Item.getItemFromBlock(mod_IDT.NeptuniumCoreReactor)) {
 			this.smelterSpeed = 200;
-			// damage items
+			this.modeName = "container.smelter.nuclear";
 			Smelter.updateState(this.hasFuel(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);
 		}
 
 		if (this.slots[0] != null && this.slots[0].getItem() == Item.getItemFromBlock(mod_IDT.SuperReactor)) {
 			this.smelterSpeed = 150;
-
+			this.modeName = "container.smelter.nuclear.super";
 			Smelter.updateState(this.hasFuel(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);
 		}
 
 		if (this.slots[0] != null && this.slots[0].getItem() == mod_IDT.MagneticUpgrade) {
 			this.smelterSpeed = 60;
+			this.modeName = "container.smelter.induction";
 			Smelter.updateState(this.hasFuel(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);
 		}
 	}

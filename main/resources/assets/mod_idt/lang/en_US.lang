@@ -35,6 +35,10 @@ container.magnetizer=Magnetizer
 container.enricher=Enricher
 container.bhg=Black Hole Generator
 
+container.smelter.nuclear=Nuclear
+container.smelter.nuclear.super=Nuclear
+container.smelter.induction=Induction
+
 container.birchChest=Birch Chest
 container.jungleChest=Jungle Chest
 container.spruceChest=Spruce Chest

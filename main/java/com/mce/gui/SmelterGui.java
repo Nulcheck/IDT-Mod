@@ -31,15 +31,18 @@ public class SmelterGui extends GuiContainer {
 	public void drawGuiContainerForegroundLayer(int x, int y) {
 		String name = this.smelter.isInvNameLocalized() ? this.smelter.getInvName()
 				: I18n.format(this.smelter.getInvName());
+		String modeName = this.smelter.isModeNameLocalized() ? this.smelter.getModeName()
+				: I18n.format(this.smelter.getModeName());
 
 		DecimalFormat df = new DecimalFormat();
 		df.setMaximumFractionDigits(1);
 		double pdam = (this.smelter.damage * 100d) / this.smelter.maxDamage;
 		String dam = String.valueOf(df.format(pdam));
 
-		this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6,
-				4210752);
-		this.fontRendererObj.drawString(I18n.format("container.inventory"), 28, this.ySize - 106 + 2, 4210752);
+		this.fontRendererObj.drawString(modeName + " " + name,
+				this.xSize / 2 - this.fontRendererObj.getStringWidth(modeName + " " + name) / 2, 6, 4210752);
+		// this.fontRendererObj.drawString(I18n.format("container.inventory"),
+		// 28, this.ySize - 106 + 2, 4210752);
 
 		this.fontRendererObj.drawString(dam + "%", 131, this.ySize - 106 + 2, 4210752);
 	}

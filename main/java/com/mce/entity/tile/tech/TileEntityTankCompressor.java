@@ -1,16 +1,17 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.tech.TankCompressor;
 import com.mce.handlers.custom_recipes.TankCompressorRecipes;
 
+import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityTankCompressor extends IDTRFTech implements ISidedInventory {
+public class TileEntityTankCompressor extends TileEnergyHandler implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
@@ -29,10 +30,6 @@ public class TileEntityTankCompressor extends IDTRFTech implements ISidedInvento
 	public int damage;
 	public final int maxDamage = 16000;
 	public static int capacity = 100000;
-
-	public TileEntityTankCompressor() {
-		super(capacity, 100);
-	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -106,6 +103,7 @@ public class TileEntityTankCompressor extends IDTRFTech implements ISidedInvento
 
 		tag.setShort("CompTime", (short) this.compTime);
 		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("MaxDamage", (short) this.maxDamage);
 
 		NBTTagList list = new NBTTagList();
 
@@ -147,6 +145,14 @@ public class TileEntityTankCompressor extends IDTRFTech implements ISidedInvento
 			this.ln = tag.getString("CustomName");
 		}
 	}
+	
+	public int getDamage() {
+		return damage;
+	}
+	
+	public int getMaxDamage(){
+		return maxDamage;
+	}
 
 	public boolean isUseableByPlayer(EntityPlayer player) {
 		return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false
@@ -165,7 +171,7 @@ public class TileEntityTankCompressor extends IDTRFTech implements ISidedInvento
 	}
 
 	public boolean isPowered() {
-		return this.hasEnergy(energy.getStored());
+		return this.getEnergyStored(ForgeDirection.UNKNOWN) > 0;
 	}
 
 	public int getEnergyNeeded() {
@@ -176,7 +182,7 @@ public class TileEntityTankCompressor extends IDTRFTech implements ISidedInvento
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (this.isCompressing() && this.isPowered()) {
+		if (this.isCompressing() && flag) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -186,8 +192,9 @@ public class TileEntityTankCompressor extends IDTRFTech implements ISidedInvento
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.isPowered() && this.canComp() && this.checkSlot() && (this.damage > 0)) {
-				if (this.consumeEnergy(this.getEnergyNeeded())) {
+			if (this.canComp() && this.checkSlot() && (this.damage > 0)) {
+				if (flag) {
+					this.extractEnergy(ForgeDirection.UNKNOWN, this.getEnergyNeeded(), false);
 					this.compTime++;
 
 					if (this.compTime == this.compSpeed) {

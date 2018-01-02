@@ -1,11 +1,11 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.tech.ZNG;
 import com.mce.common.mod_IDT;
 
-import cofh.api.energy.IEnergyProvider;
-import cpw.mods.fml.common.Optional;
+import cofh.api.energy.EnergyStorage;
+import cofh.api.energy.IEnergyReceiver;
+import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
@@ -13,26 +13,22 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.Packet;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergyProvider, ITickable {
+public class TileEntityZNG extends TileEnergyHandler implements ISidedInventory, ITickable {
 	// Slot 0 is just the input. There is no output item thing.
 	private static final int[] input_slot = new int[] { 0 };
 
 	private String isInvNameLocalized;
 	private String getInvName;
 
+	IEnergyReceiver adjacentReceiver = null;
+	EnergyStorage energyStorage = new EnergyStorage(0);
+
 	private ItemStack[] slots = new ItemStack[2];
 
 	int maxRF = 70;
 	int rf;
-
-	public TileEntityZNG() {
-		super(70, 0, 70);
-	}
+	byte facing = 1;
 
 	// Specs
 	public int fuel;
@@ -145,6 +141,7 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 		tag.setBoolean("Active", ZNG.isActive);
 		tag.setShort("Fuel", (short) this.fuel);
 		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("MaxDamage", (short) this.maxDamage);
 
 		NBTTagList list = new NBTTagList();
 
@@ -162,6 +159,14 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 		if (this.isInvNameLocalized()) {
 			tag.setString("CustomName", this.ln);
 		}
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public int getMaxDamage() {
+		return maxDamage;
 	}
 
 	public boolean isUseableByPlayer(EntityPlayer player) {
@@ -186,6 +191,14 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 
 	public boolean isActive() {
 		return ZNG.isActive;
+	}
+
+	public void onBlockPlaced() {
+		int e = facing + 6;
+
+		for (int i = facing + 1; i < e; i++) {
+			facing = (byte) (i % 6);
+		}
 	}
 
 	public void updateEntity() {
@@ -228,7 +241,7 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 
 				if (this.burnTime == this.speed) {
 					this.burnTime = 0;
-					this.power();
+					this.power(facing);
 					flag1 = true;
 				}
 
@@ -260,9 +273,12 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 		}
 	}
 
-	public void power() {
-		// Power.
-		this.energy.addEnergy(70, true);
+	public void power(int side) {
+		// this.receiveEnergy(ForgeDirection.getOrientation(6), 80, false);
+		if (adjacentReceiver == null) {
+			return;
+		}
+		this.energyStorage.modifyEnergyStored(80);
 	}
 
 	public static int getItemFuel(ItemStack stack) {
@@ -322,12 +338,6 @@ public class TileEntityZNG extends IDTRFTech implements ISidedInventory, IEnergy
 
 	public int getDamageScaled(int i) {
 		return this.damage * i / this.maxDamage;
-	}
-
-	@Optional.Method(modid = "CoFHAPI|energy")
-	@Override
-	public int extractEnergy(ForgeDirection dir, int maxOut, boolean doExtract) {
-		return this.energy.addEnergy(maxOut, doExtract);
 	}
 
 	@Override

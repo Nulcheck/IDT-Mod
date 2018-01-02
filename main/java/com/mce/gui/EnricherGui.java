@@ -32,8 +32,8 @@ public class EnricherGui extends GuiContainer {
 
 		this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6,
 				4210752);
-		this.fontRendererObj.drawString(I18n.format("container.inventory"),
-				this.xSize / 2 - this.fontRendererObj.getStringWidth("Inventory") / 2, this.ySize - 96 + 2, 4210752);
+		/*this.fontRendererObj.drawString(I18n.format("container.inventory"),
+				this.xSize / 2 - this.fontRendererObj.getStringWidth("Inventory") / 2, this.ySize - 96 + 2, 4210752);*/
 	}
 
 	public void drawGuiContainerBackgroundLayer(float f, int i, int j) {

@@ -1,17 +1,18 @@
 package com.mce.entity.tile.tech;
 
-import com.mce.api.rf.IDTRFTech;
 import com.mce.blocks.tech.MatterCondenser;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.MatterCondenserRecipes;
 
+import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInventory {
+public class TileEntityMatterCondenser extends TileEnergyHandler implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
@@ -30,10 +31,6 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 	public int damage;
 	public final int maxDamage = 96000;
 	public static int capacity = 2000000;
-
-	public TileEntityMatterCondenser() {
-		super(capacity, 1000);
-	}
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -130,6 +127,7 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 
 		tag.setShort("Progress", (short) this.cTime);
 		tag.setShort("DamageAmount", (short) this.damage);
+		tag.setShort("MaxDamage", (short) this.maxDamage);
 
 		NBTTagList list = new NBTTagList();
 
@@ -147,6 +145,14 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 		if (this.isInvNameLocalized()) {
 			tag.setString("CustomName", this.ln);
 		}
+	}
+	
+	public int getDamage() {
+		return damage;
+	}
+	
+	public int getMaxDamage(){
+		return maxDamage;
 	}
 
 	public boolean isUseableByPlayer(EntityPlayer player) {
@@ -166,7 +172,7 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 	}
 
 	public boolean isPowered() {
-		return this.hasEnergy(energy.getStored());
+		return this.getEnergyStored(ForgeDirection.UNKNOWN) > 0;
 	}
 
 	public int getEnergyNeeded() {
@@ -177,7 +183,7 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
 
-		if (this.isCondensing() && this.isPowered()) {
+		if (this.isCondensing() && flag) {
 			this.burnTime--;
 			this.damage--;
 		}
@@ -190,7 +196,8 @@ public class TileEntityMatterCondenser extends IDTRFTech implements ISidedInvent
 
 			if (this.isPowered() && (this.damage > 0)) {
 				if (this.canCondense() && this.checkSlot()) {
-					if (this.consumeEnergy(this.getEnergyNeeded())) {
+					if (flag) {
+						this.extractEnergy(ForgeDirection.UNKNOWN, this.getEnergyNeeded(), false);
 						this.cTime++;
 						this.cDTime++;
 
