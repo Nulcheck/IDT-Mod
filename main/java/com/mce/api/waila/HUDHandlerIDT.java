@@ -49,7 +49,7 @@ public class HUDHandlerIDT implements IWailaDataProvider {
 				}
 
 				else if (tag.getString("SmelterMode").equals("container.smelter.nuclear.super")) {
-					((ITaggedList) list).add("Smelter Mode: Nuclear (Super)");
+					((ITaggedList) list).add("Smelter Mode: Thermal Nuclear");
 				}
 
 				else if (tag.getString("SmelterMode").equals("container.smelter.induction")) {
@@ -129,6 +129,26 @@ public class HUDHandlerIDT implements IWailaDataProvider {
 
 		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.LiquidNitrogen)) {
 			list.add("Cold!");
+		}
+
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 0) {
+			list.add("Tier 1 Frame");
+		}
+
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 1) {
+			list.add("Tier 2 Frame");
+		}
+		
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 2) {
+			list.add("Tier 3 Frame");
+		}
+		
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 3) {
+			list.add("Tier 4 Frame");
+		}
+		
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 4) {
+			list.add("Tier 5 Frame");
 		}
 		return list;
 	}

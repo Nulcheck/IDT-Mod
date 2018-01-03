@@ -4,14 +4,14 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class modelMagnetizer extends ModelBase {
+public class MagnetizerModel extends ModelBase {
 	// fields
 	ModelRenderer Base;
 	ModelRenderer Side1;
 	ModelRenderer Side2;
 	ModelRenderer Top;
 
-	public modelMagnetizer() {
+	public MagnetizerModel() {
 		textureWidth = 128;
 		textureHeight = 128;
 

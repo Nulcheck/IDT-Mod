@@ -8,16 +8,14 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 
-public class UBBlock extends ItemBlock {
-
-	public UBBlock(Block block) {
+public class ItemNpBomb extends ItemBlock {
+	public ItemNpBomb(Block block) {
 		super(block);
 	}
 
 	public void addInformation(ItemStack stack, EntityPlayer player, List list,
 			boolean show) {
-		list.add(EnumChatFormatting.BOLD + "****" + EnumChatFormatting.RESET
-				+ "***");
+		list.add(EnumChatFormatting.BOLD + "***" + EnumChatFormatting.RESET
+				+ "****");
 	}
-
 }

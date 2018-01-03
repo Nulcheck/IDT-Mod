@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.modelWelder;
+import com.mce.models.blocks.WelderModel;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -12,10 +12,10 @@ import net.minecraftforge.client.IItemRenderer;
 public class ItemRenderWelder implements IItemRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/modelWelder.png".substring(1));
-	private modelWelder model;
+	private WelderModel model;
 
 	public ItemRenderWelder() {
-		this.model = new modelWelder();
+		this.model = new WelderModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, IItemRenderer.ItemRenderType type) {

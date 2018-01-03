@@ -1,21 +1,20 @@
 package com.mce.handlers.registers;
 
 import com.mce.common.mod_IDT;
-import com.mce.items.ZimWireItem;
-import com.mce.items.blocks.DGBlock;
-import com.mce.items.blocks.EBBlock;
-import com.mce.items.blocks.NBBlock;
-import com.mce.items.blocks.UBBlock;
-import com.mce.items.blocks.UNBlock;
-import com.mce.items.blocks.ZNGBlock;
+import com.mce.items.blocks.ItemDidymiumGlass;
+import com.mce.items.blocks.ItemEsBomb;
+import com.mce.items.blocks.ItemMachineFrame;
+import com.mce.items.blocks.ItemMetalFrame;
+import com.mce.items.blocks.ItemNpBomb;
+import com.mce.items.blocks.ItemUBomb;
+import com.mce.items.blocks.ItemUltimateNuker;
+import com.mce.items.blocks.ItemZNG;
+import com.mce.items.blocks.ItemZimWire;
 import com.mce.items.blocks.slabs.ItemSlabCement;
 import com.mce.items.blocks.slabs.ItemSlabCementBrick;
 import com.mce.items.blocks.slabs.ItemSlabEbony;
 import com.mce.items.blocks.slabs.ItemSlabGelid;
 import com.mce.items.blocks.slabs.ItemSlabGlass;
-import com.mce.items.blocks.slabs.ItemSlabSilkwood;
-import com.mce.items.blocks.slabs.ItemSlabStone;
-import com.mce.items.blocks.slabs.ItemSlabWillow;
 import com.mce.items.blocks.slabs.ItemSlabGlass.ItemSlabGlassBlack;
 import com.mce.items.blocks.slabs.ItemSlabGlass.ItemSlabGlassBlue;
 import com.mce.items.blocks.slabs.ItemSlabGlass.ItemSlabGlassBrown;
@@ -32,16 +31,40 @@ import com.mce.items.blocks.slabs.ItemSlabGlass.ItemSlabGlassPurple;
 import com.mce.items.blocks.slabs.ItemSlabGlass.ItemSlabGlassRed;
 import com.mce.items.blocks.slabs.ItemSlabGlass.ItemSlabGlassWhite;
 import com.mce.items.blocks.slabs.ItemSlabGlass.ItemSlabGlassYellow;
+import com.mce.items.blocks.slabs.ItemSlabSilkwood;
+import com.mce.items.blocks.slabs.ItemSlabStone;
+import com.mce.items.blocks.slabs.ItemSlabWillow;
+import com.mce.items.blocks.tech.ItemBFE;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockRegistry {
 	public static void registerBlocks() {
+		// Tech
+		GameRegistry.registerBlock(mod_IDT.MetalFrame, ItemMetalFrame.class, mod_IDT.MetalFrame.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.MachineFrame, ItemMachineFrame.class,
+				mod_IDT.MachineFrame.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.HealerBlock, "Healer");
+		// GameRegistry.registerBlock(mod_IDT.AdvancedHealer, "AdvancedHealer");
+		GameRegistry.registerBlock(mod_IDT.SmelterIdle, "SmelterIdle");
+		GameRegistry.registerBlock(mod_IDT.SmelterActive, "SmelterActive");
+		GameRegistry.registerBlock(mod_IDT.IndustrialCutter, "IC");
+		GameRegistry.registerBlock(mod_IDT.MatterCondenser, "MatterCondenser");
+		GameRegistry.registerBlock(mod_IDT.BioFuelExtractor, ItemBFE.class, mod_IDT.BioFuelExtractor.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.TankCompressor, "TankCompressor");
+		GameRegistry.registerBlock(mod_IDT.BlackHoleGenerator, "BHG");
+		GameRegistry.registerBlock(mod_IDT.Welder, "Welder");
+		GameRegistry.registerBlock(mod_IDT.Magnetizer, "Magnetizer");
+		GameRegistry.registerBlock(mod_IDT.Enricher, "Enricher");
+		GameRegistry.registerBlock(mod_IDT.ZNG, ItemZNG.class, mod_IDT.ZNG.getUnlocalizedName());
+		// GameRegistry.registerBlock(mod_IDT.EssenceInfuser,
+		// "EssenceInfuser");
+		// GameRegistry.registerBlock(mod_IDT.EssenceExtractor,
+		// "EssenceExtractor");
+
 		// Other
 		GameRegistry.registerBlock(mod_IDT.Cement, "Cement");
 		GameRegistry.registerBlock(mod_IDT.CementBricks, "CementBricks");
-		GameRegistry.registerBlock(mod_IDT.HealerBlock, "Healer");
-		// GameRegistry.registerBlock(mod_IDT.AdvancedHealer, "AdvancedHealer");
 		GameRegistry.registerBlock(mod_IDT.CryingObsidian, "CryingObsidian");
 		GameRegistry.registerBlock(mod_IDT.LavaStone, "LavaStone");
 		GameRegistry.registerBlock(mod_IDT.LavaCobble, "LavaCobble");
@@ -64,8 +87,8 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.BoronBlock, "BoronBlock");
 		GameRegistry.registerBlock(mod_IDT.SulfurBlock, "SulfurBlock");
 		GameRegistry.registerBlock(mod_IDT.ZimphnodeBlock, "ZimphnodeBlock");
-		GameRegistry.registerBlock(mod_IDT.TitaniumFrame, "TitaniumFrame");
-		GameRegistry.registerBlock(mod_IDT.DidymiumGlass, DGBlock.class, mod_IDT.DidymiumGlass.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.DidymiumGlass, ItemDidymiumGlass.class,
+				mod_IDT.DidymiumGlass.getUnlocalizedName());
 		GameRegistry.registerBlock(mod_IDT.DidymiumGlassPane, "DidymiumGlassPane");
 		GameRegistry.registerBlock(mod_IDT.EinsteiniumGlass, "EinsteiniumGlass");
 		GameRegistry.registerBlock(mod_IDT.EinsteiniumGlassPane, "EinsteiniumGlassPane");
@@ -83,30 +106,16 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.NeptuniumCoreReactor, "NeptuniumCoreReactor");
 		GameRegistry.registerBlock(mod_IDT.UraniumCoreReactor, "UraniumCoreReactor");
 		GameRegistry.registerBlock(mod_IDT.SuperReactor, "SuperReactor");
-		GameRegistry.registerBlock(mod_IDT.SmelterIdle, "SmelterIdle");
-		GameRegistry.registerBlock(mod_IDT.SmelterActive, "SmelterActive");
-		GameRegistry.registerBlock(mod_IDT.IndustrialCutter, "IC");
-		GameRegistry.registerBlock(mod_IDT.MatterCondenser, "MatterCondenser");
-		GameRegistry.registerBlock(mod_IDT.ZNG, ZNGBlock.class, mod_IDT.ZNG.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.BioFuelExtractor, "BioFuelExtractor");
-		GameRegistry.registerBlock(mod_IDT.TankCompressor, "TankCompressor");
-		GameRegistry.registerBlock(mod_IDT.BlackHoleGenerator, "BHG");
-		GameRegistry.registerBlock(mod_IDT.Welder, "Welder");
-		GameRegistry.registerBlock(mod_IDT.Magnetizer, "Magnetizer");
-		GameRegistry.registerBlock(mod_IDT.Enricher, "Enricher");
-		GameRegistry.registerBlock(mod_IDT.ZimphnodeWire, ZimWireItem.class,
+		GameRegistry.registerBlock(mod_IDT.ZimphnodeWire, ItemZimWire.class,
 				mod_IDT.ZimphnodeWire.getUnlocalizedName());
-		// GameRegistry.registerBlock(mod_IDT.EssenceInfuser,
-		// "EssenceInfuser");
-		// GameRegistry.registerBlock(mod_IDT.EssenceExtractor,
-		// "EssenceExtractor");
 
 		// Bombs
-		GameRegistry.registerBlock(mod_IDT.EinsteiniumBomb, EBBlock.class,
+		GameRegistry.registerBlock(mod_IDT.EinsteiniumBomb, ItemEsBomb.class,
 				mod_IDT.EinsteiniumBomb.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.NeptuniumBomb, NBBlock.class, mod_IDT.NeptuniumBomb.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.UraniumBomb, UBBlock.class, mod_IDT.UraniumBomb.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.UltimateNuker, UNBlock.class, mod_IDT.UltimateNuker.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.NeptuniumBomb, ItemNpBomb.class, mod_IDT.NeptuniumBomb.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.UraniumBomb, ItemUBomb.class, mod_IDT.UraniumBomb.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.UltimateNuker, ItemUltimateNuker.class,
+				mod_IDT.UltimateNuker.getUnlocalizedName());
 		// GameRegistry.registerBlock(mod_IDT.DarkMatterBomb, "DarkMatterBomb");
 
 		// Frost Dim
@@ -484,10 +493,6 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.EbonyCraftingTable, "EbonyCraftingTable");
 		GameRegistry.registerBlock(mod_IDT.SilkwoodCraftingTable, "SilkwoodCraftingTable");
 		GameRegistry.registerBlock(mod_IDT.GelidCraftingTable, "GelidCraftingTable");
-		/*
-		 * GameRegistry.registerBlock(mod_IDT.IDTCraftingTable,
-		 * "IDTCraftingTable");
-		 */
 
 		// Ladders
 		GameRegistry.registerBlock(mod_IDT.BirchLadder, "BirchLadder");

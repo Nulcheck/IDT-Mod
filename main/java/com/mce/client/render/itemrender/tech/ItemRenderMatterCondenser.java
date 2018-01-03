@@ -5,13 +5,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
 
 import com.mce.entity.tile.tech.TileEntityMatterCondenser;
-import com.mce.models.blocks.matterCondenser;
+import com.mce.models.blocks.MatterCondenserModel;
 
 public class ItemRenderMatterCondenser implements IItemRenderer {
-	private matterCondenser model;
+	private MatterCondenserModel model;
 
 	public ItemRenderMatterCondenser() {
-		this.model = new matterCondenser();
+		this.model = new MatterCondenserModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) {

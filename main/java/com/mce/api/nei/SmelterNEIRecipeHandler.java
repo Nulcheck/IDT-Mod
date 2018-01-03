@@ -2,66 +2,37 @@ package com.mce.api.nei;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.mce.common.mod_IDT;
 import com.mce.entity.tile.tech.TileEntitySmelter;
 import com.mce.gui.SmelterGui;
 import com.mce.handlers.custom_recipes.SmelterRecipes;
+import com.mce.handlers.custom_recipes.SmelterRecipes.OreDictItemStackSmelter;
+import com.mce.handlers.custom_recipes.SmelterRecipes.RecipeSmelter;
 
 import codechicken.nei.ItemList;
 import codechicken.nei.NEIClientUtils;
 import codechicken.nei.NEIServerUtils;
 import codechicken.nei.PositionedStack;
 import codechicken.nei.recipe.TemplateRecipeHandler;
+import cofh.lib.inventory.ComparableItemStackSafe;
+import cofh.lib.util.helpers.ItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 	public static ArrayList<FuelPair> afuels;
 	public static HashSet<Block> efuels;
-
-	public class SmeltingPair extends CachedRecipe {
-		PositionedStack ingred;
-		PositionedStack ingred2;
-		PositionedStack result;
-
-		public SmeltingPair(ItemStack ingred, ItemStack result) {
-			//this.ingred = new PositionedStack(ingred, 49, 25);
-			this.ingred = new PositionedStack(ingred, 69, 25);
-			this.result = new PositionedStack(result, 131, 24);
-		}
-
-		public List<PositionedStack> getIngredients() {
-			return getCycledIngredients(cycleticks / 48, Arrays.asList(ingred));
-		}
-
-		public PositionedStack getResult() {
-			return result;
-		}
-
-		public PositionedStack getOtherStack() {
-			return afuels.get((cycleticks / 48) % afuels.size()).stack;
-		}
-	}
-
-	public static class FuelPair {
-		public PositionedStack stack;
-		public int burnTime;
-
-		public FuelPair(ItemStack ingred, int burnTime) {
-			this.stack = new PositionedStack(ingred, 3, 39, false);
-			this.burnTime = burnTime;
-		}
+	
+	public SmelterNEIRecipeHandler(){
+		super();
 	}
 
 	@Override
@@ -90,11 +61,11 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 
 	@Override
 	public void loadCraftingRecipes(String outputId, Object... results) {
-		if (outputId.equals("idt.smelter") && getClass() == SmelterNEIRecipeHandler.class) {
-			Map<ItemStack, ItemStack> recipes = SmelterRecipes.instance().getRecipeList();
-			
-			for (Entry<ItemStack, ItemStack> recipe : recipes.entrySet()) {
-				arecipes.add(new SmeltingPair(recipe.getKey(), recipe.getValue()));
+		if (outputId.equals("idt.smelter")) {
+			RecipeSmelter[] recipes = SmelterRecipes.getRecipeList();
+
+			for (RecipeSmelter recipe : recipes) {
+				arecipes.add(new NEIRecpieSmelter(recipe));
 			}
 		} else {
 			super.loadCraftingRecipes(outputId, results);
@@ -103,11 +74,11 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 
 	@Override
 	public void loadCraftingRecipes(ItemStack result) {
-		Map<ItemStack, ItemStack> recipes = SmelterRecipes.instance().getRecipeList();
-		
-		for (Entry<ItemStack, ItemStack> recipe : recipes.entrySet()) {
-			if (NEIServerUtils.areStacksSameType(recipe.getValue(), result)) {
-				arecipes.add(new SmeltingPair(recipe.getKey(), recipe.getValue()));
+		RecipeSmelter[] recipes = SmelterRecipes.getRecipeList();
+
+		for (RecipeSmelter recipe : recipes) {
+			if (NEIServerUtils.areStacksSameType(recipe.getOutput(), result)) {
+				arecipes.add(new NEIRecpieSmelter(recipe));
 			}
 		}
 	}
@@ -123,13 +94,12 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 
 	@Override
 	public void loadUsageRecipes(ItemStack ingredient) {
-		Map<ItemStack, ItemStack> recipes = SmelterRecipes.instance().getRecipeList();
-		
-		for (Entry<ItemStack, ItemStack> recipe : recipes.entrySet()) {
-			if (NEIServerUtils.areStacksSameTypeCrafting(recipe.getKey(), ingredient)) {
-				SmeltingPair arecipe = new SmeltingPair(recipe.getKey(), recipe.getValue());
-				arecipe.setIngredientPermutation(Arrays.asList(arecipe.ingred), ingredient);
-				arecipes.add(arecipe);
+		RecipeSmelter[] recipes = SmelterRecipes.getRecipeList();
+
+		for (RecipeSmelter recipe : recipes) {
+			if (NEIServerUtils.areStacksSameTypeCrafting(recipe.getInput1(), ingredient)
+					|| NEIServerUtils.areStacksSameTypeCrafting(recipe.getInput2(), ingredient)) {
+				arecipes.add(new NEIRecpieSmelter(recipe));
 			}
 		}
 	}
@@ -144,6 +114,14 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 		drawProgressBar(3, -12, 176, 17, 16, 49, 0.5f, 7);
 		drawProgressBar(95, 23, 176, 0, 24, 16, 48, 0);
 		// drawProgressBar(159, 20, 192, 17, 4, 50, 0f, 7);
+		
+		if(((SmeltingPair) arecipes.get(recipe)).result.contains(mod_IDT.VCDust)){
+			drawString("Upgrade is Required.", 100, 20);
+		}
+	}
+
+	private void drawString(String string, int i, int j) {
+		
 	}
 
 	private static Set<Item> excludedFuels() {
@@ -178,5 +156,126 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 	@Override
 	public String getOverlayIdentifier() {
 		return "idt.smelter";
+	}
+
+	public class SmeltingPair extends CachedRecipe {
+		PositionedStack input = null;
+		PositionedStack input2 = null;
+		PositionedStack result = null;
+		ArrayList<ItemStack> inputList = null;
+		ArrayList<ItemStack> input2List = null;
+		boolean cycleInput = true;
+		boolean cycleInput2 = true;
+
+		String inputOreName = "Unknown";
+		String inputOreName2 = "Unknown";
+
+		int inputPosition = 0;
+		int input2Position = 0;
+
+		protected void setOres() {
+
+			if (input != null) {
+				inputOreName = ItemHelper.getOreName(input.item);
+
+				if (!inputOreName.equals("Unknown")) {
+					inputList = OreDictionary.getOres(inputOreName);
+				}
+				cycleInput &= ComparableItemStackSafe.getOreID(inputOreName) != -1;
+			}
+			if (input2 != null) {
+				inputOreName2 = ItemHelper.getOreName(input2.item);
+
+				if (!inputOreName2.equals("Unknown")) {
+					input2List = OreDictionary.getOres(inputOreName2);
+				}
+				cycleInput2 &= ComparableItemStackSafe.getOreID(inputOreName2) != -1;
+			}
+		}
+
+		protected void cycleInput1() {
+			if(inputList == null || inputList.size() <= 0){
+				return;
+			}
+			if (cycleInput && !inputOreName.equals("Unknown")) {
+				inputPosition++;
+				inputPosition %= inputList.size();
+
+				int stackSize = input.item.stackSize;
+				input.item = inputList.get(inputPosition);
+				input.item.stackSize = stackSize;
+				if (inputList.get(inputPosition).getItemDamage() != OreDictionary.WILDCARD_VALUE) {
+					input.item.setItemDamage(inputList.get(inputPosition).getItemDamage());
+				}
+			}
+		}
+
+		protected void cycleInput2() {
+			if(input2List == null || input2List.size() <= 0){
+				return;
+			}
+			if (cycleInput2 && !inputOreName2.equals("Unknown")) {
+				input2Position++;
+				input2Position %= input2List.size();
+
+				int stackSize = input2.item.stackSize;
+				input2.item = input2List.get(input2Position);
+				input2.item.stackSize = stackSize;
+				if (input2List.get(input2Position).getItemDamage() != OreDictionary.WILDCARD_VALUE) {
+					input2.item.setItemDamage(input2List.get(input2Position).getItemDamage());
+				}
+			}
+		}
+
+		public PositionedStack getIngredient() {
+			if (cycleticks % 20 == 0) {
+				cycleInput1();
+			}
+
+			return input;
+		}
+
+		public PositionedStack getResult() {
+			return result;
+		}
+
+		public ArrayList<PositionedStack> getOtherStacks() {
+			ArrayList<PositionedStack> stacks = new ArrayList<PositionedStack>();
+			if (input2 != null) {
+				if (cycleticks % 20 == 0) {
+					cycleInput2();
+				}
+				stacks.add(input2);
+			}
+
+			return stacks;
+		}
+	}
+
+	public static class FuelPair {
+		public PositionedStack stack;
+		public int burnTime;
+
+		public FuelPair(ItemStack ingred, int burnTime) {
+			this.stack = new PositionedStack(ingred, 3, 39, false);
+			this.burnTime = burnTime;
+		}
+	}
+	
+	class NEIRecpieSmelter extends SmeltingPair {
+		public NEIRecpieSmelter(RecipeSmelter recipe) {
+			result = new PositionedStack(recipe.getOutput(), 131, 24);
+			if (recipe.getInput1() != null) {
+				input = new PositionedStack(recipe.getInput1(), 69, 25);
+			}
+
+			if (recipe.getInput2() != null) {
+				input2 = new PositionedStack(recipe.getInput2(), 49, 25);
+			}
+
+			setOres();
+			cycleInput = OreDictItemStackSmelter.getOreID(inputOreName) != -1;
+			cycleInput2 = OreDictItemStackSmelter.getOreID(inputOreName2) != -1;
+		}
 	}
 }

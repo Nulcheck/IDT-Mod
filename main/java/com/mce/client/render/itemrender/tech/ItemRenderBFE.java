@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.bioFuelExtractor;
+import com.mce.models.blocks.BFEModel;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -12,10 +12,10 @@ import net.minecraftforge.client.IItemRenderer;
 public class ItemRenderBFE implements IItemRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/bioFuelExtractor.png".substring(1));
-	private bioFuelExtractor model;
+	private BFEModel model;
 
 	public ItemRenderBFE() {
-		this.model = new bioFuelExtractor();
+		this.model = new BFEModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, IItemRenderer.ItemRenderType type) {

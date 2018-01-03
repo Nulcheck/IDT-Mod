@@ -5,7 +5,7 @@ import com.mce.entity.tile.TECT;
 import com.mce.entity.tile.TileEntityECR;
 import com.mce.entity.tile.TileEntityNCR;
 import com.mce.entity.tile.TileEntitySR;
-import com.mce.entity.tile.TileEntityTF;
+import com.mce.entity.tile.TileEntityMetalFrame;
 import com.mce.entity.tile.TileEntityUCR;
 import com.mce.entity.tile.TileEntityZimWire;
 import com.mce.entity.tile.bombs.TileEntityDM;
@@ -94,7 +94,7 @@ public class TileEntityRegistry {
 
 		// Other
 		GameRegistry.registerTileEntity(TECT.class, "te_craft");
-		GameRegistry.registerTileEntity(TileEntityTF.class, "te_tf");
+		GameRegistry.registerTileEntity(TileEntityMetalFrame.class, "te_tf");
 		GameRegistry.registerTileEntity(TileEntityECR.class, "te_ecr");
 		GameRegistry.registerTileEntity(TileEntityUCR.class, "te_ucr");
 		GameRegistry.registerTileEntity(TileEntityNCR.class, "te_ncr");

@@ -2,7 +2,7 @@ package com.mce.render.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.bioFuelExtractor;
+import com.mce.models.blocks.BFEModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 public class RenderBFE extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/bioFuelExtractor.png".substring(1));
-	public bioFuelExtractor model;
+	public BFEModel model;
 
 	public RenderBFE() {
-		this.model = new bioFuelExtractor();
+		this.model = new BFEModel();
 	}
 
 	private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {

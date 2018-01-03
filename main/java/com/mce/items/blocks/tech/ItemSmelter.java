@@ -17,10 +17,6 @@ public class ItemSmelter extends ItemBlock {
 		return stack;
 	}
 
-	public int getMetadata(int meta) {
-		return meta;
-	}
-
 	public boolean showDurabilityBar(ItemStack stack) {
 		return stack.getItemDamage() != 1;
 	}

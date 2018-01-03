@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EinsteiniumCoreReactorItem extends Item {
-	public EinsteiniumCoreReactorItem() {
+public class ItemEsCore extends Item {
+	public ItemEsCore() {
 	}
 
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int meta, float dx,

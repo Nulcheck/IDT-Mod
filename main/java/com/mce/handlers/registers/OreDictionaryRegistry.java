@@ -177,7 +177,6 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("workbench", new ItemStack(mod_IDT.SilkwoodCraftingTable));
 		OreDictionary.registerOre("workbench", new ItemStack(mod_IDT.AcaciaCraftingTable));
 		OreDictionary.registerOre("workbench", new ItemStack(mod_IDT.DarkOakCraftingTable));
-		OreDictionary.registerOre("workbench", new ItemStack(mod_IDT.IDTCraftingTable));
 		OreDictionary.registerOre("workbench", new ItemStack(mod_IDT.GelidCraftingTable));
 
 		// Chests

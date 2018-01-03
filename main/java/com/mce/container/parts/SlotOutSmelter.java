@@ -47,7 +47,7 @@ public class SlotOutSmelter extends Slot {
 	protected void onCrafting(ItemStack stack) {
 		stack.onCrafting(this.thePlayer.worldObj, this.thePlayer, this.number);
 
-		if (!this.thePlayer.worldObj.isRemote) {
+		/*if (!this.thePlayer.worldObj.isRemote) {
 			int i = this.number;
 			float f = ((SmelterRecipes) SmelterRecipes.smelting()).getExp(stack);
 			int j;
@@ -71,7 +71,7 @@ public class SlotOutSmelter extends Slot {
 				this.thePlayer.worldObj.spawnEntityInWorld(new EntityXPOrb(this.thePlayer.worldObj, this.thePlayer.posX,
 						this.thePlayer.posY + 0.5D, this.thePlayer.posZ + 0.5D, j));
 			}
-		}
+		}*/
 
 		this.number = 0;
 

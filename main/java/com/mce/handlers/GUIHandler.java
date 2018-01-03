@@ -3,7 +3,6 @@ package com.mce.handlers;
 import com.mce.common.mod_IDT;
 import com.mce.container.BFEContainer;
 import com.mce.container.BHGContainer;
-import com.mce.container.IDTModContainerWorkbench;
 import com.mce.container.IndustrialCutterContainer;
 import com.mce.container.MagnetizerContainer;
 import com.mce.container.MatterCondenserContainer;
@@ -84,10 +83,6 @@ public class GUIHandler implements IGuiHandler {
 				if (entity instanceof TileEntityZNG) {
 					return new ZNGContainer(player.inventory, (TileEntityZNG) entity);
 				}
-
-			case mod_IDT.IDTCraftingTableGUI:
-				return (id == 8) && (world.getBlock(x, y, z) == mod_IDT.IDTCraftingTable)
-						? new IDTModContainerWorkbench(player.inventory, world, x, y, z) : null;
 
 			case mod_IDT.SilkwoodCraftingTableGUI:
 				return (id == 9) && (world.getBlock(x, y, z) == mod_IDT.SilkwoodCraftingTable)
@@ -180,10 +175,6 @@ public class GUIHandler implements IGuiHandler {
 				if (entity instanceof TileEntityZNG) {
 					return new ZNGGui(player.inventory, (TileEntityZNG) entity);
 				}
-
-			case mod_IDT.IDTCraftingTableGUI:
-				return (id == 8) && (world.getBlock(x, y, z) == mod_IDT.IDTCraftingTable)
-						? new GuiCrafting(player.inventory, world, x, y, z) : null;
 
 			case mod_IDT.SilkwoodCraftingTableGUI:
 				return (id == 9) && (world.getBlock(x, y, z) == mod_IDT.SilkwoodCraftingTable)

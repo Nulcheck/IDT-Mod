@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.zng;
+import com.mce.models.blocks.ZNGModel;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -12,10 +12,10 @@ import net.minecraftforge.client.IItemRenderer;
 public class ItemRenderZNG implements IItemRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/zng.png".substring(1));
-	private zng model;
+	private ZNGModel model;
 
 	public ItemRenderZNG() {
-		this.model = new zng();
+		this.model = new ZNGModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, IItemRenderer.ItemRenderType type) {

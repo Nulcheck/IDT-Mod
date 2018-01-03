@@ -1,13 +1,15 @@
 package com.mce.blocks;
 
+import java.util.List;
 import java.util.Random;
 
 import com.mce.common.mod_IDT;
 import com.mce.entity.tile.TileEntityECR;
+import com.mce.entity.tile.TileEntityMachineFrame;
+import com.mce.entity.tile.TileEntityMetalFrame;
 import com.mce.entity.tile.TileEntityNCR;
 import com.mce.entity.tile.TileEntitySBH;
 import com.mce.entity.tile.TileEntitySR;
-import com.mce.entity.tile.TileEntityTF;
 import com.mce.entity.tile.TileEntityUCR;
 
 import cpw.mods.fml.relauncher.Side;
@@ -16,6 +18,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -401,13 +404,21 @@ public class ModBlocks extends Block {
 		}
 	}
 
-	public static class TitaniumFrame extends BlockContainer {
-		public TitaniumFrame(Material mat) {
+	public static class MetalFrame extends BlockContainer {
+		public MetalFrame(Material mat) {
 			super(mat);
 		}
 
 		public TileEntity createNewTileEntity(World world, int meta) {
-			return new TileEntityTF();
+			return new TileEntityMetalFrame();
+		}
+
+		public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+			list.add(new ItemStack(item, 1, 0)); // Steel
+			list.add(new ItemStack(item, 1, 1)); // Titanium
+			list.add(new ItemStack(item, 1, 2)); // Tantalum
+			list.add(new ItemStack(item, 1, 3)); // Vanadium
+			list.add(new ItemStack(item, 1, 4)); // Vanadium Carbide
 		}
 
 		public boolean isOpaqueCube() {
@@ -420,6 +431,44 @@ public class ModBlocks extends Block {
 
 		public int getRenderBlockPass() {
 			return -1;
+		}
+
+		public int damageDropped(int meta) {
+			return meta;
+		}
+	}
+
+	public static class MachineFrame extends BlockContainer {
+		public MachineFrame(Material mat) {
+			super(mat);
+		}
+
+		public TileEntity createNewTileEntity(World world, int meta) {
+			return new TileEntityMachineFrame();
+		}
+
+		public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+			list.add(new ItemStack(item, 1, 0)); // Steel
+			list.add(new ItemStack(item, 1, 1)); // Titanium
+			list.add(new ItemStack(item, 1, 2)); // Tantalum
+			list.add(new ItemStack(item, 1, 3)); // Vanadium
+			list.add(new ItemStack(item, 1, 4)); // Vanadium Carbide
+		}
+
+		public boolean isOpaqueCube() {
+			return false;
+		}
+
+		public boolean renderAsNormalBlock() {
+			return false;
+		}
+
+		public int getRenderBlockPass() {
+			return -1;
+		}
+
+		public int damageDropped(int meta) {
+			return meta;
 		}
 	}
 
@@ -741,7 +790,7 @@ public class ModBlocks extends Block {
 		}
 
 		public void onFallenUpon(World world, int x, int y, int z, Entity e, float f) {
-			if (!world.isRemote && world.rand.nextFloat() < f - 0.8f ) {
+			if (!world.isRemote && world.rand.nextFloat() < f - 0.8f) {
 				world.setBlock(x, y, z, Blocks.air);
 			}
 		}

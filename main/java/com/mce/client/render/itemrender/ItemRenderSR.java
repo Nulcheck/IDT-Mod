@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.superReactor;
+import com.mce.models.blocks.SuperReactorModel;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -12,10 +12,10 @@ import net.minecraftforge.client.IItemRenderer;
 public class ItemRenderSR implements IItemRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/superReactor.png".substring(1));
-	private superReactor model;
+	private SuperReactorModel model;
 
 	public ItemRenderSR() {
-		this.model = new superReactor();
+		this.model = new SuperReactorModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, IItemRenderer.ItemRenderType type) {

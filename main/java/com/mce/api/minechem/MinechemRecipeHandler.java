@@ -148,7 +148,6 @@ public class MinechemRecipeHandler {
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SecretCementBrickTrapdoor), "3 Si", "3 O");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SecretStoneTrapdoor), "3 Si", "3 O");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SecretCobblestoneTrapdoor), "3 Si", "3 O");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.IDTCraftingTable), "8 cellulose");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.StoneBrick), "1 Si", "2 O");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.AcaciaWallPart), "2 cellulose");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.DarkOakWallPart), "2 cellulose");

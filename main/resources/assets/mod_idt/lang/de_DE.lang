@@ -36,7 +36,7 @@ container.enricher=Enricher
 container.bhg=Black Hole Generator
 
 container.smelter.nuclear=Nuclear
-container.smelter.nuclear.super=Nuclear
+container.smelter.nuclear.super=Thermal Nuclear
 container.smelter.induction=Induction
 
 container.birchChest=Birkentruhe
@@ -61,6 +61,23 @@ container.darkOakChestDouble=Große Schwarzeichentruhe
 container.dmChestDouble=Große Schwarz Matter truhe
 container.gelidChestDouble=Große Gelid truhe
 
+tile.MetalFrame.Steel.name=Steel Frame
+tile.MetalFrame.Titanium.name=Titanium Frame
+tile.MetalFrame.Tantalum.name=Tantalum Frame
+tile.MetalFrame.Vanadium.name=Vanadium Frame
+tile.MetalFrame.VC.name=Vanadium Carbide Frame
+tile.MachineFrame.Steel.name=Steel Machine Frame
+tile.MachineFrame.Titanium.name=Titanium Machine Frame
+tile.MachineFrame.Tantalum.name=Tantalum Machine Frame
+tile.MachineFrame.Vanadium.name=Vanadium Machine Frame
+tile.MachineFrame.VC.name=Vanadium Carbide Machine Frame
+
+tile.BioFuelExtractor.Steel.name=Steel BioFuel Extractor
+tile.BioFuelExtractor.Titanium.name=Titanium BioFuel Extractor
+tile.BioFuelExtractor.Tantalum.name=Tantalum BioFuel Extractor
+tile.BioFuelExtractor.Vanadium.name=Vanadium BioFuel Extractor
+tile.BioFuelExtractor.VC.name=Vanadium Carbide BioFuel Extractor
+
 tile.Cement.name=Cement
 tile.CementBricks.name=Cement Bricks
 tile.Healer.name=Healer
@@ -69,7 +86,6 @@ tile.LavaCobble.name=Lava Cobblestone
 tile.LavaObsidian.name=Lava Obsidian
 tile.CompactCobblestone.name=Compact Cobblestone
 tile.CrystalBlock.name=Crystal Block
-tile.TitaniumFrame.name=Titanium Frame
 tile.DidymiumGlass.name=Didymium Glass
 tile.DidymiumGlassPane.name=Didymium Glass Pane
 tile.EinsteiniumGlass.name=Einsteinium Glass
@@ -91,7 +107,6 @@ tile.SmelterActive.name=Smelter
 tile.IC.name=Industrial Cutter
 tile.MatterCondenser.name=Matter Condenser
 tile.ZNG.name=Z.N.G.
-tile.BioFuelExtractor.name=BioFuel Extractor
 tile.TankCompressor.name=Tank Compressor
 tile.BHG.name=Black Hole Generator
 tile.Welder.name=Welder

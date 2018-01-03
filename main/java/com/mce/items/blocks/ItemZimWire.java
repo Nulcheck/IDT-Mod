@@ -1,4 +1,4 @@
-package com.mce.items;
+package com.mce.items.blocks;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ZimWireItem extends ItemBlock {
-	public ZimWireItem(Block block) {
+public class ItemZimWire extends ItemBlock {
+	public ItemZimWire(Block block) {
 		super(block);
 	}
 

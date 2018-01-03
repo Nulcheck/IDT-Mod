@@ -368,12 +368,12 @@ public class BlockRecipeHandler {
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.IndustrialCutter, 1), " * ", "srs", "sss", '*',
 						new ItemStack(mod_IDT.DiamondSawBlade), 'r', new ItemStack(Items.redstone), 's', "ingotSteel"));
 
-		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.TitaniumFrame, 1),
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.MetalFrame, 1),
 				"t t", "   ", "t t", 't', "ingotTitanium"));
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.MatterCondenser), "f*f", "tct", "fgf", 'f',
-						new ItemStack(mod_IDT.TitaniumFrame), 'c', new ItemStack(mod_IDT.CompressorUnitGA), 't',
+						new ItemStack(mod_IDT.MetalFrame), 'c', new ItemStack(mod_IDT.CompressorUnitGA), 't',
 						"ingotTitanium", 'g', new ItemStack(mod_IDT.CutCrystalGem), '*',
 						new ItemStack(mod_IDT.T3CircuitBoard)));
 
@@ -614,15 +614,6 @@ public class BlockRecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.dark_oak_stairs, 4), "*  ", "** ", "***", '*',
 				new ItemStack(Blocks.planks, 1, 5));
 
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.IDTCraftingTable, 1),
-				new ItemStack(mod_IDT.SilkwoodCraftingTable));
-
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.IDTCraftingTable, 1),
-				new ItemStack(mod_IDT.AcaciaCraftingTable));
-
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.IDTCraftingTable, 1),
-				new ItemStack(mod_IDT.DarkOakCraftingTable));
-
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.EinsteiniumCoreReactor), "ppp", "sis", "ppp", 'p',
 						"plateTitanium", 's', new ItemStack(mod_IDT.SteelRod), 'i', "ingotEinsteinium"));
@@ -850,7 +841,7 @@ public class BlockRecipeHandler {
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.BioFuelExtractor), "sfs", "sas", "scs", 'f',
-						new ItemStack(mod_IDT.Flask), 'a', new ItemStack(mod_IDT.TitaniumFrame), 'c',
+						new ItemStack(mod_IDT.Flask), 'a', new ItemStack(mod_IDT.MetalFrame), 'c',
 						new ItemStack(mod_IDT.CompressorUnit), 's', "ingotSteel"));
 
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.CementBrickSlab, 6), "***", '*',

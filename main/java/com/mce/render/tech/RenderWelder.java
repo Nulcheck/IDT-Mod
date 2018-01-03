@@ -2,7 +2,7 @@ package com.mce.render.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.modelWelder;
+import com.mce.models.blocks.WelderModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 public class RenderWelder extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/modelWelder.png".substring(1));
-	public modelWelder model;
+	public WelderModel model;
 
 	public RenderWelder() {
-		this.model = new modelWelder();
+		this.model = new WelderModel();
 	}
 
 	private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {

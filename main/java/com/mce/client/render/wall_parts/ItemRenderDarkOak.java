@@ -1,17 +1,17 @@
 package com.mce.client.render.wall_parts;
 
 import com.mce.entity.tile.wall_parts.TileEntityWPDarkOak;
-import com.mce.models.items.wallPart;
+import com.mce.models.items.WallPartModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
 
 public class ItemRenderDarkOak implements IItemRenderer {
-	private wallPart model;
+	private WallPartModel model;
 
 	public ItemRenderDarkOak() {
-		this.model = new wallPart();
+		this.model = new WallPartModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, IItemRenderer.ItemRenderType type) {

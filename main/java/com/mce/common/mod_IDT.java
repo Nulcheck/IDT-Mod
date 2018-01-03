@@ -42,11 +42,12 @@ import com.mce.blocks.ModBlocks.HealerBlock;
 import com.mce.blocks.ModBlocks.LavaCobble;
 import com.mce.blocks.ModBlocks.LavaObsidian;
 import com.mce.blocks.ModBlocks.LavaStone;
+import com.mce.blocks.ModBlocks.MachineFrame;
+import com.mce.blocks.ModBlocks.MetalFrame;
 import com.mce.blocks.ModBlocks.ModGlassPane;
 import com.mce.blocks.ModBlocks.NeptuniumCoreReactor;
 import com.mce.blocks.ModBlocks.SBH;
 import com.mce.blocks.ModBlocks.SuperReactor;
-import com.mce.blocks.ModBlocks.TitaniumFrame;
 import com.mce.blocks.ModBlocks.UraniumCoreReactor;
 import com.mce.blocks.ModButtons.AcaciaButton;
 import com.mce.blocks.ModButtons.BirchButton;
@@ -197,7 +198,6 @@ import com.mce.blocks.workbench.BirchWorkbench;
 import com.mce.blocks.workbench.DarkOakWorkbench;
 import com.mce.blocks.workbench.EbonyWorkbench;
 import com.mce.blocks.workbench.GelidCraftingTable;
-import com.mce.blocks.workbench.IDTWorkbench;
 import com.mce.blocks.workbench.JungleWorkbench;
 import com.mce.blocks.workbench.SilkwoodWorkbench;
 import com.mce.blocks.workbench.SpruceWorkbench;
@@ -303,7 +303,7 @@ import com.mce.items.WallPart.StoneWallPart;
 import com.mce.items.WallPart.StonebrickWallPart;
 import com.mce.items.WallPart.WillowWallPart;
 import com.mce.items.WikiPaper;
-import com.mce.items.blocks.EinsteiniumCoreReactorItem;
+import com.mce.items.blocks.ItemEsCore;
 import com.mce.items.doors.AcaciaDoorItem;
 import com.mce.items.doors.BirchDoorItem;
 import com.mce.items.doors.DarkOakDoorItem;
@@ -374,7 +374,7 @@ public class mod_IDT {
 	public static final String modid = "mod_IDT";
 	public static final String modid2 = "mod_idt";
 	public static final String name = "Industrial Technologies and More";
-	public static final String version = "Snapshot 17w43a";
+	public static final String version = "Snapshot 18w01a";
 
 	@SidedProxy(clientSide = "com.mce.client.ClientProxy", serverSide = "com.mce.common.CommonProxy")
 	public static CommonProxy proxy;
@@ -384,19 +384,33 @@ public class mod_IDT {
 	public static boolean ebm = Loader.isModLoaded("mod_ebm");
 	public static boolean minechem = Loader.isModLoaded("minechem");
 
-	// TODO: Blocks
+	//// Blocks
+	// Tech
+	public static Block MetalFrame;
+	public static Block MachineFrame;
+	public static Block HealerBlock;
+	public static Block AdvancedHealer;
+	public static Block SmelterIdle;
+	public static Block SmelterActive;
+	public static Block IndustrialCutter;
+	public static Block MatterCondenser;
+	public static Block BioFuelExtractor;
+	public static Block TankCompressor;
+	public static Block CompactCobblestone;
+	public static Block BlackHoleGenerator;
+	public static Block Welder;
+	public static Block Magnetizer;
+	public static Block ZNG;
+	public static Block Enricher;
+
 	// Other
 	public static Block Cement;
 	public static Block CementBricks;
-	public static Block HealerBlock;
-	public static Block AdvancedHealer;
 	public static Block CryingObsidian;
 	public static Block LavaStone;
 	public static Block LavaCobble;
 	public static Block LavaObsidian;
 	public static Block CrystalBlock;
-	public static Block SmelterIdle;
-	public static Block SmelterActive;
 	public static Block SteelBlock;
 	public static Block TitaniumBlock;
 	public static Block DidymiumGlass;
@@ -407,23 +421,12 @@ public class mod_IDT {
 	public static Block NeptuniumGlassPane;
 	public static Block UraniumGlass;
 	public static Block UraniumGlassPane;
-	public static Block IndustrialCutter;
-	public static Block MatterCondenser;
 	public static Block DarkMatter;
-	public static Block ZNG;
-	public static Block TitaniumFrame;
 	public static Block StableBlackHole;
 	public static Block EinsteiniumCoreReactor;
 	public static Block NeptuniumCoreReactor;
 	public static Block UraniumCoreReactor;
 	public static Block SuperReactor;
-	public static Block BioFuelExtractor;
-	public static Block TankCompressor;
-	public static Block CompactCobblestone;
-	public static Block BlackHoleGenerator;
-	public static Block Welder;
-	public static Block Magnetizer;
-	public static Block Enricher;
 	public static Block ZimphnodeWire;
 	public static Block CopperBlock;
 	public static Block ReinforcedGlass;
@@ -820,7 +823,6 @@ public class mod_IDT {
 	public static Block JungleCraftingTable;
 	public static Block WillowCraftingTable;
 	public static Block EbonyCraftingTable;
-	public static Block IDTCraftingTable;
 	public static Block SilkwoodCraftingTable;
 	public static Block AcaciaCraftingTable;
 	public static Block DarkOakCraftingTable;
@@ -837,7 +839,7 @@ public class mod_IDT {
 	public static Block DarkOakLadder;
 	public static Block GelidLadder;
 
-	// TODO: Items
+	//// Items
 	// Other
 	public static Item StoneBrick;
 	public static Item ExplosiveCharge;
@@ -1135,7 +1137,6 @@ public class mod_IDT {
 	public static final int SmelterGUI = 5;
 	public static final int MatterCondenserGUI = 6;
 	public static final int ZNGGUI = 7;
-	public static final int IDTCraftingTableGUI = 8;
 	public static final int SilkwoodCraftingTableGUI = 9;
 	public static final int BFEGUI = 10;
 	public static final int TankCompressorGUI = 11;
@@ -1192,7 +1193,56 @@ public class mod_IDT {
 
 		new CheckVersion();
 
-		// TODO: Blocks
+		//// Blocks
+		// Tech
+		MetalFrame = new MetalFrame(Material.iron).setBlockName("MetalFrame").setCreativeTab(IDT)
+				.setStepSound(Block.soundTypeMetal).setResistance(25f);
+
+		MachineFrame = new MachineFrame(Material.iron).setBlockName("MachineFrame").setCreativeTab(IDT)
+				.setStepSound(Block.soundTypeMetal).setResistance(30f);
+
+		HealerBlock = new HealerBlock(Material.ground).setBlockName("Healer").setHardness(2.0F).setResistance(2000F)
+				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:healer");
+
+		AdvancedHealer = new AdvancedHealer(Material.ground).setBlockName("AdvancedHealer").setHardness(2f)
+				.setResistance(2000f).setStepSound(Block.soundTypeGlass).setCreativeTab(IDT);
+
+		SmelterIdle = new Smelter(Material.iron, false).setBlockName("SmelterIdle").setHardness(5f).setResistance(30f)
+				.setCreativeTab(IDT);
+
+		SmelterActive = new Smelter(Material.iron, true).setBlockName("SmelterActive").setLightLevel(1)
+				.setResistance(30f).setHardness(5f);
+
+		IndustrialCutter = new IndustrialCutter(Material.ground).setHardness(10F).setResistance(30F).setBlockName("IC")
+				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT);
+
+		MatterCondenser = new MatterCondenser(Material.iron).setHardness(10F).setResistance(100F)
+				.setBlockName("MatterCondenser").setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
+				.setBlockTextureName("mod_IDT:titanium_block");
+
+		BioFuelExtractor = new BioFuelExtractor(Material.iron).setBlockName("BioFuelExtractor").setCreativeTab(IDT)
+				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(30f)
+				.setHardness(3f);
+
+		TankCompressor = new TankCompressor(Material.iron).setBlockName("TankCompressor").setCreativeTab(IDT)
+				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(30f)
+				.setHardness(3f);
+
+		BlackHoleGenerator = new BHG(Material.ground).setBlockName("BHG").setHardness(5f).setResistance(35f)
+				.setCreativeTab(IDT).setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:titanium_block");
+
+		Welder = new Welder(Material.ground, false).setBlockName("Welder").setHardness(2f).setResistance(30f)
+				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
+
+		Magnetizer = new Magnetizer(Material.ground).setBlockName("Magnetizer").setHardness(2f).setResistance(30f)
+				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
+
+		Enricher = new Enricher(Material.ground).setBlockName("Enricher").setHardness(2f).setResistance(30f)
+				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
+
+		ZNG = new ZNG(Material.iron).setBlockName("ZNG").setResistance(30f).setCreativeTab(IDT)
+				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:steel_block");
+
 		// Other
 		Cement = new ModBlocks(Material.ground).setBlockName("Cement").setHardness(2.0F).setResistance(30.0F)
 				.setStepSound(Block.soundTypeStone).setCreativeTab(IDT).setBlockTextureName("mod_IDT:cement");
@@ -1200,12 +1250,6 @@ public class mod_IDT {
 		CementBricks = new ModBlocks(Material.ground).setBlockName("CementBricks").setHardness(2.5F)
 				.setResistance(30.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:cement_bricks");
-
-		HealerBlock = new HealerBlock(Material.ground).setBlockName("Healer").setHardness(2.0F).setResistance(2000F)
-				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:healer");
-
-		AdvancedHealer = new AdvancedHealer(Material.ground).setBlockName("AdvancedHealer").setHardness(2f)
-				.setResistance(2000f).setStepSound(Block.soundTypeGlass).setCreativeTab(IDT);
 
 		CryingObsidian = new CryingObsidian(Material.ground).setBlockName("CryingObsidian").setHardness(50.0F)
 				.setResistance(2000F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
@@ -1226,12 +1270,6 @@ public class mod_IDT {
 		CrystalBlock = new CrystalBlock(Material.ground).setBlockName("CrystalBlock").setHardness(5.0F)
 				.setResistance(30F).setLightOpacity(1).setStepSound(Block.soundTypeGlass).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:crystal_block");
-
-		SmelterIdle = new Smelter(Material.iron, false).setBlockName("SmelterIdle").setHardness(5f).setResistance(30f)
-				.setCreativeTab(IDT);
-
-		SmelterActive = new Smelter(Material.iron, true).setBlockName("SmelterActive").setLightLevel(1)
-				.setResistance(30f).setHardness(5f);
 
 		SteelBlock = new SteelBlock(Material.iron).setHardness(10F).setResistance(30F).setBlockName("SteelBlock")
 				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT).setBlockTextureName("mod_IDT:steel_block");
@@ -1269,22 +1307,9 @@ public class mod_IDT {
 				.setHardness(5f).setResistance(15f).setBlockName("UraniumGlassPane").setStepSound(Block.soundTypeGlass)
 				.setCreativeTab(IDT);
 
-		IndustrialCutter = new IndustrialCutter(Material.ground).setHardness(10F).setResistance(30F).setBlockName("IC")
-				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT);
-
-		MatterCondenser = new MatterCondenser(Material.iron).setHardness(10F).setResistance(100F)
-				.setBlockName("MatterCondenser").setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:titanium_block");
-
 		DarkMatter = new DarkMatter(Material.ground, true).setHardness(30F).setResistance(1500F)
 				.setBlockName("DarkMatter").setCreativeTab(IDT).setStepSound(Block.soundTypeCloth)
 				.setBlockTextureName("mod_IDT:dark_matter");
-
-		ZNG = new ZNG(Material.iron).setBlockName("ZNG").setResistance(30f).setCreativeTab(IDT)
-				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:steel_block");
-
-		TitaniumFrame = new TitaniumFrame(Material.iron).setBlockName("TitaniumFrame").setCreativeTab(IDT)
-				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(25f);
 
 		StableBlackHole = new SBH(Material.ground).setBlockName("StableBlackHole").setCreativeTab(IDT)
 				.setStepSound(Block.soundTypeSnow).setResistance(7000000f).setBlockTextureName("mod_idt:sbh")
@@ -1305,29 +1330,9 @@ public class mod_IDT {
 		SuperReactor = new SuperReactor(Material.iron).setBlockName("SuperReactor").setCreativeTab(IDT)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(96f);
 
-		BioFuelExtractor = new BioFuelExtractor(Material.iron).setBlockName("BioFuelExtractor").setCreativeTab(IDT)
-				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(30f)
-				.setHardness(3f);
-
-		TankCompressor = new TankCompressor(Material.iron).setBlockName("TankCompressor").setCreativeTab(IDT)
-				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(30f)
-				.setHardness(3f);
-
 		CompactCobblestone = new ModBlocks(Material.rock).setBlockName("CompactCobblestone").setHardness(5f)
 				.setResistance(15f).setCreativeTab(IDT).setStepSound(Block.soundTypeStone)
 				.setBlockTextureName("mod_IDT:compact_cobble");
-
-		BlackHoleGenerator = new BHG(Material.ground).setBlockName("BHG").setHardness(5f).setResistance(35f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:titanium_block");
-
-		Welder = new Welder(Material.ground, false).setBlockName("Welder").setHardness(2f).setResistance(30f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
-
-		Magnetizer = new Magnetizer(Material.ground).setBlockName("Magnetizer").setHardness(2f).setResistance(30f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
-
-		Enricher = new Enricher(Material.ground).setBlockName("Enricher").setHardness(2f).setResistance(30f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
 
 		ZimphnodeWire = new ZimWire(Material.circuits).setBlockName("ZimWire").setHardness(1f).setResistance(5f)
 				/* .setCreativeTab(IDT) */.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:zimphnode");
@@ -1416,7 +1421,7 @@ public class mod_IDT {
 		CrystalRock = new CrystalRock(Material.rock).setBlockName("CrystalRock").setHardness(3f).setResistance(15f)
 				.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:crystal_rock").setCreativeTab(IDT);
 
-		// TODO: Ores
+		//// Ores
 		EinsteiniumOre = new EinsteiniumOre(true).setBlockName("EinsteiniumOre").setHardness(3F).setResistance(5F)
 				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:ore_einsteinium");
@@ -2362,9 +2367,6 @@ public class mod_IDT {
 		EbonyCraftingTable = new EbonyWorkbench().setHardness(2.5F).setResistance(5f).setBlockName("EbonyCraftingTable")
 				.setBlockTextureName("mod_IDT:ebony").setStepSound(Block.soundTypeWood).setCreativeTab(IDT);
 
-		IDTCraftingTable = new IDTWorkbench().setHardness(2.5F).setResistance(5f).setBlockName("IDTCraftingTable")
-				.setBlockTextureName("planks_wood").setStepSound(Block.soundTypeWood).setCreativeTab(IDT);
-
 		SilkwoodCraftingTable = new SilkwoodWorkbench().setHardness(2.5F).setResistance(5f)
 				.setBlockName("SilkwoodCraftingTable").setBlockTextureName("mod_IDT:silkwood")
 				.setStepSound(Block.soundTypeWood).setCreativeTab(IDT);
@@ -2415,7 +2417,7 @@ public class mod_IDT {
 		CrystalPortal = new CrystalPortal().setBlockName("CrystalPortal").setBlockUnbreakable();
 		// log.info("Blocks loaded.");
 
-		// TODO: Items
+		//// Items
 		// Other
 		StoneBrick = new Item().setTextureName("mod_IDT:stone_brick").setCreativeTab(IDTItems)
 				.setUnlocalizedName("StoneBrick");
@@ -2484,8 +2486,8 @@ public class mod_IDT {
 		CopperWire = new Item().setTextureName("mod_IDT:wire_copper").setCreativeTab(IDTItems)
 				.setUnlocalizedName("CopperWire");
 
-		EinsteiniumCoreReactorItem = new EinsteiniumCoreReactorItem().setCreativeTab(IDTItems)
-				.setTextureName("mod_IDT:titanium_block").setUnlocalizedName("ECRI");
+		EinsteiniumCoreReactorItem = new ItemEsCore().setCreativeTab(IDTItems).setTextureName("mod_IDT:titanium_block")
+				.setUnlocalizedName("ECRI");
 
 		/*
 		 * NeptuniumCoreReactorItem = new
@@ -2946,7 +2948,7 @@ public class mod_IDT {
 		Popcorn = new ItemFood(2, false).setTextureName("mod_IDT:popcorn").setCreativeTab(IDTItems)
 				.setUnlocalizedName("Popcorn");
 
-		// TODO: Tools/Armors
+		//// Tools/Armors
 		ArmorMaterial mat_steel = EnumHelper.addArmorMaterial("mat_steel", 17,
 				new int[] { (int) 2.5, 7, (int) 5.5, (int) 2.5 }, (int) 9.5);
 
@@ -3217,7 +3219,7 @@ public class mod_IDT {
 		}
 	}
 
-	// TODO: Everything Else
+	//// Everything Else
 	@Mod.EventHandler
 	public static void load(FMLInitializationEvent event) {
 		gameRegistry();
@@ -3258,7 +3260,7 @@ public class mod_IDT {
 		OreGenHandler.genOres();
 	}
 
-	// TODO: Post
+	//// Post
 	@Mod.EventHandler
 	public static void postInit(FMLPostInitializationEvent event) {
 		// For liquids and their buckets

@@ -4,7 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class coreReactor extends ModelBase {
+public class CoreReactorModel extends ModelBase {
 	// fields
 	ModelRenderer Base_Bottom_1;
 	ModelRenderer Base_Bottom_2;
@@ -36,7 +36,7 @@ public class coreReactor extends ModelBase {
 	ModelRenderer Transfer_Line_3;
 	ModelRenderer Transfer_Line_4;
 
-	public coreReactor() {
+	public CoreReactorModel() {
 		textureWidth = 128;
 		textureHeight = 128;
 

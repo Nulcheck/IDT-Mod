@@ -2,7 +2,7 @@ package com.mce.render.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.zng;
+import com.mce.models.blocks.ZNGModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 public class RenderZNG extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/zng.png".substring(1));
-	public zng model;
+	public ZNGModel model;
 
 	public RenderZNG() {
-		this.model = new zng();
+		this.model = new ZNGModel();
 	}
 
 	private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {

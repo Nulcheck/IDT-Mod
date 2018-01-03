@@ -4,7 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class titaniumFrame extends ModelBase {
+public class MetalFrameModel extends ModelBase {
 	// fields
 	ModelRenderer Base1;
 	ModelRenderer Base2;
@@ -19,7 +19,7 @@ public class titaniumFrame extends ModelBase {
 	ModelRenderer Top3;
 	ModelRenderer Top4;
 
-	public titaniumFrame() {
+	public MetalFrameModel() {
 		textureWidth = 64;
 		textureHeight = 32;
 

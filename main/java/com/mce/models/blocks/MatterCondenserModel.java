@@ -4,7 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class matterCondenser extends ModelBase {
+public class MatterCondenserModel extends ModelBase {
 	// fields
 	ModelRenderer Base1;
 	ModelRenderer Base2;
@@ -27,7 +27,7 @@ public class matterCondenser extends ModelBase {
 	ModelRenderer Support3;
 	ModelRenderer Support4;
 
-	public matterCondenser() {
+	public MatterCondenserModel() {
 		textureWidth = 128;
 		textureHeight = 128;
 

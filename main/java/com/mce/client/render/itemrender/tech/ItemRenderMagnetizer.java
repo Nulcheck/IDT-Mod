@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.modelMagnetizer;
+import com.mce.models.blocks.MagnetizerModel;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -12,10 +12,10 @@ import net.minecraftforge.client.IItemRenderer;
 public class ItemRenderMagnetizer implements IItemRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/modelMagnetizer.png".substring(1));
-	private modelMagnetizer model;
+	private MagnetizerModel model;
 
 	public ItemRenderMagnetizer() {
-		this.model = new modelMagnetizer();
+		this.model = new MagnetizerModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, IItemRenderer.ItemRenderType type) {

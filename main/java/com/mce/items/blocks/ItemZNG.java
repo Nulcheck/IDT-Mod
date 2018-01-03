@@ -8,9 +8,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 
-public class ZNGBlock extends ItemBlock {
-
-	public ZNGBlock(Block block) {
+public class ItemZNG extends ItemBlock {
+	public ItemZNG(Block block) {
 		super(block);
 	}
 
@@ -18,5 +17,4 @@ public class ZNGBlock extends ItemBlock {
 			boolean show) {
 		list.add("Zimphnode Generator");
 	}
-
 }

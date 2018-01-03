@@ -3,7 +3,7 @@ package com.mce.render;
 import org.lwjgl.opengl.GL11;
 
 import com.mce.entity.tile.TileEntityUCR;
-import com.mce.models.blocks.coreReactor;
+import com.mce.models.blocks.CoreReactorModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -13,10 +13,10 @@ import net.minecraft.world.World;
 public class RenderUCR extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/uraniumCoreReactor.png".substring(1));
-	public coreReactor model;
+	public CoreReactorModel model;
 
 	public RenderUCR() {
-		this.model = new coreReactor();
+		this.model = new CoreReactorModel();
 	}
 
 	private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {

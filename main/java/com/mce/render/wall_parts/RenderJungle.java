@@ -2,7 +2,7 @@ package com.mce.render.wall_parts;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.items.wallPart;
+import com.mce.models.items.WallPartModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -11,10 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderJungle extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/wall_part_jungle.png".substring(1));
-	public wallPart model;
+	public WallPartModel model;
 
 	public RenderJungle() {
-		this.model = new wallPart();
+		this.model = new WallPartModel();
 	}
 
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f) {

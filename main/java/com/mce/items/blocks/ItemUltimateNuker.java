@@ -8,9 +8,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 
-public class UNBlock extends ItemBlock {
-
-	public UNBlock(Block block) {
+public class ItemUltimateNuker extends ItemBlock {
+	public ItemUltimateNuker(Block block) {
 		super(block);
 	}
 
@@ -19,5 +18,4 @@ public class UNBlock extends ItemBlock {
 		list.add(EnumChatFormatting.BOLD + "******" + EnumChatFormatting.RESET
 				+ "*");
 	}
-
 }

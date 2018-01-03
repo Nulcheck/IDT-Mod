@@ -4,7 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class tankCompressor extends ModelBase {
+public class TankCompressorModel extends ModelBase {
 	// fields
 	ModelRenderer base;
 	ModelRenderer colomn1;
@@ -16,7 +16,7 @@ public class tankCompressor extends ModelBase {
 	ModelRenderer tanktopbase;
 	ModelRenderer tanktopnozzel;
 
-	public tankCompressor() {
+	public TankCompressorModel() {
 		textureWidth = 64;
 		textureHeight = 64;
 

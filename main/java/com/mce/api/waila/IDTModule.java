@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Level;
 import com.mce.blocks.MineralBlocks.EinsteiniumBlock;
 import com.mce.blocks.MineralBlocks.NeptuniumBlock;
 import com.mce.blocks.MineralBlocks.UraniumBlock;
+import com.mce.blocks.ModBlocks.MetalFrame;
 import com.mce.blocks.ModBlocks.ModGlassPane;
 import com.mce.blocks.ModBlocks.SBH;
 import com.mce.blocks.ModGlass;
@@ -46,6 +47,7 @@ public class IDTModule {
 	public static Class<?> nuker = null;
 	public static Class<?> sbh = null;
 	public static Class<?> ln = null;
+	public static Class<?> metalFrame = null;
 
 	public static Class<?> smelter = null;
 	public static Method smelter_damage = null;
@@ -55,26 +57,32 @@ public class IDTModule {
 	public static Class<?> bfe = null;
 	public static Method bfe_damage = null;
 	public static Method bfe_damageMax = null;
+	public static Method bfe_tier = null;
 
 	public static Class<?> bhg = null;
 	public static Method bhg_damage = null;
 	public static Method bhg_damageMax = null;
+	public static Method bhg_tier = null;
 
 	public static Class<?> cutter = null;
 	public static Method cutter_damage = null;
 	public static Method cutter_damageMax = null;
+	public static Method cutter_tier = null;
 
 	public static Class<?> mag = null;
 	public static Method mag_damage = null;
 	public static Method mag_damageMax = null;
+	public static Method mag_tier = null;
 
 	public static Class<?> tc = null;
 	public static Method tc_damage = null;
 	public static Method tc_damageMax = null;
+	public static Method tc_tier = null;
 
 	public static Class<?> mc = null;
 	public static Method mc_damage = null;
 	public static Method mc_damageMax = null;
+	public static Method mc_tier = null;
 
 	public static Class<?> zng = null;
 	public static Method zng_damage = null;
@@ -104,6 +112,7 @@ public class IDTModule {
 			nuker = UltimateNuker.class;
 			sbh = SBH.class;
 			ln = LiquidNitrogen.class;
+			metalFrame = MetalFrame.class;
 
 			smelter = TileEntitySmelter.class;
 			smelter_damage = smelter.getMethod("getDamage");
@@ -173,5 +182,6 @@ public class IDTModule {
 		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), nuker);
 		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), sbh);
 		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), ln);
+		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), metalFrame);
 	}
 }

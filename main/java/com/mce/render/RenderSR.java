@@ -2,7 +2,7 @@ package com.mce.render;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.superReactor;
+import com.mce.models.blocks.SuperReactorModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 public class RenderSR extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/superReactor.png".substring(1));
-	public superReactor model;
+	public SuperReactorModel model;
 
 	public RenderSR() {
-		this.model = new superReactor();
+		this.model = new SuperReactorModel();
 	}
 
 	private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {

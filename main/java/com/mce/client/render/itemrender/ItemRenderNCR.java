@@ -2,7 +2,7 @@ package com.mce.client.render.itemrender;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.coreReactor;
+import com.mce.models.blocks.CoreReactorModel;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -12,10 +12,10 @@ import net.minecraftforge.client.IItemRenderer;
 public class ItemRenderNCR implements IItemRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/neptuniumCoreReactor.png".substring(1));
-	private coreReactor model;
+	private CoreReactorModel model;
 
 	public ItemRenderNCR() {
-		this.model = new coreReactor();
+		this.model = new CoreReactorModel();
 	}
 
 	public boolean handleRenderType(ItemStack item, IItemRenderer.ItemRenderType type) {

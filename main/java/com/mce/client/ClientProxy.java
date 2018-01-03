@@ -20,7 +20,7 @@ import com.mce.client.render.itemrender.ItemRenderAdvancedHealer;
 import com.mce.client.render.itemrender.ItemRenderECR;
 import com.mce.client.render.itemrender.ItemRenderNCR;
 import com.mce.client.render.itemrender.ItemRenderSR;
-import com.mce.client.render.itemrender.ItemRenderTF;
+import com.mce.client.render.itemrender.ItemRenderMetalFrame;
 import com.mce.client.render.itemrender.ItemRenderUCR;
 import com.mce.client.render.itemrender.bombs.ItemRenderDM;
 import com.mce.client.render.itemrender.bombs.ItemRenderEB;
@@ -79,7 +79,7 @@ import com.mce.entity.tile.TileEntityECR;
 import com.mce.entity.tile.TileEntityNCR;
 import com.mce.entity.tile.TileEntitySBH;
 import com.mce.entity.tile.TileEntitySR;
-import com.mce.entity.tile.TileEntityTF;
+import com.mce.entity.tile.TileEntityMetalFrame;
 import com.mce.entity.tile.TileEntityUCR;
 import com.mce.entity.tile.TileEntityZimWire;
 import com.mce.entity.tile.bombs.TileEntityDM;
@@ -135,7 +135,7 @@ import com.mce.render.RenderNCR;
 import com.mce.render.RenderSBH;
 import com.mce.render.RenderSR;
 import com.mce.render.RenderTC;
-import com.mce.render.RenderTF;
+import com.mce.render.RenderMetalFrame;
 import com.mce.render.RenderUCR;
 import com.mce.render.RenderZimWire;
 import com.mce.render.bombs.RenderDM;
@@ -211,8 +211,8 @@ public class ClientProxy extends CommonProxy {
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityZimWire.class, new RenderZimWire());
 
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTF.class, new RenderTF());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(mod_IDT.TitaniumFrame), new ItemRenderTF());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMetalFrame.class, new RenderMetalFrame());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(mod_IDT.MetalFrame), new ItemRenderMetalFrame());
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityECR.class, new RenderECR());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(mod_IDT.EinsteiniumCoreReactor),

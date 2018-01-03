@@ -6,15 +6,15 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.matterCondenser;
+import com.mce.models.blocks.MatterCondenserModel;
 
 public class RenderMatterCondenser extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation(
 			"mod_idt", "/textures/models/matterCondenser.png".substring(1));
-	public matterCondenser model;
+	public MatterCondenserModel model;
 
 	public RenderMatterCondenser() {
-		this.model = new matterCondenser();
+		this.model = new MatterCondenserModel();
 	}
 
 	public void renderTileEntityAt(TileEntity entity, double x, double y,

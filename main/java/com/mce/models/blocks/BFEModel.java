@@ -4,7 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class bioFuelExtractor extends ModelBase {
+public class BFEModel extends ModelBase {
 	// fields
 	ModelRenderer Base1;
 	ModelRenderer Base2;
@@ -27,7 +27,7 @@ public class bioFuelExtractor extends ModelBase {
 	ModelRenderer Pipe3;
 	ModelRenderer Pipe4;
 
-	public bioFuelExtractor() {
+	public BFEModel() {
 		textureWidth = 64;
 		textureHeight = 64;
 

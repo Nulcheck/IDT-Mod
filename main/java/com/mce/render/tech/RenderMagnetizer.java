@@ -2,7 +2,7 @@ package com.mce.render.tech;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.modelMagnetizer;
+import com.mce.models.blocks.MagnetizerModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 public class RenderMagnetizer extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/modelMagnetizer.png".substring(1));
-	public modelMagnetizer model;
+	public MagnetizerModel model;
 
 	public RenderMagnetizer() {
-		this.model = new modelMagnetizer();
+		this.model = new MagnetizerModel();
 	}
 
 	private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {

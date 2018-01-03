@@ -4,13 +4,13 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class modelWelder extends ModelBase {
+public class WelderModel extends ModelBase {
 	// fields
 	ModelRenderer Base;
 	ModelRenderer WeldSide1;
 	ModelRenderer WeldSide2;
 
-	public modelWelder() {
+	public WelderModel() {
 		textureWidth = 64;
 		textureHeight = 128;
 

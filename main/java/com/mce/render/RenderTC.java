@@ -2,7 +2,7 @@ package com.mce.render;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mce.models.blocks.tankCompressor;
+import com.mce.models.blocks.TankCompressorModel;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -11,10 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderTC extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/tankCompressor.png".substring(1));
-	public tankCompressor model;
+	public TankCompressorModel model;
 
 	public RenderTC() {
-		this.model = new tankCompressor();
+		this.model = new TankCompressorModel();
 	}
 
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f) {
