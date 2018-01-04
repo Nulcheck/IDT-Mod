@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 public class RenderDM extends TileEntitySpecialRenderer {
 
 	public static final ResourceLocation texture = new ResourceLocation(
-			"mod_idt", "/textures/models/DM.png".substring(1));
+			"mod_idt", "/textures/models/bombs/DM.png".substring(1));
 
 	public static final ResourceLocation modelDir = new ResourceLocation(
 			"mod_idt", "/models/DarkMatterBomb.obj");

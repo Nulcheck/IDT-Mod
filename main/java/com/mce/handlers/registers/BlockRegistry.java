@@ -3,7 +3,7 @@ package com.mce.handlers.registers;
 import com.mce.common.mod_IDT;
 import com.mce.items.blocks.ItemDidymiumGlass;
 import com.mce.items.blocks.ItemEsBomb;
-import com.mce.items.blocks.ItemMachineFrame;
+import com.mce.items.blocks.ItemMachineCasing;
 import com.mce.items.blocks.ItemMetalFrame;
 import com.mce.items.blocks.ItemNpBomb;
 import com.mce.items.blocks.ItemUBomb;
@@ -42,8 +42,8 @@ public class BlockRegistry {
 	public static void registerBlocks() {
 		// Tech
 		GameRegistry.registerBlock(mod_IDT.MetalFrame, ItemMetalFrame.class, mod_IDT.MetalFrame.getUnlocalizedName());
-		GameRegistry.registerBlock(mod_IDT.MachineFrame, ItemMachineFrame.class,
-				mod_IDT.MachineFrame.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.MachineCasing, ItemMachineCasing.class,
+				mod_IDT.MachineCasing.getUnlocalizedName());
 		GameRegistry.registerBlock(mod_IDT.HealerBlock, "Healer");
 		// GameRegistry.registerBlock(mod_IDT.AdvancedHealer, "AdvancedHealer");
 		GameRegistry.registerBlock(mod_IDT.SmelterIdle, "SmelterIdle");

@@ -5,12 +5,12 @@ import java.util.Random;
 
 import com.mce.common.mod_IDT;
 import com.mce.entity.tile.TileEntityECR;
-import com.mce.entity.tile.TileEntityMachineFrame;
 import com.mce.entity.tile.TileEntityMetalFrame;
 import com.mce.entity.tile.TileEntityNCR;
 import com.mce.entity.tile.TileEntitySBH;
 import com.mce.entity.tile.TileEntitySR;
 import com.mce.entity.tile.TileEntityUCR;
+import com.mce.entity.tile.tech.TileEntityMachineCasing;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -438,13 +438,13 @@ public class ModBlocks extends Block {
 		}
 	}
 
-	public static class MachineFrame extends BlockContainer {
-		public MachineFrame(Material mat) {
+	public static class MachineCasing extends BlockContainer {
+		public MachineCasing(Material mat) {
 			super(mat);
 		}
 
 		public TileEntity createNewTileEntity(World world, int meta) {
-			return new TileEntityMachineFrame();
+			return new TileEntityMachineCasing();
 		}
 
 		public void getSubBlocks(Item item, CreativeTabs tab, List list) {

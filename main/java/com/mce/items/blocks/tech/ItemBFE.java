@@ -18,19 +18,19 @@ public class ItemBFE extends ItemBlockWithMetadata {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
 		switch (stack.getItemDamage()) {
 		case 0:
-			list.add("Using Tier 1 Machine Frame");
+			list.add("Using Tier 1 Casing");
 			break;
 		case 1:
-			list.add("Using Tier 2 Machine Frame");
+			list.add("Using Tier 2 Casing");
 			break;
 		case 2:
-			list.add("Using Tier 3 Machine Frame");
+			list.add("Using Tier 3 Casing");
 			break;
 		case 3:
-			list.add("Using Tier 4 Machine Frame");
+			list.add("Using Tier 4 Casing");
 			break;
 		case 4:
-			list.add("Using Tier 5 Machine Frame");
+			list.add("Using Tier 5 Casing");
 			break;
 		}
 	}

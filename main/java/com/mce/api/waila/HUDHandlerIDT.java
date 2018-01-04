@@ -138,17 +138,37 @@ public class HUDHandlerIDT implements IWailaDataProvider {
 		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 1) {
 			list.add("Tier 2 Frame");
 		}
-		
+
 		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 2) {
 			list.add("Tier 3 Frame");
 		}
-		
+
 		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 3) {
 			list.add("Tier 4 Frame");
 		}
-		
+
 		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.MetalFrame) && stack.getItemDamage() == 4) {
 			list.add("Tier 5 Frame");
+		}
+
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.BioFuelExtractor) && stack.getItemDamage() == 0) {
+			list.add("Using Tier 1 Casing");
+		}
+
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.BioFuelExtractor) && stack.getItemDamage() == 1) {
+			list.add("Using Tier 2 Casing");
+		}
+
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.BioFuelExtractor) && stack.getItemDamage() == 2) {
+			list.add("Using Tier 3 Casing");
+		}
+
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.BioFuelExtractor) && stack.getItemDamage() == 3) {
+			list.add("Using Tier 4 Casing");
+		}
+
+		else if (stack.getItem() == Item.getItemFromBlock(mod_IDT.BioFuelExtractor) && stack.getItemDamage() == 4) {
+			list.add("Using Tier 5 Casing");
 		}
 		return list;
 	}

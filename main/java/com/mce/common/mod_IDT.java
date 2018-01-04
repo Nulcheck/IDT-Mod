@@ -42,7 +42,7 @@ import com.mce.blocks.ModBlocks.HealerBlock;
 import com.mce.blocks.ModBlocks.LavaCobble;
 import com.mce.blocks.ModBlocks.LavaObsidian;
 import com.mce.blocks.ModBlocks.LavaStone;
-import com.mce.blocks.ModBlocks.MachineFrame;
+import com.mce.blocks.ModBlocks.MachineCasing;
 import com.mce.blocks.ModBlocks.MetalFrame;
 import com.mce.blocks.ModBlocks.ModGlassPane;
 import com.mce.blocks.ModBlocks.NeptuniumCoreReactor;
@@ -213,6 +213,7 @@ import com.mce.events.EventBonemeal;
 import com.mce.events.OtherEvents;
 import com.mce.events.PotionEvents;
 import com.mce.events.ToolEvent;
+import com.mce.events.UpgradeTechEvent;
 import com.mce.events.WikiPaperEvent;
 import com.mce.handlers.AchievementHandler;
 import com.mce.handlers.BlockRecipeHandler;
@@ -387,7 +388,7 @@ public class mod_IDT {
 	//// Blocks
 	// Tech
 	public static Block MetalFrame;
-	public static Block MachineFrame;
+	public static Block MachineCasing;
 	public static Block HealerBlock;
 	public static Block AdvancedHealer;
 	public static Block SmelterIdle;
@@ -1198,7 +1199,7 @@ public class mod_IDT {
 		MetalFrame = new MetalFrame(Material.iron).setBlockName("MetalFrame").setCreativeTab(IDT)
 				.setStepSound(Block.soundTypeMetal).setResistance(25f);
 
-		MachineFrame = new MachineFrame(Material.iron).setBlockName("MachineFrame").setCreativeTab(IDT)
+		MachineCasing = new MachineCasing(Material.iron).setBlockName("MachineCasing").setCreativeTab(IDT)
 				.setStepSound(Block.soundTypeMetal).setResistance(30f);
 
 		HealerBlock = new HealerBlock(Material.ground).setBlockName("Healer").setHardness(2.0F).setResistance(2000F)
@@ -3185,8 +3186,8 @@ public class mod_IDT {
 		MinecraftForge.EVENT_BUS.register(new ChatEvent());
 		MinecraftForge.EVENT_BUS.register(new ToolEvent());
 		MinecraftForge.EVENT_BUS.register(new BlowtorchEvent());
-		// MinecraftForge.EVENT_BUS.register(new ChemicalHandler());
 		MinecraftForge.EVENT_BUS.register(new PlayerDevHandler());
+		MinecraftForge.EVENT_BUS.register(new UpgradeTechEvent());
 		FMLCommonHandler.instance().bus().register(new OtherEvents());
 		FMLCommonHandler.instance().bus().register(new PlayerHandler());
 		FMLCommonHandler.instance().bus().register(new AchievementHandler());

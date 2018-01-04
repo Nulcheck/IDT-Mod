@@ -10,19 +10,19 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMetalFrame extends TileEntitySpecialRenderer {
 	public static final ResourceLocation steel = new ResourceLocation("mod_idt",
-			"/textures/models/steelFrame.png".substring(1));
+			"/textures/models/tech/frames/steelFrame.png".substring(1));
 
 	public static final ResourceLocation titanium = new ResourceLocation("mod_idt",
-			"/textures/models/titaniumFrame.png".substring(1));
+			"/textures/models/tech/frames/titaniumFrame.png".substring(1));
 
 	public static final ResourceLocation tantalum = new ResourceLocation("mod_idt",
-			"/textures/models/tantalumFrame.png".substring(1));
+			"/textures/models/tech/frames/tantalumFrame.png".substring(1));
 
 	public static final ResourceLocation vanadium = new ResourceLocation("mod_idt",
-			"/textures/models/vanadiumFrame.png".substring(1));
+			"/textures/models/tech/frames/vanadiumFrame.png".substring(1));
 
 	public static final ResourceLocation vc = new ResourceLocation("mod_idt",
-			"/textures/models/vcFrame.png".substring(1));
+			"/textures/models/tech/frames/vcFrame.png".substring(1));
 	public MetalFrameModel model;
 
 	public RenderMetalFrame() {

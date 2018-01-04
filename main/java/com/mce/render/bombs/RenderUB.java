@@ -10,7 +10,7 @@ import com.mce.models.blocks.ModelBomb;
 
 public class RenderUB extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation(
-			"mod_idt", "/textures/models/UB.png".substring(1));
+			"mod_idt", "/textures/models/bombs/UB.png".substring(1));
 	public ModelBomb model;
 
 	public RenderUB() {

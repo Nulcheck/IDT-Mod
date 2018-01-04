@@ -7,10 +7,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 
-public class ItemMachineFrame extends ItemBlockWithMetadata {
+public class ItemMachineCasing extends ItemBlockWithMetadata {
 	String name = "";
 
-	public ItemMachineFrame(Block block) {
+	public ItemMachineCasing(Block block) {
 		super(block, block);
 		this.setUnlocalizedName(getUnlocalizedName() + "." + name);
 	}
@@ -18,19 +18,19 @@ public class ItemMachineFrame extends ItemBlockWithMetadata {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
 		switch (stack.getItemDamage()) {
 		case 0:
-			list.add("Tier 1 Frame");
+			list.add("Tier 1 Case");
 			break;
 		case 1:
-			list.add("Tier 2 Frame");
+			list.add("Tier 2 Case");
 			break;
 		case 2:
-			list.add("Tier 3 Frame");
+			list.add("Tier 3 Case");
 			break;
 		case 3:
-			list.add("Tier 4 Frame");
+			list.add("Tier 4 Case");
 			break;
 		case 4:
-			list.add("Tier 5 Frame");
+			list.add("Tier 5 Case");
 			break;
 		}
 	}

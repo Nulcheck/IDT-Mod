@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSandstone extends TileEntitySpecialRenderer {
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
-			"/textures/models/wall_part_sandstone.png".substring(1));
+			"/textures/models/wall_part/wall_part_sandstone.png".substring(1));
 	public WallPartModel model;
 
 	public RenderSandstone() {

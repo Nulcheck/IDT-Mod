@@ -66,11 +66,11 @@ tile.MetalFrame.Titanium.name=Titanium Frame
 tile.MetalFrame.Tantalum.name=Tantalum Frame
 tile.MetalFrame.Vanadium.name=Vanadium Frame
 tile.MetalFrame.VC.name=Vanadium Carbide Frame
-tile.MachineFrame.Steel.name=Steel Machine Frame
-tile.MachineFrame.Titanium.name=Titanium Machine Frame
-tile.MachineFrame.Tantalum.name=Tantalum Machine Frame
-tile.MachineFrame.Vanadium.name=Vanadium Machine Frame
-tile.MachineFrame.VC.name=Vanadium Carbide Machine Frame
+tile.MachineCasing.Steel.name=Steel Machine Casing
+tile.MachineCasing.Titanium.name=Titanium Machine Casing
+tile.MachineCasing.Tantalum.name=Tantalum Machine Casing
+tile.MachineCasing.Vanadium.name=Vanadium Machine Casing
+tile.MachineCasing.VC.name=Vanadium Carbide Machine Casing
 
 tile.BioFuelExtractor.Steel.name=Steel BioFuel Extractor
 tile.BioFuelExtractor.Titanium.name=Titanium BioFuel Extractor

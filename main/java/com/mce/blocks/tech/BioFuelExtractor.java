@@ -1,5 +1,6 @@
 package com.mce.blocks.tech;
 
+import java.util.List;
 import java.util.Random;
 
 import com.mce.common.mod_IDT;
@@ -8,6 +9,7 @@ import com.mce.entity.tile.tech.TileEntityBFE;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,9 +37,21 @@ public class BioFuelExtractor extends BlockContainer {
 
 	public void onBlockAdded(World world, int x, int y, int z) {
 		TileEntityBFE bfe = (TileEntityBFE) world.getTileEntity(x, y, z);
+		int meta = world.getBlockMetadata(x, y, z);
 
 		super.onBlockAdded(world, x, y, z);
-		bfe.damage = bfe.maxDamage;
+		if (meta == 0)
+			bfe.setLvl("steel"); bfe.calcTier();
+		if (meta == 1)
+			bfe.setLvl("titanium"); bfe.calcTier();
+		if (meta == 2)
+			bfe.setLvl("tantalum"); bfe.calcTier();
+		if (meta == 3)
+			bfe.setLvl("vanadium"); bfe.calcTier();
+		if (meta == 4)
+			bfe.setLvl("vc"); bfe.calcTier();
+		
+		bfe.setDamage(bfe.getMaxDamage());
 	}
 
 	public TileEntity createNewTileEntity(World world, int meta) {
@@ -52,31 +66,49 @@ public class BioFuelExtractor extends BlockContainer {
 	}
 
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack) {
+		TileEntityBFE bfe = (TileEntityBFE) world.getTileEntity(x, y, z);
+		int meta = world.getBlockMetadata(x, y, z);
 		int l = MathHelper.floor_double((double) (entity.rotationYaw * 4f / 360f) + .5d) & 3;
 
-		if (l == 0) {
-			world.setBlockMetadataWithNotify(x, y, z, 2, 1);
-		}
+		if (meta == 0)
+			bfe.setLvl("steel"); bfe.calcTier();
+		if (meta == 1)
+			bfe.setLvl("titanium"); bfe.calcTier();
+		if (meta == 2)
+			bfe.setLvl("tantalum"); bfe.calcTier();
+		if (meta == 3)
+			bfe.setLvl("vanadium"); bfe.calcTier();
+		if (meta == 4)
+			bfe.setLvl("vc"); bfe.calcTier();
 
-		if (l == 1) {
-			world.setBlockMetadataWithNotify(x, y, z, 5, 1);
-		}
-
-		if (l == 3) {
-			world.setBlockMetadataWithNotify(x, y, z, 3, 1);
-		}
-
-		if (l == 4) {
-			world.setBlockMetadataWithNotify(x, y, z, 4, 1);
-		}
+		if (l == 0)
+			bfe.setFacing(2);
+		if (l == 1)
+			bfe.setFacing(5);
+		if (l == 3)
+			bfe.setFacing(3);
+		if (l == 4)
+			bfe.setFacing(4);
 
 		if (stack.hasDisplayName()) {
-			((TileEntityBFE) world.getTileEntity(x, y, z)).setGuiDisplayName(stack.getDisplayName());
+			bfe.setGuiDisplayName(stack.getDisplayName());
 		}
 	}
 
+	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+		list.add(new ItemStack(item, 1, 0)); // Steel
+		list.add(new ItemStack(item, 1, 1)); // Titanium
+		list.add(new ItemStack(item, 1, 2)); // Tantalum
+		list.add(new ItemStack(item, 1, 3)); // Vanadium
+		list.add(new ItemStack(item, 1, 4)); // Vanadium Carbide
+	}
+
+	public int damageDropped(int meta) {
+		return meta;
+	}
+
 	public static void updateState(boolean active, World world, int x, int y, int z) {
-		int i = world.getBlockMetadata(x, y, z);
+		// int i = world.getBlockMetadata(x, y, z);
 
 		TileEntity te = world.getTileEntity(x, y, z);
 		keepInv = true;
@@ -88,7 +120,7 @@ public class BioFuelExtractor extends BlockContainer {
 		}
 
 		keepInv = false;
-		world.setBlockMetadataWithNotify(x, y, z, i, 2);
+		// world.setBlockMetadataWithNotify(x, y, z, i, 2);
 
 		if (te != null) {
 			te.validate();

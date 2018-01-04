@@ -3,18 +3,17 @@ package com.mce.entity.tile.tech;
 import com.mce.blocks.tech.BioFuelExtractor;
 import com.mce.handlers.custom_recipes.BFERecipes;
 
-import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory {
+public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
+	protected TileEntityMachineCasing mc = new TileEntityMachineCasing();
 
 	private String isInvNameLocalized;
 	private String getInvName;
@@ -26,9 +25,7 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 	public int speed = 300;
 	public int extractingTime;
 	public int burnTime;
-
-	public int damage;
-	public final int maxDamage = 16000;
+	public int facing;
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -100,9 +97,8 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 	public void writeToNBT(NBTTagCompound tag) {
 		super.writeToNBT(tag);
 
-		tag.setShort("ExtractingTime", (short) this.extractingTime);
-		tag.setShort("DamageAmount", (short) this.damage);
-		tag.setShort("MaxDamage", (short) this.maxDamage);
+		tag.setInteger("ExtractingTime", this.extractingTime);
+		tag.setInteger("Facing", this.facing);
 
 		NBTTagList list = new NBTTagList();
 
@@ -137,26 +133,26 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 			}
 		}
 
-		this.extractingTime = tag.getShort("ExtractingTime");
-		this.damage = tag.getShort("DamageAmount");
+		this.extractingTime = tag.getInteger("ExtractingTime");
+		this.facing = tag.getInteger("Facing");
 
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
 		}
-	}
-	
-	public int getDamage() {
-		return damage;
-	}
-	
-	public int getMaxDamage(){
-		return maxDamage;
 	}
 
 	public boolean isUseableByPlayer(EntityPlayer player) {
 		return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false
 				: player.getDistanceSq((double) this.xCoord + .5d, (double) this.yCoord + .5d,
 						(double) this.zCoord + .5d) <= 64d;
+	}
+
+	public void setFacing(int side) {
+		this.facing = side;
+	}
+
+	public int getFacing() {
+		return this.facing;
 	}
 
 	public void openChest() {
@@ -167,10 +163,6 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 
 	public boolean isExtracting() {
 		return this.extractingTime > 0;
-	}
-
-	public boolean isPowered() {
-		return this.getEnergyStored(ForgeDirection.UNKNOWN) > 0;
 	}
 
 	public int getEnergyNeeded() {
@@ -186,14 +178,10 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 			this.damage--;
 		}
 
-		if (this.damage > this.maxDamage) {
-			this.damage = this.maxDamage;
-		}
-
 		if (!this.worldObj.isRemote) {
 			if (this.canExtract() && this.checkSlot() && (this.damage > 0)) {
 				if (flag) {
-					this.extractEnergy(ForgeDirection.UNKNOWN, this.getEnergyNeeded(), false);
+					es.extractEnergy(this.getEnergyNeeded(), false);
 					this.extractingTime++;
 
 					if (this.extractingTime == this.speed) {
@@ -312,6 +300,6 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 	}
 
 	public int getDamageScaled(int i) {
-		return this.damage * i / this.maxDamage;
+		return this.getDamage() * i / this.getMaxDamage();
 	}
 }

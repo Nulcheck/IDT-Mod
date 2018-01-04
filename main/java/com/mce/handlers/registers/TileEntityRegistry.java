@@ -3,9 +3,9 @@ package com.mce.handlers.registers;
 import com.mce.entity.tile.TEAH;
 import com.mce.entity.tile.TECT;
 import com.mce.entity.tile.TileEntityECR;
+import com.mce.entity.tile.TileEntityMetalFrame;
 import com.mce.entity.tile.TileEntityNCR;
 import com.mce.entity.tile.TileEntitySR;
-import com.mce.entity.tile.TileEntityMetalFrame;
 import com.mce.entity.tile.TileEntityUCR;
 import com.mce.entity.tile.TileEntityZimWire;
 import com.mce.entity.tile.bombs.TileEntityDM;
@@ -27,6 +27,7 @@ import com.mce.entity.tile.tech.TileEntityBFE;
 import com.mce.entity.tile.tech.TileEntityBHG;
 import com.mce.entity.tile.tech.TileEntityEnricher;
 import com.mce.entity.tile.tech.TileEntityIndustrialCutter;
+import com.mce.entity.tile.tech.TileEntityMachineCasing;
 import com.mce.entity.tile.tech.TileEntityMagnetizer;
 import com.mce.entity.tile.tech.TileEntityMatterCondenser;
 import com.mce.entity.tile.tech.TileEntitySmelter;
@@ -68,6 +69,8 @@ public class TileEntityRegistry {
 		GameRegistry.registerTileEntity(TileEntityDM.class, "DM");
 
 		// Tech
+		GameRegistry.registerTileEntity(TileEntityMetalFrame.class, "te_metal_frame");
+		GameRegistry.registerTileEntity(TileEntityMachineCasing.class, "te_machine_case");
 		GameRegistry.registerTileEntity(TileEntitySmelter.class, "te_smelter");
 		GameRegistry.registerTileEntity(TileEntityIndustrialCutter.class, "te_ic");
 		GameRegistry.registerTileEntity(TileEntityMatterCondenser.class, "te_mc");

@@ -155,6 +155,7 @@ public class IDTModule {
 		ModuleRegistrar.instance().registerNBTProvider(new HUDHandlerIDT(), smelter);
 		ModuleRegistrar.instance().registerBodyProvider(new HUDHandlerIDT(), bfe);
 		ModuleRegistrar.instance().registerNBTProvider(new HUDHandlerIDT(), bfe);
+		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), bfe);
 		ModuleRegistrar.instance().registerBodyProvider(new HUDHandlerIDT(), bhg);
 		ModuleRegistrar.instance().registerNBTProvider(new HUDHandlerIDT(), bhg);
 		ModuleRegistrar.instance().registerBodyProvider(new HUDHandlerIDT(), cutter);
@@ -183,5 +184,6 @@ public class IDTModule {
 		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), sbh);
 		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), ln);
 		ModuleRegistrar.instance().registerTailProvider(new HUDHandlerIDT(), metalFrame);
+		
 	}
 }
