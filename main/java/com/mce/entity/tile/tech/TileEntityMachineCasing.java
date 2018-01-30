@@ -147,18 +147,18 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 		}
 
 		if (getLvl("tantalum")) {
+			setMaxDamage(96000);
+			setMaxEnergy(96000);
+		}
+
+		if (getLvl("vanadium")) {
 			setMaxDamage(128000);
 			setMaxEnergy(128000);
 		}
 
-		if (getLvl("vanadium")) {
-			setMaxDamage(512000);
-			setMaxEnergy(512000);
-		}
-
 		if (getLvl("vc")) {
-			setMaxDamage(2048000);
-			setMaxEnergy(2048000);
+			setMaxDamage(160000);
+			setMaxEnergy(160000);
 		}
 	}
 

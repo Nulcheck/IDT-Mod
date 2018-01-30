@@ -1,33 +1,26 @@
 package com.mce.handlers.custom_recipes;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.mce.api.interfaces.ISmelterRecipe;
 import com.mce.common.mod_IDT;
 
-import cofh.core.util.oredict.OreDictionaryArbiter;
-import cofh.lib.inventory.ComparableItemStack;
-import cofh.lib.util.helpers.ItemHelper;
-import gnu.trove.map.hash.THashMap;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class SmelterRecipes {
 	public static final SmelterRecipes smeltingBase = new SmelterRecipes();
-	private static Map<OreDictItemStackSmelter, RecipeSmelter> recipeMap = new THashMap<OreDictItemStackSmelter, RecipeSmelter>();
-	private static Map experienceList = new HashMap();
-	private Map input1 = new HashMap();
-	private Map input2 = new HashMap();
+	//private static Map recipeMap = new HashMap();
+	private static Map expMap = new HashMap();
+	private static Map input1 = new HashMap();
+	private static Map input2 = new HashMap();
 	private static Map output = new HashMap();
 
-	public static SmelterRecipes smelting() {
+	public static SmelterRecipes instance() {
 		return smeltingBase;
 	}
 
@@ -54,148 +47,98 @@ public class SmelterRecipes {
 
 		addRecipe(new ItemStack(mod_IDT.PSiliconChip), new ItemStack(mod_IDT.SiliconChip),
 				new ItemStack(mod_IDT.PhosphorusDust), 1.5f);
-
-		// API shiz
-		/*
-		 * this.smeltItem(IDTRecipeAPI.smelterItem1, IDTRecipeAPI.smelterItem2,
-		 * IDTRecipeAPI.smelterOutput, IDTRecipeAPI.smelterExp);
-		 */
-
 	}
 
-	public static boolean addRecipe(ItemStack out, ItemStack item1, ItemStack item2, float exp) {
-		if ((item1 == null && item2 == null) || out == null) {
-			return false;
-		}
-
-		RecipeSmelter recipe = new RecipeSmelter(out, item1, item2);
-		recipeMap.put(new OreDictItemStackSmelter(item2), recipe);
-		//experienceList.put(item2, Float.valueOf(exp));
-		return true;
-	}
-	
-	public static RecipeSmelter[] getRecipeList() {
-		return recipeMap.values().toArray(new RecipeSmelter[0]);
+	public void addRecipe(ItemStack out, ItemStack in, ItemStack in2, float exp) {
+		// this.inputs.put(in, in2);
+		this.input1.put(in, out);
+		this.input2.put(in2, out);
+		this.output.put(in2, out);
+		//this.recipeMap.put(in2, out);
+		this.expMap.put(out, exp);
 	}
 
-	public static RecipeSmelter getRecipe(ItemStack input) {
+	public ItemStack getInput1(ItemStack stack) {
+		Iterator iter = this.input1.entrySet().iterator();
+		Entry entry;
 
-		if (input == null) {
-			return null;
-		}
-		OreDictItemStackSmelter query = new OreDictItemStackSmelter(input);
-
-		RecipeSmelter recipe = recipeMap.get(query);
-
-		if (recipe == null) {
-			query.metadata = OreDictionary.WILDCARD_VALUE;
-			recipe = recipeMap.get(query);
-		}
-		return recipe;
-	}
-
-	public static boolean recipeExists(ItemStack input) {
-
-		return getRecipe(input) != null;
-	}
-
-	public static class RecipeSmelter implements ISmelterRecipe {
-		public static RecipeSmelter instance;
-		final ItemStack input1;
-		final ItemStack input2;
-		final ItemStack output;
-
-		RecipeSmelter(ItemStack out, ItemStack slot1, ItemStack slot2) {
-			this.input1 = slot1;
-			this.input2 = slot2;
-			this.output = out;
-
-			if (input1.stackSize < 0) {
-				input1.stackSize = 1;
-			}
-
-			if (input2 != null && input2.stackSize < 0) {
-				input2.stackSize = 1;
-			}
-
-			if (output.stackSize < 0) {
-				output.stackSize = 1;
-			}
-		}
-
-		public ItemStack getInput1() {
-			if(input1 == null){
+		do {
+			if (!iter.hasNext()) {
 				return null;
 			}
-			return input1.copy();
-		}
 
-		public ItemStack getInput2() {
-			if(input2 == null){
-				return null;
-			}
-			return input2.copy();
-		}
+			entry = (Entry) iter.next();
+		} while (!this.input(stack, (ItemStack) entry.getKey()));
 
-		public ItemStack getOutput() {
-			return output.copy();
-		}
-		
-		public static RecipeSmelter instance() {
-			return instance;
-		}
+		return stack;
 	}
 
-	public static class OreDictItemStackSmelter extends ComparableItemStack {
-		static final String ore = "ore";
-		static final String ingot = "ingot";
+	public ItemStack getInput2(ItemStack stack) {
+		Iterator iter = this.input2.entrySet().iterator();
+		Entry entry;
 
-		public static boolean safeOreType(String oreName) {
-			return oreName.startsWith(ore) || oreName.startsWith(ingot);
-		}
-
-		public static int getOreID(String oreName) {
-
-			if (!safeOreType(oreName)) {
-				return -1;
+		do {
+			if (!iter.hasNext()) {
+				return null;
 			}
-			return ItemHelper.oreProxy.getOreID(oreName);
-		}
 
-		public static int getOreID(ItemStack stack) {
+			entry = (Entry) iter.next();
+		} while (!this.input(stack, (ItemStack) entry.getKey()));
 
-			ArrayList<Integer> ids = OreDictionaryArbiter.getAllOreIDs(stack);
+		return stack;
+	}
 
-			if (ids != null) {
-				for (int i = 0, e = ids.size(); i < e;) {
-					int id = ids.get(i++);
-					if (id != -1 && safeOreType(ItemHelper.oreProxy.getOreName(id))) {
-						return id;
-					}
-				}
+	private boolean input(ItemStack in, ItemStack out) {
+		return in.getItem() == out.getItem();
+	}
+
+	public ItemStack getOutput(ItemStack stack) {
+		Iterator iter = this.output.entrySet().iterator();
+		Entry entry;
+
+		do {
+			if (!iter.hasNext()) {
+				return null;
 			}
-			return -1;
-		}
 
-		public OreDictItemStackSmelter(ItemStack stack) {
+			entry = (Entry) iter.next();
+		} while (!this.output(stack, (ItemStack) entry.getKey()));
 
-			super(stack);
-			oreID = getOreID(stack);
-		}
+		return (ItemStack) entry.getValue();
+	}
 
-		public OreDictItemStackSmelter(Item item, int damage, int stackSize) {
+	private boolean output(ItemStack in, ItemStack out) {
+		return out.getItem() == in.getItem();
+	}
 
-			super(item, damage, stackSize);
-			this.oreID = getOreID(this.toItemStack());
-		}
+	public Map getRecipeList() {
+		return this.output;
+	}
 
-		@Override
-		public OreDictItemStackSmelter set(ItemStack stack) {
+	public Map getInput1List() {
+		return this.input1;
+	}
 
-			super.set(stack);
-			oreID = getOreID(stack);
+	public Map getInput2List() {
+		return this.input2;
+	}
 
-			return this;
-		}
+	public float expHandling(ItemStack stack) {
+		float ret = stack.getItem().getSmeltingExperience(stack);
+		if (ret != -1)
+			return ret;
+
+		Iterator iter = this.expMap.entrySet().iterator();
+		Entry entry;
+
+		do {
+			if (!iter.hasNext()) {
+				return 0.0F;
+			}
+
+			entry = (Entry) iter.next();
+		} while (!this.output(stack, (ItemStack) entry.getKey()));
+
+		return ((Float) entry.getValue()).floatValue();
 	}
 }

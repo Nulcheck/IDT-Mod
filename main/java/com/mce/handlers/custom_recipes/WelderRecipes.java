@@ -41,13 +41,6 @@ public class WelderRecipes {
 
 		this.weldItem(new ItemStack(mod_IDT.TantalumIngot), new ItemStack(mod_IDT.TantalumIngot),
 				new ItemStack(mod_IDT.TantalumPlate), 0.5f);
-
-		// API shiz
-		/*
-		 * if (mod_IDT.detectAddon) this.weldItem(IDTRecipeAPI.welderItem1,
-		 * IDTRecipeAPI.welderItem2, IDTRecipeAPI.welderOutput,
-		 * IDTRecipeAPI.welderExp);
-		 */
 	}
 
 	public void weldBlock(ItemStack item, Block block, ItemStack out, float xp) {

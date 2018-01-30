@@ -1,76 +1,68 @@
 package com.mce.api;
 
+import com.mce.handlers.custom_recipes.BFERecipes;
+import com.mce.handlers.custom_recipes.IndustrialCutterRecipes;
+import com.mce.handlers.custom_recipes.MatterCondenserRecipes;
+import com.mce.handlers.custom_recipes.SmelterRecipes;
+import com.mce.handlers.custom_recipes.WelderRecipes;
+
 import net.minecraft.item.ItemStack;
 
-@SuppressWarnings({ "unchecked", "unused" })
 public class IDTRecipeAPI {
 	/**
-	 * @param input1
-	 *            - First slot input. (usually coal)
-	 * @param input2
-	 *            - Second slot input. (usually ingots)
-	 * @param output
-	 *            - Output slot.
+	 * Adds a Smelter recipe.
+	 * 
+	 * @param out
+	 * @param in
+	 * @param in2
 	 * @param exp
-	 *            - XP you get for smelting something.
-	 * @return If recipe detected, true, otherwise false.
 	 */
-	public static ItemStack smelterItem1;
-	public static ItemStack smelterItem2;
-	public static ItemStack smelterOutput;
-	public static float smelterExp;
-
-	public static boolean addSmelterRecipe(ItemStack input1, ItemStack input2, ItemStack output, float exp) {
-		try {
-			Object items = IDTClassAccess.classSmelterRecipes.getConstructor(new Class[] { ItemStack.class })
-					.newInstance(new Object[] { input1, input2, output, exp });
-			Object recipeThing = IDTClassAccess.classSmelterRecipes
-					.getMethod("add", new Class[] { IDTClassAccess.classSmelterRecipes })
-					.invoke(null, new Object[] { items });
-			smelterItem1 = input1;
-			smelterItem2 = input2;
-			smelterOutput = output;
-			smelterExp = exp;
-			return true;
-		} catch (Exception e) {
-			System.out.println(":(");
-			e.printStackTrace();
-		}
-
-		return false;
+	public static void addSmelterRecipe(ItemStack out, ItemStack in, ItemStack in2, float exp) {
+		SmelterRecipes.instance().addRecipe(out, in, in2, exp);
 	}
-
+	
 	/**
-	 * @param input1
-	 *            - First slot input.
-	 * @param input2
-	 *            - Second slot input.
-	 * @param output
-	 *            - Output slot..
+	 * Adds a BioFuel Extractor recipe.
+	 * 
+	 * @param in
+	 * @param out
 	 * @param exp
-	 *            - XP you get for smelting something.
-	 * @return If recipe detected, true, otherwise false.
 	 */
-	public static ItemStack welderItem1;
-	public static ItemStack welderItem2;
-	public static ItemStack welderOutput;
-	public static float welderExp;
-
-	public static boolean addWelderRecipe(ItemStack input1, ItemStack input2, ItemStack output, float exp) {
-		try {
-			Object items = IDTClassAccess.classWelderRecipes.getConstructor(new Class[] { ItemStack.class })
-					.newInstance(new Object[] { input1, input2, output, exp });
-			Object recipeThing = IDTClassAccess.classWelderRecipes
-					.getMethod("add", new Class[] { IDTClassAccess.classWelderRecipes })
-					.invoke(null, new Object[] { items });
-			welderItem1 = input1;
-			welderItem2 = input2;
-			welderOutput = output;
-			welderExp = exp;
-			return true;
-		} catch (Exception e) {
-		}
-
-		return false;
+	public static void addBioFuelRecipe(ItemStack in, ItemStack out, float exp){
+		BFERecipes.instance().extract(in, out, exp);
+	}
+	
+	/**
+	 * Adds an Industrial Cutter recipe.
+	 * 
+	 * @param in
+	 * @param out
+	 * @param exp
+	 */
+	public static void addCutterRecipe(ItemStack in, ItemStack out, float exp){
+		IndustrialCutterRecipes.instance().cutBase(in, out, exp);
+	}
+	
+	/**
+	 * Adds a Matter Condenser recipe.
+	 * 
+	 * @param in
+	 * @param out
+	 * @param exp
+	 */
+	public static void addCondenserRecipe(ItemStack in, ItemStack out, float exp){
+		MatterCondenserRecipes.instance().conBase(in, out, exp);
+	}
+	
+	/**
+	 * Adds a Welder recipe.
+	 * 
+	 * @param in
+	 * @param in2
+	 * @param out
+	 * @param exp
+	 */
+	public static void addWelderRecipe(ItemStack in, ItemStack in2, ItemStack out, float exp){
+		WelderRecipes.instance().weldBase(in, in2, out, exp);
 	}
 }

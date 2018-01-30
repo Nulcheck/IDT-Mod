@@ -403,6 +403,8 @@ public class mod_IDT {
 	public static Block Magnetizer;
 	public static Block ZNG;
 	public static Block Enricher;
+	public static Block NanoRepairer;
+	public static Block UpgradeFabricator;
 
 	// Other
 	public static Block Cement;

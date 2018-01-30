@@ -3,7 +3,6 @@ package com.mce.entity.tile.tech;
 import com.mce.blocks.tech.Smelter;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.SmelterRecipes;
-import com.mce.handlers.custom_recipes.SmelterRecipes.RecipeSmelter;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -24,7 +23,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 	private String isInvNameLocalized;
 	private String isModeNameLocalized;
 	public String modeName;
-	//public int mode;
+	// public int mode;
 
 	private ItemStack[] slots = new ItemStack[4];
 
@@ -237,7 +236,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 			}
 
 			this.detectUpgrade();
-			//this.detectUpgradeAndCanSmelt();
+			// this.detectUpgradeAndCanSmelt();
 
 			if (this.hasFuel() && this.checkSlot() && this.canSmelt() && this.damage > 0) {
 				this.cookTime++;
@@ -337,8 +336,8 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 
 	public boolean checkSlot() {
 		if (this.slots[1] != null && this.slots[2] != null) {
-			ItemStack stack1 = RecipeSmelter.instance().getInput1();
-			ItemStack stack2 = RecipeSmelter.instance().getInput2();
+			ItemStack stack1 = SmelterRecipes.instance().getInput1(this.slots[1]);
+			ItemStack stack2 = SmelterRecipes.instance().getInput2(this.slots[2]);
 
 			if (this.slots[1].getItem() == mod_IDT.Carbon && this.slots[2].getItem() == mod_IDT.VPowder
 					&& !checkUpgrade()) {
@@ -359,7 +358,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 		if (this.slots[1] == null && this.slots[2] == null || (this.slots[1] == null || this.slots[2] == null)) {
 			return false;
 		} else {
-			ItemStack stack = RecipeSmelter.instance().getOutput();
+			ItemStack stack = SmelterRecipes.instance().getOutput(this.slots[2]);
 
 			if (this.slots[1] == null && this.slots[2] == null)
 				return false;
@@ -377,7 +376,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 
 	public void smeltItem() {
 		if (this.canSmelt() == true) {
-			ItemStack stack = RecipeSmelter.instance().getOutput();
+			ItemStack stack = SmelterRecipes.instance().getOutput(this.slots[2]);
 
 			if (this.slots[3] == null) {
 				this.slots[3] = stack.copy();

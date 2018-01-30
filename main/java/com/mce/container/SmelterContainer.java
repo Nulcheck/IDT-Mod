@@ -113,7 +113,7 @@ public class SmelterContainer extends Container {
 			}
 			// Fuel and input(s), if selected slot is not
 			else if (sSlot != 0 && sSlot != 1 && sSlot != 2) {
-				if (SmelterRecipes.recipeExists(stack1)) {
+				if (SmelterRecipes.instance().getOutput(stack1) != null) {
 					if (!this.mergeItemStack(stack1, 2, 3, false)) {
 						// 2 input
 						return null;
