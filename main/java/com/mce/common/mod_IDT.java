@@ -189,6 +189,7 @@ import com.mce.blocks.tech.Enricher;
 import com.mce.blocks.tech.IndustrialCutter;
 import com.mce.blocks.tech.Magnetizer;
 import com.mce.blocks.tech.MatterCondenser;
+import com.mce.blocks.tech.NanoRepairer;
 import com.mce.blocks.tech.Smelter;
 import com.mce.blocks.tech.TankCompressor;
 import com.mce.blocks.tech.Welder;
@@ -1204,10 +1205,10 @@ public class mod_IDT {
 		MachineCasing = new MachineCasing(Material.iron).setBlockName("MachineCasing").setCreativeTab(IDT)
 				.setStepSound(Block.soundTypeMetal).setResistance(30f);
 
-		HealerBlock = new HealerBlock(Material.ground).setBlockName("Healer").setHardness(2.0F).setResistance(2000F)
+		HealerBlock = new HealerBlock(Material.iron).setBlockName("Healer").setHardness(2.0F).setResistance(2000F)
 				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:healer");
 
-		AdvancedHealer = new AdvancedHealer(Material.ground).setBlockName("AdvancedHealer").setHardness(2f)
+		AdvancedHealer = new AdvancedHealer(Material.iron).setBlockName("AdvancedHealer").setHardness(2f)
 				.setResistance(2000f).setStepSound(Block.soundTypeGlass).setCreativeTab(IDT);
 
 		SmelterIdle = new Smelter(Material.iron, false).setBlockName("SmelterIdle").setHardness(5f).setResistance(30f)
@@ -1216,7 +1217,7 @@ public class mod_IDT {
 		SmelterActive = new Smelter(Material.iron, true).setBlockName("SmelterActive").setLightLevel(1)
 				.setResistance(30f).setHardness(5f);
 
-		IndustrialCutter = new IndustrialCutter(Material.ground).setHardness(10F).setResistance(30F).setBlockName("IC")
+		IndustrialCutter = new IndustrialCutter(Material.iron).setHardness(10F).setResistance(30F).setBlockName("IC")
 				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT);
 
 		MatterCondenser = new MatterCondenser(Material.iron).setHardness(10F).setResistance(100F)
@@ -1231,13 +1232,13 @@ public class mod_IDT {
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(30f)
 				.setHardness(3f);
 
-		BlackHoleGenerator = new BHG(Material.ground).setBlockName("BHG").setHardness(5f).setResistance(35f)
+		BlackHoleGenerator = new BHG(Material.iron).setBlockName("BHG").setHardness(5f).setResistance(35f)
 				.setCreativeTab(IDT).setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:titanium_block");
 
-		Welder = new Welder(Material.ground, false).setBlockName("Welder").setHardness(2f).setResistance(30f)
+		Welder = new Welder(Material.iron, false).setBlockName("Welder").setHardness(2f).setResistance(30f)
 				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
 
-		Magnetizer = new Magnetizer(Material.ground).setBlockName("Magnetizer").setHardness(2f).setResistance(30f)
+		Magnetizer = new Magnetizer(Material.iron).setBlockName("Magnetizer").setHardness(2f).setResistance(30f)
 				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
 
 		Enricher = new Enricher(Material.ground).setBlockName("Enricher").setHardness(2f).setResistance(30f)
@@ -1245,6 +1246,9 @@ public class mod_IDT {
 
 		ZNG = new ZNG(Material.iron).setBlockName("ZNG").setResistance(30f).setCreativeTab(IDT)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:steel_block");
+
+		NanoRepairer = new NanoRepairer(Material.iron).setBlockName("NanoRepairer").setCreativeTab(IDT)
+				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
 
 		// Other
 		Cement = new ModBlocks(Material.ground).setBlockName("Cement").setHardness(2.0F).setResistance(30.0F)
