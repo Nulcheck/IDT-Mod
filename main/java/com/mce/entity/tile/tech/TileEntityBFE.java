@@ -96,6 +96,14 @@ public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInve
 
 		tag.setInteger("ExtractingTime", this.extractingTime);
 		tag.setInteger("Facing", this.facing);
+		if (getDamage() > getMaxDamage())
+			setDamage(getMaxDamage());
+		if (getDamage() < 0)
+			setDamage(0);
+
+		tag.setInteger("Damage", getDamage());
+		tag.setInteger("MaxDamage", getMaxDamage());
+		es.writeToNBT(tag);
 
 		NBTTagList list = new NBTTagList();
 
@@ -132,7 +140,15 @@ public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInve
 
 		this.extractingTime = tag.getInteger("ExtractingTime");
 		this.facing = tag.getInteger("Facing");
+		setDamage(tag.getInteger("Damage"));
+		setMaxDamage(tag.getInteger("MaxDamage"));
+		es.readFromNBT(tag);
 
+		if (getDamage() > getMaxDamage())
+			setDamage(getMaxDamage());
+		if (getDamage() < 0)
+			setDamage(0);
+		
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
 		}
@@ -169,6 +185,8 @@ public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInve
 	public void updateEntity() {
 		boolean flag = this.isPowered();
 		boolean flag1 = false;
+		
+		this.calcTier(); // Method is in Machine Casing Tile Entity class
 
 		if (this.isExtracting() && flag) {
 			this.burnTime--;
@@ -176,7 +194,7 @@ public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInve
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.canExtract() && this.checkSlot() && (this.damage > 0)) {
+			if (this.canExtract() && this.checkSlot() && (this.getDamage() > 0)) {
 				if (flag) {
 					es.extractEnergy(this.getEnergyNeeded(), false);
 					this.extractingTime++;
@@ -187,7 +205,7 @@ public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInve
 						flag1 = true;
 					}
 
-					if (this.damage <= 0) {
+					if (this.getDamage() <= 0) {
 						this.extractingTime = 0;
 					}
 				}
@@ -294,9 +312,5 @@ public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInve
 
 	public int getCookProgressScaled(int i) {
 		return this.extractingTime * i / this.speed;
-	}
-
-	public int getDamageScaled(int i) {
-		return this.getDamage() * i / this.getMaxDamage();
 	}
 }

@@ -3,6 +3,7 @@ package com.mce.blocks.tech;
 import java.util.List;
 import java.util.Random;
 
+import com.mce.common.mod_IDT;
 import com.mce.entity.tile.tech.TileEntityMachineCasing;
 
 import net.minecraft.block.BlockContainer;
@@ -46,7 +47,7 @@ public class MachineCasing extends BlockContainer {
 		return meta;
 	}
 
-	public Item getItemDropped(int id, Random random, int amount) {
-		return Item.getItemFromBlock(this);
-	}
+	/*public Item getItemDropped(int id, Random random, int amount) {
+		return Item.getItemFromBlock(mod_IDT.MachineCasing);
+	}*/
 }

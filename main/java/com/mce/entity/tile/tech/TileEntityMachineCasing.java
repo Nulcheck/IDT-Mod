@@ -165,10 +165,6 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 		}
 	}
 
-	public void updateEntity() {
-		this.calcTier();
-	}
-
 	public int getInfoEnergyStored() {
 		return es.getEnergyStored();
 	}
@@ -183,5 +179,9 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 
 	public int getInfoMaxEnergyPerTick() {
 		return 0;
+	}
+
+	public int getDamageScaled(int i) {
+		return getDamage() * i / getMaxDamage();
 	}
 }

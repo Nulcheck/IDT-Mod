@@ -67,6 +67,7 @@ public class BioFuelExtractor extends BlockContainer {
 		TileEntityBFE bfe = (TileEntityBFE) world.getTileEntity(x, y, z);
 		int l = MathHelper.floor_double((double) (entity.rotationYaw * 4f / 360f) + .5d) & 3;
 
+		bfe.updateEntity();
 		bfe.setDamage(bfe.getMaxDamage());
 
 		if (l == 0)
