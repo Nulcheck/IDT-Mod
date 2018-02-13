@@ -13,14 +13,13 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 
 	public int damage;
 	public int maxDamage;
-	public String lvl;
+	// public int lvl;
 
 	public void readFromNBT(NBTTagCompound tag) {
 		super.readFromNBT(tag);
 
 		setDamage(tag.getInteger("Damage"));
 		setMaxDamage(tag.getInteger("MaxDamage"));
-		setLvl(tag.getString("Lvl"));
 		es.readFromNBT(tag);
 
 		if (getDamage() > getMaxDamage())
@@ -39,7 +38,6 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 
 		tag.setInteger("Damage", getDamage());
 		tag.setInteger("MaxDamage", getMaxDamage());
-		tag.setString("Lvl", getLvl());
 		es.writeToNBT(tag);
 	}
 
@@ -63,29 +61,11 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 		return maxDamage;
 	}
 
-	public String getLvl() {
-		return lvl;
-	}
-
-	public boolean getLvl(String lvl) {
-		if (lvl == this.lvl)
+	public boolean getMeta(int meta) {
+		if (meta == this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord))
 			return true;
-		return false;
-	}
-
-	public void setLvl(String lvl) {
-		if (lvl == "steel")
-			this.lvl = "steel";
-		if (lvl == "titanium")
-			this.lvl = "titanium";
-		if (lvl == "tantalum")
-			this.lvl = "tantalum";
-		if (lvl == "vanadium")
-			this.lvl = "vanadium";
-		if (lvl == "vc")
-			this.lvl = "vc";
 		else
-			this.lvl = "steel";
+			return false;
 	}
 
 	public boolean isPowered() {
@@ -128,42 +108,64 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 		return MathHelper.round((long) es.getEnergyStored() * scale / es.getMaxEnergyStored());
 	}
 
-	public void calcMinMax() {
-		if (getDamage() > getMaxDamage())
-			setDamage(getMaxDamage());
-		if (getDamage() < 0)
-			setDamage(0);
-	}
-
 	public void calcTier() {
-		if (getLvl("steel")) {
+		// Steel
+		if (getMeta(0)) {
 			setMaxDamage(32000);
 			setMaxEnergy(32000);
+
+			if (getDamage() > getMaxDamage())
+				setDamage(getMaxDamage());
+			if (getDamage() < 0)
+				setDamage(0);
 		}
 
-		if (getLvl("titanium")) {
+		// Titanium
+		if (getMeta(1)) {
 			setMaxDamage(64000);
 			setMaxEnergy(64000);
+
+			if (getDamage() > getMaxDamage())
+				setDamage(getMaxDamage());
+			if (getDamage() < 0)
+				setDamage(0);
 		}
 
-		if (getLvl("tantalum")) {
+		// Tantalum
+		if (getMeta(2)) {
 			setMaxDamage(96000);
 			setMaxEnergy(96000);
+
+			if (getDamage() > getMaxDamage())
+				setDamage(getMaxDamage());
+			if (getDamage() < 0)
+				setDamage(0);
 		}
 
-		if (getLvl("vanadium")) {
+		// Vanadium
+		if (getMeta(3)) {
 			setMaxDamage(128000);
 			setMaxEnergy(128000);
+
+			if (getDamage() > getMaxDamage())
+				setDamage(getMaxDamage());
+			if (getDamage() < 0)
+				setDamage(0);
 		}
 
-		if (getLvl("vc")) {
+		// VC
+		if (getMeta(4)) {
 			setMaxDamage(160000);
 			setMaxEnergy(160000);
+
+			if (getDamage() > getMaxDamage())
+				setDamage(getMaxDamage());
+			if (getDamage() < 0)
+				setDamage(0);
 		}
 	}
 
 	public void updateEntity() {
-		this.calcMinMax();
 		this.calcTier();
 	}
 

@@ -17,13 +17,12 @@ public class UpgradeTechEvent {
 	public void upgrade(PlayerInteractEvent e) {
 		bfe = e.world.getTileEntity(e.x, e.y, e.z);
 
-		if (e.action == Action.RIGHT_CLICK_BLOCK && e.entityPlayer.getHeldItem() != null
-				&& e.entityPlayer.isSneaking()) {
+		if (e.action == Action.RIGHT_CLICK_BLOCK && e.entityPlayer.isSneaking() && e.entityPlayer.getHeldItem() != null
+				&& e.entityPlayer.getHeldItem().getItem() == Item.getItemFromBlock(mod_IDT.MachineCasing)) {
 			if (e.world.getBlock(e.x, e.y, e.z) == mod_IDT.BioFuelExtractor) {
-				if (e.entityPlayer.getHeldItem().getItem() == Item.getItemFromBlock(mod_IDT.MachineCasing)
-						&& e.entityPlayer.getHeldItem().getItemDamage() == 0) {
+				if (e.entityPlayer.getHeldItem().getItemDamage() == 0) {
 					int lvl = e.world.getBlockMetadata(e.x, e.y, e.z);
-					((TileEntityBFE) bfe).setLvl("steel");
+					//((TileEntityBFE) bfe).setLvl(0);
 					e.entityPlayer.getHeldItem().stackSize--;
 					e.entityPlayer.inventory.addItemStackToInventory(
 							new ItemStack(Item.getItemFromBlock(mod_IDT.MachineCasing), 1, lvl));
@@ -31,10 +30,9 @@ public class UpgradeTechEvent {
 					e.world.markBlockForUpdate(e.x, e.y, e.z);
 				}
 
-				else if (e.entityPlayer.getHeldItem().getItem() == Item.getItemFromBlock(mod_IDT.MachineCasing)
-						&& e.entityPlayer.getHeldItem().getItemDamage() == 1) {
+				else if (e.entityPlayer.getHeldItem().getItemDamage() == 1) {
 					int lvl = e.world.getBlockMetadata(e.x, e.y, e.z);
-					((TileEntityBFE) bfe).setLvl("titanium");
+					//((TileEntityBFE) bfe).setLvl(1);
 					e.entityPlayer.getHeldItem().stackSize--;
 					e.entityPlayer.inventory.addItemStackToInventory(
 							new ItemStack(Item.getItemFromBlock(mod_IDT.MachineCasing), 1, lvl));
@@ -42,10 +40,9 @@ public class UpgradeTechEvent {
 					e.world.markBlockForUpdate(e.x, e.y, e.z);
 				}
 
-				else if (e.entityPlayer.getHeldItem().getItem() == Item.getItemFromBlock(mod_IDT.MachineCasing)
-						&& e.entityPlayer.getHeldItem().getItemDamage() == 2) {
+				else if (e.entityPlayer.getHeldItem().getItemDamage() == 2) {
 					int lvl = e.world.getBlockMetadata(e.x, e.y, e.z);
-					((TileEntityBFE) bfe).setLvl("tantalum");
+					//((TileEntityBFE) bfe).setLvl(2);
 					e.entityPlayer.getHeldItem().stackSize--;
 					e.entityPlayer.inventory.addItemStackToInventory(
 							new ItemStack(Item.getItemFromBlock(mod_IDT.MachineCasing), 1, lvl));
@@ -53,10 +50,9 @@ public class UpgradeTechEvent {
 					e.world.markBlockForUpdate(e.x, e.y, e.z);
 				}
 
-				else if (e.entityPlayer.getHeldItem().getItem() == Item.getItemFromBlock(mod_IDT.MachineCasing)
-						&& e.entityPlayer.getHeldItem().getItemDamage() == 3) {
+				else if (e.entityPlayer.getHeldItem().getItemDamage() == 3) {
 					int lvl = e.world.getBlockMetadata(e.x, e.y, e.z);
-					((TileEntityBFE) bfe).setLvl("vanadium");
+					//((TileEntityBFE) bfe).setLvl(3);
 					e.entityPlayer.getHeldItem().stackSize--;
 					e.entityPlayer.inventory.addItemStackToInventory(
 							new ItemStack(Item.getItemFromBlock(mod_IDT.MachineCasing), 1, lvl));
@@ -64,10 +60,9 @@ public class UpgradeTechEvent {
 					e.world.markBlockForUpdate(e.x, e.y, e.z);
 				}
 
-				else if (e.entityPlayer.getHeldItem().getItem() == Item.getItemFromBlock(mod_IDT.MachineCasing)
-						&& e.entityPlayer.getHeldItem().getItemDamage() == 4) {
+				else if (e.entityPlayer.getHeldItem().getItemDamage() == 4) {
 					int lvl = e.world.getBlockMetadata(e.x, e.y, e.z);
-					((TileEntityBFE) bfe).setLvl("vc");
+					//((TileEntityBFE) bfe).setLvl(4);
 					e.entityPlayer.getHeldItem().stackSize--;
 					e.entityPlayer.inventory.addItemStackToInventory(
 							new ItemStack(Item.getItemFromBlock(mod_IDT.MachineCasing), 1, lvl));

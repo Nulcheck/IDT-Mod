@@ -13,15 +13,12 @@ public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInve
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
-	protected TileEntityMachineCasing mc = new TileEntityMachineCasing();
 
 	private String isInvNameLocalized;
-	private String getInvName;
-
 	private ItemStack[] slots = new ItemStack[2];
 
 	// Cutter Specs
-	// Speed is a little slower than a furnace
+	// 300 speed is a little slower than a furnace
 	public int speed = 300;
 	public int extractingTime;
 	public int burnTime;

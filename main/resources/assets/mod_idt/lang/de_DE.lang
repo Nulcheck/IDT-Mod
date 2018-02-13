@@ -17,6 +17,7 @@ death.attack.idtradiation=%1$s died from their cells being ionized.
 
 itemGroup.IDT=§bIndustrial Technologies§r
 itemGroup.IDTItems=§bIndustrial Technologies: Items§r
+itemGroup.IDTTech=§bIndustrial Technologies: Tech§r
 
 entity.mod_IDT.Ice Phantom.name=Ice Phantom
 entity.mod_IDT.Icy Creeper.name=Icy Creeper

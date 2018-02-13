@@ -56,7 +56,7 @@ public class RenderBFE extends TileEntitySpecialRenderer {
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
 
-		if (bfe.getLvl("steel")) {
+		if (bfe.getMeta(0)) {
 			GL11.glPushMatrix();
 			this.bindTexture(steel);
 
@@ -68,7 +68,7 @@ public class RenderBFE extends TileEntitySpecialRenderer {
 			GL11.glPopMatrix();
 		}
 
-		if (bfe.getLvl("titanium")) {
+		if (bfe.getMeta(1)) {
 			GL11.glPushMatrix();
 			this.bindTexture(titanium);
 
@@ -80,7 +80,7 @@ public class RenderBFE extends TileEntitySpecialRenderer {
 			GL11.glPopMatrix();
 		}
 
-		if (bfe.getLvl("tantalum")) {
+		if (bfe.getMeta(2)) {
 			GL11.glPushMatrix();
 			this.bindTexture(tantalum);
 
@@ -92,7 +92,7 @@ public class RenderBFE extends TileEntitySpecialRenderer {
 			GL11.glPopMatrix();
 		}
 
-		if (bfe.getLvl("vanadium")) {
+		if (bfe.getMeta(3)) {
 			GL11.glPushMatrix();
 			this.bindTexture(vanadium);
 
@@ -104,7 +104,7 @@ public class RenderBFE extends TileEntitySpecialRenderer {
 			GL11.glPopMatrix();
 		}
 
-		if (bfe.getLvl("vc")) {
+		if (bfe.getMeta(4)) {
 			GL11.glPushMatrix();
 			this.bindTexture(vc);
 

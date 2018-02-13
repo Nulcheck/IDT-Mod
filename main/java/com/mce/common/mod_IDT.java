@@ -42,7 +42,6 @@ import com.mce.blocks.ModBlocks.HealerBlock;
 import com.mce.blocks.ModBlocks.LavaCobble;
 import com.mce.blocks.ModBlocks.LavaObsidian;
 import com.mce.blocks.ModBlocks.LavaStone;
-import com.mce.blocks.ModBlocks.MachineCasing;
 import com.mce.blocks.ModBlocks.MetalFrame;
 import com.mce.blocks.ModBlocks.ModGlassPane;
 import com.mce.blocks.ModBlocks.NeptuniumCoreReactor;
@@ -187,6 +186,7 @@ import com.mce.blocks.tech.BHG;
 import com.mce.blocks.tech.BioFuelExtractor;
 import com.mce.blocks.tech.Enricher;
 import com.mce.blocks.tech.IndustrialCutter;
+import com.mce.blocks.tech.MachineCasing;
 import com.mce.blocks.tech.Magnetizer;
 import com.mce.blocks.tech.MatterCondenser;
 import com.mce.blocks.tech.NanoRepairer;
@@ -376,7 +376,7 @@ public class mod_IDT {
 	public static final String modid = "mod_IDT";
 	public static final String modid2 = "mod_idt";
 	public static final String name = "Industrial Technologies and More";
-	public static final String version = "Snapshot 18w01a";
+	public static final String version = "Snapshot 18w07a";
 
 	@SidedProxy(clientSide = "com.mce.client.ClientProxy", serverSide = "com.mce.common.CommonProxy")
 	public static CommonProxy proxy;
@@ -1199,55 +1199,59 @@ public class mod_IDT {
 
 		//// Blocks
 		// Tech
-		MetalFrame = new MetalFrame(Material.iron).setBlockName("MetalFrame").setCreativeTab(IDT)
+		MetalFrame = new MetalFrame(Material.iron).setBlockName("MetalFrame").setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setResistance(25f);
 
-		MachineCasing = new MachineCasing(Material.iron).setBlockName("MachineCasing").setCreativeTab(IDT)
+		MachineCasing = new MachineCasing(Material.iron).setBlockName("MachineCasing").setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setResistance(30f);
 
 		HealerBlock = new HealerBlock(Material.iron).setBlockName("Healer").setHardness(2.0F).setResistance(2000F)
-				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:healer");
+				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDTTech).setBlockTextureName("mod_IDT:healer");
 
 		AdvancedHealer = new AdvancedHealer(Material.iron).setBlockName("AdvancedHealer").setHardness(2f)
-				.setResistance(2000f).setStepSound(Block.soundTypeGlass).setCreativeTab(IDT);
+				.setResistance(2000f).setStepSound(Block.soundTypeGlass).setCreativeTab(IDTTech);
 
 		SmelterIdle = new Smelter(Material.iron, false).setBlockName("SmelterIdle").setHardness(5f).setResistance(30f)
-				.setCreativeTab(IDT);
+				.setCreativeTab(IDTTech);
 
 		SmelterActive = new Smelter(Material.iron, true).setBlockName("SmelterActive").setLightLevel(1)
 				.setResistance(30f).setHardness(5f);
 
 		IndustrialCutter = new IndustrialCutter(Material.iron).setHardness(10F).setResistance(30F).setBlockName("IC")
-				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT);
+				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDTTech);
 
 		MatterCondenser = new MatterCondenser(Material.iron).setHardness(10F).setResistance(100F)
-				.setBlockName("MatterCondenser").setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
+				.setBlockName("MatterCondenser").setStepSound(Block.soundTypeStone).setCreativeTab(IDTTech)
 				.setBlockTextureName("mod_IDT:titanium_block");
 
-		BioFuelExtractor = new BioFuelExtractor(Material.iron).setBlockName("BioFuelExtractor").setCreativeTab(IDT)
+		BioFuelExtractor = new BioFuelExtractor(Material.iron).setBlockName("BioFuelExtractor").setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(30f)
 				.setHardness(3f);
 
-		TankCompressor = new TankCompressor(Material.iron).setBlockName("TankCompressor").setCreativeTab(IDT)
+		TankCompressor = new TankCompressor(Material.iron).setBlockName("TankCompressor").setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(30f)
 				.setHardness(3f);
 
 		BlackHoleGenerator = new BHG(Material.iron).setBlockName("BHG").setHardness(5f).setResistance(35f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:titanium_block");
+				.setCreativeTab(IDTTech).setStepSound(Block.soundTypeStone)
+				.setBlockTextureName("mod_IDT:titanium_block");
 
 		Welder = new Welder(Material.iron, false).setBlockName("Welder").setHardness(2f).setResistance(30f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
+				.setCreativeTab(IDTTech).setStepSound(Block.soundTypeMetal)
+				.setBlockTextureName("mod_IDT:titanium_block");
 
 		Magnetizer = new Magnetizer(Material.iron).setBlockName("Magnetizer").setHardness(2f).setResistance(30f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
+				.setCreativeTab(IDTTech).setStepSound(Block.soundTypeMetal)
+				.setBlockTextureName("mod_IDT:titanium_block");
 
 		Enricher = new Enricher(Material.ground).setBlockName("Enricher").setHardness(2f).setResistance(30f)
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
+				.setCreativeTab(IDTTech).setStepSound(Block.soundTypeMetal)
+				.setBlockTextureName("mod_IDT:titanium_block");
 
-		ZNG = new ZNG(Material.iron).setBlockName("ZNG").setResistance(30f).setCreativeTab(IDT)
+		ZNG = new ZNG(Material.iron).setBlockName("ZNG").setResistance(30f).setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:steel_block");
 
-		NanoRepairer = new NanoRepairer(Material.iron).setBlockName("NanoRepairer").setCreativeTab(IDT)
+		NanoRepairer = new NanoRepairer(Material.iron).setBlockName("NanoRepairer").setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block");
 
 		// Other
@@ -1323,18 +1327,18 @@ public class mod_IDT {
 				.setBlockUnbreakable();
 
 		EinsteiniumCoreReactor = new EinsteiniumCoreReactor(Material.iron).setBlockName("EinsteiniumCoreReactor")
-				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setCreativeTab(IDT)
-				.setResistance(32f);
+				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block")
+				.setCreativeTab(IDTTech).setResistance(32f);
 
 		NeptuniumCoreReactor = new NeptuniumCoreReactor(Material.iron).setBlockName("NeptuniumCoreReactor")
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block")
-				.setResistance(32f);
+				.setCreativeTab(IDTTech).setStepSound(Block.soundTypeMetal)
+				.setBlockTextureName("mod_IDT:titanium_block").setResistance(32f);
 
 		UraniumCoreReactor = new UraniumCoreReactor(Material.iron).setBlockName("UraniumCoreReactor")
-				.setCreativeTab(IDT).setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block")
-				.setResistance(32f);
+				.setCreativeTab(IDTTech).setStepSound(Block.soundTypeMetal)
+				.setBlockTextureName("mod_IDT:titanium_block").setResistance(32f);
 
-		SuperReactor = new SuperReactor(Material.iron).setBlockName("SuperReactor").setCreativeTab(IDT)
+		SuperReactor = new SuperReactor(Material.iron).setBlockName("SuperReactor").setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(96f);
 
 		CompactCobblestone = new ModBlocks(Material.rock).setBlockName("CompactCobblestone").setHardness(5f)
@@ -2100,19 +2104,19 @@ public class mod_IDT {
 
 		// Bombs
 		EinsteiniumBomb = new EinsteiniumBomb().setBlockName("EinsteiniumBomb").setHardness(1.0F)
-				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT).setBlockTextureName("iron_block");
+				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDTTech).setBlockTextureName("iron_block");
 
 		UraniumBomb = new UraniumBomb().setBlockName("UraniumBomb").setHardness(1.0F).setStepSound(Block.soundTypeMetal)
-				.setCreativeTab(IDT).setBlockTextureName("iron_block");
+				.setCreativeTab(IDTTech).setBlockTextureName("iron_block");
 
 		NeptuniumBomb = new NeptuniumBomb().setBlockName("NeptuniumBomb").setHardness(1.0F)
-				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT).setBlockTextureName("iron_block");
+				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDTTech).setBlockTextureName("iron_block");
 
 		UltimateNuker = new UltimateNuker().setBlockName("UltimateNuker").setHardness(1.0F)
-				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT).setBlockTextureName("iron_block");
+				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDTTech).setBlockTextureName("iron_block");
 
 		DarkMatterBomb = new DarkMatterBomb().setBlockName("DarkMatterBomb").setHardness(1.0F)
-				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT).setBlockTextureName("mod_IDT:dark_matter");
+				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDTTech).setBlockTextureName("mod_IDT:dark_matter");
 
 		// Crops
 		CornCrop = new CornCrop().setBlockName("CornCrop").setHardness(0.0F).setBlockTextureName("mod_IDT:corn");
@@ -3236,6 +3240,7 @@ public class mod_IDT {
 	}
 
 	public static SimpleNetworkWrapper networkWrapper;
+	public static CreativeTabs IDTTech = new ModCreativeTabs("IDTTech");
 	public static CreativeTabs IDT = new ModCreativeTabs("IDT");
 	public static CreativeTabs IDTItems = new ModCreativeTabs("IDTItems");
 

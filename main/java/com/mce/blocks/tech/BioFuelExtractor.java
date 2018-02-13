@@ -35,24 +35,22 @@ public class BioFuelExtractor extends BlockContainer {
 		return Item.getItemFromBlock(mod_IDT.BioFuelExtractor);
 	}
 
-	public void onBlockAdded(World world, int x, int y, int z) {
-		TileEntityBFE bfe = (TileEntityBFE) world.getTileEntity(x, y, z);
-		int meta = world.getBlockMetadata(x, y, z);
-
-		super.onBlockAdded(world, x, y, z);
-		if (meta == 0)
-			bfe.setLvl("steel"); bfe.calcTier();
-		if (meta == 1)
-			bfe.setLvl("titanium"); bfe.calcTier();
-		if (meta == 2)
-			bfe.setLvl("tantalum"); bfe.calcTier();
-		if (meta == 3)
-			bfe.setLvl("vanadium"); bfe.calcTier();
-		if (meta == 4)
-			bfe.setLvl("vc"); bfe.calcTier();
-		
-		bfe.setDamage(bfe.getMaxDamage());
-	}
+	/*
+	 * public void onBlockAdded(World world, int x, int y, int z) {
+	 * TileEntityBFE bfe = (TileEntityBFE) world.getTileEntity(x, y, z); int
+	 * meta = world.getBlockMetadata(x, y, z);
+	 * 
+	 * super.onBlockAdded(world, x, y, z);
+	 * 
+	 * if (meta == 0) { bfe.setLvl("steel"); bfe.updateEntity(); } if (meta ==
+	 * 1) { bfe.setLvl("titanium"); bfe.updateEntity(); } if (meta == 2) {
+	 * bfe.setLvl("tantalum"); bfe.updateEntity(); } if (meta == 3) {
+	 * bfe.setLvl("vanadium"); bfe.updateEntity(); } if (meta == 4) {
+	 * bfe.setLvl("vc"); bfe.updateEntity(); }
+	 * 
+	 * 
+	 * bfe.setDamage(bfe.getMaxDamage()); }
+	 */
 
 	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileEntityBFE();
@@ -67,19 +65,9 @@ public class BioFuelExtractor extends BlockContainer {
 
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack) {
 		TileEntityBFE bfe = (TileEntityBFE) world.getTileEntity(x, y, z);
-		int meta = world.getBlockMetadata(x, y, z);
 		int l = MathHelper.floor_double((double) (entity.rotationYaw * 4f / 360f) + .5d) & 3;
 
-		if (meta == 0)
-			bfe.setLvl("steel"); bfe.calcTier();
-		if (meta == 1)
-			bfe.setLvl("titanium"); bfe.calcTier();
-		if (meta == 2)
-			bfe.setLvl("tantalum"); bfe.calcTier();
-		if (meta == 3)
-			bfe.setLvl("vanadium"); bfe.calcTier();
-		if (meta == 4)
-			bfe.setLvl("vc"); bfe.calcTier();
+		bfe.setDamage(bfe.getMaxDamage());
 
 		if (l == 0)
 			bfe.setFacing(2);
@@ -108,8 +96,6 @@ public class BioFuelExtractor extends BlockContainer {
 	}
 
 	public static void updateState(boolean active, World world, int x, int y, int z) {
-		// int i = world.getBlockMetadata(x, y, z);
-
 		TileEntity te = world.getTileEntity(x, y, z);
 		keepInv = true;
 
@@ -120,7 +106,6 @@ public class BioFuelExtractor extends BlockContainer {
 		}
 
 		keepInv = false;
-		// world.setBlockMetadataWithNotify(x, y, z, i, 2);
 
 		if (te != null) {
 			te.validate();
