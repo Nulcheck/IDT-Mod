@@ -30,10 +30,10 @@ public class BioFuelExtractor extends BlockContainer {
 		super(mat);
 	}
 
-	// Creative middle click
+	/*// Creative middle click
 	public Item getItem(World world, int x, int y, int z) {
 		return Item.getItemFromBlock(mod_IDT.BioFuelExtractor);
-	}
+	}*/
 
 	/*
 	 * public void onBlockAdded(World world, int x, int y, int z) {
@@ -90,6 +90,21 @@ public class BioFuelExtractor extends BlockContainer {
 		list.add(new ItemStack(item, 1, 2)); // Tantalum
 		list.add(new ItemStack(item, 1, 3)); // Vanadium
 		list.add(new ItemStack(item, 1, 4)); // Vanadium Carbide
+	}
+	
+	public float getBlockHardness(World world, int x, int y, int z) {
+		if (world.getBlockMetadata(x, y, z) == 0)
+			return 1.5f;
+		if (world.getBlockMetadata(x, y, z) == 1)
+			return 2f;
+		if (world.getBlockMetadata(x, y, z) == 2)
+			return 2.5f;
+		if (world.getBlockMetadata(x, y, z) == 3)
+			return 3f;
+		if (world.getBlockMetadata(x, y, z) == 4)
+			return 4f;
+		else
+			return 2f;
 	}
 
 	public int damageDropped(int meta) {

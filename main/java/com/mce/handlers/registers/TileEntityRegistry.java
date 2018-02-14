@@ -70,7 +70,7 @@ public class TileEntityRegistry {
 
 		// Tech
 		GameRegistry.registerTileEntity(TileEntityMetalFrame.class, "te_metal_frame");
-		GameRegistry.registerTileEntity(TileEntityMachineCasing.class, "te_machine_case");
+		//GameRegistry.registerTileEntity(TileEntityMachineCasing.class, "te_machine_case");
 		GameRegistry.registerTileEntity(TileEntitySmelter.class, "te_smelter");
 		GameRegistry.registerTileEntity(TileEntityIndustrialCutter.class, "te_ic");
 		GameRegistry.registerTileEntity(TileEntityMatterCondenser.class, "te_mc");

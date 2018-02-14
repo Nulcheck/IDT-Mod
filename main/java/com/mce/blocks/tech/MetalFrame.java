@@ -2,21 +2,24 @@ package com.mce.blocks.tech;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
+import com.mce.entity.tile.TileEntityMetalFrame;
+
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class MachineCasing extends Block {
-	public MachineCasing(Material mat) {
+public class MetalFrame extends BlockContainer {
+	public MetalFrame(Material mat) {
 		super(mat);
 	}
 
-	/*public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileEntityMachineCasing();
-	}*/
+	public TileEntity createNewTileEntity(World world, int meta) {
+		return new TileEntityMetalFrame();
+	}
 
 	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
 		list.add(new ItemStack(item, 1, 0)); // Steel

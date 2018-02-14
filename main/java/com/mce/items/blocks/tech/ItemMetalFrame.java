@@ -1,4 +1,4 @@
-package com.mce.items.blocks;
+package com.mce.items.blocks.tech;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 
 public class ItemMetalFrame extends ItemBlockWithMetadata {
 	String name = "";
@@ -13,6 +14,15 @@ public class ItemMetalFrame extends ItemBlockWithMetadata {
 	public ItemMetalFrame(Block block) {
 		super(block, block);
 		this.setUnlocalizedName(getUnlocalizedName() + "." + name);
+		this.setHasSubtypes(true);
+	}
+
+	public IIcon getIconFromDamage(int meta) {
+		return Block.getBlockFromItem(this).getIcon(2, meta);
+	}
+
+	public int getMetadata(int meta) {
+		return meta;
 	}
 
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {

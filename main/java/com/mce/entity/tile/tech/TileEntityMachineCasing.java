@@ -3,12 +3,11 @@ package com.mce.entity.tile.tech;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyStorage;
 import cofh.api.energy.TileEnergyHandler;
-import cofh.api.tileentity.IEnergyInfo;
 import cofh.lib.util.helpers.MathHelper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityMachineCasing extends TileEnergyHandler implements IEnergyInfo {
+public class TileEntityMachineCasing extends TileEnergyHandler {
 	protected EnergyStorage es = new EnergyStorage(0);
 
 	public int damage;
@@ -163,22 +162,6 @@ public class TileEntityMachineCasing extends TileEnergyHandler implements IEnerg
 			if (getDamage() < 0)
 				setDamage(0);
 		}
-	}
-
-	public int getInfoEnergyStored() {
-		return es.getEnergyStored();
-	}
-
-	public int getInfoMaxEnergyStored() {
-		return es.getMaxEnergyStored();
-	}
-
-	public int getInfoEnergyPerTick() {
-		return 0;
-	}
-
-	public int getInfoMaxEnergyPerTick() {
-		return 0;
 	}
 
 	public int getDamageScaled(int i) {

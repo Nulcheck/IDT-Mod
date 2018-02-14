@@ -3,8 +3,6 @@ package com.mce.handlers.registers;
 import com.mce.common.mod_IDT;
 import com.mce.items.blocks.ItemDidymiumGlass;
 import com.mce.items.blocks.ItemEsBomb;
-import com.mce.items.blocks.ItemMachineCasing;
-import com.mce.items.blocks.ItemMetalFrame;
 import com.mce.items.blocks.ItemNpBomb;
 import com.mce.items.blocks.ItemUBomb;
 import com.mce.items.blocks.ItemUltimateNuker;
@@ -35,6 +33,8 @@ import com.mce.items.blocks.slabs.ItemSlabSilkwood;
 import com.mce.items.blocks.slabs.ItemSlabStone;
 import com.mce.items.blocks.slabs.ItemSlabWillow;
 import com.mce.items.blocks.tech.ItemBFE;
+import com.mce.items.blocks.tech.ItemMachineCasing;
+import com.mce.items.blocks.tech.ItemMetalFrame;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
