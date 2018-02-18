@@ -1,7 +1,6 @@
 package com.mce.effects;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.ITextureObject;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 
@@ -19,10 +18,7 @@ public class RadiationEffect extends Potion {
 	}
 
 	public int getStatusIconIndex() {
-		ITextureObject texture = Minecraft.getMinecraft().renderEngine
-				.getTexture(icon);
 		Minecraft.getMinecraft().renderEngine.bindTexture(icon);
-
 		return super.getStatusIconIndex();
 	}
 

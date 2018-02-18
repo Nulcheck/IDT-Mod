@@ -1,5 +1,6 @@
 package com.mce.client.render.itemrender;
 
+import com.mce.models.blocks.ModelBomb;
 import org.lwjgl.opengl.GL11;
 
 import com.mce.common.mod_IDT;
@@ -12,7 +13,8 @@ import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
 
 public class ItemRenderAdvancedHealer implements IItemRenderer {
-	private IModelCustom model = AdvancedModelLoader.loadModel(new ResourceLocation(mod_IDT.modid2, "obj/test.obj"));
+	//private IModelCustom model = AdvancedModelLoader.loadModel(new ResourceLocation(mod_IDT.modid2, "obj/test.obj"));
+	private ModelBomb model;
 	public static final ResourceLocation texture = new ResourceLocation("mod_idt",
 			"/textures/models/tex.png".substring(1));
 
@@ -35,7 +37,7 @@ public class ItemRenderAdvancedHealer implements IItemRenderer {
 			GL11.glScalef(.5f, .5f, .5f);
 
 			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderAll();
+			model.renderModel(0.0625f);
 			GL11.glPopMatrix();
 			break;
 		}
@@ -45,7 +47,7 @@ public class ItemRenderAdvancedHealer implements IItemRenderer {
 			GL11.glScalef(.5f, .5f, .5f);
 
 			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderAll();
+			model.renderModel(0.0625f);
 			GL11.glPopMatrix();
 			break;
 		}
@@ -56,7 +58,7 @@ public class ItemRenderAdvancedHealer implements IItemRenderer {
 			GL11.glScalef(.5f, .5f, .5f);
 
 			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderAll();
+			model.renderModel(0.0625f);
 			GL11.glPopMatrix();
 			break;
 		}
@@ -67,7 +69,7 @@ public class ItemRenderAdvancedHealer implements IItemRenderer {
 			GL11.glScalef(.5f, .5f, .5f);
 
 			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderAll();
+			model.renderModel(0.0625f);
 			GL11.glPopMatrix();
 			break;
 		}
@@ -79,7 +81,7 @@ public class ItemRenderAdvancedHealer implements IItemRenderer {
 
 			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 
-			model.renderAll();
+			model.renderModel(0.0625f);
 			GL11.glPopMatrix();
 			break;
 		}

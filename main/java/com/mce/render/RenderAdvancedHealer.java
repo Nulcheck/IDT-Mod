@@ -1,5 +1,6 @@
 package com.mce.render;
 
+import com.mce.models.blocks.ModelBomb;
 import org.lwjgl.opengl.GL11;
 
 import com.mce.common.mod_IDT;
@@ -12,11 +13,12 @@ import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
 
 public class RenderAdvancedHealer extends TileEntitySpecialRenderer {
-	private IModelCustom model;
+	//private IModelCustom model;
+	private ModelBomb model;
 	private ResourceLocation texture;
 
 	public RenderAdvancedHealer() {
-		model = AdvancedModelLoader.loadModel(new ResourceLocation(mod_IDT.modid2, "obj/test.obj"));
+		//model = AdvancedModelLoader.loadModel(new ResourceLocation(mod_IDT.modid2, "obj/test.obj"));
 		texture = new ResourceLocation(mod_IDT.modid2, "/textures/models/tex.png");
 	}
 
@@ -47,7 +49,7 @@ public class RenderAdvancedHealer extends TileEntitySpecialRenderer {
 		GL11.glTranslatef(0f, -1f, 0f);
 		GL11.glScalef(.5f, .5f, .5f);
 		this.adjustRotatePivotViaMeta(te.getWorldObj(), te.xCoord, te.yCoord, te.zCoord);
-		this.model.renderAll();
+		this.model.renderModel(0.0625f);
 
 		GL11.glPopMatrix();
 		GL11.glPopMatrix();
