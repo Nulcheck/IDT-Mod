@@ -74,13 +74,13 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.PraseodymiumIngot, "PraIngot");
 		GameRegistry.registerItem(mod_IDT.NeodymiumIngot, "NeoIngot");
 		GameRegistry.registerItem(mod_IDT.VanadiumIngot, "VanIngot");
+		GameRegistry.registerItem(mod_IDT.VanadiumCarbideIngot, "VanadiumCarbideIngot");
 		GameRegistry.registerItem(mod_IDT.TantalumIngot, "TantIngot");
 		GameRegistry.registerItem(mod_IDT.ZimphnodeBar, "ZimphnodeBar");
 		GameRegistry.registerItem(mod_IDT.NeoronIngot, "NeoronIngot");
 		GameRegistry.registerItem(mod_IDT.BoronIngot, "BoronIngot");
 		GameRegistry.registerItem(mod_IDT.CopperIngot, "CopperIngot");
 		GameRegistry.registerItem(mod_IDT.SiliconIngot, "SiliconIngot");
-		GameRegistry.registerItem(mod_IDT.VCIngot, "VCIngot");
 
 		// Nuggets
 		GameRegistry.registerItem(mod_IDT.EinsteiniumNugget, "EinsteiniumNugget");
@@ -91,19 +91,50 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.PraseodymiumNugget, "PraseodymiumNugget");
 		GameRegistry.registerItem(mod_IDT.NeodymiumNugget, "NeodymiumNugget");
 		GameRegistry.registerItem(mod_IDT.VanadiumNugget, "VanadiumNugget");
+		GameRegistry.registerItem(mod_IDT.VanadiumCarbideNugget, "VanadiumCarbideNugget");
 		GameRegistry.registerItem(mod_IDT.TantalumNugget, "TantalumNugget");
 		GameRegistry.registerItem(mod_IDT.BoronNugget, "BoronNugget");
 		GameRegistry.registerItem(mod_IDT.CopperNugget, "CopperNugget");
 		GameRegistry.registerItem(mod_IDT.SiliconNugget, "SiliconNugget");
 		GameRegistry.registerItem(mod_IDT.CrystalNugget, "CrystalNugget");
 
+		// Dusts
+		GameRegistry.registerItem(mod_IDT.EinsteiniumDust, "EinsteiniumDust");
+		GameRegistry.registerItem(mod_IDT.NeptuniumDust, "NeptuniumDust");
+		GameRegistry.registerItem(mod_IDT.UraniumDust, "UraniumDust");
+		GameRegistry.registerItem(mod_IDT.TitaniumDust, "TitaniumDust");
+		GameRegistry.registerItem(mod_IDT.PraseodymiumDust, "PraseodymiumDust");
+		GameRegistry.registerItem(mod_IDT.NeodymiumDust, "NeodymiumDust");
+		GameRegistry.registerItem(mod_IDT.VanadiumDust, "VanadiumDust");
+		GameRegistry.registerItem(mod_IDT.VanadiumCarbideDust, "VanadiumCarbideDust");
+		GameRegistry.registerItem(mod_IDT.TantalumDust, "TantalumDust");
+		GameRegistry.registerItem(mod_IDT.BoronDust, "BoronDust");
+		GameRegistry.registerItem(mod_IDT.CopperDust, "CopperDust");
+		GameRegistry.registerItem(mod_IDT.SiliconDust, "SiliconDust");
+		GameRegistry.registerItem(mod_IDT.PhosphorusDust, "PhosphorusDust");
+		GameRegistry.registerItem(mod_IDT.CrystalDust, "CrystalDust");
+		GameRegistry.registerItem(mod_IDT.Sulfur, "Sulfur");
+		GameRegistry.registerItem(mod_IDT.Carbon, "Carbon");
+		// GameRegistry.registerItem(mod_IDT.Graphene, "Graphene");
+
 		// Crystals
+		GameRegistry.registerItem(mod_IDT.PureQuartz, "PQuartz");
 		GameRegistry.registerItem(mod_IDT.CrystalGem, "CrystalGem");
 		GameRegistry.registerItem(mod_IDT.CutCrystalGem, "CutCrystalGem");
 		GameRegistry.registerItem(mod_IDT.CrystalPiece, "CrystalPiece");
 		GameRegistry.registerItem(mod_IDT.CrystalLens, "CrystalLens");
 		GameRegistry.registerItem(mod_IDT.CrystalBall, "CrystalBall");
 		GameRegistry.registerItem(mod_IDT.HardCrystalBall, "HardCrystalBall");
+
+		// Chem
+		GameRegistry.registerItem(mod_IDT.V2O5, "V2O5");
+		GameRegistry.registerItem(mod_IDT.SO2, "SO2");
+		GameRegistry.registerItem(mod_IDT.SO3, "SO3");
+		GameRegistry.registerItem(mod_IDT.H2SO4, "H2SO4");
+		GameRegistry.registerItem(mod_IDT.HNO3, "HNO3");
+		GameRegistry.registerItem(mod_IDT.Nitroglycerin, "NG");
+		GameRegistry.registerItem(mod_IDT.Glycerin, "Glycerin");
+		GameRegistry.registerItem(mod_IDT.Acrolein, "Acrolein");
 
 		// Essence
 		GameRegistry.registerItem(mod_IDT.EssenceOfLife, "EssenceOfLife");
@@ -125,30 +156,6 @@ public class ItemRegistry {
 		 * GameRegistry.registerItem(mod_IDT.PureAirEssence, "PureAirEssence");
 		 * GameRegistry.registerItem(mod_IDT.EOTP, "EOTP");
 		 */
-
-		//// Chemistry Stuff/Dusts
-		GameRegistry.registerItem(mod_IDT.Sulfur, "Sulfur");
-		GameRegistry.registerItem(mod_IDT.CrystalDust, "CrystalDust");
-		GameRegistry.registerItem(mod_IDT.VPowder, "VPowder");
-		GameRegistry.registerItem(mod_IDT.V2O5, "V2O5");
-		GameRegistry.registerItem(mod_IDT.Carbon, "Carbon");
-		// GameRegistry.registerItem(mod_IDT.Graphene, "Graphene");
-		GameRegistry.registerItem(mod_IDT.SiliconDust, "SiliconDust");
-		GameRegistry.registerItem(mod_IDT.CopperDust, "CopperDust");
-		// GameRegistry.registerItem(mod_IDT.TitaniumDust, "TitaniumDust");
-		GameRegistry.registerItem(mod_IDT.PhosphorusDust, "PhosphorusDust");
-		GameRegistry.registerItem(mod_IDT.BoronDust, "BoronDust");
-		GameRegistry.registerItem(mod_IDT.VCDust, "VCDust");
-		GameRegistry.registerItem(mod_IDT.PureQuartz, "PQuartz");
-		
-		// Chem
-		GameRegistry.registerItem(mod_IDT.SO2, "SO2");
-		GameRegistry.registerItem(mod_IDT.SO3, "SO3");
-		GameRegistry.registerItem(mod_IDT.H2SO4, "H2SO4");
-		GameRegistry.registerItem(mod_IDT.HNO3, "HNO3");
-		GameRegistry.registerItem(mod_IDT.Nitroglycerin, "NG");
-		GameRegistry.registerItem(mod_IDT.Glycerin, "Glycerin");
-		GameRegistry.registerItem(mod_IDT.Acrolein, "Acrolein");
 
 		// Liquids
 		GameRegistry.registerItem(mod_IDT.LiquidNitrogenBucket, "LiquidNitrogenBucket");

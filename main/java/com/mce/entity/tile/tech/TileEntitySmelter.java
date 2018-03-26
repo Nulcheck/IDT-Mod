@@ -339,7 +339,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 			ItemStack stack1 = SmelterRecipes.instance().getInput1(this.slots[1]);
 			ItemStack stack2 = SmelterRecipes.instance().getInput2(this.slots[2]);
 
-			if (this.slots[1].getItem() == mod_IDT.Carbon && this.slots[2].getItem() == mod_IDT.VPowder
+			if (this.slots[1].getItem() == mod_IDT.Carbon && this.slots[2].getItem() == mod_IDT.VanadiumDust
 					&& !checkUpgrade()) {
 				return false;
 			}

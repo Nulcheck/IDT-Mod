@@ -33,6 +33,6 @@ public class VCArmor extends ItemArmor {
 	}
 	
 	public boolean getIsRepairable(ItemStack armor, ItemStack stack) {
-		return stack.getItem() == mod_IDT.VCIngot;
+		return stack.getItem() == mod_IDT.VanadiumCarbideIngot;
 	}
 }

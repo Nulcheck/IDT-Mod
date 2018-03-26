@@ -255,6 +255,7 @@ import com.mce.items.ModItems.IronSawBlade;
 import com.mce.items.ModItems.LaserUpgrade;
 import com.mce.items.ModItems.MagneticUpgrade;
 import com.mce.items.ModItems.Microchip;
+import com.mce.items.ModItems.ModDust;
 import com.mce.items.ModItems.ModEssence;
 import com.mce.items.ModItems.ModIngot;
 import com.mce.items.ModItems.ModNugget;
@@ -439,6 +440,7 @@ public class mod_IDT {
 	public static Block EssenceInfuser;
 	public static Block EssenceExtractor;
 	public static Block VanadiumBlock;
+	public static Block VanadiumCarbideBlock;
 	public static Block TantalumBlock;
 	public static Block EinsteiniumBlock;
 	public static Block NeptuniumBlock;
@@ -446,7 +448,6 @@ public class mod_IDT {
 	public static Block PraseodymiumBlock;
 	public static Block NeodymiumBlock;
 	public static Block BoronBlock;
-	public static Block VCBlock;
 	public static Block SulfurBlock;
 	public static Block ZimphnodeBlock;
 	public static Block NeoronBlock;
@@ -913,17 +914,18 @@ public class mod_IDT {
 	public static Item PraseodymiumIngot;
 	public static Item NeodymiumIngot;
 	public static Item VanadiumIngot;
+	public static Item VanadiumCarbideIngot;
 	public static Item TantalumIngot;
 	public static Item ZimphnodeBar;
 	public static Item NeoronIngot;
 	public static Item BoronIngot;
 	public static Item CopperIngot;
 	public static Item SiliconIngot;
-	public static Item VCIngot;
 
 	// Dusts
 	public static Item TitaniumDust;
-	public static Item VPowder;
+	public static Item VanadiumDust;
+	public static Item VanadiumCarbideDust;
 	public static Item EinsteiniumDust;
 	public static Item NeptuniumDust;
 	public static Item UraniumDust;
@@ -933,7 +935,6 @@ public class mod_IDT {
 	public static Item TantalumDust;
 	public static Item CopperDust;
 	public static Item SiliconDust;
-	public static Item VCDust;
 	public static Item PhosphorusDust;
 	public static Item BoronDust;
 
@@ -946,6 +947,7 @@ public class mod_IDT {
 	public static Item PraseodymiumNugget;
 	public static Item NeodymiumNugget;
 	public static Item VanadiumNugget;
+	public static Item VanadiumCarbideNugget;
 	public static Item TantalumNugget;
 	public static Item BoronNugget;
 	public static Item CopperNugget;
@@ -1365,8 +1367,8 @@ public class mod_IDT {
 				.setBlockName("VanadiumBlock").setStepSound(Block.soundTypeMetal).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:vanadium_block");
 
-		VCBlock = new VanadiumBlock(Material.iron).setHardness(30f).setResistance(45f).setBlockName("VCBlock")
-				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT)
+		VanadiumCarbideBlock = new VanadiumBlock(Material.iron).setHardness(30f).setResistance(45f)
+				.setBlockName("VCBlock").setStepSound(Block.soundTypeMetal).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:vanadium_carbide_block");
 
 		TantalumBlock = new TantalumBlock(Material.iron).setHardness(18f).setResistance(32f)
@@ -2630,6 +2632,9 @@ public class mod_IDT {
 		VanadiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_vanadium").setCreativeTab(IDTItems)
 				.setUnlocalizedName("VanIngot");
 
+		VanadiumCarbideIngot = new ModIngot().setTextureName("mod_IDT:ingot_vc").setCreativeTab(IDTItems)
+				.setUnlocalizedName("VanadiumCarbideIngot");
+
 		TantalumIngot = new ModIngot().setTextureName("mod_IDT:ingot_tantalum").setCreativeTab(IDTItems)
 				.setUnlocalizedName("TantIngot");
 
@@ -2644,9 +2649,6 @@ public class mod_IDT {
 
 		SiliconIngot = new ModIngot().setTextureName("mod_IDT:ingot_silicon").setCreativeTab(IDTItems)
 				.setUnlocalizedName("SiliconIngot");
-
-		VCIngot = new ModIngot().setTextureName("mod_IDT:ingot_vc").setCreativeTab(IDTItems)
-				.setUnlocalizedName("VCIngot");
 
 		// Nuggets
 		EinsteiniumNugget = new ModNugget().setTextureName("mod_IDT:nugget_einsteinium").setCreativeTab(IDTItems)
@@ -2673,6 +2675,9 @@ public class mod_IDT {
 		VanadiumNugget = new ModNugget().setTextureName("mod_IDT:nugget_vanadium").setCreativeTab(IDTItems)
 				.setUnlocalizedName("VanadiumNugget");
 
+		VanadiumCarbideNugget = new ModNugget().setTextureName("mod_IDT:nugget_vanadium_carbide")
+				.setCreativeTab(IDTItems).setUnlocalizedName("VanadiumCarbideNugget");
+
 		TantalumNugget = new ModNugget().setTextureName("mod_IDT:nugget_tantalum").setCreativeTab(IDTItems)
 				.setUnlocalizedName("TantalumNugget");
 
@@ -2686,22 +2691,51 @@ public class mod_IDT {
 				.setUnlocalizedName("SiliconNugget");
 
 		// Dusts
+		EinsteiniumDust = new ModDust().setTextureName("mod_IDT:dust_einsteinium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("EinsteiniumDust");
+
+		NeptuniumDust = new ModDust().setTextureName("mod_IDT:dust_neptunium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("NeptuniumDust");
+
+		UraniumDust = new ModDust().setTextureName("mod_IDT:dust_uranium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("UraniumDust");
+
+		TitaniumDust = new ModDust().setTextureName("mod_IDT:dust_titanium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("TitaniumDust");
+
+		PraseodymiumDust = new ModDust().setTextureName("mod_IDT:dust_praseodymium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("PraseodymiumDust");
+
+		NeodymiumDust = new ModDust().setTextureName("mod_IDT:dust_neodymium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("NeodymiumDust");
+
+		VanadiumDust = new ModDust().setTextureName("mod_IDT:dust_vanadium").setCreativeTab(IDTItems)
+				.setUnlocalizedName("VanadiumDust");
+
+		VanadiumCarbideDust = new ModDust().setTextureName("mod_IDT:dust_vanadium_carbide").setCreativeTab(IDTItems)
+				.setUnlocalizedName("VanadiumCarbideDust");
+
+		TantalumDust = new ModDust().setTextureName("mod_IDT:dust_tantalum").setCreativeTab(IDTItems)
+				.setUnlocalizedName("TantalumDust");
+
+		BoronDust = new ModDust().setTextureName("mod_IDT:dust_boron").setCreativeTab(IDTItems)
+				.setUnlocalizedName("BoronDust");
+
 		CopperDust = new Item().setTextureName("mod_IDT:dust_copper").setCreativeTab(IDTItems)
 				.setUnlocalizedName("CopperDust");
 
 		SiliconDust = new Item().setTextureName("mod_IDT:dust_silicon").setCreativeTab(IDTItems)
 				.setUnlocalizedName("SiliconDust");
 
-		VCDust = new Item().setTextureName("mod_IDT:dust_vc").setCreativeTab(IDTItems).setUnlocalizedName("VCDust");
-
-		TitaniumDust = new Item().setTextureName("mod_IDT:dust_titanium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("TitaniumDust");
-
 		PhosphorusDust = new Item().setTextureName("mod_IDT:dust_phosphorus").setCreativeTab(IDTItems)
 				.setUnlocalizedName("PhosphorusDust");
 
-		BoronDust = new Item().setTextureName("mod_IDT:dust_boron").setCreativeTab(IDTItems)
-				.setUnlocalizedName("BoronDust");
+		Carbon = new Item().setTextureName("mod_IDT:carbon").setCreativeTab(IDTItems).setUnlocalizedName("Carbon");
+
+		Sulfur = new Item().setTextureName("mod_IDT:sulfur").setCreativeTab(IDTItems).setUnlocalizedName("Sulfur");
+
+		Graphene = new Item().setTextureName("mod_IDT:graphene").setUnlocalizedName("Graphene")
+				.setCreativeTab(IDTItems);
 
 		// Records
 		cd_icy = new DiscIcy("8-bit Icy").setUnlocalizedName("cd_icy").setTextureName("mod_idt:cd_icy")
@@ -2713,8 +2747,6 @@ public class mod_IDT {
 				.setTextureName("mod_idt:r51vWLcxy9jo1Nvi").setCreativeTab(IDTItems);
 
 		// Chemistry Things
-		Sulfur = new Item().setTextureName("mod_IDT:sulfur").setCreativeTab(IDTItems).setUnlocalizedName("Sulfur");
-
 		SO2 = new SO2().setTextureName("mod_IDT:so2").setCreativeTab(IDTItems).setUnlocalizedName("SO2");
 
 		SO3 = new SO3().setTextureName("mod_IDT:so3").setCreativeTab(IDTItems).setUnlocalizedName("SO3");
@@ -2726,9 +2758,6 @@ public class mod_IDT {
 
 		HNO3 = new HNO3().setTextureName("mod_IDT:hno3").setCreativeTab(IDTItems).setUnlocalizedName("HNO3");
 
-		VPowder = new Item().setTextureName("mod_IDT:vanadium_powder").setCreativeTab(IDTItems)
-				.setUnlocalizedName("VPowder");
-
 		V2O5 = new V2O5().setTextureName("mod_IDT:v2o5").setCreativeTab(IDTItems).setUnlocalizedName("V2O5");
 
 		Nitroglycerin = new Nitroglycerin().setTextureName("mod_IDT:glycerin").setCreativeTab(IDTItems)
@@ -2736,8 +2765,6 @@ public class mod_IDT {
 
 		Glycerin = new Glycerin().setTextureName("mod_IDT:glycerin").setCreativeTab(IDTItems)
 				.setUnlocalizedName("Glycerin");
-
-		Carbon = new Item().setTextureName("mod_IDT:carbon").setCreativeTab(IDTItems).setUnlocalizedName("Carbon");
 
 		Acrolein = new Item().setTextureName("mod_IDT:glycerin").setCreativeTab(IDTItems)
 				.setUnlocalizedName("Acrolein");
@@ -2747,9 +2774,6 @@ public class mod_IDT {
 
 		Propene = new Item().setTextureName("mod_IDT:propane_tank").setCreativeTab(IDTItems)
 				.setUnlocalizedName("Propene");
-
-		Graphene = new Item().setTextureName("mod_IDT:graphene").setUnlocalizedName("Graphene")
-				.setCreativeTab(IDTItems);
 
 		// Liquids
 		LiquidNitrogenBucket = new LiquidNitrogenBucket(LiquidNitrogen).setCreativeTab(IDTItems)
@@ -3055,8 +3079,7 @@ public class mod_IDT {
 				.setTextureName("mod_IDT:boots_tantalum").setCreativeTab(IDTItems);
 
 		// Neoron
-		NeoronHelmet = new NeoronArmor(mat_neoron, 5, 0).setUnlocalizedName("NeoHelmet").setCreativeTab(IDTItems)
-				.setTextureName("mod_IDT:helmet_neoron");
+		NeoronHelmet = new NeoronArmor(mat_neoron, 5, 0).setUnlocalizedName("NeoHelmet").setCreativeTab(IDTItems);
 
 		NeoronChestplate = new NeoronArmor(mat_neoron, 5, 1).setUnlocalizedName("NeoChest").setCreativeTab(IDTItems)
 				.setTextureName("mod_IDT:chestplate_neoron");

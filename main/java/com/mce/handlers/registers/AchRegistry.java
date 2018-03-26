@@ -202,7 +202,7 @@ public class AchRegistry {
 
 		fixIt = new Achievement("achievement.fixIt", "fixIt", 4, 1, mod_IDT.BlowTorch, greenChem).registerStat();
 
-		vcIngot = new Achievement("achievement.vcIngot", "vcIngot", 3, 4, mod_IDT.VCIngot, vanadiumIngot).registerStat()
+		vcIngot = new Achievement("achievement.vcIngot", "vcIngot", 3, 4, mod_IDT.VanadiumCarbideIngot, vanadiumIngot).registerStat()
 				.setSpecial();
 
 		vcPick = new Achievement("achievement.vcPick", "vcPick", 3, 5, mod_IDT.VCPick, vcIngot).registerStat();

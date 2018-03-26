@@ -36,7 +36,7 @@ public class MinechemRecipeHandler {
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.BoronIngot), "16 B");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CopperIngot), "16 Cu");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SiliconIngot), "16 Si");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VCIngot), "6 V, 3 C");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VanadiumCarbideIngot), "6 V, 3 C");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SteelIngot), "16 Fe, 1 C");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.TitaniumIngot), "16 Ti");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.NeoronIngot), "16 Fe, 16 Nd");
@@ -57,7 +57,7 @@ public class MinechemRecipeHandler {
 				"16 magma");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.LavaCobble), "2 siliconDioxide", "16 magma");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.Nitroglycerin), "1 nitroglycerin");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VPowder), "2 V");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VanadiumDust), "2 V");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.V2O5), "2 V", "5 O");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SO2), "1 S", "2 O");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SO3), "1 S", "3 O");
@@ -69,7 +69,7 @@ public class MinechemRecipeHandler {
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.Carbon), "1 C");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CopperDust), "1 Cu");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SiliconDust), "1 Si");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VCDust), "2 V, 1 C");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VanadiumCarbideDust), "2 V, 1 C");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.PureQuartz), "2 siliconDioxide");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CopperWire), "6 Cu");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VanadiumWire), "6 V");
@@ -193,7 +193,7 @@ public class MinechemRecipeHandler {
 				"1 siliconDioxide", "1 siliconDioxide", "1 siliconDioxide", "16 magma", "1 siliconDioxide",
 				"1 siliconDioxide", "1 siliconDioxide", "1 siliconDioxide");
 		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.Nitroglycerin), false, 1000, "1  nitroglycerin");
-		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.VPowder), true, 1000, "2 V", "", "", "", "", "", "", "", "");
+		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.VanadiumDust), true, 1000, "2 V", "", "", "", "", "", "", "", "");
 		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.V2O5), false, 1000, "2 V", "5 O");
 		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.LiquidNitrogenBucket), true, 1000, "", "", "", "16 Fe",
 				"16 N", "16 Fe", "", "16 Fe", "");

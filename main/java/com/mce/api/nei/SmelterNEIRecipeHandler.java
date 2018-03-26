@@ -109,7 +109,7 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 		drawProgressBar(95, 23, 176, 0, 24, 16, 48, 0);
 		// drawProgressBar(159, 20, 192, 17, 4, 50, 0f, 7);
 
-		if (((SmelterPair) arecipes.get(recipe)).out.contains(mod_IDT.VCDust)) {
+		if (((SmelterPair) arecipes.get(recipe)).out.contains(mod_IDT.VanadiumCarbideDust)) {
 			drawString("Upgrade is Required.", 100, 20);
 		}
 	}

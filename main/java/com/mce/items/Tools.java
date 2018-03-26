@@ -23,7 +23,7 @@ public class Tools {
 			if (tool.getItem() == mod_IDT.VanadiumPick)
 				return stack.getItem() == mod_IDT.VanadiumIngot;
 			if (tool.getItem() == mod_IDT.VCPick)
-				return stack.getItem() == mod_IDT.VCIngot;
+				return stack.getItem() == mod_IDT.VanadiumCarbideIngot;
 			if (tool.getItem() == mod_IDT.NeoronPick)
 				return stack.getItem() == mod_IDT.NeoronIngot;
 			return false;
@@ -43,7 +43,7 @@ public class Tools {
 			if (tool.getItem() == mod_IDT.VanadiumShovel)
 				return stack.getItem() == mod_IDT.VanadiumIngot;
 			if (tool.getItem() == mod_IDT.VCShovel)
-				return stack.getItem() == mod_IDT.VCIngot;
+				return stack.getItem() == mod_IDT.VanadiumCarbideIngot;
 			return false;
 		}
 	}
@@ -61,7 +61,7 @@ public class Tools {
 			if (tool.getItem() == mod_IDT.VanadiumAxe)
 				return stack.getItem() == mod_IDT.VanadiumIngot;
 			if (tool.getItem() == mod_IDT.VCAxe)
-				return stack.getItem() == mod_IDT.VCIngot;
+				return stack.getItem() == mod_IDT.VanadiumCarbideIngot;
 			return false;
 		}
 	}
@@ -79,7 +79,7 @@ public class Tools {
 			if (tool.getItem() == mod_IDT.VanadiumSword)
 				return stack.getItem() == mod_IDT.VanadiumIngot;
 			if (tool.getItem() == mod_IDT.VCSword)
-				return stack.getItem() == mod_IDT.VCIngot;
+				return stack.getItem() == mod_IDT.VanadiumCarbideIngot;
 			return false;
 		}
 	}
@@ -97,7 +97,7 @@ public class Tools {
 			if (tool.getItem() == mod_IDT.VanadiumHoe)
 				return stack.getItem() == mod_IDT.VanadiumIngot;
 			if (tool.getItem() == mod_IDT.VCHoe)
-				return stack.getItem() == mod_IDT.VCIngot;
+				return stack.getItem() == mod_IDT.VanadiumCarbideIngot;
 			return false;
 		}
 	}

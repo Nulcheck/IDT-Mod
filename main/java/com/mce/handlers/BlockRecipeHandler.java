@@ -982,7 +982,7 @@ public class BlockRecipeHandler {
 				"***", "***", "***", '*', "ingotVanadium"));
 
 		CraftingManager.getInstance().getRecipeList()
-				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.VCBlock, 1), "***", "***", "***", '*', "ingotVC"));
+				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.VanadiumCarbideBlock, 1), "***", "***", "***", '*', "ingotVanadiumCarbide"));
 
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.TantalumBlock, 1),
 				"***", "***", "***", '*', "ingotTantalum"));

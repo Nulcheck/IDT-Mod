@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 
 public class SmelterRecipes {
 	public static final SmelterRecipes smeltingBase = new SmelterRecipes();
-	//private static Map recipeMap = new HashMap();
+	// private static Map recipeMap = new HashMap();
 	private static Map expMap = new HashMap();
 	private static Map input1 = new HashMap();
 	private static Map input2 = new HashMap();
@@ -40,7 +40,8 @@ public class SmelterRecipes {
 		addRecipe(new ItemStack(mod_IDT.BoronFG), new ItemStack(mod_IDT.Fiberglass), new ItemStack(mod_IDT.BoronIngot),
 				0.6f);
 
-		addRecipe(new ItemStack(mod_IDT.VCDust), new ItemStack(mod_IDT.Carbon), new ItemStack(mod_IDT.VPowder), 1f);
+		addRecipe(new ItemStack(mod_IDT.VanadiumCarbideDust), new ItemStack(mod_IDT.Carbon),
+				new ItemStack(mod_IDT.VanadiumDust), 1f);
 
 		addRecipe(new ItemStack(mod_IDT.BSiliconChip), new ItemStack(mod_IDT.SiliconChip),
 				new ItemStack(mod_IDT.BoronDust), 1.5f);
@@ -54,7 +55,7 @@ public class SmelterRecipes {
 		this.input1.put(in, out);
 		this.input2.put(in2, out);
 		this.output.put(in2, out);
-		//this.recipeMap.put(in2, out);
+		// this.recipeMap.put(in2, out);
 		this.expMap.put(out, exp);
 	}
 

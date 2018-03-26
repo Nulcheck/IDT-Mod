@@ -16,7 +16,7 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("blockCopper", new ItemStack(mod_IDT.CopperBlock));
 		OreDictionary.registerOre("blockSilicon", new ItemStack(mod_IDT.SiliconBlock));
 		OreDictionary.registerOre("blockVanadium", new ItemStack(mod_IDT.VanadiumBlock));
-		OreDictionary.registerOre("blockVanadiumCarbide", new ItemStack(mod_IDT.VCBlock));
+		OreDictionary.registerOre("blockVanadiumCarbide", new ItemStack(mod_IDT.VanadiumCarbideBlock));
 		OreDictionary.registerOre("blockTantalum", new ItemStack(mod_IDT.TantalumBlock));
 		OreDictionary.registerOre("blockEinsteinium", new ItemStack(mod_IDT.EinsteiniumBlock));
 		OreDictionary.registerOre("blockNeptunium", new ItemStack(mod_IDT.NeptuniumBlock));
@@ -55,14 +55,13 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("ingotNeodymium", new ItemStack(mod_IDT.NeodymiumIngot));
 		OreDictionary.registerOre("ingotPraseodymium", new ItemStack(mod_IDT.PraseodymiumIngot));
 		OreDictionary.registerOre("ingotVanadium", new ItemStack(mod_IDT.VanadiumIngot));
+		OreDictionary.registerOre("ingotVanadiumCarbide", new ItemStack(mod_IDT.VanadiumCarbideIngot));
 		OreDictionary.registerOre("ingotTantalum", new ItemStack(mod_IDT.TantalumIngot));
-		OreDictionary.registerOre("lumpSulfur", new ItemStack(mod_IDT.Sulfur));
 		OreDictionary.registerOre("ingotNeoron", new ItemStack(mod_IDT.NeoronIngot));
 		OreDictionary.registerOre("ingotBoron", new ItemStack(mod_IDT.BoronIngot));
 		OreDictionary.registerOre("ingotCopper", new ItemStack(mod_IDT.CopperIngot));
 		OreDictionary.registerOre("ingotSilicon", new ItemStack(mod_IDT.SiliconIngot));
-		OreDictionary.registerOre("ingotVC", new ItemStack(mod_IDT.VCIngot));
-		
+
 		// Nuggets
 		OreDictionary.registerOre("nuggetEinsteinium", new ItemStack(mod_IDT.EinsteiniumNugget));
 		OreDictionary.registerOre("nuggetNeptunium", new ItemStack(mod_IDT.NeptuniumNugget));
@@ -72,11 +71,33 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("nuggetPraseodymium", new ItemStack(mod_IDT.PraseodymiumNugget));
 		OreDictionary.registerOre("nuggetNeodymium", new ItemStack(mod_IDT.NeodymiumNugget));
 		OreDictionary.registerOre("nuggetVanadium", new ItemStack(mod_IDT.VanadiumNugget));
+		OreDictionary.registerOre("nuggetVanadiumCarbide", new ItemStack(mod_IDT.VanadiumCarbideNugget));
 		OreDictionary.registerOre("nuggetTantalum", new ItemStack(mod_IDT.TantalumNugget));
 		OreDictionary.registerOre("nuggetBoron", new ItemStack(mod_IDT.BoronNugget));
 		OreDictionary.registerOre("nuggetCopper", new ItemStack(mod_IDT.CopperNugget));
 		OreDictionary.registerOre("nuggetSilicon", new ItemStack(mod_IDT.SiliconNugget));
 		OreDictionary.registerOre("nuggetCrystal", new ItemStack(mod_IDT.CrystalNugget));
+
+		// Dusts
+		OreDictionary.registerOre("dustEinsteinium", new ItemStack(mod_IDT.EinsteiniumDust));
+		OreDictionary.registerOre("dustNeptunium", new ItemStack(mod_IDT.NeptuniumDust));
+		OreDictionary.registerOre("dustUranium", new ItemStack(mod_IDT.UraniumDust));
+		OreDictionary.registerOre("dustTitanium", new ItemStack(mod_IDT.TitaniumDust));
+		OreDictionary.registerOre("dustPraseodymium", new ItemStack(mod_IDT.PraseodymiumDust));
+		OreDictionary.registerOre("dustNeodymium", new ItemStack(mod_IDT.NeodymiumDust));
+		OreDictionary.registerOre("dustVanadium", new ItemStack(mod_IDT.VanadiumDust));
+		OreDictionary.registerOre("dustVanadiumCarbide", new ItemStack(mod_IDT.VanadiumCarbideDust));
+		OreDictionary.registerOre("dustTantalum", new ItemStack(mod_IDT.TantalumDust));
+		OreDictionary.registerOre("dustBoron", new ItemStack(mod_IDT.BoronDust));
+		OreDictionary.registerOre("dustCopper", new ItemStack(mod_IDT.CopperDust));
+		OreDictionary.registerOre("dustSilicon", new ItemStack(mod_IDT.SiliconDust));
+		OreDictionary.registerOre("dustCrystal", new ItemStack(mod_IDT.CrystalDust));
+		OreDictionary.registerOre("dustPhosphorus", new ItemStack(mod_IDT.PhosphorusDust));
+		OreDictionary.registerOre("dustBoron", new ItemStack(mod_IDT.BoronDust));
+		OreDictionary.registerOre("lumpSulfur", new ItemStack(mod_IDT.Sulfur));
+		OreDictionary.registerOre("dustSulfur", new ItemStack(mod_IDT.Sulfur));
+		OreDictionary.registerOre("dustCarbon", new ItemStack(mod_IDT.Carbon));
+		
 
 		// Wire
 		OreDictionary.registerOre("wireCopper", new ItemStack(mod_IDT.CopperWire));
@@ -91,14 +112,6 @@ public class OreDictionaryRegistry {
 		// Foil
 		OreDictionary.registerOre("foilCopper", new ItemStack(mod_IDT.CopperFoil));
 		OreDictionary.registerOre("foilTantalum", new ItemStack(mod_IDT.TantalumFoil));
-
-		// Dusts
-		OreDictionary.registerOre("dustCrystal", new ItemStack(mod_IDT.CrystalDust));
-		OreDictionary.registerOre("dustCopper", new ItemStack(mod_IDT.CopperDust));
-		OreDictionary.registerOre("dustSilicon", new ItemStack(mod_IDT.SiliconDust));
-		OreDictionary.registerOre("dustVC", new ItemStack(mod_IDT.VCDust));
-		OreDictionary.registerOre("dustPhosphorus", new ItemStack(mod_IDT.PhosphorusDust));
-		OreDictionary.registerOre("dustBoron", new ItemStack(mod_IDT.BoronDust));
 
 		// Crystal
 		OreDictionary.registerOre("gemCrystal", new ItemStack(mod_IDT.CrystalGem));

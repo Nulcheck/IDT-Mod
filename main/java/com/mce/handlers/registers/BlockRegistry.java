@@ -50,7 +50,8 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.SmelterActive, "SmelterActive");
 		GameRegistry.registerBlock(mod_IDT.IndustrialCutter, "IC");
 		GameRegistry.registerBlock(mod_IDT.MatterCondenser, "MatterCondenser");
-		GameRegistry.registerBlock(mod_IDT.BioFuelExtractor, ItemBFE.class, mod_IDT.BioFuelExtractor.getUnlocalizedName());
+		GameRegistry.registerBlock(mod_IDT.BioFuelExtractor, ItemBFE.class,
+				mod_IDT.BioFuelExtractor.getUnlocalizedName());
 		GameRegistry.registerBlock(mod_IDT.TankCompressor, "TankCompressor");
 		GameRegistry.registerBlock(mod_IDT.BlackHoleGenerator, "BHG");
 		GameRegistry.registerBlock(mod_IDT.Welder, "Welder");
@@ -70,23 +71,6 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.LavaCobble, "LavaCobble");
 		GameRegistry.registerBlock(mod_IDT.LavaObsidian, "LavaObsidin");
 		GameRegistry.registerBlock(mod_IDT.CompactCobblestone, "CompactCobblestone");
-		GameRegistry.registerBlock(mod_IDT.CrystalBlock, "CrystalBlock");
-		GameRegistry.registerBlock(mod_IDT.SteelBlock, "SteelBlock");
-		GameRegistry.registerBlock(mod_IDT.TitaniumBlock, "TitaniumBlock");
-		GameRegistry.registerBlock(mod_IDT.CopperBlock, "CopperBlock");
-		GameRegistry.registerBlock(mod_IDT.SiliconBlock, "SiliconBlock");
-		GameRegistry.registerBlock(mod_IDT.VanadiumBlock, "VanadiumBlock");
-		GameRegistry.registerBlock(mod_IDT.VCBlock, "VCBlock");
-		GameRegistry.registerBlock(mod_IDT.TantalumBlock, "TantalumBlock");
-		GameRegistry.registerBlock(mod_IDT.EinsteiniumBlock, "EinsteiniumBlock");
-		GameRegistry.registerBlock(mod_IDT.NeptuniumBlock, "NeptuniumBlock");
-		GameRegistry.registerBlock(mod_IDT.UraniumBlock, "UraniumBlock");
-		GameRegistry.registerBlock(mod_IDT.PraseodymiumBlock, "PraseodymiumBlock");
-		GameRegistry.registerBlock(mod_IDT.NeodymiumBlock, "NeodymiumBlock");
-		GameRegistry.registerBlock(mod_IDT.NeoronBlock, "NeoronBlock");
-		GameRegistry.registerBlock(mod_IDT.BoronBlock, "BoronBlock");
-		GameRegistry.registerBlock(mod_IDT.SulfurBlock, "SulfurBlock");
-		GameRegistry.registerBlock(mod_IDT.ZimphnodeBlock, "ZimphnodeBlock");
 		GameRegistry.registerBlock(mod_IDT.DidymiumGlass, ItemDidymiumGlass.class,
 				mod_IDT.DidymiumGlass.getUnlocalizedName());
 		GameRegistry.registerBlock(mod_IDT.DidymiumGlassPane, "DidymiumGlassPane");
@@ -129,6 +113,25 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.CrystalPortal, "CrystalPortal");
 		GameRegistry.registerBlock(mod_IDT.CrystalGlass, "CrystalGlass");
 		GameRegistry.registerBlock(mod_IDT.CrystalRock, "CrystalRock");
+
+		// Mineral Blocks
+		GameRegistry.registerBlock(mod_IDT.EinsteiniumBlock, "EinsteiniumBlock");
+		GameRegistry.registerBlock(mod_IDT.NeptuniumBlock, "NeptuniumBlock");
+		GameRegistry.registerBlock(mod_IDT.UraniumBlock, "UraniumBlock");
+		GameRegistry.registerBlock(mod_IDT.SteelBlock, "SteelBlock");
+		GameRegistry.registerBlock(mod_IDT.TitaniumBlock, "TitaniumBlock");
+		GameRegistry.registerBlock(mod_IDT.PraseodymiumBlock, "PraseodymiumBlock");
+		GameRegistry.registerBlock(mod_IDT.NeodymiumBlock, "NeodymiumBlock");
+		GameRegistry.registerBlock(mod_IDT.VanadiumBlock, "VanadiumBlock");
+		GameRegistry.registerBlock(mod_IDT.VanadiumCarbideBlock, "VanadiumCarbideBlock");
+		GameRegistry.registerBlock(mod_IDT.TantalumBlock, "TantalumBlock");
+		GameRegistry.registerBlock(mod_IDT.ZimphnodeBlock, "ZimphnodeBlock");
+		GameRegistry.registerBlock(mod_IDT.NeoronBlock, "NeoronBlock");
+		GameRegistry.registerBlock(mod_IDT.BoronBlock, "BoronBlock");
+		GameRegistry.registerBlock(mod_IDT.CopperBlock, "CopperBlock");
+		GameRegistry.registerBlock(mod_IDT.SiliconBlock, "SiliconBlock");
+		GameRegistry.registerBlock(mod_IDT.SulfurBlock, "SulfurBlock");
+		GameRegistry.registerBlock(mod_IDT.CrystalBlock, "CrystalBlock");
 
 		// Ores
 		GameRegistry.registerBlock(mod_IDT.EinsteiniumOre, "EindteiniumOre");

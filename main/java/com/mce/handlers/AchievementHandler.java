@@ -291,7 +291,7 @@ public class AchievementHandler {
 			e.player.addStat(AchRegistry.comp, 1);
 		}
 
-		else if (e.crafting.getItem().equals(mod_IDT.VCIngot)) {
+		else if (e.crafting.getItem().equals(mod_IDT.VanadiumCarbideIngot)) {
 			e.player.addStat(AchRegistry.vcIngot, 1);
 		}
 
