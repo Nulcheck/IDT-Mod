@@ -71,11 +71,11 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.UraniumIngot, "UraniumIngot");
 		GameRegistry.registerItem(mod_IDT.SteelIngot, "SteelIngot");
 		GameRegistry.registerItem(mod_IDT.TitaniumIngot, "TitaniumIngot");
-		GameRegistry.registerItem(mod_IDT.PraseodymiumIngot, "PraIngot");
-		GameRegistry.registerItem(mod_IDT.NeodymiumIngot, "NeoIngot");
-		GameRegistry.registerItem(mod_IDT.VanadiumIngot, "VanIngot");
+		GameRegistry.registerItem(mod_IDT.PraseodymiumIngot, "PraseodymiumIngot");
+		GameRegistry.registerItem(mod_IDT.NeodymiumIngot, "NeodymiumIngot");
+		GameRegistry.registerItem(mod_IDT.VanadiumIngot, "VanadiumIngot");
 		GameRegistry.registerItem(mod_IDT.VanadiumCarbideIngot, "VanadiumCarbideIngot");
-		GameRegistry.registerItem(mod_IDT.TantalumIngot, "TantIngot");
+		GameRegistry.registerItem(mod_IDT.TantalumIngot, "TantalumIngot");
 		GameRegistry.registerItem(mod_IDT.ZimphnodeBar, "ZimphnodeBar");
 		GameRegistry.registerItem(mod_IDT.NeoronIngot, "NeoronIngot");
 		GameRegistry.registerItem(mod_IDT.BoronIngot, "BoronIngot");
@@ -102,6 +102,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.EinsteiniumDust, "EinsteiniumDust");
 		GameRegistry.registerItem(mod_IDT.NeptuniumDust, "NeptuniumDust");
 		GameRegistry.registerItem(mod_IDT.UraniumDust, "UraniumDust");
+		GameRegistry.registerItem(mod_IDT.SteelDust, "SteelDust");
 		GameRegistry.registerItem(mod_IDT.TitaniumDust, "TitaniumDust");
 		GameRegistry.registerItem(mod_IDT.PraseodymiumDust, "PraseodymiumDust");
 		GameRegistry.registerItem(mod_IDT.NeodymiumDust, "NeodymiumDust");

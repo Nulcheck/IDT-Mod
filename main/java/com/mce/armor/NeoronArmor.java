@@ -3,7 +3,6 @@ package com.mce.armor;
 import com.mce.common.mod_IDT;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;

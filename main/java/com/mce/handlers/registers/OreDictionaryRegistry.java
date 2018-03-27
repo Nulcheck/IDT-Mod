@@ -82,6 +82,7 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("dustEinsteinium", new ItemStack(mod_IDT.EinsteiniumDust));
 		OreDictionary.registerOre("dustNeptunium", new ItemStack(mod_IDT.NeptuniumDust));
 		OreDictionary.registerOre("dustUranium", new ItemStack(mod_IDT.UraniumDust));
+		OreDictionary.registerOre("dustSteel", new ItemStack(mod_IDT.SteelDust));
 		OreDictionary.registerOre("dustTitanium", new ItemStack(mod_IDT.TitaniumDust));
 		OreDictionary.registerOre("dustPraseodymium", new ItemStack(mod_IDT.PraseodymiumDust));
 		OreDictionary.registerOre("dustNeodymium", new ItemStack(mod_IDT.NeodymiumDust));

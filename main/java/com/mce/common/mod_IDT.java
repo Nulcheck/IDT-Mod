@@ -923,6 +923,7 @@ public class mod_IDT {
 	public static Item SiliconIngot;
 
 	// Dusts
+	public static Item SteelDust;
 	public static Item TitaniumDust;
 	public static Item VanadiumDust;
 	public static Item VanadiumCarbideDust;
@@ -2624,19 +2625,19 @@ public class mod_IDT {
 				.setUnlocalizedName("TitaniumIngot");
 
 		PraseodymiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_praseodymium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("PraIngot");
+				.setUnlocalizedName("PraseodymiumIngot");
 
 		NeodymiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_neodymium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("NeoIngot");
+				.setUnlocalizedName("NeodymiumIngot");
 
 		VanadiumIngot = new ModIngot().setTextureName("mod_IDT:ingot_vanadium").setCreativeTab(IDTItems)
-				.setUnlocalizedName("VanIngot");
+				.setUnlocalizedName("VanadiumIngot");
 
 		VanadiumCarbideIngot = new ModIngot().setTextureName("mod_IDT:ingot_vc").setCreativeTab(IDTItems)
 				.setUnlocalizedName("VanadiumCarbideIngot");
 
 		TantalumIngot = new ModIngot().setTextureName("mod_IDT:ingot_tantalum").setCreativeTab(IDTItems)
-				.setUnlocalizedName("TantIngot");
+				.setUnlocalizedName("TantalumIngot");
 
 		NeoronIngot = new ModIngot().setTextureName("mod_IDT:ingot_neoron").setCreativeTab(IDTItems)
 				.setUnlocalizedName("NeoronIngot");
@@ -2699,6 +2700,9 @@ public class mod_IDT {
 
 		UraniumDust = new ModDust().setTextureName("mod_IDT:dust_uranium").setCreativeTab(IDTItems)
 				.setUnlocalizedName("UraniumDust");
+
+		SteelDust = new ModDust().setTextureName("mod_IDT:dust_steel").setCreativeTab(IDTItems)
+				.setUnlocalizedName("SteelDust");
 
 		TitaniumDust = new ModDust().setTextureName("mod_IDT:dust_titanium").setCreativeTab(IDTItems)
 				.setUnlocalizedName("TitaniumDust");
@@ -3079,7 +3083,8 @@ public class mod_IDT {
 				.setTextureName("mod_IDT:boots_tantalum").setCreativeTab(IDTItems);
 
 		// Neoron
-		NeoronHelmet = new NeoronArmor(mat_neoron, 5, 0).setUnlocalizedName("NeoHelmet").setCreativeTab(IDTItems);
+		NeoronHelmet = new NeoronArmor(mat_neoron, 5, 0).setUnlocalizedName("NeoHelmet").setCreativeTab(IDTItems)
+				.setTextureName("mod_IDT:helmet_neoron");
 
 		NeoronChestplate = new NeoronArmor(mat_neoron, 5, 1).setUnlocalizedName("NeoChest").setCreativeTab(IDTItems)
 				.setTextureName("mod_IDT:chestplate_neoron");
