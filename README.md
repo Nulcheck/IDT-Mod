@@ -4,6 +4,8 @@ Created by MCE626.
 
 http://discord.gg/XyjNtY2
 
+https://trello.com/b/JJKhiF8G
+
 ------
 # Custom License for this Repository
 ## Notice
