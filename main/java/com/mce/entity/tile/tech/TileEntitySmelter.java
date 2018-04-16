@@ -3,6 +3,7 @@ package com.mce.entity.tile.tech;
 import com.mce.blocks.tech.Smelter;
 import com.mce.common.mod_IDT;
 import com.mce.handlers.custom_recipes.SmelterRecipes;
+import com.mce.handlers.custom_recipes.SmelterRecipes.DoubleInputHandler;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -336,15 +337,16 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 
 	public boolean checkSlot() {
 		if (this.slots[1] != null && this.slots[2] != null) {
-			ItemStack stack1 = SmelterRecipes.instance().getInput1(this.slots[1]);
-			ItemStack stack2 = SmelterRecipes.instance().getInput2(this.slots[2]);
-
+			DoubleInputHandler stack = SmelterRecipes.getRecipe(this.slots[1], this.slots[2]);
+			ItemStack item1 = stack.getInput1();
+			ItemStack item2 = stack.getInput2();
+			
 			if (this.slots[1].getItem() == mod_IDT.Carbon && this.slots[2].getItem() == mod_IDT.VanadiumDust
 					&& !checkUpgrade()) {
 				return false;
 			}
 
-			else if (this.slots[1] == stack1 && this.slots[2] == stack2) {
+			else if (this.slots[1] == item1 && this.slots[2] == item2) {
 				return true;
 			} else {
 				return false;
@@ -358,7 +360,9 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 		if (this.slots[1] == null && this.slots[2] == null || (this.slots[1] == null || this.slots[2] == null)) {
 			return false;
 		} else {
-			ItemStack stack = SmelterRecipes.instance().getOutput(this.slots[2]);
+			DoubleInputHandler recipe = SmelterRecipes.getRecipe(this.slots[1], this.slots[2]);
+			ItemStack stack = recipe.getOutput();
+			//ItemStack stack = SmelterRecipes.instance().getOutput(this.slots[2]);
 
 			if (this.slots[1] == null && this.slots[2] == null)
 				return false;
@@ -376,7 +380,9 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 
 	public void smeltItem() {
 		if (this.canSmelt() == true) {
-			ItemStack stack = SmelterRecipes.instance().getOutput(this.slots[2]);
+			//ItemStack stack = SmelterRecipes.instance().getOutput(this.slots[2]);
+			DoubleInputHandler recipe = SmelterRecipes.getRecipe(this.slots[1], this.slots[2]);
+			ItemStack stack = recipe.getOutput();
 
 			if (this.slots[3] == null) {
 				this.slots[3] = stack.copy();

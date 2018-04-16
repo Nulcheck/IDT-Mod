@@ -15,10 +15,19 @@ public class IDTRecipeAPI {
 	 * @param out
 	 * @param in
 	 * @param in2
-	 * @param exp
 	 */
-	public static void addSmelterRecipe(ItemStack out, ItemStack in, ItemStack in2, float exp) {
-		SmelterRecipes.instance().addRecipe(out, in, in2, exp);
+	public static void addSmelterRecipe(ItemStack out, ItemStack in, ItemStack in2) {
+		SmelterRecipes.addRecipe(in, in2, out);
+	}
+	
+	/**
+	 * Removes a Smelter recipe.
+	 * 
+	 * @param in
+	 * @param in2
+	 */
+	public static void removeSmelterRecipe(ItemStack in, ItemStack in2){
+		SmelterRecipes.removeRecipe(in, in2);
 	}
 	
 	/**

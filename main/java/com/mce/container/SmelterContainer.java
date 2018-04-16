@@ -4,6 +4,7 @@ import com.mce.common.mod_IDT;
 import com.mce.container.parts.SlotOutSmelter;
 import com.mce.entity.tile.tech.TileEntitySmelter;
 import com.mce.handlers.custom_recipes.SmelterRecipes;
+import com.mce.handlers.custom_recipes.SmelterRecipes.DoubleInputHandler;
 import com.mce.handlers.registers.AchRegistry;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -94,7 +95,7 @@ public class SmelterContainer extends Container {
 	}
 
 	// Shift click
-	public ItemStack transferStackInSlot(EntityPlayer player, int sSlot) {
+	/*public ItemStack transferStackInSlot(EntityPlayer player, int sSlot) {
 		ItemStack stack = null;
 		Slot slot = (Slot) this.inventorySlots.get(sSlot);
 
@@ -111,6 +112,8 @@ public class SmelterContainer extends Container {
 
 				slot.onSlotChange(stack1, stack);
 			}
+			DoubleInputHandler stackOut = DoubleInputHandler.getOutput();
+			
 			// Fuel and input(s), if selected slot is not
 			else if (sSlot != 0 && sSlot != 1 && sSlot != 2) {
 				if (SmelterRecipes.instance().getOutput(stack1) != null) {
@@ -158,7 +161,7 @@ public class SmelterContainer extends Container {
 		}
 
 		return stack;
-	}
+	}*/
 
 	public boolean canInteractWith(EntityPlayer player) {
 		return this.smelter.isUseableByPlayer(player);

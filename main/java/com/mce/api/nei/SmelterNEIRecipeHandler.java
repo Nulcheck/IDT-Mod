@@ -12,6 +12,7 @@ import com.mce.common.mod_IDT;
 import com.mce.entity.tile.tech.TileEntitySmelter;
 import com.mce.gui.SmelterGui;
 import com.mce.handlers.custom_recipes.SmelterRecipes;
+import com.mce.handlers.custom_recipes.SmelterRecipes.DoubleInputHandler;
 
 import codechicken.nei.ItemList;
 import codechicken.nei.NEIClientUtils;
@@ -58,7 +59,7 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 	@Override
 	public void loadCraftingRecipes(String outputId, Object... results) {
 		if (outputId.equals("idt.smelter") && getClass() == SmelterNEIRecipeHandler.class) {
-			Map<ItemStack, ItemStack> recipes = SmelterRecipes.instance().getRecipeList();
+			Map<ItemStack, ItemStack> recipes = SmelterRecipes.getRecipeListMap();
 			for (Entry<ItemStack, ItemStack> recipe : recipes.entrySet()) {
 				arecipes.add(new SmelterPair(recipe.getKey(), recipe.getValue()));
 			}
@@ -69,7 +70,7 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 
 	@Override
 	public void loadCraftingRecipes(ItemStack result) {
-		Map<ItemStack, ItemStack> recipes = SmelterRecipes.instance().getRecipeList();
+		Map<ItemStack, ItemStack> recipes = SmelterRecipes.getRecipeListMap();
 		for (Entry<ItemStack, ItemStack> recipe : recipes.entrySet()) {
 			if (NEIServerUtils.areStacksSameType(recipe.getValue(), result)) {
 				arecipes.add(new SmelterPair(recipe.getKey(), recipe.getValue()));
@@ -88,7 +89,7 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 
 	@Override
 	public void loadUsageRecipes(ItemStack ingredient) {
-		Map<ItemStack, ItemStack> recipes = SmelterRecipes.instance().getRecipeList();
+		Map<ItemStack, ItemStack> recipes = SmelterRecipes.getRecipeListMap();
 		for (Entry<ItemStack, ItemStack> recipe : recipes.entrySet()) {
 			if (NEIServerUtils.areStacksSameTypeCrafting(recipe.getKey(), ingredient)) {
 				SmelterPair arecipe = new SmelterPair(recipe.getKey(), recipe.getValue());
@@ -156,11 +157,12 @@ public class SmelterNEIRecipeHandler extends TemplateRecipeHandler {
 		PositionedStack in;
 		PositionedStack in2;
 		PositionedStack out;
+		DoubleInputHandler stackIn2;
 
 		public SmelterPair(ItemStack in, ItemStack out) {
 			// in.stackSize = 1;
 			this.in = new PositionedStack(in, 51, 24);
-			this.in2 = new PositionedStack(SmelterRecipes.instance().getInput2List(), 64, 24);
+			this.in2 = new PositionedStack(stackIn2.getInput2(), 64, 24);
 			this.out = new PositionedStack(out, 111, 24);
 		}
 
