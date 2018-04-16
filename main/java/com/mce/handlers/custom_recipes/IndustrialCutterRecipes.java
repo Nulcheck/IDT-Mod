@@ -9,6 +9,7 @@ import com.mce.common.mod_IDT;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -48,6 +49,46 @@ public class IndustrialCutterRecipes {
 		this.cutItem(mod_IDT.CutCrystalGem, new ItemStack(mod_IDT.CrystalRod, 2), 0.8f);
 
 		this.cutItem(mod_IDT.CrystalRod, new ItemStack(mod_IDT.CrystalLens), 1f);
+
+		this.cutBase(new ItemStack(Blocks.log, 1, 0), new ItemStack(Blocks.planks, 6, 0), 0f);
+
+		this.cutBase(new ItemStack(Blocks.log, 1, 1), new ItemStack(Blocks.planks, 6, 1), 0f);
+
+		this.cutBase(new ItemStack(Blocks.log, 1, 2), new ItemStack(Blocks.planks, 6, 2), 0f);
+
+		this.cutBase(new ItemStack(Blocks.log, 1, 3), new ItemStack(Blocks.planks, 6, 3), 0f);
+
+		this.cutBase(new ItemStack(Blocks.log2, 1, 0), new ItemStack(Blocks.planks, 6, 4), 0f);
+
+		this.cutBase(new ItemStack(Blocks.log2, 1, 1), new ItemStack(Blocks.planks, 6, 5), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.WillowLog), new ItemStack(mod_IDT.WillowPlanks, 6), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.SilkwoodLog), new ItemStack(mod_IDT.SilkwoodPlanks, 6), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.EbonyLog), new ItemStack(mod_IDT.EbonyPlanks, 6), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.GelidLog), new ItemStack(mod_IDT.GelidPlanks, 6), 0f);
+
+		this.cutBase(new ItemStack(Blocks.planks, 1, 0), new ItemStack(Items.stick, 4), 0f);
+
+		this.cutBase(new ItemStack(Blocks.planks, 1, 1), new ItemStack(mod_IDT.SpruceStick, 4), 0f);
+
+		this.cutBase(new ItemStack(Blocks.planks, 1, 2), new ItemStack(mod_IDT.BirchStick, 4), 0f);
+
+		this.cutBase(new ItemStack(Blocks.planks, 1, 3), new ItemStack(mod_IDT.JungleStick, 4), 0f);
+
+		this.cutBase(new ItemStack(Blocks.planks, 1, 4), new ItemStack(mod_IDT.AcaciaStick, 4), 0f);
+
+		this.cutBase(new ItemStack(Blocks.planks, 1, 5), new ItemStack(mod_IDT.DarkOakStick, 4), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.WillowPlanks), new ItemStack(mod_IDT.WillowStick, 4), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.SilkwoodPlanks), new ItemStack(mod_IDT.SilkwoodStick, 4), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.EbonyPlanks), new ItemStack(mod_IDT.EbonyStick, 4), 0f);
+
+		this.cutBase(new ItemStack(mod_IDT.GelidPlanks), new ItemStack(mod_IDT.GelidStick, 4), 0f);
 	}
 
 	/**
