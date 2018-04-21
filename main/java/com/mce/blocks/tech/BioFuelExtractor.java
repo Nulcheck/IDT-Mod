@@ -71,9 +71,9 @@ public class BioFuelExtractor extends BlockContainer {
 		bfe.setDamage(bfe.getMaxDamage());
 
 		if (l == 0)
-			bfe.setFacing(2);
+			bfe.setFacing(1);
 		if (l == 1)
-			bfe.setFacing(5);
+			bfe.setFacing(2);
 		if (l == 3)
 			bfe.setFacing(3);
 		if (l == 4)

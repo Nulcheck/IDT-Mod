@@ -30,6 +30,7 @@ public class Smelter extends BlockContainer {
 	@SideOnly(Side.CLIENT)
 	private IIcon side;
 	private Random rand = new Random();
+	byte b0 = 3;
 
 	private static boolean keepInv;
 	private final boolean isActive;
@@ -78,7 +79,6 @@ public class Smelter extends BlockContainer {
 			Block block1 = world.getBlock(x, y, z + 1);
 			Block block2 = world.getBlock(x - 1, y, z);
 			Block block3 = world.getBlock(x + 1, y, z);
-			byte b0 = 3;
 
 			if (block.func_149730_j() && !block1.func_149730_j()) {
 				b0 = 3;
@@ -104,8 +104,9 @@ public class Smelter extends BlockContainer {
 			float hitY, float hitZ) {
 		if (!world.isRemote) {
 			player.openGui(mod_IDT.instance, mod_IDT.SmelterGUI, world, x, y, z);
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	public TileEntity createNewTileEntity(World world, int meta) {
@@ -225,8 +226,8 @@ public class Smelter extends BlockContainer {
 
 							stack.stackSize -= j;
 
-							EntityItem item = new EntityItem(world, (double) ((float) x + f),
-									(double) ((float) y + f1), (double) ((float) z + f2),
+							EntityItem item = new EntityItem(world, (double) ((float) x + f), (double) ((float) y + f1),
+									(double) ((float) z + f2),
 									new ItemStack(stack.getItem(), j, stack.getItemDamage()));
 
 							// Check items for tag and load it

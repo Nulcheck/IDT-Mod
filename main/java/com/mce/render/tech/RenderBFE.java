@@ -39,13 +39,13 @@ public class RenderBFE extends TileEntitySpecialRenderer {
 		if (meta == 0) {
 			GL11.glRotatef(180 + 90, 1f, 800f, 1f);
 		}
-		if (meta == 3) {
-			GL11.glRotatef(270 + 90, 1F, 800F, 1F);
+		if (meta == 1) {
+			GL11.glRotatef(meta + 90, 1F, 800F, 1F);
 		}
 		if (meta == 2) {
-			GL11.glRotatef(meta * (180) + 90, 1F, 800F, 1F);
+			GL11.glRotatef(90 + 90, 1F, 800F, 1F);
 		}
-		if (meta == 5) {
+		if (meta == 3) {
 			GL11.glRotatef(meta * (90) + 90, 1F, 800F, 1F);
 		}
 	}

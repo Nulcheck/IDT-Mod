@@ -306,6 +306,7 @@ import com.mce.items.WallPart.StoneWallPart;
 import com.mce.items.WallPart.StonebrickWallPart;
 import com.mce.items.WallPart.WillowWallPart;
 import com.mce.items.WikiPaper;
+import com.mce.items.Wrench;
 import com.mce.items.blocks.ItemEsCore;
 import com.mce.items.doors.AcaciaDoorItem;
 import com.mce.items.doors.BirchDoorItem;
@@ -1104,6 +1105,7 @@ public class mod_IDT {
 
 	// Tools
 	public static Item Chisel;
+	public static Item Wrench;
 
 	// Pick
 	public static Item SteelPick;
@@ -3110,6 +3112,8 @@ public class mod_IDT {
 
 		// Tools
 		Chisel = new Chisel().setTextureName("mod_IDT:chisel").setCreativeTab(IDTItems).setUnlocalizedName("Chisel");
+
+		Wrench = new Wrench().setTextureName("mod_IDT:wrench").setCreativeTab(IDTItems).setUnlocalizedName("Wrench");
 
 		// Pick
 		SteelPick = new Pick(mat_steel_tool).setTextureName("mod_IDT:pick_steel").setCreativeTab(IDTItems)

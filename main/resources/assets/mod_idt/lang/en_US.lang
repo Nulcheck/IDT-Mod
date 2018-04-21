@@ -15,7 +15,7 @@ nei.recipe.zng=Zimphnode Generator
 potion.radiationEffect=Radiation
 death.attack.idtradiation=%1$s died from their cells being ionized.
 
-itemGroup.IDT=§bIndustrial Technologies§r
+itemGroup.IDT=§bIndustrial Technologies: Blocks§r
 itemGroup.IDTItems=§bIndustrial Technologies: Items§r
 itemGroup.IDTTech=§bIndustrial Technologies: Tech§r
 
@@ -745,6 +745,7 @@ item.Popcorn.name=Popcorn
 
 item.Chisel.name=Chisel
 item.WikiPaper.name=§bWiki Paper§r
+item.Wrench.name=§bWrench§r
 
 item.LiquidNitrogenBucket.name=Liquid Nitrogen Bucket
 

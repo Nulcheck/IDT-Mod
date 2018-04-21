@@ -267,6 +267,7 @@ public class ItemRegistry {
 		// TODO Tools
 		GameRegistry.registerItem(mod_IDT.Chisel, "Chisel");
 		GameRegistry.registerItem(mod_IDT.WikiPaper, "WikiPaper");
+		GameRegistry.registerItem(mod_IDT.Wrench, "Wrench");
 
 		// Pick
 		GameRegistry.registerItem(mod_IDT.SteelPick, "SteelPick");
