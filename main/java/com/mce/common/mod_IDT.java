@@ -3336,7 +3336,7 @@ public class mod_IDT {
 
 		if(thermal){
 			e.getModState();
-			TEIDTAPI.loadComplete();
+			TEIDTAPI.pulverizerRecipes();
 			log.info("Loaded integration with Thermal Expansion.");
 		}
 	}

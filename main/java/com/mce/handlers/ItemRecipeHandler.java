@@ -589,26 +589,15 @@ public class ItemRecipeHandler {
 	}
 
 	public static void registerSmelting() {
+		// Ores
 		GameRegistry.addSmelting(mod_IDT.EinsteiniumOre, new ItemStack(mod_IDT.EinsteiniumIngot), 5.0F);
 
+		GameRegistry.addSmelting(mod_IDT.NeptuniumOre, new ItemStack(mod_IDT.NeptuniumIngot), 5.0F);
+		
 		GameRegistry.addSmelting(mod_IDT.UraniumOre, new ItemStack(mod_IDT.UraniumIngot), 5.0F);
 
-		GameRegistry.addSmelting(mod_IDT.NeptuniumOre, new ItemStack(mod_IDT.NeptuniumIngot), 5.0F);
-
 		GameRegistry.addSmelting(mod_IDT.CrystalOre, new ItemStack(mod_IDT.CrystalNugget), 5.0F);
-
-		GameRegistry.addSmelting(mod_IDT.CrystalBall, new ItemStack(mod_IDT.HardCrystalBall), 5.0F);
-
-		GameRegistry.addSmelting(mod_IDT.CornSeeds, new ItemStack(mod_IDT.Popcorn, 4), 3.0F);
-
-		GameRegistry.addSmelting(mod_IDT.WillowLog, new ItemStack(Items.coal, 1, 1), 5.0F);
-
-		GameRegistry.addSmelting(mod_IDT.EbonyLog, new ItemStack(Items.coal, 1, 1), 5.0F);
-
-		GameRegistry.addSmelting(mod_IDT.SilkwoodLog, new ItemStack(Items.coal, 1, 1), 5.0F);
-
-		GameRegistry.addSmelting(mod_IDT.GelidLog, new ItemStack(Items.coal, 1, 1), 5.0F);
-
+		
 		GameRegistry.addSmelting(mod_IDT.ZimphnodeOre, new ItemStack(mod_IDT.ZimphnodeBar), 5.3F);
 
 		GameRegistry.addSmelting(mod_IDT.VanadiumOre, new ItemStack(mod_IDT.VanadiumIngot), 5.0f);
@@ -618,15 +607,7 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.PraseodymiumOre, new ItemStack(mod_IDT.PraseodymiumIngot), 5.0f);
 
 		GameRegistry.addSmelting(mod_IDT.TantalumOre, new ItemStack(mod_IDT.TantalumIngot), 5f);
-
-		GameRegistry.addSmelting(mod_IDT.Sulfur, new ItemStack(mod_IDT.SO2), 3f);
-
-		GameRegistry.addSmelting(mod_IDT.VanadiumDust, new ItemStack(mod_IDT.V2O5), 3.5f);
-
-		GameRegistry.addSmelting(mod_IDT.Glycerin, new ItemStack(mod_IDT.Acrolein), 1.3f);
-
-		GameRegistry.addSmelting(mod_IDT.Propanol, new ItemStack(mod_IDT.Propene), 1.4f);
-
+		
 		GameRegistry.addSmelting(mod_IDT.BoronOre, new ItemStack(mod_IDT.BoronIngot), 1.5f);
 
 		GameRegistry.addSmelting(mod_IDT.CopperOre, new ItemStack(mod_IDT.CopperIngot), 1.5f);
@@ -634,5 +615,55 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.TitaniumOre, new ItemStack(mod_IDT.TitaniumIngot), 1f);
 
 		GameRegistry.addSmelting(mod_IDT.Phosphorite, new ItemStack(mod_IDT.PhosphorusDust, 3), 1.5f);
+		
+		GameRegistry.addSmelting(mod_IDT.Agate, new ItemStack(mod_IDT.PureQuartz, 2), 1.5f);
+		
+		// Dusts
+		GameRegistry.addSmelting(mod_IDT.EinsteiniumDust, new ItemStack(mod_IDT.EinsteiniumIngot), 5.0F);
+
+		GameRegistry.addSmelting(mod_IDT.NeptuniumDust, new ItemStack(mod_IDT.NeptuniumIngot), 5.0F);
+		
+		GameRegistry.addSmelting(mod_IDT.UraniumDust, new ItemStack(mod_IDT.UraniumIngot), 5.0F);
+
+		GameRegistry.addSmelting(mod_IDT.CrystalDust, new ItemStack(mod_IDT.CrystalNugget), 5.0F);
+		
+		GameRegistry.addSmelting(mod_IDT.ZimphnodeDust, new ItemStack(mod_IDT.ZimphnodeBar), 5.3F);
+
+		GameRegistry.addSmelting(mod_IDT.VanadiumDust, new ItemStack(mod_IDT.VanadiumIngot), 5.0f);
+		
+		GameRegistry.addSmelting(mod_IDT.VanadiumCarbideDust, new ItemStack(mod_IDT.VanadiumCarbideIngot), 5.0f);
+
+		GameRegistry.addSmelting(mod_IDT.NeodymiumDust, new ItemStack(mod_IDT.NeodymiumIngot), 5.0f);
+
+		GameRegistry.addSmelting(mod_IDT.PraseodymiumDust, new ItemStack(mod_IDT.PraseodymiumIngot), 5.0f);
+
+		GameRegistry.addSmelting(mod_IDT.TantalumDust, new ItemStack(mod_IDT.TantalumIngot), 5f);
+		
+		GameRegistry.addSmelting(mod_IDT.BoronDust, new ItemStack(mod_IDT.BoronIngot), 1.5f);
+
+		GameRegistry.addSmelting(mod_IDT.CopperDust, new ItemStack(mod_IDT.CopperIngot), 1.5f);
+
+		GameRegistry.addSmelting(mod_IDT.TitaniumDust, new ItemStack(mod_IDT.TitaniumIngot), 1f);
+
+		
+		// Logs
+		GameRegistry.addSmelting(mod_IDT.WillowLog, new ItemStack(Items.coal, 1, 1), 5.0F);
+
+		GameRegistry.addSmelting(mod_IDT.EbonyLog, new ItemStack(Items.coal, 1, 1), 5.0F);
+
+		GameRegistry.addSmelting(mod_IDT.SilkwoodLog, new ItemStack(Items.coal, 1, 1), 5.0F);
+
+		GameRegistry.addSmelting(mod_IDT.GelidLog, new ItemStack(Items.coal, 1, 1), 5.0F);
+		
+		// Other
+		GameRegistry.addSmelting(mod_IDT.CrystalBall, new ItemStack(mod_IDT.HardCrystalBall), 5.0F);
+
+		GameRegistry.addSmelting(mod_IDT.CornSeeds, new ItemStack(mod_IDT.Popcorn, 4), 3.0F);
+
+		GameRegistry.addSmelting(mod_IDT.Sulfur, new ItemStack(mod_IDT.SO2), 3f);
+
+		GameRegistry.addSmelting(mod_IDT.Glycerin, new ItemStack(mod_IDT.Acrolein), 1.3f);
+
+		GameRegistry.addSmelting(mod_IDT.Propanol, new ItemStack(mod_IDT.Propene), 1.4f);
 	}
 }
