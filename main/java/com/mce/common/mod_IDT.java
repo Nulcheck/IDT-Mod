@@ -8,6 +8,7 @@ import com.mce.api.minechem.MinechemChemicalHandler;
 import com.mce.api.minechem.MinechemNameHandler;
 import com.mce.api.minechem.MinechemRecipeHandler;
 import com.mce.api.other.CraftingPillarIDTAPI;
+import com.mce.api.other.TEIDTAPI;
 import com.mce.api.waila.IDTModule;
 import com.mce.armor.NeoronArmor;
 import com.mce.armor.SteelArmor;
@@ -387,6 +388,7 @@ public class mod_IDT {
 	public boolean mobDef = Loader.isModLoaded("mod_mobdefensive");
 	public static boolean ebm = Loader.isModLoaded("mod_ebm");
 	public static boolean minechem = Loader.isModLoaded("minechem");
+	public static boolean thermal = Loader.isModLoaded("ThermalExpansion");
 
 	//// Blocks
 	// Tech
@@ -3329,12 +3331,14 @@ public class mod_IDT {
 		if (minechem) {
 			e.getModState();
 			MinechemRecipeHandler.getInstance().recipes();
-			log.info("Loaded integration with Minechem. & IDT recipe test");
+			log.info("Loaded integration with Minechem.");
 		}
 
-		/*
-		 * if(Loader.isModLoaded("mod_IDT")){ IDTRecH.getInstance().recipes(); }
-		 */
+		if(thermal){
+			e.getModState();
+			TEIDTAPI.loadComplete();
+			log.info("Loaded integration with Thermal Expansion.");
+		}
 	}
 
 	@SuppressWarnings("rawtypes")
