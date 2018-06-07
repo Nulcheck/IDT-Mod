@@ -644,7 +644,6 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.CopperDust, new ItemStack(mod_IDT.CopperIngot), 1.5f);
 
 		GameRegistry.addSmelting(mod_IDT.TitaniumDust, new ItemStack(mod_IDT.TitaniumIngot), 1f);
-
 		
 		// Logs
 		GameRegistry.addSmelting(mod_IDT.WillowLog, new ItemStack(Items.coal, 1, 1), 5.0F);
@@ -665,5 +664,7 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.Glycerin, new ItemStack(mod_IDT.Acrolein), 1.3f);
 
 		GameRegistry.addSmelting(mod_IDT.Propanol, new ItemStack(mod_IDT.Propene), 1.4f);
+		
+		GameRegistry.addSmelting(mod_IDT.V2O5, new ItemStack(mod_IDT.VanadiumIngot), 1.4f);
 	}
 }
