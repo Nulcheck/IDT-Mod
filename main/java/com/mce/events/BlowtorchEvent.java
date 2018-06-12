@@ -138,14 +138,33 @@ public class BlowtorchEvent {
 						new ItemStack(e.world.getBlock(e.x, e.y, e.z), 1, e.world.getBlockMetadata(e.x, e.y, e.z)));
 
 				if (stack != null && stack.getItem() instanceof ItemBlock) {
-					e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()),
-							e.world.getBlockMetadata(e.x, e.y, e.z), 2);
-					e.world.markBlockForUpdate(e.x, e.y, e.z);
-					e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
+					if (e.world.getBlock(e.x, e.y, e.z) == Blocks.stone_slab) {
+						int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
+						if (meta == 11) {
+							e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()), 8, 1);
+							e.world.markBlockForUpdate(e.x, e.y, e.z);
+							e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
 
-					if (!e.entityPlayer.capabilities.isCreativeMode)
-						e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
+							if (!e.entityPlayer.capabilities.isCreativeMode)
+								e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
+						} else {
+							e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()), 0, 1);
+							e.world.markBlockForUpdate(e.x, e.y, e.z);
+							e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
 
+							if (!e.entityPlayer.capabilities.isCreativeMode)
+								e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
+						}
+					} else {
+
+						e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()),
+								e.world.getBlockMetadata(e.x, e.y, e.z), 1);
+						e.world.markBlockForUpdate(e.x, e.y, e.z);
+						e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
+
+						if (!e.entityPlayer.capabilities.isCreativeMode)
+							e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
+					}
 				}
 			}
 		}

@@ -254,9 +254,6 @@ public class ItemRecipeHandler {
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.OakWallPart, 2),
 				"*p", "*p", '*', "stickWood", 'p', "plankWood"));
 
-		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.Chisel, 1), " *",
-				"s ", '*', new ItemStack(Items.iron_ingot), 's', "stickWood"));
-
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.SilkwoodDoorItem), "**", "**", "**", '*',
 				new ItemStack(mod_IDT.SilkwoodPlanks));
 

@@ -1112,7 +1112,6 @@ public class mod_IDT {
 	public static Item VCBoots;
 
 	// Tools
-	public static Item Chisel;
 	public static Item Wrench;
 
 	// Pick
@@ -3121,8 +3120,6 @@ public class mod_IDT {
 				.setTextureName("mod_IDT:boots_vc");
 
 		// Tools
-		Chisel = new Chisel().setTextureName("mod_IDT:chisel").setCreativeTab(IDTItems).setUnlocalizedName("Chisel");
-
 		Wrench = new Wrench().setTextureName("mod_IDT:wrench").setCreativeTab(IDTItems).setUnlocalizedName("Wrench");
 
 		// Pick

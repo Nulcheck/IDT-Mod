@@ -10,11 +10,11 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 public class ChiselEvent {
 	@SubscribeEvent
-	public void chisel(PlayerInteractEvent e) {
+	public void Wrench(PlayerInteractEvent e) {
 		if (e.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 			if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.stone
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.stonebrick, 0, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -22,7 +22,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.stonebrick
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.stonebrick, 1, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -30,7 +30,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.stonebrick
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.stonebrick, 2, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -39,7 +39,7 @@ public class ChiselEvent {
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.stonebrick
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.world.getBlockMetadata(e.x, e.y, e.z) == 2
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.stonebrick, 3, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -47,7 +47,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.stonebrick
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.stonebrick, 0, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -55,7 +55,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.sandstone
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.sandstone, 1, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -63,7 +63,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.sandstone
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.sandstone, 2, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -71,7 +71,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.sandstone
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, Blocks.sandstone, 0, 0);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -79,7 +79,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.Cement
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.CementBricks);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -88,7 +88,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBricks
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.Cement);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -97,7 +97,7 @@ public class ChiselEvent {
 			// Secret Trapdoors!
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.BirchTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretBirchTrapdoor);
@@ -107,7 +107,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SpruceTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretSpruceTrapdoor);
@@ -117,7 +117,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.JungleTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretJungleTrapdoor);
@@ -127,7 +127,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.WillowTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretWillowTrapdoor);
@@ -137,7 +137,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.EbonyTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretEbonyTrapdoor);
@@ -147,7 +147,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SilkwoodTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretSilkwoodTrapdoor);
@@ -157,7 +157,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.AcaciaTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretAcaciaTrapdoor);
@@ -167,7 +167,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.DarkOakTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretDarkOakTrapdoor);
@@ -177,7 +177,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretBirchTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.BirchTrapdoor);
@@ -187,7 +187,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretSpruceTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SpruceTrapdoor);
@@ -197,7 +197,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretJungleTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.JungleTrapdoor);
@@ -207,7 +207,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretWillowTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.WillowTrapdoor);
@@ -217,7 +217,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretEbonyTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.EbonyTrapdoor);
@@ -227,7 +227,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretSilkwoodTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SilkwoodTrapdoor);
@@ -237,7 +237,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretAcaciaTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.AcaciaTrapdoor);
@@ -247,7 +247,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretDarkOakTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.DarkOakTrapdoor);
@@ -257,7 +257,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == Blocks.trapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretOakTrapdoor);
@@ -267,7 +267,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretOakTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, Blocks.trapdoor);
@@ -277,7 +277,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretCementTrapdoor);
@@ -287,7 +287,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretCementTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.CementTrapdoor);
@@ -297,7 +297,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretCementBrickTrapdoor);
@@ -307,7 +307,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretCementBrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.CementBrickTrapdoor);
@@ -317,7 +317,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StoneTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretStoneTrapdoor);
@@ -327,7 +327,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretStoneTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.StoneTrapdoor);
@@ -337,7 +337,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CobblestoneTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretCobblestoneTrapdoor);
@@ -347,7 +347,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretCobblestoneTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.CobblestoneTrapdoor);
@@ -357,7 +357,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.MossyCobblestoneTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretMossyCobblestoneTrapdoor);
@@ -368,7 +368,7 @@ public class ChiselEvent {
 			else if (e.entityPlayer.isSneaking()
 					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretMossyCobblestoneTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.MossyCobblestoneTrapdoor);
@@ -378,7 +378,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretStonebrickTrapdoor);
@@ -388,7 +388,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretStonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.StonebrickTrapdoor);
@@ -398,7 +398,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.MossyStonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretMossyStonebrickTrapdoor);
@@ -409,7 +409,7 @@ public class ChiselEvent {
 			else if (e.entityPlayer.isSneaking()
 					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretMossyStonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.MossyStonebrickTrapdoor);
@@ -419,7 +419,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CrackedStonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretCrackedStonebrickTrapdoor);
@@ -430,7 +430,7 @@ public class ChiselEvent {
 			else if (e.entityPlayer.isSneaking()
 					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretCrackedStonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.CrackedStonebrickTrapdoor);
@@ -441,7 +441,7 @@ public class ChiselEvent {
 			else if (e.entityPlayer.isSneaking()
 					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.ChiseledStonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.SecretChiseledStonebrickTrapdoor);
@@ -452,7 +452,7 @@ public class ChiselEvent {
 			else if (e.entityPlayer.isSneaking()
 					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SecretChiseledStonebrickTrapdoor
 					&& e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
 
 				e.world.setBlock(e.x, e.y, e.z, mod_IDT.ChiseledStonebrickTrapdoor);
@@ -464,7 +464,7 @@ public class ChiselEvent {
 			// Willow
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.WillowSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -472,7 +472,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.WillowSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -480,7 +480,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.WillowSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -488,7 +488,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.WillowSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -496,7 +496,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.WillowSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -504,7 +504,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.WillowSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -513,7 +513,7 @@ public class ChiselEvent {
 			// Ebony
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.EbonySlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -521,7 +521,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.EbonySlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -529,7 +529,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.EbonySlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -537,7 +537,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.EbonySlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -545,7 +545,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.EbonySlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -553,7 +553,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.EbonySlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -562,7 +562,7 @@ public class ChiselEvent {
 			// Silkwood
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SilkwoodSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -570,7 +570,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SilkwoodSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -578,7 +578,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SilkwoodSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -586,7 +586,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SilkwoodSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -594,7 +594,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SilkwoodSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -602,7 +602,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.SilkwoodSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -611,7 +611,7 @@ public class ChiselEvent {
 			// Real Stone
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StoneSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -619,7 +619,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StoneSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -627,7 +627,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StoneSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -635,7 +635,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StoneSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -643,7 +643,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StoneSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -651,7 +651,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.StoneSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -660,7 +660,7 @@ public class ChiselEvent {
 			// Cement
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -668,7 +668,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -676,7 +676,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -684,7 +684,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -692,7 +692,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -700,7 +700,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -709,7 +709,7 @@ public class ChiselEvent {
 			// Cement Brick
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBrickSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -717,7 +717,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBrickSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -725,7 +725,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBrickSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -733,7 +733,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBrickSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -741,7 +741,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBrickSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -749,7 +749,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CementBrickSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -758,7 +758,7 @@ public class ChiselEvent {
 			// Glass
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -766,7 +766,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -774,7 +774,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -782,7 +782,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -790,7 +790,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -798,7 +798,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlab
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -807,7 +807,7 @@ public class ChiselEvent {
 			// White
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabWhite
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -815,7 +815,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabWhite
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -823,7 +823,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabWhite
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -831,7 +831,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabWhite
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -839,7 +839,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabWhite
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -847,7 +847,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabWhite
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -856,7 +856,7 @@ public class ChiselEvent {
 			// Orange
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabOrange
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -864,7 +864,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabOrange
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -872,7 +872,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabOrange
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -880,7 +880,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabOrange
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -888,7 +888,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabOrange
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -896,7 +896,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabOrange
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -905,7 +905,7 @@ public class ChiselEvent {
 			// Magenta
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabMagenta
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -913,7 +913,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabMagenta
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -921,7 +921,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabMagenta
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -929,7 +929,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabMagenta
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -937,7 +937,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabMagenta
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -945,7 +945,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabMagenta
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -954,7 +954,7 @@ public class ChiselEvent {
 			// Light Blue
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -962,7 +962,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -970,7 +970,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -978,7 +978,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -986,7 +986,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -994,7 +994,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1003,7 +1003,7 @@ public class ChiselEvent {
 			// Yellow
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabYellow
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1011,7 +1011,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabYellow
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1019,7 +1019,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabYellow
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1027,7 +1027,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabYellow
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1035,7 +1035,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabYellow
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1043,7 +1043,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabYellow
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1052,7 +1052,7 @@ public class ChiselEvent {
 			// Lime
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLime
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1060,7 +1060,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLime
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1068,7 +1068,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLime
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1076,7 +1076,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLime
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1084,7 +1084,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLime
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1092,7 +1092,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLime
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1101,7 +1101,7 @@ public class ChiselEvent {
 			// Pink
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPink
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1109,7 +1109,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPink
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1117,7 +1117,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPink
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1125,7 +1125,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPink
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1133,7 +1133,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPink
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1141,7 +1141,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPink
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1150,7 +1150,7 @@ public class ChiselEvent {
 			// Gray
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1158,7 +1158,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1166,7 +1166,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1174,7 +1174,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1182,7 +1182,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1190,7 +1190,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1199,7 +1199,7 @@ public class ChiselEvent {
 			// Light Gray
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1207,7 +1207,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1215,7 +1215,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1223,7 +1223,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1231,7 +1231,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1239,7 +1239,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabLightGray
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1248,7 +1248,7 @@ public class ChiselEvent {
 			// Cyan
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabCyan
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1256,7 +1256,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabCyan
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1264,7 +1264,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabCyan
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1272,7 +1272,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabCyan
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1280,7 +1280,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabCyan
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1288,7 +1288,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabCyan
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1297,7 +1297,7 @@ public class ChiselEvent {
 			// Purple
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPurple
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1305,7 +1305,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPurple
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1313,7 +1313,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPurple
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1321,7 +1321,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPurple
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1329,7 +1329,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPurple
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1337,7 +1337,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabPurple
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1346,7 +1346,7 @@ public class ChiselEvent {
 			// Blue
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1354,7 +1354,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1362,7 +1362,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1370,7 +1370,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1378,7 +1378,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1386,7 +1386,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlue
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1395,7 +1395,7 @@ public class ChiselEvent {
 			// Brown
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBrown
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1403,7 +1403,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBrown
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1411,7 +1411,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBrown
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1419,7 +1419,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBrown
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1427,7 +1427,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBrown
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1435,7 +1435,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBrown
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1444,7 +1444,7 @@ public class ChiselEvent {
 			// Green
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGreen
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1452,7 +1452,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGreen
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1460,7 +1460,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGreen
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1468,7 +1468,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGreen
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1476,7 +1476,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGreen
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1484,7 +1484,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabGreen
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1493,7 +1493,7 @@ public class ChiselEvent {
 			// Red
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabRed
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1501,7 +1501,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabRed
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1509,7 +1509,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabRed
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1517,7 +1517,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabRed
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1525,7 +1525,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabRed
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1533,7 +1533,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabRed
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1542,7 +1542,7 @@ public class ChiselEvent {
 			// Black
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlack
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 0 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 1, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1550,7 +1550,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlack
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 1 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 2, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1558,7 +1558,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlack
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 2 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 3, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1566,7 +1566,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlack
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 3 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 4, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1574,7 +1574,7 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlack
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 4 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
@@ -1582,18 +1582,18 @@ public class ChiselEvent {
 
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.GlassSlabBlack
 					&& e.world.getBlockMetadata(e.x, e.y, e.z) == 8 && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench) {
 				e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
 				e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
 			}
 
 			// Leave the null check in there, or it will crash when you use a
-			// trapdoor with anything but the chisel
+			// trapdoor with anything but the Wrench
 			else if (!e.entityPlayer.isSneaking() && e.entityPlayer.getHeldItem() != null
-					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Chisel && !e.world.isRemote) {
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.Wrench && !e.world.isRemote) {
 				e.entityPlayer
-						.addChatComponentMessage(new ChatComponentText("You need to be sneaking to chisel something!"));
+						.addChatComponentMessage(new ChatComponentText("You need to be sneaking to do this!"));
 			}
 		}
 	}

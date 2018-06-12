@@ -266,7 +266,6 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.NeoronBoots, "NeoBoots");
 
 		// TODO Tools
-		GameRegistry.registerItem(mod_IDT.Chisel, "Chisel");
 		GameRegistry.registerItem(mod_IDT.WikiPaper, "WikiPaper");
 		GameRegistry.registerItem(mod_IDT.Wrench, "Wrench");
 

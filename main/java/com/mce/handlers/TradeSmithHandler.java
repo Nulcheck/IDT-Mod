@@ -34,8 +34,6 @@ public class TradeSmithHandler implements IVillageTradeHandler {
 
 		recipeList.add(new MerchantRecipe(new ItemStack(Items.emerald, 2), new ItemStack(mod_IDT.SteelIngot, 1)));
 
-		recipeList.add(new MerchantRecipe(new ItemStack(Items.emerald, 1), new ItemStack(mod_IDT.Chisel, 1)));
-
 		recipeList.add(new MerchantRecipe(new ItemStack(mod_IDT.TitaniumIngot, 1), new ItemStack(Items.emerald, 3)));
 
 		recipeList.add(new MerchantRecipe(new ItemStack(mod_IDT.SteelIngot, 1), new ItemStack(Items.emerald, 2)));

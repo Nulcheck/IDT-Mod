@@ -62,6 +62,10 @@ public class ModSlab extends BlockSlab {
 	public boolean renderAsNormalBlock() {
 		return false;
 	}
+	
+	public int getRenderBlockPass() {
+		return 1;
+	}
 
 	public String getFullSlabName(int id) {
 		if (id < 0) {

@@ -63,9 +63,6 @@ public class ChestHookHandler {
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.TitaniumIngot), 3, 5, 35));
 
-		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.Chisel), 1, 2, 5));
-
 		// Stronghold
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.EinsteiniumIngot), 1, 5, 25));
@@ -226,9 +223,6 @@ public class ChestHookHandler {
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.TitaniumIngot), 3, 5, 35));
 
-		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.Chisel), 1, 2, 5));
-
 		// Village
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.TantalumIngot), 2, 4, 18));
@@ -296,13 +290,7 @@ public class ChestHookHandler {
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.DiamondSawBlade), 1, 1, 1));
 
-		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.Chisel), 1, 2, 5));
-
 		// Bonus Chest
-		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.Chisel), 1, 1, 15));
-
 		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.Plank), 2, 10, 30));
 
