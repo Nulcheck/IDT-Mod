@@ -244,7 +244,6 @@ import com.mce.handlers.registers.MobRegistry;
 import com.mce.handlers.registers.OreDictionaryRegistry;
 import com.mce.handlers.registers.TileEntityRegistry;
 import com.mce.items.ChargeStone;
-import com.mce.items.Chisel;
 import com.mce.items.HardCrystalBall;
 import com.mce.items.LiquidNitrogenBucket;
 import com.mce.items.ModItems;
