@@ -2749,6 +2749,37 @@ public class mod_IDT {
 		Graphene = new Item().setTextureName("mod_IDT:graphene").setUnlocalizedName("Graphene")
 				.setCreativeTab(IDTItems);
 
+		// Crystals
+		AmblygoniteDust = new Item().setTextureName("mod_IDT:amblygonite_dust").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteDust");
+
+		AmblygoniteGem = new Item().setTextureName("mod_IDT:amblygonite_gem").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteGem");
+
+		ChrysocollaGem = new Item().setTextureName("mod_IDT:chrysocolla_gem").setCreativeTab(IDTItems)
+				.setUnlocalizedName("ChrysocollaGem");
+
+		AmblygoniteNugget = new Item().setTextureName("mod_IDT:amblygonite_nugget").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteNugget");
+
+		AmblygonitePiece = new Item().setTextureName("mod_IDT:amblygonite_piece").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygonitePiece");
+
+		CrystalBall = new Item().setTextureName("mod_IDT:crystal_ball").setCreativeTab(IDTItems)
+				.setUnlocalizedName("CrystalBall");
+
+		HardCrystalBall = new HardCrystalBall().setTextureName("mod_IDT:crystal_ball_hard").setCreativeTab(IDTItems)
+				.setUnlocalizedName("HardCrystalBall");
+
+		CutAmblygoniteGem = new Item().setTextureName("mod_IDT:amblygonite_gem_cut").setCreativeTab(IDTItems)
+				.setUnlocalizedName("CutAmblygoniteGem");
+
+		AmblygoniteLens = new Item().setTextureName("mod_IDT:amblygonite_lens").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteLens");
+
+		AmblygoniteRod = new Item().setTextureName("mod_IDT:amblygonite_rod").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteRod");
+
 		// Records
 		cd_icy = new DiscIcy("8-bit Icy").setUnlocalizedName("cd_icy").setTextureName("mod_idt:cd_icy")
 				.setCreativeTab(IDTItems);
@@ -2889,37 +2920,6 @@ public class mod_IDT {
 
 		GelidDoorItem = new GelidDoorItem(Material.wood).setCreativeTab(IDTItems).setTextureName("mod_IDT:door_gelid")
 				.setUnlocalizedName("GelidDoorItem");
-
-		// Crystals
-		AmblygoniteDust = new Item().setTextureName("mod_IDT:amblygonite_dust").setCreativeTab(IDTItems)
-				.setUnlocalizedName("AmblygoniteDust");
-
-		AmblygoniteGem = new Item().setTextureName("mod_IDT:amblygonite_gem").setCreativeTab(IDTItems)
-				.setUnlocalizedName("AmblygoniteGem");
-		
-		ChrysocollaGem = new Item().setTextureName("mod_IDT:chrysocolla_gem").setCreativeTab(IDT)
-				.setUnlocalizedName("ChrysocollaGem");
-
-		AmblygoniteNugget = new Item().setTextureName("mod_IDT:amblygonite_nugget").setCreativeTab(IDTItems)
-				.setUnlocalizedName("AmblygoniteNugget");
-
-		AmblygonitePiece = new Item().setTextureName("mod_IDT:amblygonite_piece").setCreativeTab(IDTItems)
-				.setUnlocalizedName("AmblygonitePiece");
-
-		CrystalBall = new Item().setTextureName("mod_IDT:crystal_ball").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CrystalBall");
-
-		HardCrystalBall = new HardCrystalBall().setTextureName("mod_IDT:crystal_ball_hard").setCreativeTab(IDTItems)
-				.setUnlocalizedName("HardCrystalBall");
-
-		CutAmblygoniteGem = new Item().setTextureName("mod_IDT:amblygonite_gem_cut").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CutAmblygoniteGem");
-
-		AmblygoniteLens = new Item().setTextureName("mod_IDT:amblygonite_lens").setCreativeTab(IDTItems)
-				.setUnlocalizedName("AmblygoniteLens");
-
-		AmblygoniteRod = new Item().setTextureName("mod_IDT:amblygonite_rod").setCreativeTab(IDTItems)
-				.setUnlocalizedName("AmblygoniteRod");
 
 		// Essence
 		EssenceOfLife = new ModEssence().setTextureName("mod_IDT:essence_life").setCreativeTab(IDTItems)

@@ -48,13 +48,17 @@ public class ItemRecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygoniteGem), " **", "***", "** ", '*',
 				new ItemStack(mod_IDT.AmblygoniteNugget));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygoniteGem, 9), "*", '*', new ItemStack(mod_IDT.AmblygoniteBlock));
+		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygoniteGem, 9), "*", '*',
+				new ItemStack(mod_IDT.AmblygoniteBlock));
 
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygonitePiece, 5), new ItemStack(mod_IDT.AmblygoniteNugget));
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygonitePiece, 5),
+				new ItemStack(mod_IDT.AmblygoniteNugget));
 
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygoniteDust, 7), new ItemStack(mod_IDT.AmblygonitePiece));
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygoniteDust, 7),
+				new ItemStack(mod_IDT.AmblygonitePiece));
 
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygoniteNugget, 7), new ItemStack(mod_IDT.AmblygoniteGem));
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygoniteNugget, 7),
+				new ItemStack(mod_IDT.AmblygoniteGem));
 
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.EssenceOfLife, 1), new ItemStack(mod_IDT.HardCrystalBall),
 				new ItemStack(Blocks.red_flower));
@@ -478,11 +482,11 @@ public class ItemRecipeHandler {
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.VCHelmet), "***", "* *", '*', "ingotVanadiumCarbide"));
 
-		CraftingManager.getInstance().getRecipeList()
-				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.VCChestplate), "* *", "***", "***", '*', "ingotVanadiumCarbide"));
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.VCChestplate),
+				"* *", "***", "***", '*', "ingotVanadiumCarbide"));
 
-		CraftingManager.getInstance().getRecipeList()
-				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.VCLeggings), "***", "* *", "* *", '*', "ingotVanadiumCarbide"));
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.VCLeggings), "***",
+				"* *", "* *", '*', "ingotVanadiumCarbide"));
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.VCBoots), "* *", "* *", '*', "ingotVanadiumCarbide"));
@@ -569,10 +573,9 @@ public class ItemRecipeHandler {
 						new ItemStack(mod_IDT.UpgradeBase), 's', "ingotSteel", 't', "ingotTitanium", 'm',
 						new ItemStack(mod_IDT.NdMagnet, 1, 1), 'c', new ItemStack(mod_IDT.T2CircuitBoard)));
 
-		CraftingManager.getInstance().getRecipeList()
-				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.LaserUpgrade), "sgs", "sls", "tut", 'u',
-						new ItemStack(mod_IDT.UpgradeBase), 't', "ingotTitanium", 'l',
-						new ItemStack(mod_IDT.AmblygoniteLens), 's', "ingotSteel", 'g', new ItemStack(Blocks.glass_pane)));
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.LaserUpgrade),
+				"sgs", "sls", "tut", 'u', new ItemStack(mod_IDT.UpgradeBase), 't', "ingotTitanium", 'l',
+				new ItemStack(mod_IDT.AmblygoniteLens), 's', "ingotSteel", 'g', new ItemStack(Blocks.glass_pane)));
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.StabilizerUpgrade), "vmv", "mqm", "vuv", 'u',
@@ -581,8 +584,15 @@ public class ItemRecipeHandler {
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.QCUpgrade), "vcv", "mqm", "vuv", 'u',
-						new ItemStack(mod_IDT.UpgradeBase), 'v', "ingotVanadium", 'm', new ItemStack(mod_IDT.NdMagnet, 1, 1),
-						'q', new ItemStack(mod_IDT.QMan), 'c', new ItemStack(mod_IDT.CompressorUnitGA)));
+						new ItemStack(mod_IDT.UpgradeBase), 'v', "ingotVanadium", 'm',
+						new ItemStack(mod_IDT.NdMagnet, 1, 1), 'q', new ItemStack(mod_IDT.QMan), 'c',
+						new ItemStack(mod_IDT.CompressorUnitGA)));
+
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.Wrench), "i i",
+				" s ", " s ", 'i', "ingotIron", 's', "rodSteel"));
+
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.Wrench), "i i",
+				" s ", " s ", 'i', "ingotIron", 's', "stickSteel"));
 	}
 
 	public static void registerSmelting() {
@@ -590,11 +600,11 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.EinsteiniumOre, new ItemStack(mod_IDT.EinsteiniumIngot), 5.0F);
 
 		GameRegistry.addSmelting(mod_IDT.NeptuniumOre, new ItemStack(mod_IDT.NeptuniumIngot), 5.0F);
-		
+
 		GameRegistry.addSmelting(mod_IDT.UraniumOre, new ItemStack(mod_IDT.UraniumIngot), 5.0F);
 
 		GameRegistry.addSmelting(mod_IDT.AmblygoniteOre, new ItemStack(mod_IDT.AmblygoniteNugget), 5.0F);
-		
+
 		GameRegistry.addSmelting(mod_IDT.ZimphnodeOre, new ItemStack(mod_IDT.ZimphnodeBar), 5.3F);
 
 		GameRegistry.addSmelting(mod_IDT.VanadiumOre, new ItemStack(mod_IDT.VanadiumIngot), 5.0f);
@@ -604,7 +614,7 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.PraseodymiumOre, new ItemStack(mod_IDT.PraseodymiumIngot), 5.0f);
 
 		GameRegistry.addSmelting(mod_IDT.TantalumOre, new ItemStack(mod_IDT.TantalumIngot), 5f);
-		
+
 		GameRegistry.addSmelting(mod_IDT.BoronOre, new ItemStack(mod_IDT.BoronIngot), 1.5f);
 
 		GameRegistry.addSmelting(mod_IDT.CopperOre, new ItemStack(mod_IDT.CopperIngot), 1.5f);
@@ -612,22 +622,22 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.TitaniumOre, new ItemStack(mod_IDT.TitaniumIngot), 1f);
 
 		GameRegistry.addSmelting(mod_IDT.Phosphorite, new ItemStack(mod_IDT.PhosphorusDust, 3), 1.5f);
-		
+
 		GameRegistry.addSmelting(mod_IDT.Agate, new ItemStack(mod_IDT.PureQuartz, 2), 1.5f);
-		
+
 		// Dusts
 		GameRegistry.addSmelting(mod_IDT.EinsteiniumDust, new ItemStack(mod_IDT.EinsteiniumIngot), 5.0F);
 
 		GameRegistry.addSmelting(mod_IDT.NeptuniumDust, new ItemStack(mod_IDT.NeptuniumIngot), 5.0F);
-		
+
 		GameRegistry.addSmelting(mod_IDT.UraniumDust, new ItemStack(mod_IDT.UraniumIngot), 5.0F);
 
 		GameRegistry.addSmelting(mod_IDT.AmblygoniteDust, new ItemStack(mod_IDT.AmblygoniteNugget), 5.0F);
-		
+
 		GameRegistry.addSmelting(mod_IDT.ZimphnodeDust, new ItemStack(mod_IDT.ZimphnodeBar), 5.3F);
 
 		GameRegistry.addSmelting(mod_IDT.VanadiumDust, new ItemStack(mod_IDT.VanadiumIngot), 5.0f);
-		
+
 		GameRegistry.addSmelting(mod_IDT.VanadiumCarbideDust, new ItemStack(mod_IDT.VanadiumCarbideIngot), 5.0f);
 
 		GameRegistry.addSmelting(mod_IDT.NeodymiumDust, new ItemStack(mod_IDT.NeodymiumIngot), 5.0f);
@@ -635,13 +645,13 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.PraseodymiumDust, new ItemStack(mod_IDT.PraseodymiumIngot), 5.0f);
 
 		GameRegistry.addSmelting(mod_IDT.TantalumDust, new ItemStack(mod_IDT.TantalumIngot), 5f);
-		
+
 		GameRegistry.addSmelting(mod_IDT.BoronDust, new ItemStack(mod_IDT.BoronIngot), 1.5f);
 
 		GameRegistry.addSmelting(mod_IDT.CopperDust, new ItemStack(mod_IDT.CopperIngot), 1.5f);
 
 		GameRegistry.addSmelting(mod_IDT.TitaniumDust, new ItemStack(mod_IDT.TitaniumIngot), 1f);
-		
+
 		// Logs
 		GameRegistry.addSmelting(mod_IDT.WillowLog, new ItemStack(Items.coal, 1, 1), 5.0F);
 
@@ -650,7 +660,7 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.SilkwoodLog, new ItemStack(Items.coal, 1, 1), 5.0F);
 
 		GameRegistry.addSmelting(mod_IDT.GelidLog, new ItemStack(Items.coal, 1, 1), 5.0F);
-		
+
 		// Other
 		GameRegistry.addSmelting(mod_IDT.CrystalBall, new ItemStack(mod_IDT.HardCrystalBall), 5.0F);
 
@@ -661,7 +671,7 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(mod_IDT.Glycerin, new ItemStack(mod_IDT.Acrolein), 1.3f);
 
 		GameRegistry.addSmelting(mod_IDT.Propanol, new ItemStack(mod_IDT.Propene), 1.4f);
-		
+
 		GameRegistry.addSmelting(mod_IDT.V2O5, new ItemStack(mod_IDT.VanadiumIngot), 1.4f);
 	}
 }
