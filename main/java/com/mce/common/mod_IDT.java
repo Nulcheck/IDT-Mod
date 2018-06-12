@@ -403,7 +403,6 @@ public class mod_IDT {
 	public static Block MatterCondenser;
 	public static Block BioFuelExtractor;
 	public static Block TankCompressor;
-	public static Block CompactCobblestone;
 	public static Block BlackHoleGenerator;
 	public static Block Welder;
 	public static Block Magnetizer;
@@ -1355,10 +1354,6 @@ public class mod_IDT {
 
 		SuperReactor = new SuperReactor(Material.iron).setBlockName("SuperReactor").setCreativeTab(IDTTech)
 				.setStepSound(Block.soundTypeMetal).setBlockTextureName("mod_IDT:titanium_block").setResistance(96f);
-
-		CompactCobblestone = new ModBlocks(Material.rock).setBlockName("CompactCobblestone").setHardness(5f)
-				.setResistance(15f).setCreativeTab(IDT).setStepSound(Block.soundTypeStone)
-				.setBlockTextureName("mod_IDT:compact_cobble");
 
 		ZimphnodeWire = new ZimWire(Material.circuits).setBlockName("ZimWire").setHardness(1f).setResistance(5f)
 				/* .setCreativeTab(IDT) */.setStepSound(Block.soundTypeStone).setBlockTextureName("mod_IDT:zimphnode");

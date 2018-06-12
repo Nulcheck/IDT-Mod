@@ -716,12 +716,6 @@ public class ModBlocks extends Block {
 		public int getRenderBlockPass() {
 			return 1;
 		}
-
-		public void onFallenUpon(World world, int x, int y, int z, Entity e, float f) {
-			if (!world.isRemote && world.rand.nextFloat() < f - 0.8f) {
-				world.setBlock(x, y, z, Blocks.air);
-			}
-		}
 	}
 
 	public static class CrystalRock extends Block {

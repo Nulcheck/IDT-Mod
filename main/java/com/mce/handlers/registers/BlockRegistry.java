@@ -70,7 +70,6 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.LavaStone, "LavaStone");
 		GameRegistry.registerBlock(mod_IDT.LavaCobble, "LavaCobble");
 		GameRegistry.registerBlock(mod_IDT.LavaObsidian, "LavaObsidin");
-		GameRegistry.registerBlock(mod_IDT.CompactCobblestone, "CompactCobblestone");
 		GameRegistry.registerBlock(mod_IDT.DidymiumGlass, ItemDidymiumGlass.class,
 				mod_IDT.DidymiumGlass.getUnlocalizedName());
 		GameRegistry.registerBlock(mod_IDT.DidymiumGlassPane, "DidymiumGlassPane");

@@ -879,9 +879,6 @@ public class BlockRecipeHandler {
 		CraftingManager.getInstance().getRecipeList().add(
 				new ShapedOreRecipe(new ItemStack(mod_IDT.CobblestoneTrapdoor, 2), "***", "***", '*', "cobblestone"));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.CompactCobblestone), "**", "**", '*',
-				new ItemStack(Blocks.cobblestone));
-
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapelessOreRecipe(new ItemStack(mod_IDT.DidymiumGlassPane), new ItemStack(Blocks.glass_pane),
 						"ingotNeodymium", "ingotPraseodymium"));
@@ -933,9 +930,6 @@ public class BlockRecipeHandler {
 
 		GameRegistry.addRecipe(new ItemStack(Blocks.cobblestone_wall, 6, 1), "***", "***", '*',
 				new ItemStack(mod_IDT.MossyCobblestoneWallPart));
-
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.cobblestone, 4),
-				new ItemStack(mod_IDT.CompactCobblestone));
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.BlackHoleGenerator), "*g*", "vnv", "tct", 'v',

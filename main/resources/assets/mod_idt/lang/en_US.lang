@@ -86,7 +86,7 @@ tile.CryingObsidian.name=Crying Obsidian
 tile.LavaCobble.name=Lava Cobblestone
 tile.LavaObsidian.name=Lava Obsidian
 tile.CompactCobblestone.name=Compact Cobblestone
-tile.CrystalBlock.name=Crystal Block
+tile.CrystalBlock.name=Amblygonite Block
 tile.DidymiumGlass.name=Didymium Glass
 tile.DidymiumGlassPane.name=Didymium Glass Pane
 tile.EinsteiniumGlass.name=Einsteinium Glass
@@ -134,14 +134,14 @@ tile.SulfurBlock.name=Block of Sulfur
 tile.ZimphnodeBlock.name=Zimphnode Block
 
 tile.FrozenFire.name=Frozen Fire
-tile.CrystalFire.name=Crystal Fire
+tile.CrystalFire.name=Amblygonite Fire
 
 tile.LiquidNitrogen.name=Liquid Nitrogen
 
 tile.EinsteiniumOre.name=Einsteinium Ore
 tile.NeptuniumOre.name=Neptunium Ore
 tile.UraniumOre.name=Uranium Ore
-tile.CrystalOre.name=Crystal Ore
+tile.CrystalOre.name=Amblygonite Ore
 tile.PraOre.name=Praseodymium Ore
 tile.NeoOre.name=Neodymium Ore
 tile.VanOre.name=Vanadium Ore
@@ -166,7 +166,7 @@ tile.FrostDirt.name=Frozen Dirt
 tile.FrostStone.name=Frozen Stone
 tile.FrostCobble.name=Frozen Cobblestone
 
-tile.CrystalPortal.name=Crystal Portal
+tile.CrystalPortal.name=Amblygonite Portal
 tile.CrystalGlass.name=Crystal Glass
 tile.CrystalRock.name=Crystalline Rock
 
@@ -220,7 +220,7 @@ tile.GelidStairs.name=Gelid Wood Stairs
 tile.StoneStairs.name=Stone Stairs
 tile.CementStairs.name=Cement Stairs
 tile.CementBrickStairs.name=Cement Brick Stairs
-tile.CrystalStairs.name=Crystal Stairs
+tile.CrystalStairs.name=Amblygonite Stairs
 tile.GlassStairs.name=Glass Stairs
 
 tile.GlassStairsWhite.name=White Stained Glass Stairs
@@ -704,7 +704,7 @@ item.TantalumNugget.name=Tantalum Nugget
 item.BoronNugget.name=Boron Nugget
 item.CopperNugget.name=Copper Nugget
 item.SiliconNugget.name=Silicon Nugget
-item.CrystalNugget.name=Crystal Nugget
+item.CrystalNugget.name=Amblygonite Nugget
 
 item.EinsteiniumDust.name=Einsteinium Dust
 item.NeptuniumDust.name=Neptunium Dust
@@ -720,14 +720,14 @@ item.BoronDust.name=Boron Dust
 item.CopperDust.name=Copper Dust
 item.SiliconDust.name=Silicon Dust
 item.PhosphorusDust.name=Phosphorus Dust
-item.CrystalDust.name=Crystal Dust
+item.CrystalDust.name=Amblygonite Dust
 item.Sulfur.name=Sulfur
 item.Carbon.name=Carbon
 item.PQuartz.name=Pure Quartz
 
-item.CrystalGem.name=Crystal Gem
-item.CutCrystalGem.name=Cut Crystal Gem
-item.CrystalPiece.name=Crystal Piece
+item.CrystalGem.name=Amblygonite Gem
+item.CutCrystalGem.name=Cut Amblygonite Gem
+item.CrystalPiece.name=Amblygonite Piece
 item.CrystalBall.name=Crystal Ball
 item.HardCrystalBall.name=Hard Crystal Ball
 
