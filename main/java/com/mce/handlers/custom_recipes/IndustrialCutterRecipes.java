@@ -28,7 +28,7 @@ public class IndustrialCutterRecipes {
 	}
 
 	private IndustrialCutterRecipes() {
-		this.cutItem(mod_IDT.CrystalGem, new ItemStack(mod_IDT.CutCrystalGem), 0.7f);
+		this.cutItem(mod_IDT.AmblygoniteGem, new ItemStack(mod_IDT.CutAmblygoniteGem), 0.7f);
 
 		this.cutItem(mod_IDT.PureQuartz, new ItemStack(mod_IDT.SiliconDust, 6), 0.5f);
 
@@ -46,9 +46,9 @@ public class IndustrialCutterRecipes {
 
 		this.cutItem(mod_IDT.BoronIngot, new ItemStack(mod_IDT.BoronDust, 3), 0.5f);
 
-		this.cutItem(mod_IDT.CutCrystalGem, new ItemStack(mod_IDT.CrystalRod, 2), 0.8f);
+		this.cutItem(mod_IDT.CutAmblygoniteGem, new ItemStack(mod_IDT.AmblygoniteRod, 2), 0.8f);
 
-		this.cutItem(mod_IDT.CrystalRod, new ItemStack(mod_IDT.CrystalLens), 1f);
+		this.cutItem(mod_IDT.AmblygoniteRod, new ItemStack(mod_IDT.AmblygoniteLens), 1f);
 
 		this.cutBase(new ItemStack(Blocks.log, 1, 0), new ItemStack(Blocks.planks, 6, 0), 0f);
 

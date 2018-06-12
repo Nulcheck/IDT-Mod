@@ -20,7 +20,7 @@ public class TEIDTAPI {
 		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.UraniumOre), new ItemStack(mod_IDT.UraniumDust, 2),
 				true);
 
-		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.CrystalOre), new ItemStack(mod_IDT.CrystalNugget, 3),
+		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.AmblygoniteOre), new ItemStack(mod_IDT.AmblygoniteNugget, 3),
 				true);
 
 		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.PraseodymiumOre),
@@ -90,26 +90,20 @@ public class TEIDTAPI {
 		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.SteelIngot), new ItemStack(mod_IDT.SteelDust, 1),
 				true);
 
-		// Crystals
-		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.CrystalGem), new ItemStack(mod_IDT.CrystalNugget, 7),
+		// Amblygonites
+		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.AmblygoniteGem), new ItemStack(mod_IDT.AmblygoniteNugget, 7),
 				true);
 
-		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.CutCrystalGem),
-				new ItemStack(mod_IDT.CrystalNugget, 7), true);
+		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.CutAmblygoniteGem),
+				new ItemStack(mod_IDT.AmblygoniteNugget, 7), true);
 
-		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.CrystalBall),
-				new ItemStack(mod_IDT.CrystalNugget, 14), true);
+		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.AmblygoniteNugget),
+				new ItemStack(mod_IDT.AmblygonitePiece, 5), true);
 
-		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.HardCrystalBall),
-				new ItemStack(mod_IDT.CrystalNugget, 14), true);
-
-		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.CrystalNugget),
-				new ItemStack(mod_IDT.CrystalPiece, 5), true);
-
-		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.CrystalPiece), new ItemStack(mod_IDT.CrystalDust, 7),
+		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.AmblygonitePiece), new ItemStack(mod_IDT.AmblygoniteDust, 7),
 				true);
 
 		PulverizerManager.addRecipe(energy, new ItemStack(mod_IDT.ChrysocollaOre),
-				new ItemStack(mod_IDT.Chrysocolla, 2), true);
+				new ItemStack(mod_IDT.ChrysocollaGem, 2), true);
 	}
 }

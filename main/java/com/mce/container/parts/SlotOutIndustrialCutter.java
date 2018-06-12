@@ -77,7 +77,7 @@ public class SlotOutIndustrialCutter extends Slot {
 
 		FMLCommonHandler.instance().firePlayerSmeltedEvent(thePlayer, stack);
 
-		if (stack.getItem() == mod_IDT.CutCrystalGem) {
+		if (stack.getItem() == mod_IDT.CutAmblygoniteGem) {
 			this.thePlayer.addStat(AchRegistry.soPretty, 1);
 		}
 

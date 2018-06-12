@@ -28,23 +28,23 @@ public class AchievementHandler {
 			e.player.addStat(AchievementList.mineWood, 1);
 		}
 
-		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(Item.getItemFromBlock(mod_IDT.CrystalOre)))) {
+		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(Item.getItemFromBlock(mod_IDT.AmblygoniteOre)))) {
 			e.player.addStat(AchRegistry.crystal, 1);
 		}
 
-		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.CrystalGem))) {
+		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.AmblygoniteGem))) {
 			e.player.addStat(AchRegistry.crystal, 1);
 		}
 
-		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.CrystalNugget))) {
+		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.AmblygoniteNugget))) {
 			e.player.addStat(AchRegistry.crystal, 1);
 		}
 
-		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.CrystalPiece))) {
+		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.AmblygonitePiece))) {
 			e.player.addStat(AchRegistry.crystal, 1);
 		}
 
-		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.CrystalDust))) {
+		else if (e.pickedUp.getEntityItem().isItemEqual(new ItemStack(mod_IDT.AmblygoniteDust))) {
 			e.player.addStat(AchRegistry.crystal, 1);
 		}
 
@@ -211,8 +211,8 @@ public class AchievementHandler {
 			e.player.addStat(AchRegistry.matterCon, 1);
 		}
 
-		else if (e.crafting.getItem().equals(Item.getItemFromBlock(mod_IDT.CrystalBlock))) {
-			e.player.addStat(AchRegistry.crystalBlock, 1);
+		else if (e.crafting.getItem().equals(Item.getItemFromBlock(mod_IDT.AmblygoniteBlock))) {
+			e.player.addStat(AchRegistry.AmblygoniteBlock, 1);
 		}
 
 		else if (e.crafting.getItem().equals(mod_IDT.DiamondSawBlade)) {
@@ -223,7 +223,7 @@ public class AchievementHandler {
 			e.player.addStat(AchRegistry.cutter, 1);
 		}
 
-		else if (e.crafting.getItem().equals(mod_IDT.CutCrystalGem)) {
+		else if (e.crafting.getItem().equals(mod_IDT.CutAmblygoniteGem)) {
 			e.player.addStat(AchRegistry.soPretty, 1);
 		}
 
@@ -275,7 +275,7 @@ public class AchievementHandler {
 			e.player.addStat(AchRegistry.gaComp, 1);
 		}
 
-		else if (e.crafting.getItem().equals(mod_IDT.CrystalGem)) {
+		else if (e.crafting.getItem().equals(mod_IDT.AmblygoniteGem)) {
 			e.player.addStat(AchRegistry.craftGem, 1);
 		}
 

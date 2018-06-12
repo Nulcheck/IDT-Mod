@@ -33,8 +33,8 @@ import com.mce.blocks.MineralBlocks.UraniumBlock;
 import com.mce.blocks.MineralBlocks.VanadiumBlock;
 import com.mce.blocks.MineralBlocks.ZimphnodeBlock;
 import com.mce.blocks.ModBlocks;
+import com.mce.blocks.ModBlocks.AmblygoniteBlock;
 import com.mce.blocks.ModBlocks.CryingObsidian;
-import com.mce.blocks.ModBlocks.CrystalBlock;
 import com.mce.blocks.ModBlocks.CrystalGlass;
 import com.mce.blocks.ModBlocks.CrystalRock;
 import com.mce.blocks.ModBlocks.DarkMatter;
@@ -87,10 +87,10 @@ import com.mce.blocks.ModLogs.GelidLog;
 import com.mce.blocks.ModLogs.SilkwoodLog;
 import com.mce.blocks.ModLogs.WillowLog;
 import com.mce.blocks.ModOre.Agate;
+import com.mce.blocks.ModOre.AmblygoniteOre;
 import com.mce.blocks.ModOre.BoronOre;
 import com.mce.blocks.ModOre.ChrysocollaOre;
 import com.mce.blocks.ModOre.CopperOre;
-import com.mce.blocks.ModOre.CrystalOre;
 import com.mce.blocks.ModOre.EinsteiniumOre;
 import com.mce.blocks.ModOre.NeodymiumOre;
 import com.mce.blocks.ModOre.NeptuniumOre;
@@ -418,7 +418,7 @@ public class mod_IDT {
 	public static Block LavaStone;
 	public static Block LavaCobble;
 	public static Block LavaObsidian;
-	public static Block CrystalBlock;
+	public static Block AmblygoniteBlock;
 	public static Block SteelBlock;
 	public static Block TitaniumBlock;
 	public static Block DidymiumGlass;
@@ -471,7 +471,7 @@ public class mod_IDT {
 	public static Block EinsteiniumOre;
 	public static Block UraniumOre;
 	public static Block NeptuniumOre;
-	public static Block CrystalOre;
+	public static Block AmblygoniteOre;
 	public static Block PraseodymiumOre;
 	public static Block NeodymiumOre;
 	public static Block VanadiumOre;
@@ -634,7 +634,6 @@ public class mod_IDT {
 	public static Block CementStairs;
 	public static Block CementBrickStairs;
 	public static Block EbonyStairs;
-	public static Block CrystalStairs;
 	public static Block SilkwoodStairs;
 	public static Block GelidStairs;
 
@@ -1024,16 +1023,16 @@ public class mod_IDT {
 	public static Item GelidDoorItem;
 
 	// Crystals
-	public static Item CrystalDust;
-	public static Item CrystalGem;
-	public static Item CrystalNugget;
-	public static Item CrystalPiece;
+	public static Item AmblygoniteDust;
+	public static Item AmblygoniteGem;
+	public static Item ChrysocollaGem;
+	public static Item AmblygoniteNugget;
+	public static Item AmblygonitePiece;
 	public static Item CrystalBall;
 	public static Item HardCrystalBall;
-	public static Item CutCrystalGem;
-	public static Item CrystalLens;
-	public static Item CrystalRod;
-	public static Item Chrysocolla;
+	public static Item CutAmblygoniteGem;
+	public static Item AmblygoniteLens;
+	public static Item AmblygoniteRod;
 
 	// Essence
 	public static Item EssenceOfLife;
@@ -1292,9 +1291,9 @@ public class mod_IDT {
 				.setResistance(2000F).setLightLevel(1.0F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:lava_obsidian");
 
-		CrystalBlock = new CrystalBlock(Material.ground).setBlockName("CrystalBlock").setHardness(5.0F)
+		AmblygoniteBlock = new AmblygoniteBlock(Material.ground).setBlockName("AmblygoniteBlock").setHardness(5.0F)
 				.setResistance(30F).setLightOpacity(1).setStepSound(Block.soundTypeGlass).setCreativeTab(IDT)
-				.setBlockTextureName("mod_IDT:crystal_block");
+				.setBlockTextureName("mod_IDT:amblygonite_block");
 
 		SteelBlock = new SteelBlock(Material.iron).setHardness(10F).setResistance(30F).setBlockName("SteelBlock")
 				.setStepSound(Block.soundTypeMetal).setCreativeTab(IDT).setBlockTextureName("mod_IDT:steel_block");
@@ -1455,8 +1454,8 @@ public class mod_IDT {
 				.setLightLevel(0.5F).setStepSound(Block.soundTypeStone).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:ore_neptunium");
 
-		CrystalOre = new CrystalOre().setBlockName("CrystalOre").setHardness(3.0F).setResistance(5F)
-				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_crystal");
+		AmblygoniteOre = new AmblygoniteOre().setBlockName("AmblygoniteOre").setHardness(3.0F).setResistance(5F)
+				.setStepSound(Block.soundTypeGlass).setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_amblygonite");
 
 		PraseodymiumOre = new PraseodymiumOre().setBlockName("PraOre").setHardness(3.5F).setResistance(5.5F)
 				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_praseodymium");
@@ -1967,9 +1966,6 @@ public class mod_IDT {
 
 		EbonyStairs = new ModWoodStairs(EbonyPlanks, 0).setHardness(2.0F).setStepSound(Block.soundTypeWood)
 				.setCreativeTab(IDT).setBlockName("EbonyStairs").setLightOpacity(0);
-
-		CrystalStairs = new ModStairs(CrystalBlock, 0).setHardness(5.0F).setStepSound(Block.soundTypeGlass)
-				.setCreativeTab(IDT).setBlockName("CrystalStairs").setLightOpacity(1);
 
 		SilkwoodStairs = new ModWoodStairs(SilkwoodPlanks, 0).setHardness(2.0F).setStepSound(Block.soundTypeWood)
 				.setCreativeTab(IDT).setBlockName("SilkwoodStairs").setLightOpacity(0);
@@ -2896,17 +2892,20 @@ public class mod_IDT {
 				.setUnlocalizedName("GelidDoorItem");
 
 		// Crystals
-		CrystalDust = new Item().setTextureName("mod_IDT:crystal_dust").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CrystalDust");
+		AmblygoniteDust = new Item().setTextureName("mod_IDT:amblygonite_dust").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteDust");
 
-		CrystalGem = new Item().setTextureName("mod_IDT:crystal_gem").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CrystalGem");
+		AmblygoniteGem = new Item().setTextureName("mod_IDT:amblygonite_gem").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteGem");
+		
+		ChrysocollaGem = new Item().setTextureName("mod_IDT:chrysocolla_gem").setCreativeTab(IDT)
+				.setUnlocalizedName("ChrysocollaGem");
 
-		CrystalNugget = new Item().setTextureName("mod_IDT:crystal_nugget").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CrystalNugget");
+		AmblygoniteNugget = new Item().setTextureName("mod_IDT:amblygonite_nugget").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteNugget");
 
-		CrystalPiece = new Item().setTextureName("mod_IDT:crystal_piece").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CrystalPiece");
+		AmblygonitePiece = new Item().setTextureName("mod_IDT:amblygonite_piece").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygonitePiece");
 
 		CrystalBall = new Item().setTextureName("mod_IDT:crystal_ball").setCreativeTab(IDTItems)
 				.setUnlocalizedName("CrystalBall");
@@ -2914,17 +2913,14 @@ public class mod_IDT {
 		HardCrystalBall = new HardCrystalBall().setTextureName("mod_IDT:crystal_ball_hard").setCreativeTab(IDTItems)
 				.setUnlocalizedName("HardCrystalBall");
 
-		CutCrystalGem = new Item().setTextureName("mod_IDT:crystal_gem_cut").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CutCrystalGem");
+		CutAmblygoniteGem = new Item().setTextureName("mod_IDT:amblygonite_gem_cut").setCreativeTab(IDTItems)
+				.setUnlocalizedName("CutAmblygoniteGem");
 
-		CrystalLens = new Item().setTextureName("mod_IDT:crystal_lens").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CrystalLens");
+		AmblygoniteLens = new Item().setTextureName("mod_IDT:amblygonite_lens").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteLens");
 
-		CrystalRod = new Item().setTextureName("mod_IDT:crystal_rod").setCreativeTab(IDTItems)
-				.setUnlocalizedName("CrystalRod");
-
-		Chrysocolla = new Item().setTextureName("mod_IDT:crystal_chrysocolla").setCreativeTab(IDT)
-				.setUnlocalizedName("Chrysocolla");
+		AmblygoniteRod = new Item().setTextureName("mod_IDT:amblygonite_rod").setCreativeTab(IDTItems)
+				.setUnlocalizedName("AmblygoniteRod");
 
 		// Essence
 		EssenceOfLife = new ModEssence().setTextureName("mod_IDT:essence_life").setCreativeTab(IDTItems)

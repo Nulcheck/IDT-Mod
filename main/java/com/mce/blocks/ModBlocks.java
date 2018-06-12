@@ -236,8 +236,8 @@ public class ModBlocks extends Block {
 		}
 	}
 
-	public static class CrystalBlock extends Block {
-		public CrystalBlock(Material mat) {
+	public static class AmblygoniteBlock extends Block {
+		public AmblygoniteBlock(Material mat) {
 			super(mat);
 		}
 
@@ -731,7 +731,7 @@ public class ModBlocks extends Block {
 			}
 
 			else {
-				return mod_IDT.CrystalDust;
+				return mod_IDT.AmblygoniteDust;
 			}
 		}
 

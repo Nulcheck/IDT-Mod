@@ -19,13 +19,13 @@ public class ChestHookHandler {
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeptuniumIngot), 1, 3, 15));
 
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalDust), 2, 5, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteDust), 2, 5, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.VanadiumIngot), 1, 2, 1));
 
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalNugget), 1, 3, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteNugget), 1, 3, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeptuniumIngot), 1, 3, 15));
@@ -74,13 +74,13 @@ public class ChestHookHandler {
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeptuniumIngot), 1, 3, 15));
 
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalDust), 2, 5, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteDust), 2, 5, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.VanadiumIngot), 1, 2, 1));
 
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalNugget), 1, 3, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteNugget), 1, 3, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeptuniumIngot), 1, 3, 15));
@@ -120,13 +120,13 @@ public class ChestHookHandler {
 
 		// Pyramids
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalDust), 2, 5, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteDust), 2, 5, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.VanadiumIngot), 1, 2, 1));
 
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalNugget), 1, 3, 15));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteNugget), 1, 3, 15));
 
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeodymiumIngot), 1, 3, 15));
@@ -139,13 +139,13 @@ public class ChestHookHandler {
 
 		// Jungle
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalDust), 2, 5, 50));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteDust), 2, 5, 50));
 
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.VanadiumIngot), 1, 2, 1));
 
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalNugget), 1, 3, 15));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteNugget), 1, 3, 15));
 
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeodymiumIngot), 1, 3, 15));
@@ -182,13 +182,13 @@ public class ChestHookHandler {
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeptuniumIngot), 1, 3, 15));
 
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalDust), 2, 5, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteDust), 2, 5, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.VanadiumIngot), 1, 2, 1));
 
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalNugget), 1, 3, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteNugget), 1, 3, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.NeptuniumIngot), 1, 3, 15));
@@ -237,7 +237,7 @@ public class ChestHookHandler {
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.VanadiumIngot), 1, 2, 1));
 
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH)
-				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.CrystalNugget), 1, 3, 5));
+				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.AmblygoniteNugget), 1, 3, 5));
 
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH)
 				.addItem(new WeightedRandomChestContent(new ItemStack(mod_IDT.VanadiumPick), 1, 1, 1));

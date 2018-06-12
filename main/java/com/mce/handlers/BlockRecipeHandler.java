@@ -76,9 +76,6 @@ public class BlockRecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.StoneStairs, 4), "*  ", "** ", "***", '*',
 				new ItemStack(Blocks.stone));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.CrystalStairs, 4), "*  ", "** ", "***", '*',
-				new ItemStack(mod_IDT.CrystalBlock));
-
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.WillowFence, 2), "***", "***", '*',
 				new ItemStack(mod_IDT.WillowStick, 1, 0));
 
@@ -328,8 +325,8 @@ public class BlockRecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.chest, 1), "***", "* *", "***", '*',
 				new ItemStack(Blocks.planks, 1, 0));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.CrystalBlock, 1), "***", "***", "***", '*',
-				new ItemStack(mod_IDT.CrystalGem));
+		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygoniteBlock, 1), "***", "***", "***", '*',
+				new ItemStack(mod_IDT.AmblygoniteGem));
 
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.CementBricks, 4), "**", "**", '*', new ItemStack(mod_IDT.Cement));
 
@@ -374,7 +371,7 @@ public class BlockRecipeHandler {
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.MatterCondenser), "f*f", "tct", "fgf", 'f',
 						new ItemStack(mod_IDT.MetalFrame), 'c', new ItemStack(mod_IDT.CompressorUnitGA), 't',
-						"ingotTitanium", 'g', new ItemStack(mod_IDT.CutCrystalGem), '*',
+						"ingotTitanium", 'g', new ItemStack(mod_IDT.CutAmblygoniteGem), '*',
 						new ItemStack(mod_IDT.T3CircuitBoard)));
 
 		CraftingManager.getInstance().getRecipeList()
@@ -934,7 +931,7 @@ public class BlockRecipeHandler {
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.BlackHoleGenerator), "*g*", "vnv", "tct", 'v',
 						"plateVanadium", 'n', new ItemStack(mod_IDT.NdMagnet, 1, 1), 't', "blockTitanium", 'c',
-						new ItemStack(mod_IDT.CompressorUnitGA), 'g', new ItemStack(mod_IDT.CutCrystalGem), '*',
+						new ItemStack(mod_IDT.CompressorUnitGA), 'g', new ItemStack(mod_IDT.CutAmblygoniteGem), '*',
 						new ItemStack(mod_IDT.QMan)));
 
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.Welder), "s s",

@@ -34,7 +34,7 @@ public class AchRegistry {
 	public static Achievement ultimNuke;
 	public static Achievement matterCon;
 	public static Achievement darkMatter;
-	public static Achievement crystalBlock;
+	public static Achievement AmblygoniteBlock;
 	public static Achievement dts;
 	public static Achievement cutter;
 	public static Achievement soPretty;
@@ -82,7 +82,7 @@ public class AchRegistry {
 		cementBricks = new Achievement("achievement.cementBricks", "cementBricks", 0, 3,
 				Item.getItemFromBlock(mod_IDT.CementBricks), cement).registerStat();
 
-		crystal = new Achievement("achievement.crystal", "crystal", -4, 6, Item.getItemFromBlock(mod_IDT.CrystalOre),
+		crystal = new Achievement("achievement.crystal", "crystal", -4, 6, Item.getItemFromBlock(mod_IDT.AmblygoniteOre),
 				AchievementList.acquireIron).registerStat();
 
 		essence = new Achievement("achievement.essence", "essence", -3, 6, mod_IDT.EssenceOfLife, crystal)
@@ -132,8 +132,8 @@ public class AchRegistry {
 		ultimNuke = new Achievement("achievement.ultimNuke", "ultimNuke", -4, 2,
 				Item.getItemFromBlock(mod_IDT.UltimateNuker), superReactor).registerStat();
 
-		crystalBlock = new Achievement("achievement.crystalBlock", "crystalBlock", -4, 7,
-				Item.getItemFromBlock(mod_IDT.CrystalBlock), crystal).setSpecial().registerStat();
+		AmblygoniteBlock = new Achievement("achievement.AmblygoniteBlock", "AmblygoniteBlock", -4, 7,
+				Item.getItemFromBlock(mod_IDT.AmblygoniteBlock), crystal).setSpecial().registerStat();
 
 		dts = new Achievement("achievement.dts", "dts", -3, -5, mod_IDT.DiamondSawBlade, AchievementList.diamonds)
 				.registerStat();
@@ -141,7 +141,7 @@ public class AchRegistry {
 		cutter = new Achievement("achievemetn.proJeweler", "proJeweler", -2, -5,
 				Item.getItemFromBlock(mod_IDT.IndustrialCutter), dts).registerStat();
 
-		soPretty = new Achievement("achievement.soPretty", "soPretty", -2, -6, mod_IDT.CutCrystalGem, cutter)
+		soPretty = new Achievement("achievement.soPretty", "soPretty", -2, -6, mod_IDT.CutAmblygoniteGem, cutter)
 				.registerStat();
 
 		uranGlass = new Achievement("achievement.uranGlass", "uranGlass", -7, 3, mod_IDT.UraniumGlass,
@@ -150,7 +150,7 @@ public class AchRegistry {
 		dimFrost = new Achievement("achievement.dimFrost", "dimFrost", -5, 9, mod_IDT.FrostStone, null).setSpecial()
 				.registerStat();
 
-		dimCrystal = new Achievement("achievement.dimCrystal", "dimCrystal", -4, 9, mod_IDT.CrystalBlock, crystalBlock)
+		dimCrystal = new Achievement("achievement.dimAmblygonite", "dimAmblygonite", -4, 9, mod_IDT.AmblygoniteBlock, AmblygoniteBlock)
 				.setSpecial().registerStat();
 
 		copperIngot = new Achievement("achievement.copperIngot", "copperIngot", -1, -1, mod_IDT.CopperIngot,
@@ -194,7 +194,7 @@ public class AchRegistry {
 		gaComp = new Achievement("achievement.gaComp", "gaComp", -1, -6, mod_IDT.CompressorUnitGA, soPretty)
 				.setSpecial().registerStat();
 
-		craftGem = new Achievement("achievement.craftGem", "craftGem", -5, 6, mod_IDT.CrystalGem, crystal)
+		craftGem = new Achievement("achievement.craftGem", "craftGem", -5, 6, mod_IDT.AmblygoniteGem, crystal)
 				.registerStat();
 
 		bhg = new Achievement("achievement.bhg", "bhg", 6, -3, mod_IDT.BlackHoleGenerator, qMan).setSpecial()
@@ -221,7 +221,7 @@ public class AchRegistry {
 		Modpage = new AchievementPage("\u00A7bIndustrial Technologies", mineModWood, modPlanks, sadObsidian, cement,
 				cementBricks, crystal, essence, healer, zimphnode, zimphnodeBar, zng, steelIngot, titaniumIngot,
 				vanadiumIngot, praOre, vanPick, tantalumIngot, tantArmor, didGlass, superReactor, ultimNuke, matterCon,
-				darkMatter, crystalBlock, dts, cutter, soPretty, greenChem, kompressor, warfareChem, uranGlass,
+				darkMatter, AmblygoniteBlock, dts, cutter, soPretty, greenChem, kompressor, warfareChem, uranGlass,
 				dimFrost, dimCrystal, smeltering, copperIngot, silicon, trans, mic, t1Cir, t2Cir, t3Cir, dmPiece, qMan,
 				gaComp, craftGem, bhg, fixIt, comp, vcIngot, vcPick, mag);
 
@@ -256,7 +256,7 @@ public class AchRegistry {
 		addDesc("cementBricks", "en_US", "Make cement bricks");
 
 		addName("crystal", "en_US", "Rare Ores!");
-		addDesc("crystal", "en_US", "Obtain crystal ore, gem, nugget, piece, or dust");
+		addDesc("crystal", "en_US", "Obtain a crystal ore, gem, nugget, piece, or dust");
 
 		addName("essence", "en_US", "Magical Stuff?");
 		addDesc("essence", "en_US", "Obtain essence of life, fire, earth, air or water");
@@ -309,8 +309,8 @@ public class AchRegistry {
 		addName("darkMatter", "en_US", "The Darkest Matter Ever");
 		addDesc("darkMatter", "en_US", "Make dark matter");
 
-		addName("crystalBlock", "en_US", "Expensive Block");
-		addDesc("crystalBlock", "en_US", "Craft a crystal block");
+		addName("AmblygoniteBlock", "en_US", "Expensive Block");
+		addDesc("AmblygoniteBlock", "en_US", "Craft a Amblygonite block");
 
 		addName("dts", "en_US", "Diamond Tipped Saw");
 		addDesc("dts", "en_US", "Craft a diamond saw blade");
@@ -319,7 +319,7 @@ public class AchRegistry {
 		addDesc("proJeweler", "en_US", "Craft an industrial cutter");
 
 		addName("soPretty", "en_US", "So Pretty");
-		addDesc("soPretty", "en_US", "Cut a crystal gem.");
+		addDesc("soPretty", "en_US", "Cut a Amblygonite gem.");
 
 		addName("greenChem", "en_US", "Green Chemistry");
 		addDesc("greenChem", "en_US", "Craft a biofuel extractor");
@@ -337,7 +337,7 @@ public class AchRegistry {
 		addDesc("dimFrost", "en_US", "Go to the frost dimension");
 
 		addName("dimCrystal", "en_US", "Crystalline");
-		addDesc("dimCrystal", "en_US", "Go to the crystal dimension");
+		addDesc("dimCrystal", "en_US", "Go to the Crystal dimension");
 
 		addName("smeltering", "en_US", "Smeltering");
 		addDesc("smeltering", "en_US", "Craft a smelter");

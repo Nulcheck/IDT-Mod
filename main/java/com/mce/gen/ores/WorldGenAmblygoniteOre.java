@@ -10,7 +10,7 @@ import com.mce.common.mod_IDT;
 
 import cpw.mods.fml.common.IWorldGenerator;
 
-public class WorldGenCrystalOre implements IWorldGenerator {
+public class WorldGenAmblygoniteOre implements IWorldGenerator {
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		switch (world.provider.dimensionId) {
@@ -32,7 +32,7 @@ public class WorldGenCrystalOre implements IWorldGenerator {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(13);
 			int zCoord = chunkZ + random.nextInt(16);
-			new WorldGenMinable(mod_IDT.CrystalOre, 3).generate(world,
+			new WorldGenMinable(mod_IDT.AmblygoniteOre, 3).generate(world,
 					random, xCoord, yCoord, zCoord);
 		}
 	}

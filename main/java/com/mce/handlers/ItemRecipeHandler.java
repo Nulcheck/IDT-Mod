@@ -39,22 +39,22 @@ public class ItemRecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.ExplosiveCharge), " * ", "*G*", " * ", 'G',
 				new ItemStack(Items.gunpowder), '*', new ItemStack(Items.paper));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.CrystalPiece), " * ", "***", "***", '*',
-				new ItemStack(mod_IDT.CrystalDust));
+		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygonitePiece), " * ", "***", "***", '*',
+				new ItemStack(mod_IDT.AmblygoniteDust));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.CrystalNugget), " * ", "***", " * ", '*',
-				new ItemStack(mod_IDT.CrystalPiece));
+		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygoniteNugget), " * ", "***", " * ", '*',
+				new ItemStack(mod_IDT.AmblygonitePiece));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.CrystalGem), " **", "***", "** ", '*',
-				new ItemStack(mod_IDT.CrystalNugget));
+		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygoniteGem), " **", "***", "** ", '*',
+				new ItemStack(mod_IDT.AmblygoniteNugget));
 
-		GameRegistry.addRecipe(new ItemStack(mod_IDT.CrystalGem, 9), "*", '*', new ItemStack(mod_IDT.CrystalBlock));
+		GameRegistry.addRecipe(new ItemStack(mod_IDT.AmblygoniteGem, 9), "*", '*', new ItemStack(mod_IDT.AmblygoniteBlock));
 
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.CrystalPiece, 5), new ItemStack(mod_IDT.CrystalNugget));
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygonitePiece, 5), new ItemStack(mod_IDT.AmblygoniteNugget));
 
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.CrystalDust, 7), new ItemStack(mod_IDT.CrystalPiece));
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygoniteDust, 7), new ItemStack(mod_IDT.AmblygonitePiece));
 
-		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.CrystalNugget, 7), new ItemStack(mod_IDT.CrystalGem));
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.AmblygoniteNugget, 7), new ItemStack(mod_IDT.AmblygoniteGem));
 
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.EssenceOfLife, 1), new ItemStack(mod_IDT.HardCrystalBall),
 				new ItemStack(Blocks.red_flower));
@@ -153,7 +153,7 @@ public class ItemRecipeHandler {
 				new ItemStack(mod_IDT.HardCrystalBall), new ItemStack(Blocks.grass));
 
 		GameRegistry.addRecipe(new ItemStack(mod_IDT.CrystalBall, 1), " * ", "* *", " * ", '*',
-				new ItemStack(mod_IDT.CrystalGem));
+				new ItemStack(mod_IDT.AmblygoniteGem));
 
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_IDT.EssenceOfAir, 1), new ItemStack(mod_IDT.HardCrystalBall));
 
@@ -384,7 +384,7 @@ public class ItemRecipeHandler {
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.CompressorUnitGA), "tgt", "vcv", "tdt", 't',
-						"plateTitanium", 'g', new ItemStack(mod_IDT.CutCrystalGem), 'v', "plateVanadium", 'c',
+						"plateTitanium", 'g', new ItemStack(mod_IDT.CutAmblygoniteGem), 'v', "plateVanadium", 'c',
 						new ItemStack(mod_IDT.CompressorUnit), 'd', new ItemStack(mod_IDT.T3CircuitBoard)));
 
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_IDT.BlowTorch), "g",
@@ -445,7 +445,7 @@ public class ItemRecipeHandler {
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.Microchip), "tdt", "wfw", "sss", 't',
-						new ItemStack(mod_IDT.Transistor), 'f', "foilCopper", 'd', "dustCrystal", 'w', "wireCopper",
+						new ItemStack(mod_IDT.Transistor), 'f', "foilCopper", 'd', "dustAmblygonite", 'w', "wireCopper",
 						's', new ItemStack(mod_IDT.SiliconWafer)));
 
 		CraftingManager.getInstance().getRecipeList()
@@ -575,7 +575,7 @@ public class ItemRecipeHandler {
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.LaserUpgrade), "sgs", "sls", "tut", 'u',
 						new ItemStack(mod_IDT.UpgradeBase), 't', "ingotTitanium", 'l',
-						new ItemStack(mod_IDT.CrystalLens), 's', "ingotSteel", 'g', new ItemStack(Blocks.glass_pane)));
+						new ItemStack(mod_IDT.AmblygoniteLens), 's', "ingotSteel", 'g', new ItemStack(Blocks.glass_pane)));
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_IDT.StabilizerUpgrade), "vmv", "mqm", "vuv", 'u',
@@ -596,7 +596,7 @@ public class ItemRecipeHandler {
 		
 		GameRegistry.addSmelting(mod_IDT.UraniumOre, new ItemStack(mod_IDT.UraniumIngot), 5.0F);
 
-		GameRegistry.addSmelting(mod_IDT.CrystalOre, new ItemStack(mod_IDT.CrystalNugget), 5.0F);
+		GameRegistry.addSmelting(mod_IDT.AmblygoniteOre, new ItemStack(mod_IDT.AmblygoniteNugget), 5.0F);
 		
 		GameRegistry.addSmelting(mod_IDT.ZimphnodeOre, new ItemStack(mod_IDT.ZimphnodeBar), 5.3F);
 
@@ -625,7 +625,7 @@ public class ItemRecipeHandler {
 		
 		GameRegistry.addSmelting(mod_IDT.UraniumDust, new ItemStack(mod_IDT.UraniumIngot), 5.0F);
 
-		GameRegistry.addSmelting(mod_IDT.CrystalDust, new ItemStack(mod_IDT.CrystalNugget), 5.0F);
+		GameRegistry.addSmelting(mod_IDT.AmblygoniteDust, new ItemStack(mod_IDT.AmblygoniteNugget), 5.0F);
 		
 		GameRegistry.addSmelting(mod_IDT.ZimphnodeDust, new ItemStack(mod_IDT.ZimphnodeBar), 5.3F);
 

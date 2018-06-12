@@ -214,10 +214,10 @@ public class ModOre extends BlockOre {
 		}
 	}
 
-	public static class CrystalOre extends BlockOre {
+	public static class AmblygoniteOre extends BlockOre {
 		int id, meta;
 
-		public CrystalOre() {
+		public AmblygoniteOre() {
 			super();
 		}
 
@@ -225,28 +225,28 @@ public class ModOre extends BlockOre {
 			int i = rand.nextInt(99);
 
 			if (i >= 97 && i <= 99) {
-				return Item.getItemFromBlock(mod_IDT.CrystalOre);
+				return Item.getItemFromBlock(mod_IDT.AmblygoniteOre);
 			}
 
 			if (i >= 77 && i <= 79) {
-				return mod_IDT.CrystalGem;
+				return mod_IDT.AmblygoniteGem;
 			}
 
 			if (i >= 47 && i <= 49) {
-				return mod_IDT.CrystalNugget;
+				return mod_IDT.AmblygoniteNugget;
 			}
 
 			if (i >= 27 && i <= 29) {
-				return mod_IDT.CrystalPiece;
+				return mod_IDT.AmblygonitePiece;
 			}
 
 			else {
-				return mod_IDT.CrystalDust;
+				return mod_IDT.AmblygoniteDust;
 			}
 		}
 
 		public int quantityDropped(Random rand) {
-			if (getItemDropped(id, rand, meta) == Item.getItemFromBlock(mod_IDT.CrystalOre)) {
+			if (getItemDropped(id, rand, meta) == Item.getItemFromBlock(mod_IDT.AmblygoniteOre)) {
 				return 2 + rand.nextInt(1);
 			} else {
 				return 6 + rand.nextInt(2);
@@ -412,7 +412,7 @@ public class ModOre extends BlockOre {
 		}
 		
 		public Item getItemDropped(int id, Random rand, int meta){
-			return mod_IDT.Chrysocolla;
+			return mod_IDT.ChrysocollaGem;
 		}
 	}
 }

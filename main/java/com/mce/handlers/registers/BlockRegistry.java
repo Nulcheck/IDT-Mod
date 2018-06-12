@@ -130,13 +130,13 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.CopperBlock, "CopperBlock");
 		GameRegistry.registerBlock(mod_IDT.SiliconBlock, "SiliconBlock");
 		GameRegistry.registerBlock(mod_IDT.SulfurBlock, "SulfurBlock");
-		GameRegistry.registerBlock(mod_IDT.CrystalBlock, "CrystalBlock");
+		GameRegistry.registerBlock(mod_IDT.AmblygoniteBlock, "AmblygoniteBlock");
 
 		// Ores
 		GameRegistry.registerBlock(mod_IDT.EinsteiniumOre, "EindteiniumOre");
 		GameRegistry.registerBlock(mod_IDT.NeptuniumOre, "NeptuniumOre");
 		GameRegistry.registerBlock(mod_IDT.UraniumOre, "UraniumOre");
-		GameRegistry.registerBlock(mod_IDT.CrystalOre, "CrystalOre");
+		GameRegistry.registerBlock(mod_IDT.AmblygoniteOre, "AmblygoniteOre");
 		GameRegistry.registerBlock(mod_IDT.PraseodymiumOre, "PraOre");
 		GameRegistry.registerBlock(mod_IDT.NeodymiumOre, "NeoOre");
 		GameRegistry.registerBlock(mod_IDT.VanadiumOre, "VanOre");
@@ -291,7 +291,6 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.StoneStairs, "StoneStairs");
 		GameRegistry.registerBlock(mod_IDT.CementStairs, "CementStairs");
 		GameRegistry.registerBlock(mod_IDT.CementBrickStairs, "CementBrickStairs");
-		GameRegistry.registerBlock(mod_IDT.CrystalStairs, "CrystalStairs");
 		GameRegistry.registerBlock(mod_IDT.GlassStairs, "GlassStairs");
 
 		// Colored Stairs

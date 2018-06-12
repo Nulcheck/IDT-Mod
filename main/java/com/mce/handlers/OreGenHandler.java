@@ -2,7 +2,7 @@ package com.mce.handlers;
 
 import com.mce.gen.ores.WorldGenBoronOre;
 import com.mce.gen.ores.WorldGenCopperOre;
-import com.mce.gen.ores.WorldGenCrystalOre;
+import com.mce.gen.ores.WorldGenAmblygoniteOre;
 import com.mce.gen.ores.WorldGenEinsteiniumOre;
 import com.mce.gen.ores.WorldGenNeodymiumOre;
 import com.mce.gen.ores.WorldGenNeptuniumOre;
@@ -22,7 +22,7 @@ public class OreGenHandler {
 		GameRegistry.registerWorldGenerator(new WorldGenEinsteiniumOre(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenNeptuniumOre(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenUraniumOre(), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenCrystalOre(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenAmblygoniteOre(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenPraseodymiumOre(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenNeodymiumOre(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenZimphnode(), 0);

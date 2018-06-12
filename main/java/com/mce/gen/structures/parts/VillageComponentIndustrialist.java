@@ -42,7 +42,7 @@ public class VillageComponentIndustrialist extends StructureVillagePieces.Villag
 			new WeightedRandomChestContent(mod_IDT.DiamondSawBlade, 0, 0, 1, 2),
 			new WeightedRandomChestContent(mod_IDT.CopperDust, 0, 1, 32, 15),
 			new WeightedRandomChestContent(mod_IDT.Carbon, 0, 1, 32, 15),
-			new WeightedRandomChestContent(mod_IDT.CrystalDust, 0, 0, 6, 2),
+			new WeightedRandomChestContent(mod_IDT.AmblygoniteDust, 0, 0, 6, 2),
 			new WeightedRandomChestContent(mod_IDT.CopperWire, 0, 1, 6, 15),
 			new WeightedRandomChestContent(mod_IDT.Plank, 0, 3, 6, 15),
 			new WeightedRandomChestContent(mod_IDT.Gear, 0, 0, 2, 15),

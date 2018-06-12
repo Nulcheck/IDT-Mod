@@ -18,7 +18,7 @@ public class MinechemRecipeHandler {
 		// ores 48, ingots 16
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.EinsteiniumOre), "48 Es");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.NeptuniumOre), "48 Np");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CrystalOre), "5 amblygonite");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.AmblygoniteOre), "5 amblygonite");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.PraseodymiumOre), "48 Pr");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.NeodymiumOre), "48 Nd");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.VanadiumOre), "48 V");
@@ -40,12 +40,12 @@ public class MinechemRecipeHandler {
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.SteelIngot), "16 Fe, 1 C");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.TitaniumIngot), "16 Ti");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.NeoronIngot), "16 Fe, 16 Nd");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CrystalGem), "7 amblygonite");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CutCrystalGem), "7 amblygonite");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CrystalNugget), "5 amblygonite");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CrystalPiece), "3 amblygonite");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CrystalDust), "1 amblygonite");
-		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CrystalBlock), "9 amblygonite");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.AmblygoniteGem), "7 amblygonite");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CutAmblygoniteGem), "7 amblygonite");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.AmblygoniteNugget), "5 amblygonite");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.AmblygonitePiece), "3 amblygonite");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.AmblygoniteDust), "1 amblygonite");
+		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.AmblygoniteBlock), "9 amblygonite");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.CrystalBall), "28 amblygonite");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(mod_IDT.HardCrystalBall), "28 amblygonite");
 		RecipeAPI.addDecompositionRecipe(new ItemStack(Items.lava_bucket), "16 magma", "48 Fe");
@@ -168,15 +168,15 @@ public class MinechemRecipeHandler {
 		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.Cement), false, 1000, "2 siliconDioxide");
 		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.CementBricks), true, 1000, "1 siliconDioxide",
 				"1 siliconDioxide", "", "1 siliconDioxide", "1 siliconDioxide", "", "", "", "", "", "");
-		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.CrystalGem), true, 1000, "", "1 amblygonite",
+		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.AmblygoniteGem), true, 1000, "", "1 amblygonite",
 				"1 amblygonite", "1 amblygonite", "1 amblygonite", "1 amblygonite", "1 amblygonite", "1 amblygonite",
 				"");
-		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.CrystalNugget), true, 1000, "", "1 amblygonite", "",
+		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.AmblygoniteNugget), true, 1000, "", "1 amblygonite", "",
 				"1 amblygonite", "1 amblygonite", "1 amblygonite", "", "1 amblygonite", "");
-		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.CrystalPiece), true, 1000, "", "1 amblygonite", "",
+		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.AmblygonitePiece), true, 1000, "", "1 amblygonite", "",
 				"1 amblygonite", "1 amblygonite", "1 amblygonite", "1 amblygonite", "1 amblygonite", "1 amblygonite");
-		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.CrystalDust), false, 1000, "1 amblygonite");
-		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.CrystalBlock), true, 1000, "7 amblygonite", "7 amblygonite",
+		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.AmblygoniteDust), false, 1000, "1 amblygonite");
+		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.AmblygoniteBlock), true, 1000, "7 amblygonite", "7 amblygonite",
 				"7 amblygonite", "7 amblygonite", "7 amblygonite", "7 amblygonite", "7 amblygonite", "7 amblygonite",
 				"7 amblygonite");
 		RecipeAPI.addSynthesisRecipe(new ItemStack(mod_IDT.CrystalBall), true, 1000, "", "7 amblygonite", "",

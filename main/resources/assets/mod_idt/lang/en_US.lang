@@ -85,8 +85,7 @@ tile.Healer.name=Healer
 tile.CryingObsidian.name=Crying Obsidian
 tile.LavaCobble.name=Lava Cobblestone
 tile.LavaObsidian.name=Lava Obsidian
-tile.CompactCobblestone.name=Compact Cobblestone
-tile.CrystalBlock.name=Amblygonite Block
+tile.AmblygoniteBlock.name=Amblygonite Block
 tile.DidymiumGlass.name=Didymium Glass
 tile.DidymiumGlassPane.name=Didymium Glass Pane
 tile.EinsteiniumGlass.name=Einsteinium Glass
@@ -134,14 +133,14 @@ tile.SulfurBlock.name=Block of Sulfur
 tile.ZimphnodeBlock.name=Zimphnode Block
 
 tile.FrozenFire.name=Frozen Fire
-tile.CrystalFire.name=Amblygonite Fire
+tile.CrystalFire.name=Crystal Fire
 
 tile.LiquidNitrogen.name=Liquid Nitrogen
 
 tile.EinsteiniumOre.name=Einsteinium Ore
 tile.NeptuniumOre.name=Neptunium Ore
 tile.UraniumOre.name=Uranium Ore
-tile.CrystalOre.name=Amblygonite Ore
+tile.AmblygoniteOre.name=Amblygonite Ore
 tile.PraOre.name=Praseodymium Ore
 tile.NeoOre.name=Neodymium Ore
 tile.VanOre.name=Vanadium Ore
@@ -166,7 +165,7 @@ tile.FrostDirt.name=Frozen Dirt
 tile.FrostStone.name=Frozen Stone
 tile.FrostCobble.name=Frozen Cobblestone
 
-tile.CrystalPortal.name=Amblygonite Portal
+tile.CrystalPortal.name=Crystal Portal
 tile.CrystalGlass.name=Crystal Glass
 tile.CrystalRock.name=Crystalline Rock
 
@@ -220,7 +219,7 @@ tile.GelidStairs.name=Gelid Wood Stairs
 tile.StoneStairs.name=Stone Stairs
 tile.CementStairs.name=Cement Stairs
 tile.CementBrickStairs.name=Cement Brick Stairs
-tile.CrystalStairs.name=Amblygonite Stairs
+tile.AmblygoniteStairs.name=Amblygonite Stairs
 tile.GlassStairs.name=Glass Stairs
 
 tile.GlassStairsWhite.name=White Stained Glass Stairs
@@ -653,8 +652,8 @@ item.Alternator.name=Alternator
 item.SiliconChip.name=Silicon Chip
 item.PSiliconChip.name=Phosphorus Doped Silicon Chip
 item.BSiliconChip.name=Boron Doped Silicon Chip
-item.CrystalRod.name=Crystal Rod
-item.CrystalLens.name=Crystal Lens
+item.AmblygoniteRod.name=Amblygonite Crystal Rod
+item.AmblygoniteLens.name=Amblygonite Crystal Lens
 
 item.UpBase.name=Upgrade Base
 item.UpMag.name=Magnetic Upgrade
@@ -704,7 +703,7 @@ item.TantalumNugget.name=Tantalum Nugget
 item.BoronNugget.name=Boron Nugget
 item.CopperNugget.name=Copper Nugget
 item.SiliconNugget.name=Silicon Nugget
-item.CrystalNugget.name=Amblygonite Nugget
+item.AmblygoniteNugget.name=Amblygonite Nugget
 
 item.EinsteiniumDust.name=Einsteinium Dust
 item.NeptuniumDust.name=Neptunium Dust
@@ -720,14 +719,14 @@ item.BoronDust.name=Boron Dust
 item.CopperDust.name=Copper Dust
 item.SiliconDust.name=Silicon Dust
 item.PhosphorusDust.name=Phosphorus Dust
-item.CrystalDust.name=Amblygonite Dust
+item.AmblygoniteDust.name=Amblygonite Dust
 item.Sulfur.name=Sulfur
 item.Carbon.name=Carbon
 item.PQuartz.name=Pure Quartz
 
-item.CrystalGem.name=Amblygonite Gem
-item.CutCrystalGem.name=Cut Amblygonite Gem
-item.CrystalPiece.name=Amblygonite Piece
+item.AmblygoniteGem.name=Amblygonite Gem
+item.CutAmblygoniteGem.name=Cut Amblygonite Gem
+item.AmblygonitePiece.name=Amblygonite Piece
 item.CrystalBall.name=Crystal Ball
 item.HardCrystalBall.name=Hard Crystal Ball
 
@@ -745,7 +744,7 @@ item.Popcorn.name=Popcorn
 
 item.Chisel.name=Chisel
 item.WikiPaper.name=§bWiki Paper§r
-item.Wrench.name=§bWrench§r
+item.Wrench.name=§bMultitool Wrench§r
 
 item.LiquidNitrogenBucket.name=Liquid Nitrogen Bucket
 
