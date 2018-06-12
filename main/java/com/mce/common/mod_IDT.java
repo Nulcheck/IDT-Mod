@@ -88,6 +88,7 @@ import com.mce.blocks.ModLogs.SilkwoodLog;
 import com.mce.blocks.ModLogs.WillowLog;
 import com.mce.blocks.ModOre.Agate;
 import com.mce.blocks.ModOre.BoronOre;
+import com.mce.blocks.ModOre.ChrysocollaOre;
 import com.mce.blocks.ModOre.CopperOre;
 import com.mce.blocks.ModOre.CrystalOre;
 import com.mce.blocks.ModOre.EinsteiniumOre;
@@ -482,7 +483,13 @@ public class mod_IDT {
 	public static Block CopperOre;
 	public static Block TitaniumOre;
 	public static Block Phosphorite;
+
+	// Dimensional Ores
+	// Frost
 	public static Block Agate;
+
+	// Crystal
+	public static Block ChrysocollaOre;
 
 	// Fires
 	public static FrozenFire FrozenFire;
@@ -1027,6 +1034,7 @@ public class mod_IDT {
 	public static Item CutCrystalGem;
 	public static Item CrystalLens;
 	public static Item CrystalRod;
+	public static Item Chrysocolla;
 
 	// Essence
 	public static Item EssenceOfLife;
@@ -1485,8 +1493,14 @@ public class mod_IDT {
 		Phosphorite = new Phosphorite().setBlockName("Phosphorite").setHardness(2f).setResistance(4f)
 				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_phosphorite");
 
+		// Dimensional Ores
+		// Frost
 		Agate = new Agate().setBlockName("Agate").setHardness(5f).setResistance(10f).setCreativeTab(IDT)
 				.setBlockTextureName("mod_IDT:ore_agate");
+
+		// Crystal
+		ChrysocollaOre = new ChrysocollaOre().setBlockName("ChrysocollaOre").setHardness(3f).setResistance(5f)
+				.setCreativeTab(IDT).setBlockTextureName("mod_IDT:ore_chrysocolla");
 
 		// Doors
 		BirchDoor = new BirchDoor(Material.wood).setBlockName("BirchDoor").setStepSound(Block.soundTypeWood)
@@ -2914,6 +2928,9 @@ public class mod_IDT {
 		CrystalRod = new Item().setTextureName("mod_IDT:crystal_rod").setCreativeTab(IDTItems)
 				.setUnlocalizedName("CrystalRod");
 
+		Chrysocolla = new Item().setTextureName("mod_IDT:crystal_chrysocolla").setCreativeTab(IDT)
+				.setUnlocalizedName("Chrysocolla");
+
 		// Essence
 		EssenceOfLife = new ModEssence().setTextureName("mod_IDT:essence_life").setCreativeTab(IDTItems)
 				.setUnlocalizedName("EssenceOfLife");
@@ -3334,7 +3351,7 @@ public class mod_IDT {
 			log.info("Loaded integration with Minechem.");
 		}
 
-		if(thermal){
+		if (thermal) {
 			e.getModState();
 			TEIDTAPI.pulverizerRecipes();
 			log.info("Loaded integration with Thermal Expansion.");

@@ -301,13 +301,13 @@ public class CrystalPortal extends BlockBreakable {
 
 				Block block1 = this.field_150867_a.getBlock(x + j1 * i1, y - 1, z + k1 * i1);
 
-				if (block1 != mod_IDT.CrystalBlock) {
+				if (block1 != mod_IDT.CrystalGlass) {
 					break;
 				}
 			}
 
 			block = this.field_150867_a.getBlock(x + j1 * i1, y, z + k1 * i1);
-			return block == mod_IDT.CrystalBlock ? i1 : 0;
+			return block == mod_IDT.CrystalGlass ? i1 : 0;
 		}
 
 		protected int func_150858_a() {
@@ -340,7 +340,7 @@ public class CrystalPortal extends BlockBreakable {
 								k + Direction.offsetX[CrystalPortal.field_150001_a[this.field_150865_b][0]], i,
 								l + Direction.offsetZ[CrystalPortal.field_150001_a[this.field_150865_b][0]]);
 
-						if (block != mod_IDT.CrystalBlock) {
+						if (block != mod_IDT.CrystalGlass) {
 							break label56;
 						}
 					} else if (j == this.field_150868_h - 1) {
@@ -348,7 +348,7 @@ public class CrystalPortal extends BlockBreakable {
 								k + Direction.offsetX[CrystalPortal.field_150001_a[this.field_150865_b][1]], i,
 								l + Direction.offsetZ[CrystalPortal.field_150001_a[this.field_150865_b][1]]);
 
-						if (block != mod_IDT.CrystalBlock) {
+						if (block != mod_IDT.CrystalGlass) {
 							break label56;
 						}
 					}
@@ -362,7 +362,7 @@ public class CrystalPortal extends BlockBreakable {
 				l = this.field_150861_f.posZ
 						+ i * Direction.offsetZ[CrystalPortal.field_150001_a[this.field_150865_b][1]];
 
-				if (this.field_150867_a.getBlock(j, k, l) != mod_IDT.CrystalBlock) {
+				if (this.field_150867_a.getBlock(j, k, l) != mod_IDT.CrystalGlass) {
 					this.field_150862_g = 0;
 					break;
 				}

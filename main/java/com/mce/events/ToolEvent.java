@@ -14,7 +14,7 @@ public class ToolEvent {
 			if (e.harvester.getHeldItem() != null && e.harvester.getHeldItem().getItem() == mod_IDT.NeoronPick) {
 				ItemStack stack = FurnaceRecipes.smelting()
 						.getSmeltingResult(new ItemStack(e.block, 1, e.blockMetadata));
-				if (stack != null) {
+				if (stack != null && !stack.isItemEqual(new ItemStack(mod_IDT.LavaStone))) {
 					e.drops.clear();
 					e.drops.add(stack.copy());
 				}

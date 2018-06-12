@@ -278,7 +278,7 @@ public class OtherEvents {
 
 			else if (e.entityPlayer.getHeldItem() != null
 					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.CrystalGem
-					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CrystalBlock) {
+					&& e.world.getBlock(e.x, e.y, e.z) == mod_IDT.CrystalGlass) {
 				e.world.setBlock(e.x, e.y + 1, e.z, mod_IDT.CrystalFire);
 				e.world.scheduleBlockUpdate(e.x, e.y, e.z, mod_IDT.CrystalFire, 1);
 			}

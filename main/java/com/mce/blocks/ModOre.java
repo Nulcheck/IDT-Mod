@@ -404,4 +404,15 @@ public class ModOre extends BlockOre {
 			return 2 + ran.nextInt(1);
 		}
 	}
+	
+	public static class ChrysocollaOre extends BlockOre {
+		public ChrysocollaOre(){
+			super();
+			this.setHarvestLevel("pickaxe", 2);
+		}
+		
+		public Item getItemDropped(int id, Random rand, int meta){
+			return mod_IDT.Chrysocolla;
+		}
+	}
 }

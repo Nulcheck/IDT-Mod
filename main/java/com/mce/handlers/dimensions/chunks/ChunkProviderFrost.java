@@ -379,9 +379,7 @@ public class ChunkProviderFrost implements IChunkProvider {
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(chunk, worldObj, rand, x, z, flag));
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldObj, rand, k, l));
 
-		int k1;
-		int l1;
-		int i2;
+		int k1, l1, i2;
 
 		// Water Lakes
 		if (!flag && this.rand.nextInt(4) == 0 && TerrainGen.populate(chunk, worldObj, rand, x, z, flag, LAKE)) {

@@ -148,7 +148,13 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_IDT.CopperOre, "CopperOre");
 		GameRegistry.registerBlock(mod_IDT.TitaniumOre, "TitaniumOre");
 		GameRegistry.registerBlock(mod_IDT.Phosphorite, "Phosphorite");
+
+		// Dimensional
+		// Frost
 		GameRegistry.registerBlock(mod_IDT.Agate, "Agate");
+
+		// Crystal
+		GameRegistry.registerBlock(mod_IDT.ChrysocollaOre, "ChrysocollaOre");
 
 		// Fires
 		GameRegistry.registerBlock(mod_IDT.FrozenFire, "FrozenFire");

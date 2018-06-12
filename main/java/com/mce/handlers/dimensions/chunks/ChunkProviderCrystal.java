@@ -2,6 +2,7 @@ package com.mce.handlers.dimensions.chunks;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVINE;
+import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
 
 import java.util.List;
@@ -29,6 +30,7 @@ import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenStronghold;
@@ -373,6 +375,18 @@ public class ChunkProviderCrystal implements IChunkProvider {
 		biomegenbase.decorate(this.worldObj, this.rand, k, l);
 		if (TerrainGen.populate(chunk, worldObj, rand, x, z, flag, ANIMALS)) {
 			SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);
+		}
+
+		// Custom Ore Generation
+		WorldGenMinable chrysocolla = new WorldGenMinable(mod_IDT.ChrysocollaOre, 5, mod_IDT.CrystalRock);
+		int k1, l1, i2, j2;
+
+		boolean doGen = TerrainGen.generateOre(worldObj, rand, chrysocolla, k, 1, CUSTOM);
+		for (k1 = 0; doGen && k1 < 10; ++k1) {
+			l1 = k + this.rand.nextInt(16);
+			i2 = this.rand.nextInt(75);
+			j2 = l + this.rand.nextInt(16);
+			chrysocolla.generate(worldObj, rand, l1, i2, j2);
 		}
 
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(chunk, worldObj, rand, x, z, flag));

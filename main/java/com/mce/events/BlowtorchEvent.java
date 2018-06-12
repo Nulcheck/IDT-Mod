@@ -15,6 +15,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -117,7 +118,7 @@ public class BlowtorchEvent {
 				e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
 				e.entityPlayer.addStat(AchRegistry.fixIt, 1);
 			}
-			
+
 			else if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) == mod_IDT.BlackHoleGenerator
 					&& e.entityPlayer.getHeldItem() != null
 					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.BlowTorch
@@ -129,54 +130,22 @@ public class BlowtorchEvent {
 				e.entityPlayer.addStat(AchRegistry.fixIt, 1);
 			}
 
-			// Null checks
-			/*
-			 * else if (e.entityPlayer.isSneaking() &&
-			 * e.entityPlayer.getHeldItem() != null &&
-			 * e.entityPlayer.getHeldItem().getItem() != mod_IDT.BlowTorch) {
-			 * System.out.println("Null check1"); }
-			 */
+			// Smelt block if recipe result is block
+			if (e.entityPlayer.isSneaking() && e.entityPlayer.getHeldItem() != null
+					&& e.entityPlayer.getHeldItem().getItem() == mod_IDT.BlowTorch) {
 
-			/*
-			 * else if (!e.entityPlayer.isSneaking() &&
-			 * e.entityPlayer.getHeldItem() != null &&
-			 * e.entityPlayer.getHeldItem().getItem() == mod_IDT.BlowTorch) {
-			 * System.out.println("Null check5"); }
-			 */
-		}
+				ItemStack stack = FurnaceRecipes.smelting().getSmeltingResult(
+						new ItemStack(e.world.getBlock(e.x, e.y, e.z), 1, e.world.getBlockMetadata(e.x, e.y, e.z)));
 
-		// Smelt blocks with blowtorch if recipe is a block smelting into a
-		// block
-		ItemStack stack = FurnaceRecipes.smelting().getSmeltingResult(
-				new ItemStack(e.world.getBlock(e.x, e.y, e.z), 1, e.world.getBlockMetadata(e.x, e.y, e.z)));
-
-		if (e.entityPlayer.isSneaking() && e.world.getBlock(e.x, e.y, e.z) instanceof Block
-				&& e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_IDT.BlowTorch
-				&& stack != null) {
-			if (stack.getItem() instanceof ItemBlock) {
-				if (e.world.getBlock(e.x, e.y, e.z) == Blocks.stone_slab) {
-					int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
-					if (meta == 11) {
-						e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()));
-						e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 8, 1);
-						e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
-						e.world.markBlockForUpdate(e.x, e.y, e.z);
-						e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
-					} else {
-						e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()));
-						e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, 0, 1);
-						e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
-						e.world.markBlockForUpdate(e.x, e.y, e.z);
-						e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
-					}
-				} else {
-					int meta = e.world.getBlockMetadata(e.x, e.y, e.z);
-
-					e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()));
-					e.world.setBlockMetadataWithNotify(e.x, e.y, e.z, meta, 1);
-					e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
+				if (stack != null && stack.getItem() instanceof ItemBlock) {
+					e.world.setBlock(e.x, e.y, e.z, Block.getBlockFromItem(stack.getItem()),
+							e.world.getBlockMetadata(e.x, e.y, e.z), 2);
 					e.world.markBlockForUpdate(e.x, e.y, e.z);
 					e.world.playSoundAtEntity(e.entityPlayer, "mod_idt:blowtorch", .5f, 1f);
+
+					if (!e.entityPlayer.capabilities.isCreativeMode)
+						e.entityPlayer.inventory.getCurrentItem().damageItem(1, e.entityPlayer);
+
 				}
 			}
 		}

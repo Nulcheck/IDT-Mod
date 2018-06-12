@@ -126,6 +126,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_IDT.CrystalLens, "CrystalLens");
 		GameRegistry.registerItem(mod_IDT.CrystalBall, "CrystalBall");
 		GameRegistry.registerItem(mod_IDT.HardCrystalBall, "HardCrystalBall");
+		GameRegistry.registerItem(mod_IDT.Chrysocolla, "Chrysocolla");
 
 		// Chem
 		GameRegistry.registerItem(mod_IDT.V2O5, "V2O5");
