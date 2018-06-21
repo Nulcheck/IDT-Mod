@@ -3,16 +3,11 @@ package com.mce.entity.tile.tech;
 import com.mce.blocks.tech.BioFuelExtractor;
 import com.mce.handlers.custom_recipes.BFERecipes;
 
-import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.IEnergyStorage;
-import cofh.api.energy.TileEnergyHandler;
-import cofh.lib.util.helpers.MathHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output

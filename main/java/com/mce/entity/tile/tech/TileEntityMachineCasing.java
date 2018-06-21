@@ -12,7 +12,6 @@ public class TileEntityMachineCasing extends TileEnergyHandler {
 
 	public int damage;
 	public int maxDamage;
-	// public int lvl;
 
 	public void readFromNBT(NBTTagCompound tag) {
 		super.readFromNBT(tag);
