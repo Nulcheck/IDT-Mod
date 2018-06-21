@@ -68,6 +68,7 @@ public class ClientRenderUN extends RenderTNTPrimed {
 		return textureLocation((EntityUN) entity);
 	}
 
+	@Override
 	public void doRender(Entity entity, double x, double y, double z,
 			float size, float light) {
 		renderUN((EntityUN) entity, 0.0D, 0.0D, 0.0D, 0.0F, 0.0F);

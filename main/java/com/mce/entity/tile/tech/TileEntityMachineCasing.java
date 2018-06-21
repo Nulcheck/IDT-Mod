@@ -95,16 +95,12 @@ public class TileEntityMachineCasing extends TileEnergyHandler {
 		return es.getMaxEnergyStored() > 0;
 	}
 
-	public final void setEnergyStored(int quantity) {
+	public void setEnergyStored(int quantity) {
 		es.setEnergyStored(quantity);
 	}
 
 	public IEnergyStorage getEnergyStored() {
 		return es;
-	}
-
-	public int getScaledEnergyStorage(int scale) {
-		return MathHelper.round((long) es.getEnergyStored() * scale / es.getMaxEnergyStored());
 	}
 
 	public void calcTier() {
@@ -162,6 +158,10 @@ public class TileEntityMachineCasing extends TileEnergyHandler {
 			if (getDamage() < 0)
 				setDamage(0);
 		}
+	}
+	
+	public int getScaledEnergyStorage(int scale) {
+		return MathHelper.round((long) es.getEnergyStored() * scale / es.getMaxEnergyStored());
 	}
 
 	public int getDamageScaled(int i) {

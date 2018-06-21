@@ -34,7 +34,7 @@ public class TileEntitySmelter extends TileEntity implements ISidedInventory {
 	public int cookDTime;
 
 	public int fuelAmount;
-	public final int maxFuelAmount = 150000;
+	public final int maxFuelAmount = 160000;
 
 	public int damage;
 	public final int maxDamage = 32000;

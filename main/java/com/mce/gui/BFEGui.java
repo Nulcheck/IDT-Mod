@@ -32,7 +32,7 @@ public class BFEGui extends GuiContainer {
 
 		DecimalFormat df = new DecimalFormat();
 		df.setMaximumFractionDigits(1);
-		double pdam = (this.bfe.damage * 100d) / this.bfe.maxDamage;
+		double pdam = (this.bfe.getDamage() * 100d) / this.bfe.getMaxDamage();
 		String dam = String.valueOf(df.format(pdam));
 
 		this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6,
@@ -40,6 +40,7 @@ public class BFEGui extends GuiContainer {
 		//this.fontRendererObj.drawString(I18n.format("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
 
 		this.fontRendererObj.drawString(dam + "%", 131, this.ySize - 96 + 2, 4210752);
+		this.fontRendererObj.drawString("RF: " + this.bfe.getScaledEnergyStorage(50), 8, this.ySize - 96 + 2 , 4210752);
 	}
 
 	public void drawGuiContainerBackgroundLayer(float f, int i, int j) {

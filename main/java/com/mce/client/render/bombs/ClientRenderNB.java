@@ -68,6 +68,7 @@ public class ClientRenderNB extends RenderTNTPrimed {
 		return textureLocation((EntityNB) entity);
 	}
 
+	@Override
 	public void doRender(Entity entity, double x, double y, double z,
 			float size, float light) {
 		renderEB((EntityNB) entity, 0.0D, 0.0D, 0.0D, 0.0F, 0.0F);

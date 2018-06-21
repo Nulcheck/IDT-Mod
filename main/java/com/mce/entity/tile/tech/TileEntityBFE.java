@@ -14,14 +14,14 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory {
+public class TileEntityBFE extends TileEntityMachineCasing implements ISidedInventory {
 	// Slot 0 = input; slot 1 = output
 	private static final int[] input_slot = new int[] { 0 };
 	private static final int[] output_slot = new int[] { 1 };
 
 	private String isInvNameLocalized;
 	private ItemStack[] slots = new ItemStack[2];
-	protected EnergyStorage es = new EnergyStorage(0);
+	//protected EnergyStorage es = new EnergyStorage(0);
 
 	// Cutter Specs
 	// 300 speed is a little slower than a furnace
@@ -29,8 +29,8 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 	public int extractingTime;
 	public int burnTime;
 	public int facing;
-	public int damage;
-	public int maxDamage;
+	/*public int damage;
+	public int maxDamage;*/
 
 	public int getSizeInv() {
 		return this.slots.length;
@@ -104,14 +104,14 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 
 		tag.setInteger("ExtractingTime", this.extractingTime);
 		tag.setInteger("Facing", this.facing);
-		if (getDamage() > getMaxDamage())
+		/*if (getDamage() > getMaxDamage())
 			setDamage(getMaxDamage());
 		if (getDamage() < 0)
 			setDamage(0);
 
 		tag.setInteger("Damage", getDamage());
 		tag.setInteger("MaxDamage", getMaxDamage());
-		es.writeToNBT(tag);
+		es.writeToNBT(tag);*/
 
 		NBTTagList list = new NBTTagList();
 
@@ -148,14 +148,14 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 
 		this.extractingTime = tag.getInteger("ExtractingTime");
 		this.facing = tag.getInteger("Facing");
-		setDamage(tag.getInteger("Damage"));
+		/*setDamage(tag.getInteger("Damage"));
 		setMaxDamage(tag.getInteger("MaxDamage"));
 		es.readFromNBT(tag);
 
 		if (getDamage() > getMaxDamage())
 			setDamage(getMaxDamage());
 		if (getDamage() < 0)
-			setDamage(0);
+			setDamage(0);*/
 
 		if (tag.hasKey("CustomName")) {
 			this.ln = tag.getString("CustomName");
@@ -348,7 +348,7 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 		tag.setInteger("Damage", getDamage());
 		tag.setInteger("MaxDamage", getMaxDamage());
 		es.writeToNBT(tag);
-	}*/
+	}
 
 	public void setMaxEnergy(int max) {
 		es.setCapacity(max);
@@ -472,7 +472,7 @@ public class TileEntityBFE extends TileEnergyHandler implements ISidedInventory 
 			if (getDamage() < 0)
 				setDamage(0);
 		}
-	}
+	}*/
 
 	public int getDamageScaled(int i) {
 		return getDamage() * i / getMaxDamage();

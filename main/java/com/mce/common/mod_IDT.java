@@ -386,7 +386,7 @@ public class mod_IDT {
 
 	public static Logger log = Logger.getLogger("Minecraft");
 	public boolean mobDef = Loader.isModLoaded("mod_mobdefensive");
-	public static boolean ebm = Loader.isModLoaded("mod_ebm");
+	// public static boolean ebm = Loader.isModLoaded("mod_ebm");
 	public static boolean minechem = Loader.isModLoaded("minechem");
 	public static boolean thermal = Loader.isModLoaded("ThermalExpansion");
 
