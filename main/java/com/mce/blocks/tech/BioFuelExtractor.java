@@ -30,28 +30,6 @@ public class BioFuelExtractor extends BlockContainer {
 		super(mat);
 	}
 
-	/*// Creative middle click
-	public Item getItem(World world, int x, int y, int z) {
-		return Item.getItemFromBlock(mod_IDT.BioFuelExtractor);
-	}*/
-
-	/*
-	 * public void onBlockAdded(World world, int x, int y, int z) {
-	 * TileEntityBFE bfe = (TileEntityBFE) world.getTileEntity(x, y, z); int
-	 * meta = world.getBlockMetadata(x, y, z);
-	 * 
-	 * super.onBlockAdded(world, x, y, z);
-	 * 
-	 * if (meta == 0) { bfe.setLvl("steel"); bfe.updateEntity(); } if (meta ==
-	 * 1) { bfe.setLvl("titanium"); bfe.updateEntity(); } if (meta == 2) {
-	 * bfe.setLvl("tantalum"); bfe.updateEntity(); } if (meta == 3) {
-	 * bfe.setLvl("vanadium"); bfe.updateEntity(); } if (meta == 4) {
-	 * bfe.setLvl("vc"); bfe.updateEntity(); }
-	 * 
-	 * 
-	 * bfe.setDamage(bfe.getMaxDamage()); }
-	 */
-
 	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileEntityBFE();
 	}
